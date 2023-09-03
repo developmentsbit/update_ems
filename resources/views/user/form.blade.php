@@ -42,25 +42,25 @@
     @endif
 
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 py-2">
-        <label class="form-label fw-bold" for="name">Name</label>
+        <label class="form-label fw-bold" for="name">@lang('common.name')</label>
         <input name="name" type="text" class="form-control" id="name" placeholder="Type User Name"
             value="{{ @$user->name }}" required>
     </div>
 
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 py-2">
-        <label class="form-label fw-bold" for="email">Email</label>
+        <label class="form-label fw-bold" for="email">@lang('common.email')</label>
         <input name="email" type="text" class="form-control" id="email" placeholder="Type User Email"
             value="{{ @$user->email }}" required>
     </div>
 
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 py-2">
-        <label class="form-label fw-bold" for="mobile">Mobile</label>
+        <label class="form-label fw-bold" for="mobile">@lang('common.mobile')</label>
         <input name="mobile" type="text" class="form-control" id="mobile" placeholder="Type User Mobile"
             value="{{ @$user->mobile }}">
     </div>
 
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 py-2">
-        <label class="form-label fw-bold" for="userdob">Date of Birth</label>
+        <label class="form-label fw-bold" for="userdob">@lang('common.dob')</label>
         <input name="dob" type="text" class="form-control @error('dob') is-invalid @enderror"
             placeholder="dd-mm-yyyy" data-date-format="dd-mm-yyyy" data-date-container='#datepicker1'
             data-date-end-date="0d" value="{{ @$user->dob ? date('d-m-Y', strtotime(@$user->dob)) : '' }}"
@@ -79,7 +79,7 @@
 
     @if (!@$user)
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 py-2">
-            <label class="form-label fw-bold" for="password">Password</label>
+            <label class="form-label fw-bold" for="password">@lang('common.password')</label>
             <input name="password" type="text" class="form-control" id="password" placeholder="Type User Password"
                 value="" required>
         </div>
@@ -93,7 +93,7 @@ Note, all files get deleted from that account every few hours.
 -->
         <div class="border text-center">
             <div>
-                <label class="form-label fw-bold" for="picture">Profile Image</label>
+                <label class="form-label fw-bold" for="picture">@lang('common.profile_image')</label>
             </div>
             <!-- The input element below will turn into the widget -->
             <input type="hidden" role="uploadcare-uploader" data-crop="1:1" data-images-only>
@@ -106,7 +106,7 @@ Note, all files get deleted from that account every few hours.
 
     <div class="col-md-12 text-right">
         <button type="submit" class="btn btn-primary waves-effect waves-light">
-            <i class="fa fa-save"></i> Submit
+            <i class="fa fa-save"></i> @lang('common.submit')
         </button>
     </div>
 

@@ -20,12 +20,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('page.viewtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.add_new')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('pages.create') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
 
 		<div class="card">
 			<div class="card-body">
 
-				<h3>@lang('page.managetitle')<a  href="{{ route("pages.create") }}" class="btn btn-primary float-end" >@lang('actions.add_new')</a></h3><br>
+				<h3>@lang('page.viewtitle')</h3><br>
 
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
@@ -46,13 +68,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $d->title }}</td>
 							<td>
 								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("pages.edit",$d->id) }}">@lang('actions.edit')</a>
-							{{-- 		<form action="{{ route('pages.destroy',$d->id) }}" method="post">
+									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("pages.edit",$d->id) }}">@lang('common.edit')</a>
+									<form action="{{ route('pages.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">Delete</button>
+										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
 
-									</form> --}}
+									</form>
 								</div>
 							</td>
 

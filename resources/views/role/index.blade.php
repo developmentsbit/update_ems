@@ -40,16 +40,16 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="header-title">Roles</h4>
+                        <h4 class="header-title">@lang('role.index_title')</h4>
                         <ul class="nav nav-tabs nav-bordered mb-3">
                             <li class="nav-item">
                                 <a href="#roles-tab-all" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                                    All
+                                    @lang('common.all')
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#roles-tab-deleted" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                                    Deleted
+                                    @lang('common.deleted_list')
                                 </a>
                             </li>
                         </ul> <!-- end nav-->
@@ -59,9 +59,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>@lang('common.name')</th>
+                                            <th>@lang('common.status')</th>
+                                            <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -72,9 +72,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>@lang('common.name')</th>
+                                            <th>@lang('common.status')</th>
+                                            <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
                                 </table>

@@ -20,22 +20,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('classroutine.viewtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.add_new')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('classroutine.create') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
 
 		<div class="card">
 			<div class="card-body">
 
-				<h3>@lang('classroutine.managetitle')<a  href="{{ route("classroutine.create") }}" class="btn btn-primary float-end" >@lang('actions.add_new')</a></h3><br>
+				<h3>@lang('classroutine.managetitle')</h3><br>
 
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
-							<th>@lang('classroutine.sl')</th>
+							<th>#</th>
 							<th>@lang('classroutine.date')</th>
 							<th>@lang('classroutine.classname')</th>
 							<th>@lang('classroutine.title')</th>
 							<th>@lang('classroutine.image')</th>
-							<th>@lang('actions.action')</th>
+							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
 					
@@ -52,11 +74,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td><a href="{{ asset($d->image) }}" download="" class="btn btn-success btn-sm">Download</a></td>
 							<td>
 								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("classroutine.edit",$d->id) }}">@lang('actions.edit')</a>
+									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("classroutine.edit",$d->id) }}">@lang('common.edit')</a>
 									<form action="{{ route('classroutine.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('actions.delete')</button>
+										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
 
 									</form>
 								</div>

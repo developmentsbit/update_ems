@@ -4,9 +4,9 @@ return [
 
      'managetitle' => 'Academic Calender',
      'addtitle' => 'Add Academic Calender',
-     'sl' => 'SL',
-     'title' => 'Title',
+     'viewtitle' => 'View Academic Calender',
      'edittitle' => 'Edit Academic Calender',
+     'title' => 'Title',
      'date' => 'Date',
      'image' => 'Image/File',
      'download' => 'Download/File Image',

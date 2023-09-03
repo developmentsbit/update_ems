@@ -8,14 +8,14 @@
     @endif
 
     <div class="col-lg-3 col-md-3 col-sm-6 py-2">
-        <label class="form-label" for="name">Role Name</label>
+        <label class="form-label" for="name">@lang('role.label_name')</label>
         <input name="name" type="text" class="form-control" id="name" placeholder="Type Role Name"
             value="{{ @$role->name }}" required>
     </div>
 
     <div class="col-md-12 text-right">
         <button type="submit" class="btn btn-primary waves-effect waves-light">
-            <i class="fa fa-save"></i> Submit
+            <i class="fa fa-save"></i> @lang('common.submit')
         </button>
     </div>
 

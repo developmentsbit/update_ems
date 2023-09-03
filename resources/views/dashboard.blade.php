@@ -11,7 +11,15 @@
 
 <div class="container-fluid">
 
-    @include('components.error_messages')
+        @include('components.error_messages')
+        @component('components.breadcrumb')
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+        @endcomponent
 
     <!-- start page title -->
     <div class="row">
@@ -33,7 +41,7 @@
                         </a>
                     </form>
                 </div>
-                <h4 class="page-title">Dashboard</h4>
+                <h4 class="page-title">@lang('common.dashboard')</h4>
             </div>
         </div>
     </div>
@@ -49,7 +57,7 @@
                             <div class="float-end">
                                 <i class="mdi mdi-account-multiple widget-icon"></i>
                             </div>
-                            <h4 class="text-muted fw-normal mt-0" title="Number of Customers">Total Admins</h4>
+                            <h4 class="text-muted fw-normal mt-0" title="Number of Customers">@lang('common.total_admin')</h4>
                             <h3 class="mt-3 mb-3">{{ $totaladmin }}</h3>
 
                         </div> <!-- end card-body-->
@@ -67,7 +75,7 @@
                             <div class="float-end">
                                 <i class="mdi mdi-account-multiple widget-icon"></i>
                             </div>
-                            <h4 class="text-muted fw-normal mt-0" title="Number of Orders">Total Teachers</h4>
+                            <h4 class="text-muted fw-normal mt-0" title="Number of Orders">@lang('common.total_teacher')</h4>
                             <h3 class="mt-3 mb-3">{{ $totalteachers }}</h3>
 
                         </div> <!-- end card-body-->
@@ -81,7 +89,7 @@
                             <div class="float-end">
                                 <i class="mdi mdi-account-multiple widget-icon"></i>
                             </div>
-                            <h4 class="text-muted fw-normal mt-0" title="Number of Orders">Total Staffs</h4>
+                            <h4 class="text-muted fw-normal mt-0" title="Number of Orders">@lang('common.total_staff')</h4>
                             <h3 class="mt-3 mb-3">{{ $totalstaff }}</h3>
 
                         </div> <!-- end card-body-->
@@ -95,7 +103,7 @@
                             <div class="float-end">
                                 <i class="mdi mdi-pulse widget-icon"></i>
                             </div>
-                            <h4 class="text-muted fw-normal mt-0" title="Growth">Total Notices</h4>
+                            <h4 class="text-muted fw-normal mt-0" title="Growth">@lang('common.total_notice')</h4>
                             <h3 class="mt-3 mb-3">{{ $totalnotices }}</h3>
                             
                         </div> <!-- end card-body-->

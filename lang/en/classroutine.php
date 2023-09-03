@@ -4,10 +4,10 @@ return [
 
      'managetitle' => 'Manage Routine',
      'addtitle' => 'Add Routine',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Routine',
+     'viewtitle' => 'View Routine',
      'title' => 'Title',
      'classname' => 'Class',
-     'edittitle' => 'Edit Routine',
      'details' => 'Details',
      'image' => 'Image/File',
      'date' => 'Date',

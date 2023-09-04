@@ -52,6 +52,7 @@ return [
     'success' => 'Success',
     'created' => 'Created',
     'download' => 'Download',
+    'downloads' => 'Download/File Image',
     'restore' => 'Restore',
     'retrive' => 'Retrive',
     'permenantly_delete' => 'Permenantly Delete',

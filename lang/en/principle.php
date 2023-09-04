@@ -3,9 +3,9 @@
 return [
 
      'managetitle' => 'Principle Message',
-     'edittitle' => 'Edit Principle',
      'addtitle' => 'Add Principle',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Principle',
+     'viewtitle' => 'View Principle',
      'type' => 'Type',
      'name' => 'Name',
      'image' => 'Image',

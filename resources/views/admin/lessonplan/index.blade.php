@@ -20,22 +20,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('lessonplan.viewtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.add_new')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('lessonplan.create') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
 
 		<div class="card">
 			<div class="card-body">
 
-				<h3>@lang('lessonplan.managetitle')<a  href="{{ route("lessonplan.create") }}" class="btn btn-primary float-end" >@lang('actions.add_new')</a></h3><br>
+				<h3>@lang('lessonplan.managetitle')</h3><br>
 
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
-							<th>@lang('lessonplan.sl')</th>
+							<th>#</th>
 							<th>@lang('lessonplan.date')</th>
 							<th>@lang('lessonplan.classname')</th>
 							<th>@lang('lessonplan.title')</th>
 							<th>@lang('lessonplan.image')</th>
-							<th>@lang('actions.action')</th>
+							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
 					
@@ -49,14 +71,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $d->date }}</td>
 							<td>{{ $d->class_name }}</td>
 							<td>{{ $d->title }}</td>
-							<td><a href="{{ asset($d->image) }}" download="" class="btn btn-success btn-sm">Download</a></td>
+							<td><a href="{{ asset($d->image) }}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("lessonplan.edit",$d->id) }}">@lang('actions.edit')</a>
+									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("lessonplan.edit",$d->id) }}">@lang('common.edit')</a>
 									<form action="{{ route('lessonplan.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('actions.delete')</button>
+										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
 
 									</form>
 								</div>

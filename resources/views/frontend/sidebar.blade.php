@@ -23,10 +23,10 @@
 			<li class="list-group-item" id="featureheads">সভাপতির বার্তা</li>
 		</ul>
 		<li class="list-group-item p-0 pt-2" id="padd">
-			<a href="{{ url('president') }}"><center><img src="{{ asset($president->image) }}" class="img-fluid"></center></a>
+			<a href="{{ url('presidentmessage') }}"><center><img src="{{ asset($president->image) }}" class="img-fluid"></center></a>
 			<center>
 				<div class="mt-2 mb-2">
-					<span class="head">{{ $president->name }}<br><a href="{{ url('president') }}" class="details">বিস্তারিত...</a></span>
+					<span class="head">{{ $president->name }}<br><a href="{{ url('presidentmessage') }}" class="details">বিস্তারিত...</a></span>
 				</div>
 			</center>
 		</li>

@@ -43,11 +43,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
             @endslot
         @endcomponent
 	<div class="col-12">
-
 		<div class="card">
 			<div class="card-body">
 				<h3>@lang('academic.managetitle')</h3><br>
-
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
@@ -58,8 +56,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
-					
-
 					<tbody class="tbody" id="showtdata">
 						@php $i=1;  @endphp
 						@if(isset($data))
@@ -68,7 +64,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $i++ }}</td>
 							<td>{{ $d->date }}</td>
 							<td>{{ $d->title }}</td>
-							<td><a href="{{ $d->image }}" download="" class="btn btn-success btn-sm">Download</a></td>
+							<td><a href="{{ $d->image }}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">
 									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("academiccalender.edit",$d->id) }}">@lang('common.edit')</a>
@@ -80,7 +76,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 									</form>
 								</div>
 							</td>
-
 						</tr>
 						@endforeach
 						@endif
@@ -90,15 +85,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 		</div> <!-- end card -->
 	</div><!-- end col-->
 </div>
-
-
-
-
-
-
-
-
-
 
 @push('footer_scripts')
 <!-- third party js -->
@@ -118,7 +104,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <!-- demo app -->
 <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
 <!-- end demo js-->
-
 
 @endpush
 
@@ -161,9 +146,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	toastr.warning("{{ session('warning') }}");
 	@endif
 </script>
-
-
-
-
 
 @endsection

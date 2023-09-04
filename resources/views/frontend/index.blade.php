@@ -351,10 +351,10 @@ $setting = DB::table("setting")->first();
       <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
 
         <div class="col-md-12 col-12 dmenu mt-3">
-         <li><a href="{{ url('admissioninfo/1') }}">প্রসপেক্টাস</a></li>
-         <li><a href="{{ url('admissioninfo/2') }}">ভর্তির নিয়মাবলী</a></li>
-         <li><a href="{{ url('admissioninfo/3') }}">ভর্তির পদ্ধতি</a></li>
-         <li><a href="{{ url('admissioninfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
+         <li><a href="{{ url('admissionInfo/1') }}">প্রসপেক্টাস</a></li>
+         <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
+         <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
+         <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
         
 
        </div>
@@ -529,10 +529,10 @@ $setting = DB::table("setting")->first();
   <li class="uk-parent">
     <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;ভর্তি সংক্রান্ত তথ্য</a>
     <ul class="uk-nav-sub">
-      <li><a href="{{ url('admissioninfo/1') }}">প্রসপেক্টাস</a></li>
-      <li><a href="{{ url('admissioninfo/2') }}">ভর্তির নিয়মাবলী</a></li>
-      <li><a href="{{ url('admissioninfo/3') }}">ভর্তির পদ্ধতি</a></li>
-      <li><a href="{{ url('admissioninfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
+      <li><a href="{{ url('admissionInfo/1') }}">প্রসপেক্টাস</a></li>
+      <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
+      <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
+      <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
    
 
     </ul>

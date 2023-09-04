@@ -42,13 +42,13 @@
 					@csrf
 					@method('PUT')
 					<div class="row myinput">
-						<div class="form-group mb-3 col-md-4">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('classroutine.date'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="date" name="date" id="date"  required="" value="{{ $data->date }}">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-4">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('classroutine.classname'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="class_id" id="class_id">

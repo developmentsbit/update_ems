@@ -3,10 +3,10 @@
 return [
 
      'managetitle' => 'Department',
-     'edittitle' => 'Edit Department',
      'addtitle' => 'Add Department',
-     'sl' => 'SL',
-     'title' => 'Department',
+     'edittitle' => 'Edit Department',
+     'viewtitle' => 'View Department',
+     'title' => 'Name',
 
 
 

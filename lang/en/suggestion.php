@@ -4,10 +4,10 @@ return [
 
      'managetitle' => 'Manage Suggestion',
      'addtitle' => 'Add Suggestion',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Suggestion',
+     'viewtitle' => 'View Suggestion',
      'title' => 'Title',
      'classname' => 'Class',
-     'edittitle' => 'Edit Suggestion',
      'details' => 'Details',
      'image' => 'Image/File',
      'date' => 'Date',

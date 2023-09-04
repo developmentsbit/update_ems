@@ -65,7 +65,7 @@ table{
                     </td>
                     <td class="text-center">
                         <h2>{{$setting->name}}</h2>
-                        <b>Email : </b><span>{{$setting->email}}</span>, <b>Phone : </b> <span>{{$setting->phone}}</span><br>
+                        <b>@lang('frontend.email') : </b><span>{{$setting->email}}</span>, <b>@lang('frontend.mobile') : </b> <span>{{$setting->phone}}</span><br>
                         <p>{{$setting->address}}</p>
                     </td>
                     <td>
@@ -77,11 +77,11 @@ table{
             </table>
         </div>
         <div class="details-body mt-2 pt-2 pl-3 pr-3" style="border-top: 2px solid orange">
-            <h5>Personal Information</h5>
+            <h5>@lang('frontend.personal_information')</h5>
            <table class="w-100" style="">
                 <tr>
                     <td style="width: 20%;">
-                        <b>Student Name</b>
+                        <b>@lang('frontend.student_name')</b>
                     </td>
                     <td style="width: 1%;">:</td>
                     <td style="border-bottom : 1px dotted black;padding-left:30px;">
@@ -90,7 +90,7 @@ table{
                 </tr>
                 <tr>
                     <td style="width: 20%;">
-                        <b>Father Name</b>
+                        <b>@lang('frontend.father_name')</b>
                     </td>
                     <td style="width: 1%;">:</td>
                     <td style="border-bottom : 1px dotted black;padding-left:30px;">
@@ -99,7 +99,7 @@ table{
                 </tr>
                 <tr>
                     <td style="width: 20%;">
-                        <b>Mother Name</b>
+                        <b>@lang('frontend.mother_name')</b>
                     </td>
                     <td style="width: 1%;">:</td>
                     <td style="border-bottom : 1px dotted black;padding-left:30px;">
@@ -108,14 +108,14 @@ table{
                 </tr>
 
                 <tr>
-                    <td style="width: 20%;">Birth Date</td>
+                    <td style="width: 20%;">@lang('frontend.dob')</td>
                     <td>:</td>
                     <td style="border-bottom : 1px dotted black;padding-left:30px;">
                         {{$date_of_birth}}
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 20%;">Gender</td>
+                    <td style="width: 20%;">@lang('frontend.gender')</td>
                     <td>:</td>
                     <td style="border-bottom : 1px dotted black;padding-left:30px;">
                         {{$data->gender}}
@@ -124,121 +124,121 @@ table{
            </table>
            <table>
             <tr>
-                <td style="width : 20%">Class</td>
+                <td style="width : 20%">@lang('frontend.class')</td>
                 <td style="">:</td>
                 <td style="border-bottom : 1px dotted black;padding-left:30px;width : 40%">
                     {{$data->class_name}}
                 </td>
-                <td style="width : 15%;padding-left:20px;">Group</td>
+                <td style="width : 15%;padding-left:20px;">@lang('frontend.group')</td>
                 <td style="">:</td>
                 <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->group_name}}</td>
             </tr>
            </table>
            <table>
             <tr>
-                <td style="width : 20%">Religion</td>
+                <td style="width : 20%">@lang('frontend.religion')</td>
                 <td style="">:</td>
                 <td style="border-bottom : 1px dotted black;padding-left:30px;width : 40%">
                     {{$data->religion}}
                 </td>
-                <td style="width : 15%;padding-left:20px;">Blood Group</td>
+                <td style="width : 15%;padding-left:20px;">@lang('frontend.blood_group')</td>
                 <td style="">:</td>
                 <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->blood_group}}</td>
             </tr>
            </table>
            <br>
-           <h5>Present Adress</h5>
+           <h5>@lang('frontend.present_address')</h5>
             <div class="adress-box p-2" style="border: 1px dashed lightgray;">
                 <table>
                     <tr>
-                        <td style="width : 10%">House Name / No.</td>
+                        <td style="width : 10%">@lang('frontend.present_house_name')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->present_house_name}}
                         </td>
-                        <td style="width : 10%">Village</td>
+                        <td style="width : 10%">@lang('frontend.village')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->present_village}}</td>
                     </tr>
                     <tr>
-                        <td style="width : 10%">Post Office</td>
+                        <td style="width : 10%">@lang('frontend.post_office')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->present_po}}
                         </td>
-                        <td style="width : 10%">Post Code</td>
+                        <td style="width : 10%">@lang('frontend.post_code')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->present_post_code}}</td>
                     </tr>
                     <tr>
-                        <td style="width : 10%">Upazila</td>
+                        <td style="width : 10%">@lang('frontend.upazila')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->present_upazila}}
                         </td>
-                        <td style="width : 10%">District</td>
+                        <td style="width : 10%">@lang('frontend.district')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->present_district}}</td>
                     </tr>
                 </table>
             </div>
            <br>
-           <h5>Permenant Adress</h5>
+           <h5>@lang('frontend.permenant_address')</h5>
             <div class="adress-box p-2" style="border: 1px dashed lightgray;">
                 <table>
                     <tr>
-                        <td style="width : 10%">House Name / No.</td>
+                        <td style="width : 10%">@lang('frontend.permenant_house')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->permenant_house_name}}
                         </td>
-                        <td style="width : 10%">Village</td>
+                        <td style="width : 10%">@lang('frontend.village')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->permenant_village}}</td>
                     </tr>
                     <tr>
-                        <td style="width : 10%">Post Office</td>
+                        <td style="width : 10%">@lang('frontend.post_office')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->permenant_po}}
                         </td>
-                        <td style="width : 10%">Post Code</td>
+                        <td style="width : 10%">@lang('frontend.post_code')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->permenant_post_code}}</td>
                     </tr>
                     <tr>
-                        <td style="width : 10%">Upazila</td>
+                        <td style="width : 10%">@lang('frontend.upazila')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->permenant_upazila}}
                         </td>
-                        <td style="width : 10%">District</td>
+                        <td style="width : 10%">@lang('frontend.district')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->permenant_district}}</td>
                     </tr>
                 </table>
             </div>
            <br>
-           <h5>Guardian Contact</h5>
+           <h5>@lang('frontend.guardian_contact')</h5>
             <div class="adress-box p-2" style="border: 1px dashed lightgray;">
                 <table>
                     <tr>
-                        <td style="width : 10%">Guardian Name</td>
+                        <td style="width : 10%">@lang('frontend.guardian_name')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->guardian_name}}
                         </td>
-                        <td style="width : 10%">Relation</td>
+                        <td style="width : 10%">@lang('frontend.relation')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->relation}}
                         </td>
                     </tr>
                     <tr>
-                        <td style="width : 10%">Guardian Contact</td>
+                        <td style="width : 10%">@lang('frontend.guardian_contacts')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$data->guardian_contact}}</td>
-                        <td style="width : 10%">Guardian Email</td>
+                        <td style="width : 10%">@lang('frontend.guardian_email')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$data->guardian_email}}
@@ -249,43 +249,43 @@ table{
             </div>
             @if($p_class)
            <br>
-           <h5>Previous Class</h5>
+           <h5>@lang('frontend.previous_class')</h5>
             <div class="adress-box p-2" style="border: 1px dashed lightgray;">
                 <table>
                     <tr>
-                        <td style="width : 10%">Class</td>
+                        <td style="width : 10%">@lang('frontend.class')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 20%">
                             {{$p_class->class}}
                         </td>
-                        <td style="width : 20%;padding-left:10px;">Institute Name</td>
+                        <td style="width : 20%;padding-left:10px;">@lang('frontend.institute_name')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 50%">
                             {{$p_class->institute_name}}
                         </td>
                     </tr>
                     <tr>
-                        <td style="width : 10%;">Board Roll</td>
+                        <td style="width : 10%;">@lang('frontend.board_roll')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$p_class->board_roll}}</td>
-                        <td style="width : 10%;padding-left:10px;">Reg No</td>
+                        <td style="width : 10%;padding-left:10px;">@lang('frontend.reg_no')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$p_class->reg_no}}
                         </td>
                     </tr>
                     <tr>
-                        <td style="width : 10%;">Group</td>
+                        <td style="width : 10%;">@lang('frontend.group')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$p_class->group}}</td>
-                        <td style="width : 10%;padding-left:10px;">Passing Year</td>
+                        <td style="width : 10%;padding-left:10px;">@lang('frontend.passing_year')</td>
                         <td style="width: 1%">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">
                             {{$p_class->passing_year}}
                         </td>
                     </tr>
                     <tr>
-                        <td style="width : 10%;">GPA</td>
+                        <td style="width : 10%;">@lang('frontend.gpa')</td>
                         <td style="width : 1%;">:</td>
                         <td style="border-bottom : 1px dotted black;padding-left:10px;width : 40%">{{$p_class->gpa}}</td>
 

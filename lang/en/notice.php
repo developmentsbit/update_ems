@@ -3,15 +3,14 @@
 return [
 
      'managetitle' => 'Notices',
-     'edittitle' => 'Edit Notice',
      'addtitle' => 'Add Notice',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Notice',
+     'viewtitle' => 'View Notice',
      'type' => 'Type',
      'title' => 'Title',
      'image' => 'Image/File',
      'details' => 'Details',
      'date' => 'Date',
-     'download'=>'Download',
 
  
 

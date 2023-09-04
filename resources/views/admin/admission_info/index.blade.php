@@ -21,12 +21,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 <div class="container mt-2">
 	<div class="col-12">
-
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('frontend.viewtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 		<div class="card">
 			<div class="card-body">
-
 				<h3>@lang('addclass.managetitle')</h3><br>
-
                 <div class="row pb-4">
                     <div class="col-3">
                         <select class="form-control" name="class_id" id="class_id" onchange="getStudentData()">
@@ -39,29 +50,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
                         </select>
                     </div>
                 </div>
-
 				<table id="datatable-buttons" class="mt-2 table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
-							<th>@lang('addclass.sl')</th>
+							<th>#</th>
 							<th>@lang('frontend.apply_date')</th>
 							<th>@lang('frontend.student_name')</th>
 							<th>@lang('frontend.class')</th>
 							<th>@lang('frontend.group')</th>
 							<th>@lang('frontend.image')</th>
-							<th>@lang('actions.action')</th>
+							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
-
-
 					<tbody class="tbody" id="showtdata">
 
 					</tbody>
 				</table>
-
-
-
-
 
 			</div> <!-- end card body-->
 		</div> <!-- end card -->

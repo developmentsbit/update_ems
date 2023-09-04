@@ -10,44 +10,48 @@
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('department.edittitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.view')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('department.index') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
-
 		<div class="card">
 			<div class="card-body">
-
 				<h3>@lang('department.edittitle')</h3><br>
-
-
 				<form method="post" class="btn-submit" action="{{ route('department.update',$data->id) }}" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
-
 					<div class="row myinput">
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('department.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="department" id="department"  required="" value="{{ $data->department }}">
 							</div>
 						</div>
-
-
-
-
 						<div class="modal-footer border-0">
-							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('actions.close')</button>
-							<button type="submit" class="btn btn-success button border-0">@lang('actions.update')</button>
+							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
+							<button type="submit" class="btn btn-success button border-0">@lang('common.update')</button>
 						</div>
-
-
-
-
-
 					</div>
 				</form>
-
-
-
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
 	</div><!-- end col-->

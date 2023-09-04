@@ -4,7 +4,6 @@ return [
 
      'managetitle' => 'Manage Lesson Plan',
      'addtitle' => 'Add Lesson Plan',
-     'sl' => 'SL',
      'title' => 'Title',
      'classname' => 'Class',
      'edittitle' => 'Edit Lesson Plan',

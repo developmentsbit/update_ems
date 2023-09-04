@@ -4,10 +4,8 @@ return [
 
 	'managetitle' => 'Manage Class',
 	'addtitle' => 'Add Class',
-	'sl' => 'SL',
-	'name' => 'Class Name',
-	'status' => 'Status',
 	'edittitle' => 'Edit Class',
-
-
+	'viewtitle' => 'View Class',
+	'status' => 'Status',
+	'name' => 'Class Name',
 ];

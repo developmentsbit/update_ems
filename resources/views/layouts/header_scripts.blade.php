@@ -28,8 +28,18 @@
 
 <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
     .content-page {
         padding: 15px 12px 65px !important;
     }
+    </style>
+    @if(config('app.locale') == 'bn')
+    <style>
+    body
+    {
+        font-family: 'Hind Siliguri', sans-serif;
+    }
 </style>
+@endif

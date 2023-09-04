@@ -3,6 +3,7 @@
 return array(
     'admission_form'=>'Admission Form',
     'result'=>'Result Processing',
+    'student_login'=>'Student Panel',
     'student_form_title'=>'Student Admission Form',
     'personal_info'=>'Personal Information',
     'academic_info'=>'Academic Information',

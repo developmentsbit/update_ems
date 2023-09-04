@@ -3,6 +3,7 @@
 @php
 
   $principle = DB::table('principles')->where('type',1)->first();
+  $president = DB::table('principles')->where('type',2)->first();
   $v_principle = DB::table('vice_principal_messages')->first();
   $usefullink = DB::table('usefullinks')->get();
   $setting = DB::table('setting')->first();
@@ -13,6 +14,24 @@
 
 
 <div class="col-sm-3 col-12">
+	
+	@if(request()->Is('vice_principal_messages'))
+
+	@else
+	<div class="col-sm-12 col-12 p-0 mt-2">
+		<ul class="list-group">
+			<li class="list-group-item" id="featureheads">সভাপতির বার্তা</li>
+		</ul>
+		<li class="list-group-item p-0 pt-2" id="padd">
+			<a href="{{ url('president') }}"><center><img src="{{ asset($president->image) }}" class="img-fluid"></center></a>
+			<center>
+				<div class="mt-2 mb-2">
+					<span class="head">{{ $president->name }}<br><a href="{{ url('president') }}" class="details">বিস্তারিত...</a></span>
+				</div>
+			</center>
+		</li>
+	</div>
+	@endif
 
     @if(request()->Is('principle_message'))
 
@@ -33,23 +52,6 @@
     @endif
 
 
-    @if(request()->Is('vice_principal_messages'))
-
-    @else
-	<div class="col-sm-12 col-12 p-0 mt-2">
-		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">উপাধ্যক্ষ বার্তা</li>
-		</ul>
-		<li class="list-group-item p-0 pt-2" id="padd">
-			<a href="{{ url('principle_message') }}"><center><img src="{{ asset('vice_principal_image') }}/{{$v_principle->image}}" class="img-fluid"></center></a>
-			<center>
-				<div class="mt-2 mb-2">
-					<span class="head">{{ $v_principle->name }}<br><a href="{{ url('vice_principal_messages') }}" class="details">বিস্তারিত...</a></span>
-				</div>
-			</center>
-		</li>
-	</div>
-    @endif
 
 
 

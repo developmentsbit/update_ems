@@ -14,8 +14,8 @@
 
 
 <div class="col-sm-3 col-12">
-	
-	@if(request()->Is('vice_principal_messages'))
+
+	@if(request()->Is('presidentmessage'))
 
 	@else
 	<div class="col-sm-12 col-12 p-0 mt-2">
@@ -33,7 +33,7 @@
 	</div>
 	@endif
 
-    @if(request()->Is('principle_message'))
+    @if(request()->Is('principal_message'))
 
     @else
 	<div class="col-sm-12 col-12 p-0">
@@ -41,10 +41,10 @@
 			<li class="list-group-item" id="featureheads">অধ্যক্ষের বার্তা</li>
 		</ul>
 		<li class="list-group-item p-0 pt-2" id="padd">
-			<a href="{{ url('principle_message') }}"><center><img src="{{ asset($principle->image) }}" class="img-fluid"></center></a>
+			<a href="{{ url('principal_message') }}"><center><img src="{{ asset($principle->image) }}" class="img-fluid"></center></a>
 			<center>
 				<div class="mt-2 mb-2">
-					<span class="head">{{ $principle->name }}<br><a href="{{ url('principle_message') }}" class="details">বিস্তারিত...</a></span>
+					<span class="head">{{ $principle->name }}<br><a href="{{ url('principal_message') }}" class="details">বিস্তারিত...</a></span>
 				</div>
 			</center>
 		</li>

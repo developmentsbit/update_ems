@@ -10,6 +10,8 @@ class FrontendController extends Controller
 	public function index()
 	{
 
+        // return ;
+
 		$notice = DB::table("notices")->where("type",1)->limit(6)->orderby('id','DESC')->get();
 		return view('frontend.home',compact('notice'));
 
@@ -81,7 +83,7 @@ class FrontendController extends Controller
 		return view('frontend.teacherinfo',compact('data'));
 
 	}
-	
+
 	public function Teacher_infos($id)
 	{
 	    $teacherview = DB::table('teacherstaff')
@@ -93,6 +95,7 @@ class FrontendController extends Controller
 		$data = DB::table("department")->where('id',$id)->get();
 
 		return view('frontend.department_teacher',compact('teacherview','data'));
+
 	}
 
 	public function staffinfo(){

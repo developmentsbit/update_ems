@@ -27,6 +27,82 @@ $setting = DB::table("setting")->first();
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="{{ asset('/') }}frontend/js/main.js"></script>
 </head>
+
+<style type="text/css">
+.site-lang {
+
+display: flex;
+align-items: center;
+}
+.site-lang ul {
+margin:0;
+padding:0;
+list-style:none;
+}
+.site-lang > ul > li {
+position: relative;
+display: block;
+text-align: left;
+/* padding: 11px 0; */
+}
+.site-lang ul li a {
+font-weight:700;
+color:#222222;
+position:relative;
+top:2px;
+}
+.site-lang > ul > li > a::after {
+font-family:FontAwesome;
+content:"\f107";
+margin-left:5px;
+font-weight:normal;
+}
+.site-lang ul li a:hover {
+color: #7e7678;
+}
+.site-lang ul li img {
+width:26px;
+height:26px;
+border-radius:100%;
+margin-right:15px;
+}
+.site-lang ul li ul {
+background-color: #ffffff;
+box-shadow: 5.5px 9.526px 43px 0px rgb( 98, 143, 144, 0.15 );
+position: absolute;
+top:100%;
+left: -18px;
+min-width: 165px;
+transition: .4s;
+transform-origin: top;
+z-index: 400;
+border-radius: 10px;
+opacity:0;
+visibility:hidden;
+}
+.site-lang ul li:hover ul {
+opacity:1;
+visibility:visible;
+}
+.site-lang ul li ul {
+padding:10px 0;
+}
+.site-lang ul li ul li {
+padding: 10px 25px;
+}
+.site-lang.style-2 {
+padding-left:50px;
+}
+.site-lang.style-2 > ul > li > a {
+color:#ffffff;
+}
+.site-lang.in-right ul {
+left:unset;
+right:0;
+}
+</style>
+
+
 <body>
 
 
@@ -47,19 +123,38 @@ $setting = DB::table("setting")->first();
         </div>
 
 
-        <div class="col-sm-8 col-6 text-sm-right text-center" id="email">
+        <div class="col-sm-8 col-8 text-right text-sm-center" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
-            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.result')</a>
-            <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a>
-            <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.student_login')</a>
-            
-            <!--<label><a href="" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-success btn-sm"> <img src="{{ asset('/') }}frontend/img/bdicon.png" style="width:20px">&nbsp;বাংলা</a-->
-            <!--  >-->
-            <!--</label><label><a href="en" style="text-decoration:none" class="btn btn-outline-info btn-sm"> <img src="{{ asset('/') }}frontend/img/us.png" style="width:20px;">&nbsp;English</a>-->
-            <!--  </label>-->
-            </div>
+            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.result')</a></label>
+            <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
+            <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.student_login')</a></label>
+            <label>
+            <div class="site-lang">
+                <ul>
+                    <li>
+                    @if(config('app.locale')=='en')
 
+                    <img src="{{asset('frontend')}}/usa.png" alt="usa">
+                        <a style="color: white;" href="#" aria-label="details">
+                        {{'English'}}
+                        </a>
+
+                        @else
+                        <img src="{{asset('frontend')}}/bd.png" alt="italy">
+                        <a style="color: white;" href="#" aria-label="details">
+                        {{'বাংলা'}}
+                        </a>
+
+                        @endif
+
+                        <ul>
+                        <li><img src="{{asset('frontend')}}/usa.png" alt="usa"><a href="{{url('lang/en')}}" aria-label="English">English</a></li>
+                        <li><img src="{{asset('Frontend')}}/bd.png" alt="italy"><a href="{{url('lang/bn')}}" aria-label="Italian">বাংলা</a></li>
+                        </ul>
+                </div>
+            </label>
+        </div>
 
           </div>
 
@@ -211,8 +306,8 @@ $setting = DB::table("setting")->first();
 
                 <div class="col-md-12 col-12 dmenu mt-3">
 
-                 {{-- <li><a href="{{ url('presidentmessage') }}">সভাপতির বাণী </a></li> --}}
-                 <li><a href="{{ url('principle_message') }}">অধ্যক্ষের বার্তা</a></li>
+                 <li><a href="{{ url('presidentmessage') }}">সভাপতির বার্তা </a></li>
+                 <li><a href="{{ url('principal_message') }}">অধ্যক্ষের বার্তা</a></li>
                  {{-- <li><a href="{{ url('managing_comitte') }}">পরিচালনা পর্ষদ তথ্য</a></li> --}}
                  {{-- <li><a href="{{ url('presidents') }}">সভাপতির তালিকা</a></li> --}}
                  <li><a href="{{ url('principles') }}">অধ্যক্ষদের তালিকা</a></li>
@@ -233,36 +328,36 @@ $setting = DB::table("setting")->first();
               <div class="col-md-12 col-12 dmenu mt-3">
                <div class="row">
                  <div class="col-md-7">
-          
+
                <li><a href="{{ url('teacherinfo') }}">শিক্ষকবৃন্দের তথ্য</a></li>
                @php
                 $department = DB::table('department')->limit(9)->get();
                @endphp
-               
+
                @if(isset($department))
                @foreach($department as $d)
                <li><a href="{{ url('department_teacher/'.$d->id) }}">{{ $d->department }}</a></li>
-               
+
                @endforeach
                @endif
-               
+
                </div>
-               
+
                 <div class="col-md-5">
-                    
+
                 @php
                 $department2 = DB::table('department')->skip(9)->limit(9)->get();
                @endphp
-               
+
                @if(isset($department2))
                @foreach($department2 as $d)
                <li><a href="{{ url('department_teacher/'.$d->id) }}">{{ $d->department }}</a></li>
-               
+
                @endforeach
                @endif
-               
+
                <li><a href="{{ url('staffinfo') }}">কর্মচারীদের তথ্য</a></li>
-               
+
                </div>
                </div>
 
@@ -292,7 +387,7 @@ $setting = DB::table("setting")->first();
            <li><a href="{{ url('holidaylists') }}">ছুটির তালিকা</a></li>
            <li><a href="{{ url('page/10') }}">ইউনিফর্ম</a></li>
            <li><a href="{{ url('page/11') }}">ফি সমূহ</a></li>
-           <li><a href="{{ url('page/5') }}">শিক্ষার্থী উপস্থিতি তথ্য</a></li>
+           <li><a href="{{ url('page/5') }}">ছাত্র/ছাত্রী তথ্য চার্ট</a></li>
 
 
          </div>
@@ -351,11 +446,12 @@ $setting = DB::table("setting")->first();
       <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
 
         <div class="col-md-12 col-12 dmenu mt-3">
+
          <li><a href="{{ url('admissionInfo/1') }}">প্রসপেক্টাস</a></li>
          <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
          <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
          <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
-        
+
 
        </div>
      </ul>
@@ -412,7 +508,7 @@ $setting = DB::table("setting")->first();
   </ul>
 </li>
 
- 
+
 <!--<li class="nav-item">-->
 <!--    <a class="nav-link" href="{{ url('complainbox') }}">অভিযোগ বাক্স</a>-->
 <!--</li>-->
@@ -467,7 +563,7 @@ $setting = DB::table("setting")->first();
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;প্রশাসনিক তথ্য </a>
       <ul class="uk-nav-sub">
         <li><a href="{{ url('presidentmessage') }}">সভাপতির বাণী </a></li>
-        <li><a href="{{ url('principle_message') }}">প্রধান শিক্ষকের বাণী</a></li>
+        <li><a href="{{ url('principal_message') }}">প্রধান শিক্ষকের বাণী</a></li>
         <li><a href="{{ url('managing_comitte') }}">পরিচালনা পর্ষদ তথ্য</a></li>
         <li><a href="{{ url('presidents') }}">সভাপতির তালিকা</a></li>
         <li><a href="{{ url('principles') }}">প্রধান শিক্ষকদের তালিকা</a></li>
@@ -529,11 +625,13 @@ $setting = DB::table("setting")->first();
   <li class="uk-parent">
     <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;ভর্তি সংক্রান্ত তথ্য</a>
     <ul class="uk-nav-sub">
+
       <li><a href="{{ url('admissionInfo/1') }}">প্রসপেক্টাস</a></li>
       <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
       <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
       <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
    
+
 
     </ul>
   </li>
@@ -552,8 +650,8 @@ $setting = DB::table("setting")->first();
      <!--<li><a href="{{ url('examsuggession') }}">সাজেশন্স</a></li>-->
    </ul>
  </li>
-  
- 
+
+
  <li class="uk-parent">
     <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;ফলাফল</a>
     <ul class="uk-nav-sub">
@@ -572,7 +670,7 @@ $setting = DB::table("setting")->first();
     <li><a href="{{ url('videogallery') }}">ভিডিওগ্যালারি</a></li>
   </ul>
 </li>
- 
+
 <!--<li class="nav-item">-->
 <!--    <a class="nav-link" href="{{ url('complainbox') }}">অভিযোগ বাক্স</a>-->
 <!--</li>-->

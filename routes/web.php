@@ -60,7 +60,7 @@ Route::get('/complainbox', function() {
 
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/page/{id}', [FrontendController::class, 'page']);
-Route::get('/principle_message', [FrontendController::class, 'principle_message']);
+Route::get('/principal_message', [FrontendController::class, 'principle_message']);
 Route::get('/vice_principal_messages', [FrontendController::class, 'vice_principal_message']);
 Route::get('/presidentmessage', [FrontendController::class, 'presidentmessage']);
 

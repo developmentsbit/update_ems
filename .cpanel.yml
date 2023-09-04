@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/skillbasedit.com/public_html/school_demo
+    - /bin/cp * $DEPLOYPATH
+
+

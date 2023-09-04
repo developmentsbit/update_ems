@@ -3,9 +3,9 @@
 return [
 
      'managetitle' => 'Member',
-     'edittitle' => 'Edit Member',
      'addtitle' => 'Add Member',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Member',
+     'viewtitle' => 'View Member',
      'type' => 'Type',
      'name' => 'Name',
      'father' => 'Father Name',

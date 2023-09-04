@@ -11,7 +11,11 @@
 
       <ul class="list-group p-0">
        <li class="list-group-item">
-        <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;শিক্ষকবৃন্দের তথ্য</span>
+        @if($data)
+        @foreach($data as $d)
+        <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;শিক্ষকবৃন্দের তথ্য ( {{$d->department}} )</span>
+        @endforeach
+        @endif
       </li>
 
       <li class="list-group-item">

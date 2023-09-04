@@ -10,23 +10,39 @@
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('notice.edittitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.view')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('notices.index') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
-
 		<div class="card">
 			<div class="card-body">
-
 				<h3>@lang('notice.edittitle')</h3><br>
-
-
 				<form method="post" class="btn-submit" action="{{ route('notices.update',$data->id) }}" enctype="multipart/form-data">
 					@csrf
 					@method('PUT')
-
 					<div class="row myinput">
-
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('notice.type'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<select class="form-control" name="type">
 									@if($data->type == 1)
 									<option value="1">Notices</option>
@@ -35,64 +51,42 @@
 									@if($data->type == 2)
 									<option value="2">Megazine</option>
 									<option value="1">Notices</option>
-									
 									@endif
-
-									
 								</select>
 							</div>
 						</div>
-
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('notice.date'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input type="date" class="form-control" name="date" required="" value="{{ $data->date }}">
 							</div>
 						</div>
-
-
-
-						<div class="form-group mb-3 col-md-8">
+						<div class="form-group mb-3 col-md-12">
 							<label>@lang('notice.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="" value="{{ $data->title }}">
 							</div>
 						</div>
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('notice.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<textarea  class="form-control w-100" rows="10" type="text" name="details">{{ $data->details }}</textarea>
 							</div>
 						</div>
-
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('notice.image'):</label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="file" name="image" id="image">
 								<br>
 							</div>
-							<a href="{{ asset($data->image) }}" download="" class="btn btn-info">@lang('notice.download')</a>
+							<a href="{{ asset($data->image) }}" download="" class="btn btn-info">@lang('common.downloads')</a>
 						</div>
-
-
-
-
 						<div class="modal-footer border-0">
-							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('actions.close')</button>
-							<button type="submit" class="btn btn-success button border-0">@lang('actions.update')</button>
+							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
+							<button type="submit" class="btn btn-success button border-0">@lang('common.update')</button>
 						</div>
-
-
-
-
-
 					</div>
 				</form>
-
-
-
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
 	</div><!-- end col-->

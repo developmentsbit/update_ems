@@ -69,7 +69,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $i++ }}</td>
 							<td>{{ $d->date }}</td>
 							<td>{{ $d->title }}</td>
-							<td><a href="{{ $d->image }}" download="" class="btn btn-success btn-sm">Download</a></td>
+							<td><a href="{{ $d->image }}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">
 									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("holidaylist.edit",$d->id) }}">@lang('common.edit')</a>

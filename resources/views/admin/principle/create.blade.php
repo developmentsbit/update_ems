@@ -10,13 +10,33 @@
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('principle.addtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.view')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('principle.index') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
 
 		<div class="card">
 			<div class="card-body">
-
 				<h3>@lang('principle.addtitle')</h3><br>
-
 				@if ($errors->any())
 				<div class="alert alert-danger">
 					<ul>
@@ -26,64 +46,42 @@
 					</ul>
 				</div>
 				@endif
-
-
-
 				<form method="post" class="btn-submit" action="{{ route('principle.store') }}" enctype="multipart/form-data">
 					@csrf
-
 					<div class="row myinput">
-
 						<div class="form-group mb-3 col-md-4">
 							<label>@lang('principle.type'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<select class="form-control" name="type">
 									<option value="1">Principle</option>
 									<option value="2">President</option>
 								</select>
 							</div>
 						</div>
-
-
-
 						<div class="form-group mb-3 col-md-8">
 							<label>@lang('principle.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="name" id="name"  required="">
 							</div>
 						</div>
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('principle.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<textarea  class="form-control w-100" rows="10" type="text" name="details" required=""></textarea>
 							</div>
 						</div>
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('principle.image'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="file" name="image" id="image"  required="">
 							</div>
 						</div>
-
-
-
-
 						<div class="modal-footer border-0">
-							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('actions.close')</button>
-							<button type="submit" class="btn btn-success button border-0">@lang('actions.save')</button>
+							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
+							<button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
 						</div>
-
-
-
-
-
 					</div>
 				</form>
-
-
-
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
 	</div><!-- end col-->

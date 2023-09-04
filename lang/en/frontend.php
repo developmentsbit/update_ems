@@ -2,6 +2,7 @@
 
 return array(
     'admission_form'=>'Admission Form',
+    'viewtitle'=>'View Applied Students Info',
     'result'=>'Result Processing',
     'student_login'=>'Student Panel',
     'student_form_title'=>'Student Admission Form',
@@ -48,5 +49,7 @@ return array(
     'board_roll'=>'Board Roll',
     'reg_no'=>'Registration No',
     'passing_year'=>'Passing Year',
+    'view_data'=>'View Data',
+    'delete_data'=>'Delete Data',
     'gpa'=>'GPA',
 );

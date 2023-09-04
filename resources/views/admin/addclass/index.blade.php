@@ -20,20 +20,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('addclass.viewtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.add_new')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('addclass.create') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
 
 		<div class="card">
 			<div class="card-body">
 
-				<h3>@lang('addclass.managetitle')<a  href="{{ route("addclass.create") }}" class="btn btn-primary float-end" >@lang('actions.add_new')</a></h3><br>
+				<h3>@lang('addclass.managetitle')</h3><br>
 
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
-							<th>@lang('addclass.sl')</th>
+							<th>#</th>
 							<th>@lang('addclass.name')</th>
 							<th>@lang('addclass.status')</th>
-							<th>@lang('actions.action')</th>
+							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
 					
@@ -45,39 +67,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
 							<td>{{ $d->class_name }}</td>
-
 							<td>
 								@if($d->status == 1)
-								<span class="btn btn-success btn-sm">Active</span>
+								<span class="btn btn-success btn-sm">@lang('common.active')</span>
 								@else
-								<span class="btn btn-danger btn-sm">Inactive</span>
+								<span class="btn btn-danger btn-sm">@lang('common.inactive')</span>
 								@endif
 							</td>
-							
 							<td>
 								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("addclass.edit",$d->id) }}">@lang('actions.edit')</a>
+									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("addclass.edit",$d->id) }}">@lang('common.edit')</a>
 									<form action="{{ route('addclass.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('actions.delete')</button>
+										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
 
 									</form>
 								</div>
 							</td>
-
 						</tr>
 						@endforeach
 						@endif
-
-						
 					</tbody>
 				</table>
-
-				
-
-
-
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
 	</div><!-- end col-->

@@ -4,10 +4,10 @@ return [
 
      'managetitle' => 'Manage Exam Routine',
      'addtitle' => 'Add Exam Routine',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Exam Routine',
+     'viewtitle' => 'View Exam Routine',
      'title' => 'Title',
      'classname' => 'Class',
-     'edittitle' => 'Edit Exam Routine',
      'details' => 'Details',
      'image' => 'Image/File',
      'date' => 'Date',

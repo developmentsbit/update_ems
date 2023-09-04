@@ -4,13 +4,12 @@ return [
 
      'managetitle' => 'Admission Info.',
      'addtitle' => 'Add Admission Info.',
-     'sl' => 'SL',
-     'title' => 'Title',
      'edittitle' => 'Edit Admission Info.',
+     'viewtitle' => 'View Admission Info.',
+     'title' => 'Title',
      'date' => 'Date',
      'type' => 'Type',
      'image' => 'Image/File',
-     'download' => 'Download/File Image',
 
  
 

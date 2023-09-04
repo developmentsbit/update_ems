@@ -92,7 +92,10 @@ class FrontendController extends Controller
 		->where('department_id',$id)
 		->simplePaginate(12);
 
-		return view('frontend.department_teacher',compact('teacherview'));
+		$data = DB::table("department")->where('id',$id)->get();
+
+		return view('frontend.department_teacher',compact('teacherview','data'));
+
 	}
 
 	public function staffinfo(){
@@ -111,10 +114,10 @@ class FrontendController extends Controller
 
 
 
-	public function admissioninfo($id)
+	public function admissionInfo($id)
 	{
 		$data = DB::table("notices")->where('id',$id)->orderBy('id','DESC')->get();
-		return view('frontend.admissioninfo',compact('data'));
+		return view('frontend.admissionInfo',compact('data'));
 	}
 
 

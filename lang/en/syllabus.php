@@ -4,10 +4,10 @@ return [
 
      'managetitle' => 'Manage Syllabus',
      'addtitle' => 'Add Syllabus',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Syllabus',
+     'viewtitle' => 'View Syllabus',
      'title' => 'Title',
      'classname' => 'Class',
-     'edittitle' => 'Edit Syllabus',
      'details' => 'Details',
      'image' => 'Image/File',
      'date' => 'Date',

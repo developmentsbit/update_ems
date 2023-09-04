@@ -76,7 +76,7 @@ Route::get('/teacherinfo', [FrontendController::class, 'teacherinfo']);
 Route::get('/staffinfo', [FrontendController::class, 'staffinfo']);
 Route::get('/teacherstaffdetails/{id}', [FrontendController::class, 'teacherstaffdetails']);
 
-Route::get('/admissioninfo/{id}', [FrontendController::class, 'admissioninfo']);
+Route::get('/admissionInfo/{id}', [FrontendController::class, 'admissionInfo']);
 
 Route::get('/examroutines', [FrontendController::class, 'examroutine']);
 Route::get('/examsyllabus', [FrontendController::class, 'examsyllabus']);

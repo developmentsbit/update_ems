@@ -7,7 +7,7 @@
 <div class="leftside-menu">
 
     <!-- LOGO -->
-    <a href="/" class="logo text-center logo-light">
+    <a href="/dashboard" class="logo text-center logo-light">
         <span class="logo-lg">
             <img src="{{ asset($setting->image) }}" alt="" height="50">
         </span>
@@ -17,7 +17,7 @@
     </a>
 
     <!-- LOGO -->
-    <a href="/" class="logo text-center logo-dark">
+    <a href="/dashboard" class="logo text-center logo-dark">
         <span class="logo-lg">
             <img src="{{ asset($setting->image) }}" alt="" height="16">
         </span>

@@ -39,7 +39,7 @@ $setting = DB::table("setting")->first();
 
      <div class="col-sm-12 col-12  topheader">
       <div class="row">
-        <div class="col-sm-8 col-6 text-sm-left" id="email">
+        <div class="col-sm-4 col-6 text-sm-left" id="email">
 
 
           <label><a href="public/mujib100/pages/timeline_bn.html"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;সুবর্ণ জয়ন্তী ও  বঙ্গবন্ধু কর্ণার  </a></label>
@@ -47,13 +47,13 @@ $setting = DB::table("setting")->first();
         </div>
 
 
-        <div class="col-sm-4 col-6 text-sm-right text-center" id="email">
+        <div class="col-sm-8 col-6 text-sm-right text-center" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
-            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.result')</a
-              >
-            <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a
-              >
+            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.result')</a>
+            <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a>
+            <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.student_login')</a>
+            
             <!--<label><a href="" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-success btn-sm"> <img src="{{ asset('/') }}frontend/img/bdicon.png" style="width:20px">&nbsp;বাংলা</a-->
             <!--  >-->
             <!--</label><label><a href="en" style="text-decoration:none" class="btn btn-outline-info btn-sm"> <img src="{{ asset('/') }}frontend/img/us.png" style="width:20px;">&nbsp;English</a>-->
@@ -171,7 +171,7 @@ $setting = DB::table("setting")->first();
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                আমাদের সম্পর্কে
+                প্রতিষ্ঠান পরিচিতি
               </a>
               <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 400px;  max-width:100%;">
 
@@ -381,6 +381,23 @@ $setting = DB::table("setting")->first();
 
 
 
+   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      ফলাফল
+    </a>
+    <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
+
+      <div class="col-md-12 col-12 dmenu mt-3">
+       <li><a href="#">অভ্যন্তরীণ ফলাফল</a></li>
+       <li><a href="#">পাবলিক পরীক্ষার ফলাফল</a></li>
+
+     </div>
+   </ul>
+ </li>
+
+
+
+
 
  <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -430,7 +447,7 @@ $setting = DB::table("setting")->first();
 
 
      <li class="uk-parent">
-      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;আমাদের সম্পর্কে</a>
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;প্রতিষ্ঠান পরিচিতি</a>
       <ul class="uk-nav-sub">
         <li><a href="{{ url('page/6') }}">ভৌত অবকাঠামো</a></li>
         <li><a href="{{ url('page/7') }}">বার্ষিক কর্ম পরিকল্পনা </a></li>
@@ -533,6 +550,15 @@ $setting = DB::table("setting")->first();
      <li><a href="{{ url('examroutines') }}">পরীক্ষার সময়সূচী</a></li>
      <li><a href="{{ url('examsyllabus') }}">সিলেবাস</a></li>
      <!--<li><a href="{{ url('examsuggession') }}">সাজেশন্স</a></li>-->
+   </ul>
+ </li>
+  
+ 
+ <li class="uk-parent">
+    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;ফলাফল</a>
+    <ul class="uk-nav-sub">
+     <li><a href="{{ url('page/12') }}">অভ্যন্তরীণ</a></li>
+     <li><a href="{{ url('examroutines') }}">পাবলিক পরীক্ষার ফলাফল</a></li>
    </ul>
  </li>
 

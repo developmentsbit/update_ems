@@ -4,12 +4,12 @@ return [
 
      'managetitle' => 'Manage Photo',
      'addtitle' => 'Add Photo',
-     'sl' => 'SL',
-     'title' => 'Title',
      'edittitle' => 'Edit Photo',
+     'viewtitle' => 'View Photo',
+     'title' => 'Title',
      'details' => 'Details',
-     'image' => 'Image',
-     'download' => 'Download/File Image',
+     'slider' => 'Slider',
+     'slider_image' => 'Slider Image',
 
  
 

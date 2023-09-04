@@ -4,13 +4,10 @@ return [
 
      'managetitle' => 'Video',
      'addtitle' => 'Add Video',
-     'sl' => 'SL',
-     'title' => 'Title',
      'edittitle' => 'Edit Video',
+     'viewtitle' => 'View Video',
+     'title' => 'Title',
      'details' => 'Details',
      'url' => 'Link (Embed URL):',
-     'download' => 'Download/File Image',
-
- 
 
 ];

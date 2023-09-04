@@ -75,7 +75,7 @@
 								<input class="form-control" type="text" name="blood" id="blood" >
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-4">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('teacherstaff.religion'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="religion" id="option_s2">
@@ -87,7 +87,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-4">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('teacherstaff.relationship'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="relationship" id="option_s2">
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">
-							<label>@lang('teacherstaff.image'):</label>
+							<label>@lang('common.image'):</label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="file" name="image" id="image">
 							</div>

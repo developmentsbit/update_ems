@@ -11,33 +11,47 @@
 
 @endpush
 
-
 <link rel="stylesheet" type="text/css" 
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-
-
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('photo.viewtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.add_new')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('photogallerys.create') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
-
 		<div class="card">
 			<div class="card-body">
-
-				<h3>@lang('photo.managetitle')<a  href="{{ route("photogallerys.create") }}" class="btn btn-primary float-end" >@lang('photo.addtitle')</a></h3><br>
-
+				<h3>@lang('photo.managetitle')</h3><br>
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
-							<th>@lang('photo.sl')</th>
+							<th>#</th>
 							<th>@lang('photo.title')</th>
-							<th>@lang('photo.image')</th>
-							<th>@lang('actions.action')</th>
+							<th>@lang('common.image')</th>
+							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
-					
-
 					<tbody class="tbody" id="showtdata">
 						@php $i=1;  @endphp
 						@if(isset($data))
@@ -48,40 +62,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td><img src="{{ asset($d->image) }}" style="max-height: 100px;"></td>
 							<td>
 								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("photogallerys.edit",$d->id) }}">@lang('actions.edit')</a>
+									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("photogallerys.edit",$d->id) }}">@lang('common.edit')</a>
 									<form action="{{ route('photogallerys.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('actions.delete')</button>
-
+										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
 									</form>
 								</div>
 							</td>
-
 						</tr>
 						@endforeach
 						@endif
-
-						
 					</tbody>
 				</table>
-
-				
-
-
-
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
 	</div><!-- end col-->
 </div>
-
-
-
-
-
-
-
-
 
 
 @push('footer_scripts')
@@ -102,7 +99,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <!-- demo app -->
 <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
 <!-- end demo js-->
-
 
 @endpush
 
@@ -145,9 +141,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	toastr.warning("{{ session('warning') }}");
 	@endif
 </script>
-
-
-
-
 
 @endsection

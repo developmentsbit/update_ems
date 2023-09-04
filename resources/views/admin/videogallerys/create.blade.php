@@ -7,54 +7,54 @@
 <link href="{{ asset('assets/css/vendor/quill.snow.css') }}" rel="stylesheet" type="text/css" />
 
 
-
-
 <div class="container mt-2">
+		@component('components.breadcrumb')
+            @slot('title')
+                @lang('video.addtitle')
+            @endslot
+            @slot('breadcrumb1')
+                @lang('common.dashboard')
+            @endslot
+            @slot('breadcrumb1_link')
+                {{ route('dashboard') }}
+            @endslot
+            @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
+                @slot('action_button1')
+                    @lang('common.view')
+                @endslot
+                @slot('action_button1_link')
+                    {{ route('videogallerys.index') }}
+                @endslot
+            @endif
+            @slot('action_button1_class')
+                btn-primary
+            @endslot
+        @endcomponent
 	<div class="col-12">
-
 		<div class="card">
 			<div class="card-body">
-
 				<h3>@lang('video.addtitle')</h3><br>
-
-
 				<form method="post" class="btn-submit" action="{{ route('videogallerys.store') }}" enctype="multipart/form-data">
 					@csrf
-
 					<div class="row myinput">
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('video.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="">
 							</div>
 						</div>
-
-
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('video.url'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group">
+							<div class="input-group mt-2">
 								<input class="form-control" type="url" name="linkurl" id="linkurl"  required="">
 							</div>
 						</div>
-
-
-
-
 						<div class="modal-footer border-0">
-							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('actions.close')</button>
-							<button type="submit" class="btn btn-success button border-0">@lang('actions.save')</button>
+							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
+							<button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
 						</div>
-
-
-
-
-
 					</div>
 				</form>
-
-
-
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
 	</div><!-- end col-->

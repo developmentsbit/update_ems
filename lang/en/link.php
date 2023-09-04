@@ -3,12 +3,11 @@
 return [
 
      'managetitle' => 'Useful Link',
-     'edittitle' => 'Edit Useful Link',
      'addtitle' => 'Add Useful Link',
-     'sl' => 'SL',
+     'edittitle' => 'Edit Useful Link',
+     'viewtitle' => 'View Useful Link',
      'url' => 'URL',
      'title' => 'Title',
-
 
 
 ];

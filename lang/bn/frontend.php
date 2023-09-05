@@ -63,7 +63,7 @@ return array(
     'contact'=>'যোগাযোগের ঠিকানা',
     'about_us'=>'আমাদের সম্পর্কে',
     'mission_vision'=>'লক্ষ্য এবং উদ্দেশ্য',
-    'History'=>'ইতিহাস',
+    'history'=>'ইতিহাস',
     'citizen_charter'=>'সিটিজেন চার্টার',
     'administrative_information'=>'প্রশাসনিক তথ্য',
     'presidentmessage'=>'সভাপতির বার্তা',

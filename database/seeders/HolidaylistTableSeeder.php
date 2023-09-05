@@ -24,6 +24,7 @@ class HolidaylistTableSeeder extends Seeder
                 'id' => 1,
                 'date' => '2023-06-13',
                 'title' => 'Holiday List of 2023',
+                'title_bn' => 'ছুটির দিন ২০২৩',
                 'image' => 'holidaylist_image/81390.pdf',
                 'created_at' => NULL,
                 'updated_at' => NULL,

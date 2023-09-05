@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fgcgov/public_html/school_demo
+    - export DEPLOYPATH=/home/fgcgov/public_html/update.fgc.gov.bd
     - /bin/cp * $DEPLOYPATH
 
 

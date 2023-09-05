@@ -100,8 +100,32 @@ color:#ffffff;
 left:unset;
 right:0;
 }
+.container{
+  max-width : 1274px !important;
+}
+
+@media (max-width: 768px)
+      {
+#email label a {
+    font-size: 12px;
+    padding: 6px 17px 7px 4px;
+    text-align: center;
+    /* justify-content: center; */
+}
+}
 </style>
 
+@if(config('app.locale') == 'en')
+<style>
+    li.nav-item a {
+      font-size: 10.6px;
+      padding: 14px 6px !important;
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+</style>
+
+@endif
 
 <body>
 
@@ -117,18 +141,17 @@ right:0;
       <div class="row">
         <div class="col-sm-4 col-6 text-sm-left" id="email">
 
-
           <label><a href="public/mujib100/pages/timeline_bn.html"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;@lang('frontend.golden_jubilee_and_bangabandhu_corner')  </a></label>
 
         </div>
 
 
-        <div class="col-sm-8 col-8 text-right text-sm-center" id="email">
+        <div class="col-sm-8 col-8 text-right text-sm-right" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
-            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.result')</a></label>
+            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
             <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
-            <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.student_login')</a></label>
+            <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
             <label>
             <div class="site-lang">
                 <ul>
@@ -375,19 +398,19 @@ right:0;
 
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           একাডেমিক তথ্য
+          @lang('frontend.academic_information')
          </a>
          <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
 
           <div class="col-md-12 col-12 dmenu mt-3">
 
-           <li><a href="{{ url('page/9') }}">আচরণ বিধি</a></li>
-           <li><a href="{{ url('academiccalenders') }}">একাডেমিক ক্যালেন্ডার</a></li>
-           <li><a href="{{ url('classroutines') }}">ক্লাস রুটিন</a></li>
-           <li><a href="{{ url('holidaylists') }}">ছুটির তালিকা</a></li>
-           <li><a href="{{ url('page/10') }}">ইউনিফর্ম</a></li>
-           <li><a href="{{ url('page/11') }}">ফি সমূহ</a></li>
-           <li><a href="{{ url('page/5') }}">ছাত্র/ছাত্রী তথ্য চার্ট</a></li>
+           <li><a href="{{ url('page/9') }}">@lang('frontend.rules_regulation')</a></li>
+           <li><a href="{{ url('academiccalenders') }}">@lang('frontend.academiccalenders')</a></li>
+           <li><a href="{{ url('classroutines') }}">@lang('frontend.classroutines')</a></li>
+           <li><a href="{{ url('holidaylists') }}">@lang('frontend.holidaylists')</a></li>
+           <li><a href="{{ url('page/10') }}">@lang('frontend.uniform')</a></li>
+           <li><a href="{{ url('page/11') }}">@lang('frontend.fees')</a></li>
+           <li><a href="{{ url('page/5') }}">@lang('frontend.studentinfochart')</a></li>
 
 
          </div>
@@ -406,27 +429,27 @@ right:0;
 
      <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        সহপাঠ্যক্রম
+      @lang('frontend.co_curricular')
       </a>
       <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 400px;  max-width:100%;">
 
         <div class="row">
 
           <div class="col-md-6 col-12 dmenu mt-3">
-            <li><a href="{{ url('page/13') }}">ক্রীড়া কার্যক্রম</a></li>
-            <li><a href="{{ url('page/14') }}">সাংস্কৃতিক কার্যক্রম</a></li>
-            <li><a href="{{ url('page/15') }}">স্কাউটস</a></li>
-            <li><a href="{{ url('page/18') }}">রেড ক্রিসেন্ট</a></li>
-            <li><a href="{{ url('page/22') }}">শিক্ষা সফর</a></li>
+            <li><a href="{{ url('page/13') }}">@lang('frontend.sports_activities')</a></li>
+            <li><a href="{{ url('page/14') }}">@lang('frontend.cultural_activities')</a></li>
+            <li><a href="{{ url('page/15') }}">@lang('frontend.scouts')</a></li>
+            <li><a href="{{ url('page/18') }}">@lang('frontend.red_crescent')</a></li>
+            <li><a href="{{ url('page/22') }}">@lang('frontend.educational_tour')</a></li>
 
 
           </div>
 
           <div class="col-md-6 col-12 dmenu mt-3">
-            <li><a href="{{ url('page/19') }}">স্টুডেন্ট ক্যাবিনেট</a></li>
-            <li><a href="{{ url('page/20') }}">ডিবেটিং ক্লাব </a></li>
-            <li><a href="{{ url('page/21') }}">ল্যাঙ্গুয়েজ ক্লাব</a></li>
-            <li><a href="{{ url('page/23') }}">বিজ্ঞান মেলা</a></li>
+            <li><a href="{{ url('page/19') }}">@lang('frontend.student_cabinet')</a></li>
+            <li><a href="{{ url('page/20') }}">@lang('frontend.debating_club')</a></li>
+            <li><a href="{{ url('page/21') }}">@lang('frontend.language_club')</a></li>
+            <li><a href="{{ url('page/23') }}"></a>@lang('frontend.science_fair')</li>
           </div>
 
 
@@ -441,16 +464,16 @@ right:0;
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        ভর্তি সংক্রান্ত তথ্য
+        @lang('frontend.admission_information')
       </a>
       <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
 
         <div class="col-md-12 col-12 dmenu mt-3">
 
-         <li><a href="{{ url('admissionInfo/1') }}">প্রসপেক্টাস</a></li>
-         <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
-         <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
-         <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
+         <li><a href="{{ url('admissionInfo/1') }}">@lang('frontend.prospectus')</a></li>
+         <li><a href="{{ url('admissionInfo/2') }}">@lang('frontend.admission_rules')</a></li>
+         <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.admission_procedure')</a></li>
+         <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_test_result')</a></li>
 
 
        </div>
@@ -460,15 +483,15 @@ right:0;
 
    <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      পরীক্ষা সংক্রান্ত তথ্য
+    @lang('frontend.exam_information')
     </a>
     <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
 
       <div class="col-md-12 col-12 dmenu mt-3">
-       <li><a href="{{ url('page/12') }}">পরীক্ষার নিয়মাবলী</a></li>
-       <li><a href="{{ url('examroutines') }}">পরীক্ষার সময়সূচী</a></li>
-       <li><a href="{{ url('examsyllabus') }}">সিলেবাস</a></li>
-       <!--<li><a href="{{ url('examsuggession') }}">সাজেশন্স</a></li>-->
+       <li><a href="{{ url('page/12') }}">@lang('frontend.exam_rules')</a></li>
+       <li><a href="{{ url('examroutines') }}">@lang('frontend.examroutines')</a></li>
+       <li><a href="{{ url('examsyllabus') }}">@lang('frontend.examsyllabus')</a></li>
+       <!--<li><a href="{{ url('examsuggession') }}">@lang('frontend.examsuggession')</a></li>-->
 
      </div>
    </ul>
@@ -479,13 +502,13 @@ right:0;
 
    <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      ফলাফল
+    @lang('frontend.result')
     </a>
     <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
 
       <div class="col-md-12 col-12 dmenu mt-3">
-       <li><a href="#">অভ্যন্তরীণ ফলাফল</a></li>
-       <li><a href="#">পাবলিক পরীক্ষার ফলাফল</a></li>
+       <li><a href="#">@lang('frontend.internal_results')</a></li>
+       <li><a href="https://eboardresults.com/v2/home" target="blank">@lang('frontend.public_exam_result')</a></li>
 
      </div>
    </ul>
@@ -497,20 +520,20 @@ right:0;
 
  <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    গ্যালারি
+  @lang('frontend.gallery')
   </a>
   <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 150px; max-width:100%;">
 
     <div class="col-md-12 col-12 dmenu mt-3">
-      <li><a href="{{ url('photogallery') }}">ফটোগ্যালারি</a></li>
-      <li><a href="{{ url('videogallery') }}">ভিডিওগ্যালারি</a></li>
+      <li><a href="{{ url('photogallery') }}">@lang('frontend.photogallery')</a></li>
+      <li><a href="{{ url('videogallery') }}">@lang('frontend.videogallery')</a></li>
     </div>
   </ul>
 </li>
 
 
 <!--<li class="nav-item">-->
-<!--    <a class="nav-link" href="{{ url('complainbox') }}">অভিযোগ বাক্স</a>-->
+<!--    <a class="nav-link" href="{{ url('complainbox') }}">@lang('frontend.complainbox')</a>-->
 <!--</li>-->
 
 </ul>
@@ -560,7 +583,7 @@ right:0;
 
 
     <li class="uk-parent">
-      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.institute_introduction') </a>
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.administrative_information') </a>
       <ul class="uk-nav-sub">
         <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
         <li><a href="{{ url('principal_message') }}">@lang('frontend.principal_message')</a></li>
@@ -589,32 +612,32 @@ right:0;
 
 
     <li class="uk-parent">
-      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;একাডেমিক তথ্য</a>
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.academic_information')</a>
       <ul class="uk-nav-sub">
-       <li><a href="{{ url('page/9') }}">আচরণ বিধি</a></li>
-       <li><a href="{{ url('academiccalenders') }}">একাডেমিক ক্যালেন্ডার</a></li>
-       <li><a href="{{ url('classroutines') }}">ক্লাস রুটিন</a></li>
-       <li><a href="{{ url('holidaylists') }}">ছুটির তালিকা</a></li>
-       <li><a href="{{ url('page/10') }}">ইউনিফর্ম</a></li>
-       <li><a href="{{ url('page/11') }}">ফি সমূহ</a></li>
-       <li><a href="{{ url('page/5') }}">শিক্ষার্থী উপস্থিতি তথ্য</a></li>
+       <li><a href="{{ url('page/9') }}">@lang('frontend.rules_regulation')</a></li>
+       <li><a href="{{ url('academiccalenders') }}">@lang('frontend.academiccalenders')</a></li>
+       <li><a href="{{ url('classroutines') }}">@lang('frontend.classroutines')</a></li>
+       <li><a href="{{ url('holidaylists') }}">@lang('frontend.holidaylists')</a></li>
+       <li><a href="{{ url('page/10') }}">@lang('frontend.uniform')</a></li>
+       <li><a href="{{ url('page/11') }}">@lang('frontend.fees')</a></li>
+       <li><a href="{{ url('page/5') }}">@lang('frontend.studentinfochart')</a></li>
      </ul>
    </li>
 
 
 
    <li class="uk-parent">
-    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;সহপাঠ্যক্রম</a>
+    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.co_curricular')</a>
     <ul class="uk-nav-sub">
-      <li><a href="{{ url('page/13') }}">ক্রীড়া কার্যক্রম</a></li>
-      <li><a href="{{ url('page/14') }}">সাংস্কৃতিক কার্যক্রম</a></li>
-      <li><a href="{{ url('page/15') }}">স্কাউটস</a></li>
-      <li><a href="{{ url('page/18') }}">রেড ক্রিসেন্ট</a></li>
-      <li><a href="{{ url('page/22') }}">শিক্ষা সফর</a></li>
-      <li><a href="{{ url('page/19') }}">স্টুডেন্ট ক্যাবিনেট</a></li>
-      <li><a href="{{ url('page/20') }}">ডিবেটিং ক্লাব </a></li>
-      <li><a href="{{ url('page/21') }}">ল্যাঙ্গুয়েজ ক্লাব</a></li>
-      <li><a href="{{ url('page/23') }}">বিজ্ঞান মেলা</a></li>
+      <li><a href="{{ url('page/13') }}">@lang('frontend.sports_activities')</a></li>
+      <li><a href="{{ url('page/14') }}">@lang('frontend.cultural_activities')</a></li>
+      <li><a href="{{ url('page/15') }}">@lang('frontend.scouts')</a></li>
+      <li><a href="{{ url('page/18') }}">@lang('frontend.red_crescent')</a></li>
+      <li><a href="{{ url('page/22') }}">@lang('frontend.educational_tour')</a></li>
+      <li><a href="{{ url('page/19') }}">@lang('frontend.student_cabinet')</a></li>
+      <li><a href="{{ url('page/20') }}">@lang('frontend.debating_club')</a></li>
+      <li><a href="{{ url('page/21') }}">@lang('frontend.language_club')</a></li>
+      <li><a href="{{ url('page/23') }}">@lang('frontend.science_fair')</a></li>
     </ul>
   </li>
 
@@ -623,13 +646,13 @@ right:0;
 
 
   <li class="uk-parent">
-    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;ভর্তি সংক্রান্ত তথ্য</a>
+    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.admission_information')</a>
     <ul class="uk-nav-sub">
 
-      <li><a href="{{ url('admissionInfo/1') }}">প্রসপেক্টাস</a></li>
-      <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
-      <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
-      <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
+      <li><a href="{{ url('admissionInfo/1') }}">@lang('frontend.prospectus')</a></li>
+      <li><a href="{{ url('admissionInfo/2') }}">@lang('frontend.admission_rules')</a></li>
+      <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.admission_procedure')</a></li>
+      <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_test_result')</a></li>
    
 
 
@@ -642,21 +665,21 @@ right:0;
 
 
   <li class="uk-parent">
-    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;পরীক্ষা সংক্রান্ত তথ্য</a>
+    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.exam_information')</a>
     <ul class="uk-nav-sub">
-     <li><a href="{{ url('page/12') }}">পরীক্ষার নিয়মাবলী</a></li>
-     <li><a href="{{ url('examroutines') }}">পরীক্ষার সময়সূচী</a></li>
-     <li><a href="{{ url('examsyllabus') }}">সিলেবাস</a></li>
-     <!--<li><a href="{{ url('examsuggession') }}">সাজেশন্স</a></li>-->
+     <li><a href="{{ url('page/12') }}">@lang('frontend.exam_rules')</a></li>
+     <li><a href="{{ url('examroutines') }}">@lang('frontend.examroutines')</a></li>
+     <li><a href="{{ url('examsyllabus') }}">@lang('frontend.examsyllabus')</a></li>
+     <!--<li><a href="{{ url('examsuggession') }}">@lang('frontend.examsuggession')</a></li>-->
    </ul>
  </li>
 
 
  <li class="uk-parent">
-    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;ফলাফল</a>
+    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.result')</a>
     <ul class="uk-nav-sub">
-     <li><a href="{{ url('page/12') }}">অভ্যন্তরীণ</a></li>
-     <li><a href="{{ url('examroutines') }}">পাবলিক পরীক্ষার ফলাফল</a></li>
+     <li><a href="#">@lang('frontend.internal_results')</a></li>
+     <li><a href="https://eboardresults.com/v2/home" target="blank">@lang('frontend.public_exam_result')</a></li>
    </ul>
  </li>
 
@@ -664,15 +687,15 @@ right:0;
 
 
  <li class="uk-parent">
-  <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;গ্যালারি</a>
+  <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.gallery')</a>
   <ul class="uk-nav-sub">
-    <li><a href="{{ url('photogallery') }}">ফটোগ্যালারি</a></li>
-    <li><a href="{{ url('videogallery') }}">ভিডিওগ্যালারি</a></li>
+    <li><a href="{{ url('photogallery') }}">@lang('frontend.photogallery')</a></li>
+    <li><a href="{{ url('videogallery') }}">@lang('frontend.videogallery')</a></li>
   </ul>
 </li>
 
 <!--<li class="nav-item">-->
-<!--    <a class="nav-link" href="{{ url('complainbox') }}">অভিযোগ বাক্স</a>-->
+<!--    <a class="nav-link" href="{{ url('complainbox') }}">@lang('frontend.complainbox')</a>-->
 <!--</li>-->
 
 
@@ -703,8 +726,8 @@ right:0;
   <div class="col-sm-12 col-12 developerdiv">
 
     <center>
-      <span class="develop">Copyright © <?php echo date('Y'); ?> {{ $setting->name }} All Right Reserved.</span><br>
-      <span class="develop">Developed by</span>&nbsp;&nbsp;<a href="http://sbit.com.bd" target="blank" class="it">SKILL BASED IT</a></center>
+      <span class="develop">@lang('frontend.crights') © <?php echo date('Y'); ?> {{ $setting->name }} @lang('frontend.rights')</span><br>
+      <span class="develop">@lang('frontend.drights')</span>&nbsp;&nbsp;<a href="http://sbit.com.bd" target="blank" class="it">@lang('frontend.sbit')</a></center>
 
     </div>
 

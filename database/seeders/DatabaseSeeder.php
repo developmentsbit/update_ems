@@ -23,5 +23,10 @@ class DatabaseSeeder extends Seeder
         $this->call(MenuActionsTableSeeder::class);
         $this->call(UserMenuActionsTableSeeder::class);
         $this->call(OtpSmsTableSeeder::class);
+        $this->call(PagesTableSeeder::class);
+        $this->call(AcademiccalenderTableSeeder::class);
+        $this->call(AddclassTableSeeder::class);
+        $this->call(ClassroutineTableSeeder::class);
+        $this->call(HolidaylistTableSeeder::class);
     }
 }

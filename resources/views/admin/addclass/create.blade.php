@@ -22,7 +22,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                  <i class="fa fa-eye"></i>  @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('addclass.index') }}
@@ -44,6 +44,12 @@
 							<label>@lang('addclass.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="class_name" id="class_name"  required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('addclass.name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="class_name_bn" id="class_name_bn"  required="">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">

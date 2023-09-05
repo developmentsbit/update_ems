@@ -40,7 +40,9 @@ class PagesController extends Controller
 
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['details']    = $request->details;
+     $data['details_bn']    = $request->details_bn;
      $image              = $request->file('image');
 
      if ($image) {
@@ -86,14 +88,16 @@ class PagesController extends Controller
 
        $data = array();
        $data['title']      = $request->title;
+       $data['title_bn']      = $request->title_bn;
        $data['details']    = $request->details;
+       $data['details_bn']    = $request->details_bn;
        $image              = $request->file('image');
 
        $old_image = DB::table("pages")->where('id',$id)->first();
 
        if ($image) {
 
-      
+
 
         $image_name= rand(1111,9999);
         $ext=strtolower($image->getClientOriginalExtension());
@@ -106,7 +110,7 @@ class PagesController extends Controller
 
     }else{
         $update = DB::table('pages')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
      return redirect()->route('pages.index')->with('message','Page Update Successfully');
@@ -124,7 +128,7 @@ class PagesController extends Controller
         $data = DB::table("pages")->where('id',$id)->first();
 
         if ($data) {
-     
+
            DB::table("pages")->where("id",$id)->delete();
            return redirect()->route('pages.index')->with('message','Page Delete Successfully');
        }

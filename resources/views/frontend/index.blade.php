@@ -100,6 +100,9 @@ color:#ffffff;
 left:unset;
 right:0;
 }
+.btn-success {
+    background : #05c76a
+}
 </style>
 
 
@@ -630,7 +633,7 @@ right:0;
       <li><a href="{{ url('admissionInfo/2') }}">ভর্তির নিয়মাবলী</a></li>
       <li><a href="{{ url('admissionInfo/3') }}">ভর্তির পদ্ধতি</a></li>
       <li><a href="{{ url('admissionInfo/4') }}">ভর্তি পরীক্ষার ফলাফল</a></li>
-   
+
 
 
     </ul>

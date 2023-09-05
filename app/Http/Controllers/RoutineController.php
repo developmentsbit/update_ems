@@ -21,7 +21,7 @@ class RoutineController extends Controller
     {
         $data = DB::table("classroutine")
         ->join('addclass','addclass.id','classroutine.class_id')
-        ->select("classroutine.*",'addclass.class_name')
+        ->select("classroutine.*",'addclass.class_name','addclass.class_name_bn')
         ->get();
         return view('admin.classroutine.index',compact('data'));
     }
@@ -42,6 +42,7 @@ class RoutineController extends Controller
     {
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $data['class_id']   = $request->class_id;
      $image              = $request->file('image');
@@ -89,6 +90,7 @@ class RoutineController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['date']       = $request->date;
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
@@ -110,7 +112,7 @@ class RoutineController extends Controller
 
     }else{
         $update = DB::table('classroutine')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
         return redirect()->route('classroutine.index')->with('message','Routine Update Successfully');

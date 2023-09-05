@@ -38,6 +38,7 @@ class ClassController extends Controller
     {
      $data = array();
      $data['class_name']      = $request->class_name;
+     $data['class_name_bn']      = $request->class_name_bn;
      $data['status']         = $request->status;
 
      DB::table('addclass')->insert($data);
@@ -70,6 +71,7 @@ class ClassController extends Controller
     {
         $data = array();
         $data['class_name']      = $request->class_name;
+        $data['class_name_bn']      = $request->class_name_bn;
         $data['status']    = $request->status;
 
         $update = DB::table('addclass')->where('id', $id)->update($data);

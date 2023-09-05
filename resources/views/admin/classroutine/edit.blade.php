@@ -56,16 +56,22 @@
 									@foreach($class as $c)
 									<option value="{{ $c->id }}" <?php if ($c->id == $data->class_id) {
 										echo "selected";
-									} ?>>{{ $c->class_name }}</option>
+									} ?>>@if($lang == 'en'){{ $c->class_name }}@else {{$c->class_name_bn}}@endif</option>
 									@endforeach
 									@endif
 								</select>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('classroutine.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="" value="{{ $data->title }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('classroutine.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="title_bn" id="title_bn"  required="" value="{{ $data->title_bn }}">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

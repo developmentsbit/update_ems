@@ -62,7 +62,7 @@
 						<div class="details2 p-2 border">
 							{{Str::limit($about->details,'500')}}
                             <div class="mt-2">
-                                <a href="{{url('page/1')}}" class="btn btn-sm btn-success">Read More</a>
+                                <a href="{{url('page/1')}}" class="btn btn-sm btn-success">@lang('frontend.read_more')</a>
                             </div>
 						</div>
 

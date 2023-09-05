@@ -22,7 +22,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                 <i class="fa fa-eye"></i>   @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('holidaylist.index') }}
@@ -42,16 +42,22 @@
 					@csrf
 					@method('PUT')
 					<div class="row myinput">
-						<div class="form-group mb-3 col-md-3">
+						<div class="form-group mb-3 col-md-12">
 							<label>@lang('holiday.date'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="date" name="date" id="date"  required="" value="{{ $data->date }}">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-9">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('holiday.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="" value="{{ $data->title }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('holiday.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="title_bn" id="title_bn"  required="" value="{{ $data->title_bn }}">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

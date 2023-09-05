@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title_bn'=>'পেইজ নাম বাংলা',
      'managetitle' => 'পেইজ',
      'index_title' => 'পেইজের লিস্ট',
      'addtitle' => 'পেইজ যুক্ত করুন',
@@ -10,4 +11,5 @@ return [
      'details' => 'বিস্তারিত',
      'image' => 'ইমেইজ',
      'download' => 'ডাউনলোড/ফাইল ছবি',
+     'details_bn'=>'বিস্তারিত বাংলায়',
 ];

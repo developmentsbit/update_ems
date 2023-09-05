@@ -22,7 +22,7 @@ return [
     'patient_name' => 'Patient Name',
     'updated_at' => 'Updated At',
     'status' => 'স্ট্যাটাস',
-    'action' => 'প্রদক্ষেপ',
+    'action' => 'পদক্ষেপ',
     // ----- blade file -------
     "users" => "ইউজার",
     "all" => "সব",

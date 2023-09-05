@@ -78,4 +78,10 @@ return array(
     'teachers_and_staff'=>'Teachers and staff',
     'teacherinfo'=>'Teacher Info',
     'staffinfo'=>'Staff Info',
+
+
+    //tanim
+
+    'read_more'=>'Read More...',
+    'details' => 'Details...',
 );

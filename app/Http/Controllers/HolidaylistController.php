@@ -40,6 +40,7 @@ class HolidaylistController extends Controller
 
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $image              = $request->file('image');
 
@@ -86,6 +87,7 @@ class HolidaylistController extends Controller
 
        $data = array();
        $data['title']      = $request->title;
+       $data['title_bn']      = $request->title_bn;
        $data['date']       = $request->date;
        $image              = $request->file('image');
 
@@ -93,7 +95,7 @@ class HolidaylistController extends Controller
 
        if ($image) {
 
-      
+
 
         $image_name= rand(1111,9999);
         $ext=strtolower($image->getClientOriginalExtension());
@@ -106,7 +108,7 @@ class HolidaylistController extends Controller
 
     }else{
         $update = DB::table('holidaylist')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
      return redirect()->route('holidaylist.index')->with('message','Holiday List Update Successfully');
@@ -124,7 +126,7 @@ class HolidaylistController extends Controller
         $data = DB::table("holidaylist")->where('id',$id)->first();
 
         if ($data) {
-     
+
            DB::table("holidaylist")->where("id",$id)->delete();
            return redirect()->route('holidaylist.index')->with('message','Holiday List Delete Successfully');
        }

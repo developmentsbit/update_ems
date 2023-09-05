@@ -20,13 +20,15 @@
 	@else
 	<div class="col-sm-12 col-12 p-0 mt-2">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">সভাপতির বার্তা</li>
+			<li class="list-group-item" id="featureheads">@lang('frontend.presidentmessage')</li>
 		</ul>
 		<li class="list-group-item p-0" id="padd">
 			<a href="{{ url('presidentmessage') }}"><center><img src="{{ asset($president->image) }}" class="img-fluid"></center></a>
 			<center>
+
 				<div class="mt-2">
 					<span class="head">{{ $president->name }}<br><a class="btn btn-success btn-sm w-100" style="border-radius: 0px;" href="{{ url('presidentmessage') }}" class="details">@lang('frontend.details')</a></span>
+
 				</div>
 			</center>
 		</li>
@@ -38,13 +40,15 @@
     @else
 	<div class="col-sm-12 col-12 p-0 mt-2">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">অধ্যক্ষের বার্তা</li>
+			<li class="list-group-item" id="featureheads">@lang('frontend.principal_message')</li>
 		</ul>
 		<li class="list-group-item p-0 pt-2" id="padd">
 			<a href="{{ url('principal_message') }}"><center><img src="{{ asset($principle->image) }}" class="img-fluid"></center></a>
 			<center>
+
 				<div class="mt-2">
 					<span class="head">{{ $principle->name }}<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('principal_message') }}" class="details">@lang('frontend.details')</a></span>
+
 				</div>
 			</center>
 		</li>
@@ -64,7 +68,7 @@
 
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">গুরুত্বপূর্ণ লিংক</li>
+			<li class="list-group-item" id="featureheads">@lang('frontend.useful_link')</li>
 		</ul>
 		<div class="feature">
 
@@ -85,7 +89,7 @@
 
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">গুগল ম্যাপ</li>
+			<li class="list-group-item" id="featureheads">@lang('frontend.map')</li>
 		</ul>
 		<div class="feature">
 			<iframe src="{{ $setting->map }}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -98,7 +102,7 @@
 
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">অফিসিয়াল ফ্যান পেইজ</li>
+			<li class="list-group-item" id="featureheads">@lang('frontend.fan_page')</li>
 		</ul>
 		<div class="feature">
 			      <iframe src="{{ $setting->page }}" width="250" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -120,7 +124,7 @@
 
 	<div class="col-sm-12 col-12 p-0 mt-2">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">জরুরী হটলাইন</li>
+			<li class="list-group-item" id="featureheads">@lang('frontend.emergency_hotline')</li>
 		</ul>
 		<li class="list-group-item p-0 pt-2" id="padd">
 			<center><a ><img src="{{ asset('/') }}frontend/img/Hotline_BN.png" class="img-fluid"></a><br></center>
@@ -138,7 +142,7 @@
 
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
 		<ul class="list-group">
-			<li class="list-group-item" id="featurehead">জাতীয় সংগীত</li>
+			<li class="list-group-item" id="featurehead">@lang('frontend.national_anthem')</li>
 			<audio class="mt-2 w-100" controls>
 				<source src="{{ asset('/') }}frontend/img/bd_national_anthem.mp3" type="audio/ogg">
 					<source src="{{ asset('/') }}frontend/img/bd_national_anthem.mp3" type="audio/mpeg">

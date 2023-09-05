@@ -52,4 +52,30 @@ return array(
     'view_data'=>'View Data',
     'delete_data'=>'Delete Data',
     'gpa'=>'GPA',
+    'select_menu'=>'Select Menu',
+    'golden_jubilee_and_bangabandhu_corner'=>'Golden Jubilee and Bangabandhu Corner',
+
+
+    'home'=>'Home',
+    'institute_introduction'=>'Institute Introduction',
+    'infrastructure'=>'Infrastructure',
+    'yearly_working_plan'=>'Yearly Working Plan',
+    'contact'=>'Contact',
+    'about_us'=>'About Us',
+    'mission_vision'=>'Mission & Vision',
+    'history'=>'History',
+    'citizen_charter'=>'Citizen Charter',
+
+    'administrative_information'=>'Administrative Info',
+    'presidentmessage'=>'President Message',
+    'principal_message'=>'Principal Message',
+    'managing_comitte'=>'Managing Comitte',
+    'presidents'=>'Presidents',
+    'principles'=>'Principals',
+    'donar'=>'Donar',
+    'ex_member'=>'Ex Member',
+
+    'teachers_and_staff'=>'Teachers and staff',
+    'teacherinfo'=>'Teacher Info',
+    'staffinfo'=>'Staff Info',
 );

@@ -52,4 +52,30 @@ return array(
     'view_data'=>'তথ্য দেখুন',
     'delete_data'=>'তথ্য মুছুন',
     'gpa'=>'জিপিএ',
+    'select_menu'=>'মেনু নির্বাচন করুন',
+    'golden_jubilee_and_bangabandhu_corner'=>'সুবর্ণ জয়ন্তী ও বঙ্গবন্ধু কর্ণার',
+
+    
+    'home'=>'হোম',
+    'institute_introduction'=>'প্রতিষ্ঠান পরিচিতি',
+    'infrastructure'=>'ভৌত অবকাঠামো',
+    'yearly_working_plan'=>'বার্ষিক কর্ম পরিকল্পনা',
+    'contact'=>'যোগাযোগের ঠিকানা',
+    'about_us'=>'আমাদের সম্পর্কে',
+    'mission_vision'=>'লক্ষ্য এবং উদ্দেশ্য',
+    'History'=>'ইতিহাস',
+    'citizen_charter'=>'সিটিজেন চার্টার',
+
+    'administrative_information'=>'প্রশাসনিক তথ্য',
+    'presidentmessage'=>'সভাপতির বার্তা',
+    'principal_message'=>'অধ্যক্ষের বার্তা',
+    'managing_comitte'=>'পরিচালনা পর্ষদ তথ্য',
+    'presidents'=>'সভাপতির তালিকা',
+    'principles'=>'অধ্যক্ষদের তালিকা',
+    'donar'=>'দাতা সদস্যদের তালিকা',
+    'ex_member'=>'প্রাক্তন সদস্যদের তালিকা',
+
+    'teachers_and_staff'=>'শিক্ষক এবং কর্মচারী',
+    'teacherinfo'=>'শিক্ষকবৃন্দের তথ্য',
+    'staffinfo'=>'কর্মচারীদের তথ্য',
 );

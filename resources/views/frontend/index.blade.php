@@ -118,7 +118,7 @@ right:0;
         <div class="col-sm-4 col-6 text-sm-left" id="email">
 
 
-          <label><a href="public/mujib100/pages/timeline_bn.html"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;সুবর্ণ জয়ন্তী ও  বঙ্গবন্ধু কর্ণার  </a></label>
+          <label><a href="public/mujib100/pages/timeline_bn.html"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;@lang('frontend.golden_jubilee_and_bangabandhu_corner')  </a></label>
 
         </div>
 
@@ -241,7 +241,7 @@ right:0;
       <nav class="navbar navbar-expand-lg navbar-light btco-hover-menu menubar" style="background: #fff; border-bottom: 1px solid #e5e5e5; padding: 0px; box-shadow: 0 1px 5px -2px #999;">
 
 
-        <a class="navbar-brand d-sm-none d-block" style="color: #000; font-weight: bold;" href="">মেনু নির্বাচন করুন</a>
+        <a class="navbar-brand d-sm-none d-block" style="color: #000; font-weight: bold;" href="">@lang('frontend.select_menu')</a>
 
         <button  class="navbar-toggler"  uk-toggle="target: #offcanvas-slide" style="background-color: #f4f4f4; color: #fff; padding: 5px 10px;">
           <span class="navbar-toggler-icon" style="color: #fff;"></span>
@@ -266,25 +266,25 @@ right:0;
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                প্রতিষ্ঠান পরিচিতি
+                @lang('frontend.institute_introduction')
               </a>
               <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 400px;  max-width:100%;">
 
                 <div class="row">
 
                   <div class="col-md-6 col-12 dmenu mt-3">
-                    <li><a href="{{ url('page/1') }}">আমাদের সম্পর্কে</a></li>
-                    <li><a href="{{ url('page/2') }}">লক্ষ্য এবং উদ্দেশ্য</a></li>
-                    <li><a href="{{ url('page/3') }}">ইতিহাস</a></li>
-                    <li><a href="{{ url('page/4') }}">সিটিজেন চার্টার</a></li>
+                    <li><a href="{{ url('page/1') }}">@lang('frontend.about_us')</a></li>
+                    <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
+                    <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
+                    <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
 
 
                   </div>
 
                   <div class="col-md-6 col-12 dmenu mt-3">
-                    <li><a href="{{ url('page/6') }}">ভৌত অবকাঠামো</a></li>
-                    <li><a href="{{ url('page/7') }}">বার্ষিক কর্ম পরিকল্পনা </a></li>
-                    <li><a href="{{ url('page/8') }}">যোগাযোগের ঠিকানা</a></li>
+                    <li><a href="{{ url('page/6') }}">@lang('frontend.infrastructure')</a></li>
+                    <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plan') </a></li>
+                    <li><a href="{{ url('page/8') }}">@lang('frontend.contact')</a></li>
                   </div>
 
 
@@ -300,19 +300,19 @@ right:0;
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                প্রশাসনিক তথ্য
+                @lang('frontend.administrative_information')
               </a>
               <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width:260px; max-width:100%;">
 
                 <div class="col-md-12 col-12 dmenu mt-3">
 
-                 <li><a href="{{ url('presidentmessage') }}">সভাপতির বার্তা </a></li>
-                 <li><a href="{{ url('principal_message') }}">অধ্যক্ষের বার্তা</a></li>
-                 {{-- <li><a href="{{ url('managing_comitte') }}">পরিচালনা পর্ষদ তথ্য</a></li> --}}
-                 {{-- <li><a href="{{ url('presidents') }}">সভাপতির তালিকা</a></li> --}}
-                 <li><a href="{{ url('principles') }}">অধ্যক্ষদের তালিকা</a></li>
-                 {{-- <li><a href="{{ url('donar') }}">দাতা সদস্যদের তালিকা</a></li> --}}
-                 {{-- <li><a href="{{ url('ex_member') }}">প্রাক্তন সদস্যদের তালিকা</a></li> --}}
+                 <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
+                 <li><a href="{{ url('principal_message') }}">@lang('frontend.principal_message')</a></li>
+                 {{-- <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
+                 {{-- <li><a href="{{ url('presidents') }}"></a>@lang('frontend.presidents')</li> --}}
+                 <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
+                 {{-- <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li> --}}
+                 {{-- <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li> --}}
                </div>
              </ul>
            </li>
@@ -321,7 +321,7 @@ right:0;
 
            <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              শিক্ষক এবং কর্মচারী
+              @lang('frontend.teachers_and_staff')
             </a>
             <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 500px;  max-width:100%;">
 
@@ -329,7 +329,7 @@ right:0;
                <div class="row">
                  <div class="col-md-7">
 
-               <li><a href="{{ url('teacherinfo') }}">শিক্ষকবৃন্দের তথ্য</a></li>
+               <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
                @php
                 $department = DB::table('department')->limit(9)->get();
                @endphp
@@ -356,7 +356,7 @@ right:0;
                @endforeach
                @endif
 
-               <li><a href="{{ url('staffinfo') }}">কর্মচারীদের তথ্য</a></li>
+               <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
 
                </div>
                </div>
@@ -539,19 +539,19 @@ right:0;
 
    <ul class="uk-nav-parent-icon p-3" uk-nav duration='800'>
 
-     <li><a href=""><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;হোম</a></li>
+     <li><a href=""><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.home')</a></li>
 
 
      <li class="uk-parent">
-      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;প্রতিষ্ঠান পরিচিতি</a>
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.institute_introduction')</a>
       <ul class="uk-nav-sub">
-        <li><a href="{{ url('page/6') }}">ভৌত অবকাঠামো</a></li>
-        <li><a href="{{ url('page/7') }}">বার্ষিক কর্ম পরিকল্পনা </a></li>
-        <li><a href="{{ url('page/8') }}">যোগাযোগের ঠিকানা</a></li>
-        <li><a href="{{ url('page/1') }}">আমাদের সম্পর্কে</a></li>
-        <li><a href="{{ url('page/2') }}">লক্ষ্য এবং উদ্দেশ্য</a></li>
-        <li><a href="{{ url('page/3') }}">ইতিহাস</a></li>
-        <li><a href="{{ url('page/4') }}">সিটিজেন চার্টার</a></li>
+        <li><a href="{{ url('page/6') }}">@lang('frontend.infrastructure')</a></li>
+        <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plan')</a></li>
+        <li><a href="{{ url('page/8') }}">@lang('frontend.contact')</a></li>
+        <li><a href="{{ url('page/1') }}">@lang('frontend.about_us')</a></li>
+        <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
+        <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
+        <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
       </ul>
     </li>
 
@@ -560,15 +560,15 @@ right:0;
 
 
     <li class="uk-parent">
-      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;প্রশাসনিক তথ্য </a>
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.institute_introduction') </a>
       <ul class="uk-nav-sub">
-        <li><a href="{{ url('presidentmessage') }}">সভাপতির বাণী </a></li>
-        <li><a href="{{ url('principal_message') }}">প্রধান শিক্ষকের বাণী</a></li>
-        <li><a href="{{ url('managing_comitte') }}">পরিচালনা পর্ষদ তথ্য</a></li>
-        <li><a href="{{ url('presidents') }}">সভাপতির তালিকা</a></li>
-        <li><a href="{{ url('principles') }}">প্রধান শিক্ষকদের তালিকা</a></li>
-        <li><a href="{{ url('donar') }}">দাতা সদস্যদের তালিকা</a></li>
-        <li><a href="{{ url('ex_member') }}">প্রাক্তন সদস্যদের তালিকা</a></li>
+        <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
+        <li><a href="{{ url('principal_message') }}">@lang('frontend.principal_message')</a></li>
+        {{-- <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
+        {{-- <li><a href="{{ url('presidents') }}"></a>@lang('frontend.presidents')</li> --}}
+        <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
+        {{-- <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li> --}}
+        {{-- <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li> --}}
       </ul>
     </li>
 
@@ -577,10 +577,10 @@ right:0;
 
 
     <li class="uk-parent">
-      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;শিক্ষক এবং কর্মচারী </a>
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.teachers_and_staff') </a>
       <ul class="uk-nav-sub">
-        <li><a href="{{ url('teacherinfo') }}">শিক্ষকবৃন্দের তথ্য</a></li>
-        <li><a href="{{ url('staffinfo') }}">কর্মচারীদের তথ্য</a></li>
+        <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
+        <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
       </ul>
     </li>
 

@@ -113,6 +113,7 @@ right:0;
     text-align: center;
     /* justify-content: center; */
 }
+}
 
 .btn-success {
     background : #05c76a

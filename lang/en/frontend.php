@@ -75,6 +75,7 @@ return array(
     'teachers_and_staff'=>'Teachers and staff',
     'teacherinfo'=>'Teacher Info',
     'staffinfo'=>'Staff Info',
+
     'academic_information'=>'Academic Information',
     'rules_regulation'=>'Rules Regulation',
     'academiccalenders'=>'Academic Calenders',
@@ -131,4 +132,12 @@ return array(
     'notice'=>'Notice',
     'all'=>'All',
     'introduction'=>'Introduction',
+
+
+
+    //tanim
+
+    'read_more'=>'Read More...',
+    'details' => 'Details...',
+
 );

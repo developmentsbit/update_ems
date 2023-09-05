@@ -10,4 +10,6 @@ return [
      'details' => 'Details',
      'image' => 'Image',
      'download' => 'Download/File Image',
+     'title_bn'=>'Page Name Bangla',
+     'details_bn' => 'Details'
 ];

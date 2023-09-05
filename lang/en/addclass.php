@@ -8,4 +8,5 @@ return [
 	'viewtitle' => 'View Class',
 	'status' => 'Status',
 	'name' => 'Class Name',
+    'name_bn'=>'Class Name Bangla'
 ];

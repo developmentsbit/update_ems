@@ -26,7 +26,10 @@ class AppServiceProvider extends ServiceProvider
 
         if (!empty($menus)){
             View::composer('*', function ($view) use ($menus) {
-                $view->with(['side_menus' => $menus]);
+                $view->with([
+                    'side_menus' => $menus,
+                    'lang' => config('app.locale'),
+                ]);
             });
         }
 

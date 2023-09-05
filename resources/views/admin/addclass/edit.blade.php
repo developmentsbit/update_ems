@@ -46,6 +46,12 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
+							<label>@lang('addclass.name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="class_name_bn" id="class_name_bn"  required="" value="{{ $data->class_name_bn }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('addclass.status'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="status">

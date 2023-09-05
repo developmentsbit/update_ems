@@ -60,7 +60,10 @@
 					<ul class="list-group p-0">
 						<li class="list-group-item" id="header">@lang('frontend.introduction')</li>
 						<div class="details2 p-2 border">
-							{!! $about->details !!}
+							{{Str::limit($about->details,'500')}}
+                            <div class="mt-2">
+                                <a href="{{url('page/1')}}" class="btn btn-sm btn-success">@lang('frontend.read_more')</a>
+                            </div>
 						</div>
 
 					</ul>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('addclass', function (Blueprint $table) {
             $table->id();
             $table->string('class_name');
+            $table->string('class_name_bn')->nullable();
             $table->string('status');
             $table->timestamps();
         });
@@ -24,6 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('addclass');
     }
 };

@@ -100,6 +100,7 @@ color:#ffffff;
 left:unset;
 right:0;
 }
+
 .container{
   max-width : 1274px !important;
 }
@@ -112,6 +113,10 @@ right:0;
     text-align: center;
     /* justify-content: center; */
 }
+
+.btn-success {
+    background : #05c76a
+
 }
 </style>
 
@@ -649,11 +654,13 @@ right:0;
     <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.admission_information')</a>
     <ul class="uk-nav-sub">
 
+
       <li><a href="{{ url('admissionInfo/1') }}">@lang('frontend.prospectus')</a></li>
       <li><a href="{{ url('admissionInfo/2') }}">@lang('frontend.admission_rules')</a></li>
       <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.admission_procedure')</a></li>
       <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_test_result')</a></li>
    
+
 
 
     </ul>

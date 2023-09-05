@@ -54,6 +54,7 @@ return array(
     'gpa'=>'জিপিএ',
     'select_menu'=>'মেনু নির্বাচন করুন',
     'golden_jubilee_and_bangabandhu_corner'=>'সুবর্ণ জয়ন্তী ও বঙ্গবন্ধু কর্ণার',
+
     'home'=>'হোম',
     'institute_introduction'=>'প্রতিষ্ঠান পরিচিতি',
     'about_institute'=>'প্রতিষ্ঠান সম্পর্কে',
@@ -75,6 +76,7 @@ return array(
     'teachers_and_staff'=>'শিক্ষক এবং কর্মচারী',
     'teacherinfo'=>'শিক্ষকবৃন্দের তথ্য',
     'staffinfo'=>'কর্মচারীদের তথ্য',
+
     'academic_information'=>'একাডেমিক তথ্য',
     'rules_regulation'=>'আচরণ বিধি',
     'academiccalenders'=>'একাডেমিক ক্যালেন্ডার',
@@ -131,4 +133,11 @@ return array(
     'notices'=>'নোটিশ',
     'all'=>'সকল',
     'introduction'=>'পরিচিতি',
+
+
+    //tanim
+
+    'read_more'=>'আরো পড়ুন...',
+    'details' => 'বিস্তারিত...',
+
 );

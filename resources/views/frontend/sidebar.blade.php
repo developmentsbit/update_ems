@@ -22,11 +22,13 @@
 		<ul class="list-group">
 			<li class="list-group-item" id="featureheads">@lang('frontend.presidentmessage')</li>
 		</ul>
-		<li class="list-group-item p-0 pt-2" id="padd">
+		<li class="list-group-item p-0" id="padd">
 			<a href="{{ url('presidentmessage') }}"><center><img src="{{ asset($president->image) }}" class="img-fluid"></center></a>
 			<center>
-				<div class="mt-2 mb-2">
-					<span class="head">{{ $president->name }}<br><a href="{{ url('presidentmessage') }}" class="details">@lang('frontend.details')</a></span>
+
+				<div class="mt-2">
+					<span class="head">{{ $president->name }}<br><a class="btn btn-success btn-sm w-100" style="border-radius: 0px;" href="{{ url('presidentmessage') }}" class="details">@lang('frontend.details')</a></span>
+
 				</div>
 			</center>
 		</li>
@@ -36,15 +38,17 @@
     @if(request()->Is('principal_message'))
 
     @else
-	<div class="col-sm-12 col-12 p-0">
+	<div class="col-sm-12 col-12 p-0 mt-2">
 		<ul class="list-group">
 			<li class="list-group-item" id="featureheads">@lang('frontend.principal_message')</li>
 		</ul>
 		<li class="list-group-item p-0 pt-2" id="padd">
 			<a href="{{ url('principal_message') }}"><center><img src="{{ asset($principle->image) }}" class="img-fluid"></center></a>
 			<center>
-				<div class="mt-2 mb-2">
-					<span class="head">{{ $principle->name }}<br><a href="{{ url('principal_message') }}" class="details">@lang('frontend.details')</a></span>
+
+				<div class="mt-2">
+					<span class="head">{{ $principle->name }}<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('principal_message') }}" class="details">@lang('frontend.details')</a></span>
+
 				</div>
 			</center>
 		</li>

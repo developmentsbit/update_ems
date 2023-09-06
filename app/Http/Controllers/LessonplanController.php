@@ -21,7 +21,7 @@ class LessonplanController extends Controller
     {
         $data = DB::table("lessonplan")
         ->join('addclass','addclass.id','lessonplan.class_id')
-        ->select("lessonplan.*",'addclass.class_name')
+        ->select("lessonplan.*",'addclass.class_name','addclass.class_name_bn')
         ->get();
         return view('admin.lessonplan.index',compact('data'));
     }
@@ -42,6 +42,7 @@ class LessonplanController extends Controller
     {
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $data['class_id']   = $request->class_id;
      $image              = $request->file('image');
@@ -89,6 +90,7 @@ class LessonplanController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['date']       = $request->date;
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
@@ -110,7 +112,7 @@ class LessonplanController extends Controller
 
     }else{
         $update = DB::table('lessonplan')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
         return redirect()->route('lessonplan.index')->with('message','Lesson Plan Update Successfully');

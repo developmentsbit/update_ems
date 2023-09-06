@@ -21,7 +21,7 @@ class SyllabusController extends Controller
     {
         $data = DB::table("syllabus")
         ->join('addclass','addclass.id','syllabus.class_id')
-        ->select("syllabus.*",'addclass.class_name')
+        ->select("syllabus.*",'addclass.class_name','addclass.class_name_bn')
         ->get();
         return view('admin.syllabus.index',compact('data'));
     }
@@ -42,6 +42,7 @@ class SyllabusController extends Controller
     {
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $data['class_id']   = $request->class_id;
      $image              = $request->file('image');
@@ -89,6 +90,7 @@ class SyllabusController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['date']       = $request->date;
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
@@ -110,7 +112,7 @@ class SyllabusController extends Controller
 
     }else{
         $update = DB::table('syllabus')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
         return redirect()->route('syllabus.index')->with('message','Syllabus Update Successfully');

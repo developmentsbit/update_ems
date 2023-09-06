@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('class_id')->constrained('addclass')->cascadeOnDelete();
             $table->text('title');
+            $table->text('title_bn')->nullable();
             $table->string('date');
             $table->string('image');
             $table->timestamps();

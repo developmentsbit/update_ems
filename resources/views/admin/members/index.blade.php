@@ -12,7 +12,7 @@
 @endpush
 
 
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -30,7 +30,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                    @lang('common.add_new')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('members.create') }}

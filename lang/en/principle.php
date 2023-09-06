@@ -11,7 +11,11 @@ return [
      'image' => 'Image',
      'details' => 'Details',
      'download' => 'Download/File Image',
+     'principal'=>'Principal',
+     'president'=>'President',
+     'name_bn'=>'Name (Bangla)',
+     'details_bn'=>'Details (Bangla)',
 
- 
+
 
 ];

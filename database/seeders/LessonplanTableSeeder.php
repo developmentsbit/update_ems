@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class HolidaylistTableSeeder extends Seeder
+class LessonplanTableSeeder extends Seeder
 {
 
     /**
@@ -16,16 +16,16 @@ class HolidaylistTableSeeder extends Seeder
     {
         
 
-        \DB::table('holidaylist')->delete();
+        \DB::table('lessonplan')->delete();
         
-        \DB::table('holidaylist')->insert(array (
+        \DB::table('lessonplan')->insert(array (
             0 => 
             array (
                 'id' => 1,
-                'date' => '2023-06-13',
-                'title' => 'Holiday List of 2023',
-                'title_bn' => 'ছুটির দিন ২০২৩',
-                'image' => 'holidaylist_image/81390.pdf',
+                'class_id' => 2,
+                'title' => 'ওয়েব ডিজাইন',
+                'date' => '2023-06-15',
+                'image' => 'lessonplan_image/63841.jpeg',
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),

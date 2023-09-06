@@ -12,7 +12,7 @@
 @endpush
 
 
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -62,12 +62,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $i++ }}</td>
 							<td>
 								@if($d->type == 1)
-								  Principle
+								  @lang('principle.principal')
 								@else
-								  President	
+                                @lang('principle.president')
 								@endif
 							</td>
-							<td>{{ $d->name }}</td>
+							<td>@if($lang == 'en'){{ $d->name }}@else {{$d->name_bn}}@endif</td>
 							<td><img src="{{ asset($d->image) }}" style="max-height: 100px;"></td>
 							<td>
 								<div class="btn-group">

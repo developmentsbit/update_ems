@@ -42,7 +42,9 @@ class PrincipleController extends Controller
 
        $data = array();
        $data['name']       = $request->name;
+       $data['name_bn']       = $request->name_bn;
        $data['details']    = $request->details;
+       $data['details_bn']    = $request->details_bn;
        $data['type']       = $request->type;
        $image              = $request->file('image');
 
@@ -88,12 +90,14 @@ class PrincipleController extends Controller
     {
         $data = array();
         $data['name']       = $request->name;
+        $data['name_bn']       = $request->name_bn;
         $data['details']    = $request->details;
+        $data['details_bn']    = $request->details_bn;
         $data['type']       = $request->type;
         $image              = $request->file('image');
 
         $old_image = DB::table("principles")->where('id',$id)->first();
-        
+
         if ($image) {
 
             unlink($old_image->image);
@@ -106,10 +110,10 @@ class PrincipleController extends Controller
             $success=$image->move($upload_path,$image_full_name);
             $data['image']=$image_url;
             $update = DB::table('principles')->where('id', $id)->update($data);
-            
+
         }else{
             $update = DB::table('principles')->where('id', $id)->update($data);
-        }       
+        }
 
         if ($update) {
            return redirect()->route('principle.index')->with('message','Principle Message Update Successfully');
@@ -117,7 +121,7 @@ class PrincipleController extends Controller
         else{
             return redirect()->route('principle.index')->with('error','Principle Message Update Unsuccessfully');
         }
-       
+
     }
 
     /**

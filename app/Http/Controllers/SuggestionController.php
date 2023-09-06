@@ -21,7 +21,7 @@ class SuggestionController extends Controller
     {
         $data = DB::table("suggestion")
         ->join('addclass','addclass.id','suggestion.class_id')
-        ->select("suggestion.*",'addclass.class_name')
+        ->select("suggestion.*",'addclass.class_name','addclass.class_name_bn')
         ->get();
         return view('admin.suggestion.index',compact('data'));
     }
@@ -42,6 +42,7 @@ class SuggestionController extends Controller
     {
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $data['class_id']   = $request->class_id;
      $image              = $request->file('image');
@@ -89,6 +90,7 @@ class SuggestionController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['date']       = $request->date;
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
@@ -110,7 +112,7 @@ class SuggestionController extends Controller
 
     }else{
         $update = DB::table('suggestion')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
         return redirect()->route('suggestion.index')->with('message','Suggestion Update Successfully');

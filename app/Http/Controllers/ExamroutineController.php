@@ -21,7 +21,7 @@ class ExamroutineController extends Controller
     {
         $data = DB::table("examroutine")
         ->join('addclass','addclass.id','examroutine.class_id')
-        ->select("examroutine.*",'addclass.class_name')
+        ->select("examroutine.*",'addclass.class_name','addclass.class_name_bn')
         ->get();
         return view('admin.examroutine.index',compact('data'));
     }
@@ -42,6 +42,7 @@ class ExamroutineController extends Controller
     {
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $data['class_id']   = $request->class_id;
      $image              = $request->file('image');
@@ -89,6 +90,7 @@ class ExamroutineController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['date']       = $request->date;
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
@@ -110,7 +112,7 @@ class ExamroutineController extends Controller
 
     }else{
         $update = DB::table('examroutine')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
         return redirect()->route('examroutine.index')->with('message','Exam Routine Update Successfully');

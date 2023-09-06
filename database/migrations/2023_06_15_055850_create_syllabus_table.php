@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('syllabus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('class_id')->constrained('addclass')->cascadeOnDelete();
-            $table->text('title');
+            $table->text('title')->nullable();
+            $table->text('title_bn')->nullable();
             $table->string('date');
             $table->string('image');
             $table->timestamps();

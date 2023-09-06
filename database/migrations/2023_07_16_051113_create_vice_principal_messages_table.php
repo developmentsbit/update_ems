@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('vice_principal_messages', function (Blueprint $table) {
             $table->id();
             $table->string('name',200)->nullable();
+            $table->string('name_bn',200)->nullable();
             $table->text('details')->nullable();
+            $table->text('details_bn')->nullable();
             $table->string('image',100)->default('0');
             $table->timestamps();
         });

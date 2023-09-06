@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/fgcgov/public_html/update.fgc.gov.bd
+    - export DEPLOYPATH=/home/fgcgov/public_html/
     - /bin/cp * $DEPLOYPATH
 
 

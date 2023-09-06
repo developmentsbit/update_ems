@@ -22,7 +22,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                 <i class="fa fa-eye"></i>   @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('principle.index') }}
@@ -53,21 +53,33 @@
 							<label>@lang('principle.type'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="type">
-									<option value="1">Principle</option>
-									<option value="2">President</option>
+									<option value="1">@lang('principle.principal')</option>
+									<option value="2">@lang('principle.president')</option>
 								</select>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-8">
+						<div class="form-group mb-3 col-md-4">
 							<label>@lang('principle.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="name" id="name"  required="">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-4">
+							<label>@lang('principle.name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="name_bn" id="name_bn">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('principle.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<textarea  class="form-control w-100" rows="10" type="text" name="details" required=""></textarea>
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('principle.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<textarea  class="form-control w-100" rows="10" type="text" name="details_bn"></textarea>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

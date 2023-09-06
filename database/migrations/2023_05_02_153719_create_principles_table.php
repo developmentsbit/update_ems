@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('name');
+            $table->string('name_bn')->nullable();
             $table->longText('details')->nullable();
+            $table->longText('details_bn')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -38,22 +38,34 @@
 				<form method="post" class="btn-submit" action="{{ route('vice_principal_message.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="row myinput">
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('vice_principal.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="name" id="name"  required="" value="{{$data->name}}">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('vice_principal.name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="name_bn" id="name_bn"  required="" value="{{$data->name_bn}}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('vice_principal.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<textarea  class="form-control w-100" rows="8" type="text" name="details" required="">{!! $data->details !!}</textarea>
 							</div>
 						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('vice_principal.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<textarea  class="form-control w-100" rows="8" type="text" name="details_bn" required="">{!! $data->details_bn !!}</textarea>
+							</div>
+						</div>
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('vice_principal.image'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="file" name="image" id="image"  required="">
+								<input class="form-control" type="file" name="image" id="image">
 							</div>
                             <img src="{{ asset('vice_principal_image') }}/{{$data->image}}" style="max-height: 100px;">
 						</div>

@@ -22,7 +22,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                  <i class="fa fa-eye"></i>  @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('lessonplan.index') }}
@@ -52,16 +52,22 @@
 								<select class="form-control" name="class_id" id="class_id">
 									@if(isset($class))
 									@foreach($class as $c)
-									<option value="{{ $c->id }}">{{ $c->class_name }}</option>
+									<option value="{{ $c->id }}">@if($lang == 'en'){{ $c->class_name }}@else {{$c->class_name_bn}}@endif</option>
 									@endforeach
 									@endif
 								</select>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('lessonplan.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('lessonplan.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="title_bn" id="title_bn"  required="">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

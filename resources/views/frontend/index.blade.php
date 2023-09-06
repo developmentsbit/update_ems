@@ -159,29 +159,19 @@ right:0;
             <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
             <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
             <label>
-            <div class="site-lang">
-                <ul>
-                    <li>
-                    @if(config('app.locale')=='en')
-
-                    <img src="{{asset('frontend')}}/usa.png" alt="usa">
-                        <a style="color: white;" href="#" aria-label="details">
-                        {{'English'}}
-                        </a>
-
-                        @else
-                        <img src="{{asset('frontend')}}/bd.png" alt="italy">
-                        <a style="color: white;" href="#" aria-label="details">
-                        {{'বাংলা'}}
-                        </a>
-
-                        @endif
-
-                        <ul>
-                        <li><img src="{{asset('frontend')}}/usa.png" alt="usa"><a href="{{url('lang/en')}}" aria-label="English">English</a></li>
-                        <li><img src="{{asset('Frontend')}}/bd.png" alt="italy"><a href="{{url('lang/bn')}}" aria-label="Italian">বাংলা</a></li>
-                        </ul>
-                </div>
+              <div class="site-lang" style="margin-top: -4px;">
+                  @if(config('app.locale')=='bn')
+                  <a class="nav-link" href="{{ route('lang', 'en') }}" role="button">
+                      <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
+                      <span>{{'English'}}</span>
+                  </a>
+                  @else
+                  <a class="nav-link" href="{{ route('lang', 'bn') }}" role="button">
+                      <img src="{{ asset('assets/images/flags/bd.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
+                      <span>{{'বাংলা'}}</span>
+                  </a>
+                  @endif
+              </div>
             </label>
         </div>
 
@@ -455,7 +445,7 @@ right:0;
             <li><a href="{{ url('page/19') }}">@lang('frontend.student_cabinet')</a></li>
             <li><a href="{{ url('page/20') }}">@lang('frontend.debating_club')</a></li>
             <li><a href="{{ url('page/21') }}">@lang('frontend.language_club')</a></li>
-            <li><a href="{{ url('page/23') }}"></a>@lang('frontend.science_fair')</li>
+            <li><a href="{{ url('page/23') }}">@lang('frontend.science_fair')</a></li>
           </div>
 
 
@@ -476,10 +466,11 @@ right:0;
 
         <div class="col-md-12 col-12 dmenu mt-3">
 
-         <li><a href="{{ url('admissionInfo/1') }}">@lang('frontend.prospectus')</a></li>
+         <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.prospectus')</a></li>
          <li><a href="{{ url('admissionInfo/2') }}">@lang('frontend.admission_rules')</a></li>
-         <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.admission_procedure')</a></li>
-         <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_test_result')</a></li>
+         <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_procedure')</a></li>
+         <li><a href="{{ url('admissionInfo/5') }}">@lang('frontend.admission_test_result')</a></li>
+         <li><a href="{{ url('admissionInfo/6') }}">@lang('frontend.admission_test_questions')</a></li>
 
 
        </div>
@@ -656,10 +647,11 @@ right:0;
     <ul class="uk-nav-sub">
 
 
-      <li><a href="{{ url('admissionInfo/1') }}">@lang('frontend.prospectus')</a></li>
+      <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.prospectus')</a></li>
       <li><a href="{{ url('admissionInfo/2') }}">@lang('frontend.admission_rules')</a></li>
-      <li><a href="{{ url('admissionInfo/3') }}">@lang('frontend.admission_procedure')</a></li>
-      <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_test_result')</a></li>
+      <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_procedure')</a></li>
+      <li><a href="{{ url('admissionInfo/5') }}">@lang('frontend.admission_test_result')</a></li>
+      <li><a href="{{ url('admissionInfo/6') }}">@lang('frontend.admission_test_questions')</a></li>
    
 
 

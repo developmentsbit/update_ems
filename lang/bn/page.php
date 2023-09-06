@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title_bn'=>'পেইজ নাম বাংলা',
+     'title_bn'=>'পেইজ নাম বাংলা',
      'managetitle' => 'পেইজ',
      'index_title' => 'পেইজের লিস্ট',
      'addtitle' => 'পেইজ যুক্ত করুন',

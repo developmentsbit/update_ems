@@ -99,6 +99,7 @@ return array(
     'admission_rules'=>'Admission Rules',
     'admission_procedure'=>'Admission Procedure',
     'admission_test_result'=>'Admission Test Result',
+    'admission_test_questions'=>'Admission Test Questions',
     'exam_information'=>'Exam Information',
     'exam_rules'=>'Exam Rules',
     'examroutines'=>'Exam Routines',
@@ -127,11 +128,18 @@ return array(
     'rights'=>'All Right Reserved.',
     'drights'=>'Developed by',
     'sbit'=>'Skill Based IT',
-
     'notice_board'=>'Notice Board',
     'notice'=>'Notice',
     'all'=>'All',
     'introduction'=>'Introduction',
+    'sl'=>'SL',
+    'release_date'=>'Release Date',
+    'title'=>'Title',
+    'download'=>'Download',
+
+    'calendar'=>'Academic Calendar',
+    'class_routine'=>'Class Routine',
+    'holiday_list'=>'Holiday List',
 
 
 

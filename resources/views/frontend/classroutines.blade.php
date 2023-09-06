@@ -16,7 +16,7 @@
     <div class="col-sm-12 col-12 p-0"  data-aos="fade-in" data-aos-duration="2000" >
       <ul class="list-group p-0">
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
-         ক্লাস রুটিন
+        @lang('frontend.class_routine')
 
        </li>
        <li class="list-group-item">
@@ -25,11 +25,11 @@
           <table id="example" class="display table-bordered" style="width:100%">
             <thead>
               <tr style="font-size: 15px;">
-                <th>ক্রমিক</th>
-                <th>শ্রেনী</th>
-                <th>প্রকাশের তারিখ</th>
-                <th>শিরোনাম</th>
-                <th>ডাউনলোড</th>
+                <th>@lang('frontend.sl')</th>
+                <th>@lang('frontend.class')</th>
+                <th>@lang('frontend.release_date')</th>
+                <th>@lang('frontend.title')</th>
+                <th>@lang('frontend.download')</th>
               </tr>
             </thead>
             <tbody>

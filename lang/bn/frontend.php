@@ -100,6 +100,7 @@ return array(
     'admission_rules'=>'ভর্তির নিয়মাবলী',
     'admission_procedure'=>'ভর্তির পদ্ধতি',
     'admission_test_result'=>'ভর্তি পরীক্ষার ফলাফল',
+    'admission_test_questions'=>'ভর্তির পরীক্ষার প্রশ্নপত্র',
     'exam_information'=>'পরীক্ষা সংক্রান্ত তথ্য',
     'exam_rules'=>'পরীক্ষার নিয়মাবলী',
     'examroutines'=>'পরীক্ষার সময়সূচী',
@@ -133,6 +134,14 @@ return array(
     'notices'=>'নোটিশ',
     'all'=>'সকল',
     'introduction'=>'পরিচিতি',
+    'sl'=>'ক্রমিক',
+    'release_date'=>'প্রকাশের তারিখ',
+    'title'=>'টাইটেল',
+    'download'=>'ডাউনলোড',
+
+    'calendar'=>'ক্যালেন্ডার',
+    'class_routine'=>'ক্লাস রুটিন',
+    'holiday_list'=>'ছুটির তালিকা',
 
 
     //tanim

@@ -17,15 +17,15 @@
       <ul class="list-group p-0">
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
          @if($data[0]->type == 1)
-         প্রসপেক্টাস
+         @lang('frontend.prospectus')
          @elseif($data[0]->type == 2)
-         ভর্তির নিয়মাবলী
+         @lang('frontend.admission_rules')
          @elseif($data[0]->type == 3)
-         ভর্তির পদ্ধতি
+         @lang('frontend.admission_procedure')
          @elseif($data[0]->type == 4)
-         ভর্তি পরীক্ষার ফলাফল
+         @lang('frontend.admission_test_result')
          @else
-         ভর্তির পরীক্ষার প্রশ্নপত্র
+         @lang('frontend.admission_test_questions')
          @endif
 
        </li>
@@ -35,10 +35,10 @@
           <table id="example" class="display table-bordered" style="width:100%">
             <thead>
               <tr style="font-size: 15px;">
-                <th>ক্রমিক</th>
-                <th>প্রকাশের তারিখ</th>
-                <th>শিরোনাম</th>
-                <th>ডাউনলোড</th>
+                <th>@lang('frontend.sl')</th>
+                <th>@lang('frontend.release_date')</th>
+                <th>@lang('frontend.title')</th>
+                <th>@lang('frontend.download')</th>
               </tr>
             </thead>
             <tbody>

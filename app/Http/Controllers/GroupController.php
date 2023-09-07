@@ -10,8 +10,8 @@ class GroupController extends Controller
 
    public function __construct()
    {
-    $this->middleware('auth');
-}
+        $this->middleware('auth');
+   }
 
 
     /**
@@ -21,7 +21,7 @@ class GroupController extends Controller
     {
      $data = DB::table("addgroup")
      ->leftjoin("addclass",'addclass.id','addgroup.class_id')
-     ->select("addgroup.*",'addclass.class_name')
+     ->select("addgroup.*",'addclass.class_name','addclass.class_name_bn')
      ->get();
      return view('admin.addgroup.index',compact('data'));
  }
@@ -43,6 +43,7 @@ class GroupController extends Controller
      $data = array();
      $data['class_id']      = $request->class_id;
      $data['group_name']    = $request->group_name;
+     $data['group_name_bn']    = $request->group_name_bn;
      $data['status']         = $request->status;
 
      DB::table('addgroup')->insert($data);
@@ -77,6 +78,7 @@ class GroupController extends Controller
         $data = array();
         $data['class_id']      = $request->class_id;
         $data['group_name']    = $request->group_name;
+        $data['group_name_bn']    = $request->group_name_bn;
         $data['status']        = $request->status;
 
         $update = DB::table('addgroup')->where('id', $id)->update($data);

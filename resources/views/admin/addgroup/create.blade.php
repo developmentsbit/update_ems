@@ -20,7 +20,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                  <i class="fa fa-eye"></i>  @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('addgroup.index') }}
@@ -43,7 +43,7 @@
 								<select class="form-control" name="class_id">
 									@if(isset($class))
 									@foreach($class as $c)
-									<option value="{{ $c->id }}">{{ $c->class_name }}</option>
+									<option value="{{ $c->id }}">@if($lang == 'en'){{ $c->class_name }}@else {{$c->class_name_bn}}@endif</option>
 									@endforeach
 									@endif
 								</select>
@@ -55,7 +55,13 @@
 								<input class="form-control" type="text" name="group_name" id="group_name" required="">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('addgroup.group_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="group_name_bn" id="group_name_bn" required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('addgroup.status'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="status">

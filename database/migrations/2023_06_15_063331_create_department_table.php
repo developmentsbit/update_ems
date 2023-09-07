@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('department', function (Blueprint $table) {
             $table->id();
             $table->string('department');
+            $table->string('department_name_bn')->nullable();
             $table->timestamps();
         });
     }
@@ -23,6 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('department');
     }
 };

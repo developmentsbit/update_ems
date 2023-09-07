@@ -10,5 +10,15 @@ return [
      'title' => 'টাইটেল',
      'date' => 'তারিখ',
      'image' => 'ছবি/ফাইল',
+     'prospects'=>'প্রসফেক্টস',
+     'admission_system'=>'ভর্তির নিয়মাবলী',
+     'admission_rules'=>'ভর্তির পদ্ধতি',
+     'admission_result'=>'ভর্তি পরীক্ষার ফলাফল',
+     'admission_question'=>'ভর্তি পরীক্ষার প্রশ্নপত্র',
+     'title_bn'=>'টাইটেল বাংলা',
+
+
+
+
 
 ];

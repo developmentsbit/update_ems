@@ -63,7 +63,7 @@ return [
     'total_staff' => 'সর্বমোট কর্মচারী',
     'total_notice' => 'সর্বমোট নোটিশ',
 
-    'select_one' => 'Select One',
+    'select_one' => '=== নির্বাচন করুন ===',
     'select_model' => 'Select :model',
     'serial_number' => 'SL',
 

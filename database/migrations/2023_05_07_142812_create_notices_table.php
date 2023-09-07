@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('type');
             $table->string('date');
-            $table->longText('title');
+            $table->longText('title')->nullable();
+            $table->longText('title_bn')->nullable();
             $table->longText('details')->nullable();
+            $table->longText('details_bn')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

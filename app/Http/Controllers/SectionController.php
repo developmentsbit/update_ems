@@ -22,7 +22,7 @@ class SectionController extends Controller
      $data = DB::table("addsection")
      ->leftjoin("addclass",'addclass.id','addsection.class_id')
      ->leftjoin("addgroup",'addgroup.id','addsection.group_id')
-     ->select("addsection.*",'addclass.class_name','addgroup.group_name')
+     ->select("addsection.*",'addclass.class_name','addgroup.group_name','addclass.class_name_bn','addgroup.group_name_bn')
      ->get();
      return view('admin.addsection.index',compact('data'));
  }
@@ -45,6 +45,7 @@ class SectionController extends Controller
      $data['class_id']      = $request->class_id;
      $data['group_id']      = $request->group_id;
      $data['section_name']  = $request->section_name;
+     $data['section_name_bn']  = $request->section_name_bn;
      $data['status']        = $request->status;
 
      DB::table('addsection')->insert($data);
@@ -68,7 +69,8 @@ class SectionController extends Controller
     {
         $data = DB::table("addsection")->where('id',$id)->first();
         $class = DB::table("addclass")->where('status',1)->get();
-        return view('admin.addsection.edit',compact('data','class'));
+        $group = DB::table('addgroup')->where('class_id',$data->class_id)->get();
+        return view('admin.addsection.edit',compact('data','class','group'));
     }
 
     /**
@@ -80,6 +82,7 @@ class SectionController extends Controller
         $data['class_id']      = $request->class_id;
         $data['group_id']      = $request->group_id;
         $data['section_name']  = $request->section_name;
+        $data['section_name_bn']  = $request->section_name_bn;
         $data['status']        = $request->status;
 
         $update = DB::table('addsection')->where('id', $id)->update($data);
@@ -116,7 +119,15 @@ public function getgroup($class_id){
     {
         foreach($group as $v)
         {
-            echo "<option value='".$v->id."'>".$v->group_name."</option>";
+            if(config('app.locale') == 'en')
+            {
+                $group_name = $v->group_name;
+            }
+            else
+            {
+                $group_name = $v->group_name_bn;
+            }
+            echo "<option value='".$v->id."'>".$group_name."</option>";
         }
     }
 

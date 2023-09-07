@@ -22,7 +22,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                  <i class="fa fa-eye"></i>  @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('members.index') }}
@@ -44,11 +44,11 @@
 							<label>@lang('member.type'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="type">
-									<option value="1">Principle</option>
-									<option value="2">Chairman</option>
-									<option value="3">Managing Committee</option>
-									<option value="4">Donar</option>
-									<option value="5">Ex-Member</option>
+									<option value="1">@lang('member.principal')</option>
+									<option value="2">@lang('member.chairman')</option>
+									<option value="3">@lang('member.managing_commitee')</option>
+									<option value="4">@lang('member.donar')</option>
+									<option value="5">@lang('member.ex_member')</option>
 								</select>
 							</div>
 						</div>

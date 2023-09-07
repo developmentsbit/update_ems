@@ -38,7 +38,8 @@ class DepartmentController extends Controller
     {
      $data = array();
      $data['department']      = $request->department;
-     
+     $data['department_name_bn']      = $request->department_name_bn;
+
 
      DB::table('department')->insert($data);
 
@@ -70,7 +71,8 @@ class DepartmentController extends Controller
     {
         $data = array();
         $data['department']      = $request->department;
-        
+        $data['department_name_bn']      = $request->department_name_bn;
+
 
         $update = DB::table('department')->where('id', $id)->update($data);
 

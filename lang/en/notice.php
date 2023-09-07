@@ -11,7 +11,9 @@ return [
      'image' => 'Image/File',
      'details' => 'Details',
      'date' => 'Date',
+     'title_bn'=>'Title Bangla',
+     'details_bn'=>'Details Bangla',
 
- 
+
 
 ];

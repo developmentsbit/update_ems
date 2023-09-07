@@ -10,6 +10,7 @@ return [
 	'classname' => 'ক্লাসের নাম',
 	'groupname' => 'গ্রুপের নাম',
 	'status' => 'স্টেটাস',
+    'section_name_bn'=>'সেকশান নাম বাংলা',
 
 
 ];

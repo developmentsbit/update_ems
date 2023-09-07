@@ -59,13 +59,13 @@
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('page.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<textarea  class="form-control w-100" rows="10" type="text" name="details" required=""></textarea>
+								<textarea id="summernote"  class="form-control w-100" rows="10" type="text" name="details" required=""></textarea>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('page.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<textarea  class="form-control w-100" rows="10" type="text" name="details_bn" required=""></textarea>
+								<textarea id="summernote1"  class="form-control w-100" rows="10" type="text" name="details_bn" required=""></textarea>
 							</div>
 						</div>
 

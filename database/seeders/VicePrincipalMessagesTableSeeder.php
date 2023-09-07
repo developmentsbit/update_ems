@@ -22,11 +22,13 @@ class VicePrincipalMessagesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'name' => 'অধ্যাপক দেলোয়ার হোসেন',
-                'details' => 'ghjbnkml',
+                'name' => 'Professor Delowar Hossain',
+                'name_bn' => 'অধ্যাপক দেলোয়ার হোসেন',
+                'details' => 'বিস্তারিত',
+                'details_bn' => NULL,
                 'image' => '2071625904.jpg',
                 'created_at' => NULL,
-                'updated_at' => '2023-07-16 05:25:11',
+                'updated_at' => '2023-09-06 10:27:20',
             ),
         ));
         

@@ -53,13 +53,13 @@
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('vice_principal.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<textarea  class="form-control w-100" rows="8" type="text" name="details" required="">{!! $data->details !!}</textarea>
+								<textarea id="summernote"  class="form-control w-100" rows="8" type="text" name="details" required="">{!! $data->details !!}</textarea>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('vice_principal.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<textarea  class="form-control w-100" rows="8" type="text" name="details_bn" required="">{!! $data->details_bn !!}</textarea>
+								<textarea id="summernote1"  class="form-control w-100" rows="8" type="text" name="details_bn" required="">{!! $data->details_bn !!}</textarea>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

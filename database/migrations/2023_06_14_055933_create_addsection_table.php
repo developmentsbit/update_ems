@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('class_id')->constrained('addclass')->cascadeOnDelete();
             $table->foreignId('group_id')->nullable()->constrained('addgroup')->cascadeOnDelete();
             $table->string('section_name')->nullable();
+            $table->string('section_name_bn')->nullable();
             $table->string('status');
             $table->timestamps();
         });

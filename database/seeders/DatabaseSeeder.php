@@ -13,14 +13,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call(UsersSeeder::class);
-        $this->call(RolesTableSeeder::class);
+        $this->call(MenuActionsTableSeeder::class);
+        $this->call(MenusTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
         $this->call(RoleHasPermissionsTableSeeder::class);
+        $this->call(UsersSeeder::class);
         $this->call(ModelHasRolesTableSeeder::class);
         $this->call(ModelHasPermissionsTableSeeder::class);
-        $this->call(MenusTableSeeder::class);
-        $this->call(MenuActionsTableSeeder::class);
         $this->call(UserMenuActionsTableSeeder::class);
         $this->call(OtpSmsTableSeeder::class);
         $this->call(PagesTableSeeder::class);
@@ -33,5 +33,24 @@ class DatabaseSeeder extends Seeder
         $this->call(SuggestionTableSeeder::class);
         $this->call(PrinciplesTableSeeder::class);
         $this->call(VicePrincipalMessagesTableSeeder::class);
+        $this->call(AdmissioninfoTableSeeder::class);
+        $this->call(AddsectionTableSeeder::class);
+        $this->call(DepartmentTableSeeder::class);
+        $this->call(AddgroupTableSeeder::class);
+        $this->call(ClassInfosTableSeeder::class);
+        $this->call(ExamroutineTableSeeder::class);
+        $this->call(GroupInfosTableSeeder::class);
+        $this->call(NoticesTableSeeder::class);
+        $this->call(PhotogallerysTableSeeder::class);
+        $this->call(PreviousClassInfosTableSeeder::class);
+        $this->call(SettingTableSeeder::class);
+        $this->call(StudentAdmissionsTableSeeder::class);
+        $this->call(StudentInformationsTableSeeder::class);
+        $this->call(StudentRegistrationsTableSeeder::class);
+        $this->call(SubjectInfosTableSeeder::class);
+        $this->call(TeacherstaffTableSeeder::class);
+        $this->call(UsefullinksTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(VideogallerysTableSeeder::class);
     }
 }

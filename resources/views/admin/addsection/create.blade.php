@@ -43,9 +43,10 @@
 							<label>@lang('addsection.classname'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="class_id" id="class_id" onchange="return getgroup();">
+                                    <option value="">@lang('common.select_one')</option>
 									@if(isset($class))
 									@foreach($class as $c)
-									<option value="{{ $c->id }}">{{ $c->class_name }}</option>
+									<option value="{{ $c->id }}">@if($lang == 'en'){{ $c->class_name }}@else {{$c->class_name_bn}}@endif</option>
 									@endforeach
 									@endif
 								</select>
@@ -63,6 +64,12 @@
 							<label>@lang('addsection.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="section_name" id="section_name" required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('addsection.section_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="section_name_bn" id="section_name_bn" required="">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
@@ -103,7 +110,7 @@
 			success: function (response) {
 
 				$("#group_id").html(response);
-			
+
 			}
 		});
 	}

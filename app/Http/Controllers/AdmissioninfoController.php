@@ -41,6 +41,7 @@ class AdmissioninfoController extends Controller
      $data = array();
      $data['type']      = $request->type;
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['date']       = $request->date;
      $image              = $request->file('image');
 
@@ -87,6 +88,7 @@ class AdmissioninfoController extends Controller
 
        $data = array();
        $data['title']      = $request->title;
+       $data['title_bn']      = $request->title_bn;
        $data['type']      = $request->type;
        $data['date']       = $request->date;
        $image              = $request->file('image');
@@ -95,7 +97,7 @@ class AdmissioninfoController extends Controller
 
        if ($image) {
 
-      
+
 
         $image_name= rand(1111,9999);
         $ext=strtolower($image->getClientOriginalExtension());
@@ -108,7 +110,7 @@ class AdmissioninfoController extends Controller
 
     }else{
         $update = DB::table('admissioninfo')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
      return redirect()->route('admissioninfo.index')->with('message','Admission Info. Update Successfully');
@@ -126,7 +128,7 @@ class AdmissioninfoController extends Controller
         $data = DB::table("admissioninfo")->where('id',$id)->first();
 
         if ($data) {
-     
+
            DB::table("admissioninfo")->where("id",$id)->delete();
            return redirect()->route('admissioninfo.index')->with('message','Admission Info. Delete Successfully');
        }

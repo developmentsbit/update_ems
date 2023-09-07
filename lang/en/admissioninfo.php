@@ -10,7 +10,13 @@ return [
      'date' => 'Date',
      'type' => 'Type',
      'image' => 'Image/File',
+     'prospects'=>'Prospects',
+     'admission_system'=>'Admission Process',
+     'admission_rules'=>'Admission Rules',
+     'admission_result'=>'Admission Result',
+     'admission_question'=>'Admission Question',
+     'title_bn'=>'Title Bangla',
 
- 
+
 
 ];

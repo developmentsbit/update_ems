@@ -161,12 +161,12 @@ right:0;
             <label>
               <div class="site-lang" style="margin-top: -4px;">
                   @if(config('app.locale')=='bn')
-                  <a class="nav-link" href="{{ route('lang', 'en') }}" role="button">
+                  <a class="nav-link btn btn-outline-success" href="{{ route('lang', 'en') }}" role="button">
                       <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
                       <span>{{'English'}}</span>
                   </a>
                   @else
-                  <a class="nav-link" href="{{ route('lang', 'bn') }}" role="button">
+                  <a class="nav-link btn btn-outline-success" href="{{ route('lang', 'bn') }}" role="button">
                       <img src="{{ asset('assets/images/flags/bd.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
                       <span>{{'বাংলা'}}</span>
                   </a>
@@ -652,7 +652,7 @@ right:0;
       <li><a href="{{ url('admissionInfo/4') }}">@lang('frontend.admission_procedure')</a></li>
       <li><a href="{{ url('admissionInfo/5') }}">@lang('frontend.admission_test_result')</a></li>
       <li><a href="{{ url('admissionInfo/6') }}">@lang('frontend.admission_test_questions')</a></li>
-   
+
 
 
 

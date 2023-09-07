@@ -22,7 +22,7 @@
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                <i class="fa fa-eye"></i> @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('admissioninfo.index') }}
@@ -46,40 +46,39 @@
 							<div class="input-group mt-2">
 								<select class="form-control" name="type" required="">
 									@if($data->type == 1)
-									<option value="1">প্রসপেক্টাস</option>
-									<option value="2">ভর্তির নিয়মাবলী</option>
-									<option value="3">ভর্তির পদ্ধতি</option>
-									<option value="4">ভর্তি পরীক্ষার ফলাফল</option>
-									<option value="5">ভর্তির পরীক্ষার প্রশ্নপত্র</option>
+									<option value="1">@lang('admissioninfo.prospects')</option>
+									<option value="2">@lang('admissioninfo.admission_system')</option>
+									<option value="3">@lang('admissioninfo.admission_rules')</option>
+									<option value="4">@lang('admissioninfo.admission_result')</option>
+									<option value="5">@lang('admissioninfo.admission_question')</option>
 									@endif
 									@if($data->type == 2)
-									<option value="2">ভর্তির নিয়মাবলী</option>
-									<option value="1">প্রসপেক্টাস</option>
-									
-									<option value="3">ভর্তির পদ্ধতি</option>
-									<option value="4">ভর্তি পরীক্ষার ফলাফল</option>
-									<option value="5">ভর্তির পরীক্ষার প্রশ্নপত্র</option>
+									<option value="2">@lang('admissioninfo.admission_system')</option>
+									<option value="1">@lang('admissioninfo.prospects')</option>
+									<option value="3">@lang('admissioninfo.admission_rules')</option>
+									<option value="4">@lang('admissioninfo.admission_result')</option>
+									<option value="5">@lang('admissioninfo.admission_question')</option>
 									@endif
 									@if($data->type == 3)
-									<option value="3">ভর্তির পদ্ধতি</option>
-									<option value="1">প্রসপেক্টাস</option>
-									<option value="2">ভর্তির নিয়মাবলী</option>
-									<option value="4">ভর্তি পরীক্ষার ফলাফল</option>
-									<option value="5">ভর্তির পরীক্ষার প্রশ্নপত্র</option>
+									<option value="3">@lang('admissioninfo.admission_rules')</option>
+									<option value="1">@lang('admissioninfo.prospects')</option>
+									<option value="2">@lang('admissioninfo.admission_system')</option>
+									<option value="4">@lang('admissioninfo.admission_result')</option>
+									<option value="5">@lang('admissioninfo.admission_question')</option>
 									@endif
 									@if($data->type == 4)
-									<option value="4">ভর্তি পরীক্ষার ফলাফল</option>
-									<option value="1">প্রসপেক্টাস</option>
-									<option value="2">ভর্তির নিয়মাবলী</option>
-									<option value="3">ভর্তির পদ্ধতি</option>									
-									<option value="5">ভর্তির পরীক্ষার প্রশ্নপত্র</option>
+									<option value="4">@lang('admissioninfo.admission_result')</option>
+									<option value="1">@lang('admissioninfo.prospects')</option>
+									<option value="2">@lang('admissioninfo.admission_system')</option>
+									<option value="3">@lang('admissioninfo.admission_rules')</option>
+									<option value="5">@lang('admissioninfo.admission_question')</option>
 									@endif
 									@if($data->type == 5)
-									<option value="5">ভর্তির পরীক্ষার প্রশ্নপত্র</option>
-									<option value="1">প্রসপেক্টাস</option>
-									<option value="2">ভর্তির নিয়মাবলী</option>
-									<option value="3">ভর্তির পদ্ধতি</option>
-									<option value="4">ভর্তি পরীক্ষার ফলাফল</option>									
+									<option value="5">@lang('admissioninfo.admission_question')</option>
+									<option value="1">@lang('admissioninfo.prospects')</option>
+									<option value="2">@lang('admissioninfo.admission_system')</option>
+									<option value="3">@lang('admissioninfo.admission_rules')</option>
+									<option value="4">@lang('admissioninfo.admission_result')</option>
 									@endif
 								</select>
 							</div>
@@ -90,10 +89,16 @@
 								<input class="form-control" type="date" name="date" id="date"  required="" value="{{ $data->date }}">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('admissioninfo.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="" value="{{ $data->title }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('admissioninfo.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="title_bn" id="title_bn"  required="" value="{{ $data->title_bn }}">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

@@ -41,8 +41,8 @@
 							<label>@lang('notice.type'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="type">
-									<option value="1">Notices</option>
-									<option value="2">Megazine</option>
+									<option value="1">@lang('notice.notice')</option>
+									<option value="2">@lang('notice.magazine')</option>
 								</select>
 							</div>
 						</div>
@@ -52,16 +52,28 @@
 								<input type="date" class="form-control" name="date" required="">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('notice.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('notice.title_bn'): </label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="title_bn" id="title_bn">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('notice.details'): </label>
 							<div class="input-group mt-2">
-								<textarea  class="form-control w-100" rows="10" type="text" name="details" ></textarea>
+								<textarea id="summernote"  class="form-control w-100" rows="10" type="text" name="details" ></textarea>
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('notice.details_bn'): </label>
+							<div class="input-group mt-2">
+								<textarea id="summernote1"  class="form-control w-100" rows="10" type="text" name="details_bn" ></textarea>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

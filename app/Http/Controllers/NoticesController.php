@@ -39,8 +39,10 @@ class NoticesController extends Controller
        $data = array();
        $data['type']       = $request->type;
        $data['title']      = $request->title;
+       $data['title_bn']      = $request->title_bn;
        $data['date']       = $request->date;
        $data['details']    = $request->details;
+       $data['details_bn']    = $request->details_bn;
        $image              = $request->file('image');
 
        if ($image) {
@@ -86,15 +88,17 @@ class NoticesController extends Controller
       $data = array();
       $data['type']       = $request->type;
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['date']       = $request->date;
       $data['details']    = $request->details;
+      $data['details_bn']    = $request->details_bn;
       $image              = $request->file('image');
 
       $old_image = DB::table("notices")->where('id',$id)->first();
 
       if ($image) {
 
-      
+
 
         $image_name= rand(1111,9999);
         $ext=strtolower($image->getClientOriginalExtension());
@@ -107,7 +111,7 @@ class NoticesController extends Controller
 
     }else{
         $update = DB::table('notices')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
        return redirect()->route('notices.index')->with('message','Notices Update Successfully');
@@ -125,7 +129,7 @@ class NoticesController extends Controller
         $data = DB::table("notices")->where('id',$id)->first();
 
        if ($data) {
-         
+
          DB::table("notices")->where("id",$id)->delete();
          return redirect()->route('notices.index')->with('message','Notices Delete Successfully');
      }

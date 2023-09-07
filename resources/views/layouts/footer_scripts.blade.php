@@ -26,7 +26,7 @@
 
 <script src="{{ asset('assets/js/vendor/dropzone.min.js') }}"></script>
 <script src="{{ asset('assets/js/ui/component.fileupload.js') }}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
     //ajax status update code
     function statusUpdate(id, url) {
@@ -84,6 +84,18 @@
             });
         }
     }
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#summernote1').summernote();
+    });
 </script>
 
 <script>

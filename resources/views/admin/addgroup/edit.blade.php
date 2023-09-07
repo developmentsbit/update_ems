@@ -48,7 +48,7 @@
 									@foreach($class as $c)
 									<option value="{{ $c->id }}" <?php if ($c->id == $data->class_id) {
 										echo "selected";
-									} ?>>{{ $c->class_name }}</option>
+									} ?>>@if($lang == 'en'){{ $c->class_name }}@else{{$c->class_name_bn}}@endif</option>
 									@endforeach
 									@endif
 								</select>
@@ -60,7 +60,13 @@
 								<input class="form-control" type="text" name="group_name" id="group_name" required="" value="{{ $data->group_name }}">
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('addgroup.group_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="group_name_bn" id="group_name_bn" required="" value="{{ $data->group_name_bn }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('addgroup.status'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="status">
@@ -70,7 +76,7 @@
 									@else
 									<option value="2">@lang('common.inactive')</option>
 									<option value="1">@lang('common.active')</option>
-									
+
 									@endif
 								</select>
 							</div>

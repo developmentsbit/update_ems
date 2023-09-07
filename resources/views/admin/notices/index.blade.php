@@ -11,7 +11,7 @@
 
 @endpush
 
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -29,7 +29,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
                 @slot('action_button1')
-                    @lang('common.view')
+                    @lang('common.add_new')
                 @endslot
                 @slot('action_button1_link')
                     {{ route('notices.create') }}
@@ -64,13 +64,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $i++ }}</td>
 							<td>
 								@if($d->type == 1)
-								<span>Notices</span>
+								<span>@lang('notice.notice')</span>
 								@endif
 								@if($d->type == 2)
-								<span>Megazine</span>
+								<span>@lang('notice.magazine')</span>
 								@endif
 							</td>
-							<td>{{ $d->title }}</td>
+							<td>@if($lang == 'en'){{ $d->title }}@else {{$d->title_bn}}@endif</td>
 							<td><a href="{{ asset($d->image) }}" download="" class="btn btn-success">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">

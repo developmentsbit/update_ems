@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('class_id')->constrained('addclass')->cascadeOnDelete();
             $table->string('group_name')->nullable();
+            $table->string('group_name_bn')->nullable();
             $table->string('status');
             $table->timestamps();
         });
@@ -25,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('addgroup');
     }
 };

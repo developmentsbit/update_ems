@@ -24,6 +24,7 @@ class SuggestionTableSeeder extends Seeder
                 'id' => 2,
                 'class_id' => 2,
                 'title' => 'test',
+                'title_bn' => 'টেস্ট',
                 'date' => '2023-06-21',
                 'image' => 'suggestion_image/60386.jpeg',
                 'created_at' => NULL,

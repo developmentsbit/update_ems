@@ -12,7 +12,7 @@
 @endpush
 
 
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -62,8 +62,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						@foreach($data as $d)
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
-							<td>{{ $d->class_name }}</td>
-							<td>{{ $d->group_name }}</td>
+							<td>@if($lang == 'en'){{ $d->class_name }}@else {{$d->class_name_bn}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->group_name }}@else {{$d->group_name_bn}}@endif</td>
 							<td>
 								@if($d->status == 1)
 								<span class="btn btn-success btn-sm">@lang('common.active')</span>

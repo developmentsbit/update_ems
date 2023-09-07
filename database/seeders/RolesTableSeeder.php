@@ -21,36 +21,36 @@ class RolesTableSeeder extends Seeder
         \DB::table('roles')->insert(array (
             0 => 
             array (
-                'created_at' => '2023-03-19 15:34:59',
-                'deleted_at' => NULL,
-                'deleted_by' => NULL,
-                'guard_name' => 'web',
                 'id' => 1,
                 'name' => 'Super Admin',
+                'guard_name' => 'web',
                 'status' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-03-19 15:34:59',
                 'updated_at' => '2023-03-23 08:58:55',
+                'deleted_at' => NULL,
             ),
             1 => 
             array (
-                'created_at' => '2023-03-19 15:34:59',
-                'deleted_at' => NULL,
-                'deleted_by' => NULL,
-                'guard_name' => 'web',
                 'id' => 2,
                 'name' => 'Admin',
+                'guard_name' => 'web',
                 'status' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-03-19 15:34:59',
                 'updated_at' => '2023-03-23 08:58:55',
+                'deleted_at' => NULL,
             ),
             2 => 
             array (
-                'created_at' => '2023-03-30 17:49:59',
-                'deleted_at' => NULL,
-                'deleted_by' => NULL,
-                'guard_name' => 'web',
                 'id' => 3,
                 'name' => 'User',
+                'guard_name' => 'web',
                 'status' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-03-30 17:49:59',
                 'updated_at' => '2023-03-30 17:49:59',
+                'deleted_at' => NULL,
             ),
         ));
         

@@ -37,10 +37,16 @@
 				<form method="post" class="btn-submit" action="{{ route('department.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="row myinput">
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('department.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="department" id="department"  required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('department.department_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="department_name_bn" id="department_name_bn"  required="">
 							</div>
 						</div>
 						<div class="modal-footer border-0">

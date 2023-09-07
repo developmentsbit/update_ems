@@ -12,7 +12,7 @@
 @endpush
 
 
-<link rel="stylesheet" type="text/css" 
+<link rel="stylesheet" type="text/css"
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -65,23 +65,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $i++ }}</td>
 							<td>
 								@if($d->type == 1)
-								 প্রসপেক্টাস
+                                @lang('admissioninfo.prospects')
 								@endif
 								@if($d->type == 2)
-								 ভর্তির নিয়মাবলী
+                                @lang('admissioninfo.admission_system')
 								@endif
 								@if($d->type == 3)
-								 ভর্তির পদ্ধতি
+                                @lang('admissioninfo.admission_rules')
 								@endif
 								@if($d->type == 4)
-								 ভর্তি পরীক্ষার ফলাফল
+                                @lang('admissioninfo.admission_result')
 								@endif
 								@if($d->type == 5)
-								 ভর্তির পরীক্ষার প্রশ্নপত্র
+                                @lang('admissioninfo.admission_question')
 								@endif
 							</td>
 							<td>{{ $d->date }}</td>
-							<td>{{ $d->title }}</td>
+							<td>@if($lang == 'en'){{ $d->title }}@else{{$d->title_bn}}@endif</td>
 							<td><a href="{{ $d->image }}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">
@@ -99,11 +99,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						@endforeach
 						@endif
 
-						
+
 					</tbody>
 				</table>
 
-				
+
 
 
 

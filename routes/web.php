@@ -59,6 +59,14 @@ Route::get('/complainbox', function() {
     return view('frontend.complainbox');
 });
 
+
+Route::get('/mujib_corner', [MujibController::class,'index']);
+Route::get('/time_line', [MujibController::class,'time_line']);
+Route::get('/graphic_novel', [MujibController::class,'graphic_novel']);
+Route::get('/recognition', [MujibController::class,'recognition']);
+Route::get('/photo_archive', [MujibController::class,'photo_archive']);
+Route::get('/speeches', [MujibController::class,'speeches']);
+
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/page/{id}', [FrontendController::class, 'page']);
 Route::get('/principal_message', [FrontendController::class, 'principle_message']);
@@ -323,11 +331,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Mujib Corner
 
-    Route::get('/mujib_corner', [MujibController::class,'index']);
-    Route::get('/time_line', [MujibController::class,'time_line']);
-    Route::get('/graphic_novel', [MujibController::class,'graphic_novel']);
-    Route::get('/recognition', [MujibController::class,'recognition']);
-    Route::get('/photo_archive', [MujibController::class,'photo_archive']);
-    Route::get('/speeches', [MujibController::class,'speeches']);
 
 });

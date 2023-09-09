@@ -15,6 +15,7 @@
 
 <div class="col-sm-3 col-12">
 
+    @if($setting->type == 'school')
 	@if(request()->Is('presidentmessage'))
 
 	@else
@@ -34,6 +35,8 @@
 		</li>
 	</div>
 	@endif
+
+    @endif
 
     @if(request()->Is('principal_message'))
 

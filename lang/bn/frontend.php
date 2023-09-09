@@ -142,6 +142,7 @@ return array(
     'calendar'=>'ক্যালেন্ডার',
     'class_routine'=>'ক্লাস রুটিন',
     'holiday_list'=>'ছুটির তালিকা',
+    'department_info'=>'বিভাগের শিক্ষকদের তথ্য',
 
 
     //tanim

@@ -73,8 +73,8 @@ return array(
     'donar'=>'Donar Members List',
     'ex_member'=>'Ex Members List',
     'teachers_and_staff'=>'Teachers and staff',
-    'teacherinfo'=>'Teacher Info',
-    'staffinfo'=>'Staff Info',
+    'teacherinfo'=>'Teachers Information',
+    'staffinfo'=>'Staffs Information',
 
     'academic_information'=>'Academic Information',
     'rules_regulation'=>'Rules Regulation',
@@ -140,6 +140,7 @@ return array(
     'calendar'=>'Academic Calendar',
     'class_routine'=>'Class Routine',
     'holiday_list'=>'Holiday List',
+    'department_info'=>'Department Teachers Information',
 
 
 

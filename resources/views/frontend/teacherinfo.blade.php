@@ -14,7 +14,7 @@
        <ul class="list-group p-0">
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
 
-        শিক্ষকবৃন্দের তথ্য
+        @lang('frontend.teacherinfo')
 
         </li>
       </ul>

@@ -1,0 +1,70 @@
+body {
+    background-color: lightgray;
+    /*font-family: 'Bangla', sans-serif;*/
+}
+
+.modal.fade{
+    z-index : 9999999999;
+}
+
+#banner{
+    height:600px;
+    width:100%;
+}
+
+@media (min-width: 768px) { 
+    
+    
+#banner{
+    height:200px;
+    width:100%;
+}
+    
+}
+
+body {
+    font-family: 'Bangla', Arial, sans-serif !important;
+}
+
+a.navbar-brand img {
+    width: 100px;
+}
+
+ul.navbar-nav .nav-link {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.details {
+    text-align: justify;
+    font-size: 14px;
+}
+
+.caption {
+    text-align: center;
+    padding: 10px;
+}
+
+.caption h6 {
+    font-size: 14px;
+}
+
+.caption button {
+    margin-top: 15px;
+    font-size: 14px;
+}
+#box{
+    background: white;
+    padding: 15px;
+    /*text-align: center;*/
+    /*border-radius: 10px;*/
+    margin-top: 5px;
+    /*margin-right: 5px;*/
+    width: 440px;
+}
+#modal_text
+{
+    text-align: left;
+    margin-top: 5px;
+}

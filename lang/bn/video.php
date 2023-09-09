@@ -9,5 +9,6 @@ return [
      'title' => 'টাইটেল',
      'details' => 'বিস্তারিত',
      'url' => 'লিংক (Embed URL):',
+     'title_bn'=>'টাইটেল বাংলা',
 
 ];

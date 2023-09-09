@@ -14,6 +14,9 @@ return [
      'page' => 'Facebook Page',
      'youtube' => 'Youtube Video',
      'address' => 'Address',
-     'established'=> 'Established'
+     'established'=> 'Established',
+     'name_bangla'=>'Name Bangla',
+     'address_bangla'=>'Adress Bangla',
+     'established_bangla'=>'Established Bangla',
 
 ];

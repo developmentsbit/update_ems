@@ -39,6 +39,7 @@ class VideoController extends Controller
     {
        $data = array();
        $data['title']      = $request->title;
+       $data['title_bn']      = $request->title_bn;
        $data['linkurl']    = $request->linkurl;
 
        DB::table('videogallerys')->insert($data);
@@ -72,6 +73,7 @@ class VideoController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['linkurl']    = $request->linkurl;
 
       $update = DB::table('videogallerys')->where('id', $id)->update($data);

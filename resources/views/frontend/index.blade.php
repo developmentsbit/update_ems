@@ -147,7 +147,7 @@ right:0;
       <div class="row">
         <div class="col-sm-4 col-6 text-sm-left" id="email">
 
-          <label><a href="public/mujib100/pages/timeline_bn.html"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;@lang('frontend.golden_jubilee_and_bangabandhu_corner')  </a></label>
+          <label><a href="{{url('/time_line')}}"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;@lang('frontend.golden_jubilee_and_bangabandhu_corner')  </a></label>
 
         </div>
 
@@ -211,7 +211,7 @@ right:0;
           <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
           <!-- Title Bar -->
           <span class="titleBar">
-            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>{{ $setting->name }} <p style="padding-left: 100px;  margin-top: -20px;">প্রতিষ্ঠাকাল - {{ $setting->established }} ইং</p></span><br>
+            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif <p style="padding-left: 82px;  margin-top: -20px;">প্রতিষ্ঠাকাল - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
           </span>
         </div>
 
@@ -324,8 +324,9 @@ right:0;
               <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width:260px; max-width:100%;">
 
                 <div class="col-md-12 col-12 dmenu mt-3">
-
+                 @if($setting->type == 'school')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
+                 @endif
                  <li><a href="{{ url('principal_message') }}">@lang('frontend.principal_message')</a></li>
                  {{-- <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
                  {{-- <li><a href="{{ url('presidents') }}"></a>@lang('frontend.presidents')</li> --}}

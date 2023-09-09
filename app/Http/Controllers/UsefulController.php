@@ -38,12 +38,13 @@ class UsefulController extends Controller
     {
      $data = array();
      $data['title']      = $request->title;
+     $data['title_bn']      = $request->title_bn;
      $data['linkurl']    = $request->linkurl;
 
      DB::table('usefullinks')->insert($data);
 
 
-     return redirect()->route('usefullinks.index')->with('message','Link Added Successfully');
+     return redirect()->route('usefullink.index')->with('message','Link Added Successfully');
  }
 
     /**
@@ -70,6 +71,7 @@ class UsefulController extends Controller
     {
         $data = array();
         $data['title']      = $request->title;
+        $data['title_bn']      = $request->title_bn;
         $data['linkurl']    = $request->linkurl;
 
         $update = DB::table('usefullinks')->where('id', $id)->update($data);

@@ -68,9 +68,11 @@ class SettingController extends Controller
     {
       $data = array();
       $data['name']         = $request->name;
+      $data['name_bangla']         = $request->name_bangla;
       $data['email']        = $request->email;
       $data['phone']        = $request->phone;
       $data['established']  = $request->established;
+      $data['established_bangla']  = $request->established_bangla;
       $data['meta']         = $request->meta;
       $data['meta_title']   = $request->meta_title;
       $data['description']  = $request->description;
@@ -78,6 +80,7 @@ class SettingController extends Controller
       $data['page']         = $request->page;
       $data['youtube']      = $request->youtube;
       $data['address']      = $request->address;
+      $data['address_bangla']      = $request->address_bangla;
       $image                = $request->file('image');
 
       if ($image) {
@@ -93,7 +96,7 @@ class SettingController extends Controller
 
     }else{
         $update = DB::table('setting')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
      return redirect()->route('setting.create')->with('message','Page Update Successfully');

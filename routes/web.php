@@ -38,6 +38,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ViewAdmissionController;
 use App\Http\Controllers\VicePrincipalMessage;
+use App\Http\Controllers\MujibController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -320,6 +321,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('getStudentData', [ViewAdmissionController::class,'getStudentData']);
     Route::get('deleteAdmissionInfo/{id}', [ViewAdmissionController::class,'destroy']);
 
+    //Mujib Corner
 
+    Route::get('/mujib_corner', [MujibController::class,'index']);
+    Route::get('/time_line', [MujibController::class,'time_line']);
+    Route::get('/graphic_novel', [MujibController::class,'graphic_novel']);
+    Route::get('/recognition', [MujibController::class,'recognition']);
+    Route::get('/photo_archive', [MujibController::class,'photo_archive']);
+    Route::get('/speeches', [MujibController::class,'speeches']);
 
 });

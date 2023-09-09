@@ -37,10 +37,16 @@
 				<form method="post" class="btn-submit" action="{{ route('usefullink.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="row myinput">
-						<div class="form-group mb-3 col-md-12">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('link.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="title" id="title"  required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('link.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="title_bn" id="title_bn">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

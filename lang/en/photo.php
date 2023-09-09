@@ -10,7 +10,8 @@ return [
      'details' => 'Details',
      'slider' => 'Slider',
      'slider_image' => 'Slider Image',
+     'title_bn'=>'Title Bangla',
 
- 
+
 
 ];

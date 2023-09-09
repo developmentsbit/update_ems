@@ -9,5 +9,6 @@ return [
      'title' => 'Title',
      'details' => 'Details',
      'url' => 'Link (Embed URL):',
+     'title_bn'=>'Title Bangla',
 
 ];

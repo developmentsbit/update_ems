@@ -38,6 +38,7 @@ class PhotoController extends Controller
     {
        $data = array();
        $data['title']      = $request->title;
+       $data['title_bn']      = $request->title_bn;
        $data['slider']     = $request->slider;
        $image              = $request->file('image');
 
@@ -83,6 +84,7 @@ class PhotoController extends Controller
     {
       $data = array();
       $data['title']      = $request->title;
+      $data['title_bn']      = $request->title_bn;
       $data['slider']     = $request->slider;
       $image              = $request->file('image');
 
@@ -103,7 +105,7 @@ class PhotoController extends Controller
 
     }else{
         $update = DB::table('photogallerys')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
        return redirect()->route('photogallerys.index')->with('message','Photo Update Successfully');

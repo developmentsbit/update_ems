@@ -117,7 +117,7 @@ class FrontendController extends Controller
 	public function admissionInfo($id)
 	{
 		$data = DB::table("admissioninfo")->where('id',$id)->orderBy('id','DESC')->get();
-		return view('frontend.admissionInfo',compact('data'));
+		return view('frontend.admissioninfo',compact('data'));
 	}
 
 

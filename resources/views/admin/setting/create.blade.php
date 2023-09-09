@@ -49,6 +49,12 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
+							<label>@lang('setting.name_bangla'):</label>
+							<div class="input-group mt-2">
+								<input type="text" class="form-control" name="name_bangla"  value="{{ $data->name_bangla }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('setting.email'):</label>
 							<div class="input-group mt-2">
 								<input type="text" class="form-control" name="email"  value="{{ $data->email }}">
@@ -64,6 +70,12 @@
 							<label>@lang('setting.established'):</label>
 							<div class="input-group mt-2">
 								<input type="text" class="form-control" name="established"  value="{{ $data->established }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('setting.established_bangla'):</label>
+							<div class="input-group mt-2">
+								<input type="text" class="form-control" name="established_bangla"  value="{{ $data->established_bangla }}">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
@@ -106,6 +118,12 @@
 							<label>@lang('setting.address'):</label>
 							<div class="input-group mt-2">
 								<textarea  class="form-control w-100" rows="5" type="text" name="address">{{ $data->address }}</textarea>
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-12">
+							<label>@lang('setting.address_bangla'):</label>
+							<div class="input-group mt-2">
+								<textarea  class="form-control w-100" rows="5" type="text" name="address_bangla">{{ $data->address_bangla }}</textarea>
 							</div>
 						</div>
 						<div class="modal-footer border-0">

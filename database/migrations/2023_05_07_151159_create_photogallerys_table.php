@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('photogallerys', function (Blueprint $table) {
             $table->id();
             $table->longText('title');
+            $table->longText('title_bn')->nullable();
             $table->string('image')->nullable();
             $table->integer('slider')->nullable();
             $table->timestamps();

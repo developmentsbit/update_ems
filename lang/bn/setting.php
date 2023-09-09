@@ -14,6 +14,9 @@ return [
      'page' => 'ফেসবুক পেইজ',
      'youtube' => 'ইউটিউব ভিডিও',
      'address' => 'এড্রেস',
-     'established'=> 'স্থাপিত'
+     'established'=> 'স্থাপিত',
+     'name_bangla'=>'নাম বাংলা',
+     'address_bangla'=>'ঠিকানা বাংলা',
+     'established_bangla'=>'স্থাপিত বাংলা',
 
 ];

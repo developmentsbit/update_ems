@@ -8,6 +8,7 @@ return [
      'viewtitle' => 'View Useful Link',
      'url' => 'URL',
      'title' => 'Title',
+     'title_bn'=>'Title Bangla',
 
 
 ];

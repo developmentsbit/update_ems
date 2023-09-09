@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('setting', function (Blueprint $table) {
             $table->id();
+            $table->string('type')->default('college');
             $table->text('image')->nullable();
             $table->string('name')->nullable();
+            $table->string('name_bangla')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('established')->nullable();
+            $table->string('established_bangla')->nullable();
             $table->string('meta')->nullable();
             $table->string('meta_title')->nullable();
             $table->longText('description')->nullable();
@@ -25,6 +28,7 @@ return new class extends Migration
             $table->longText('page')->nullable();
             $table->longText('youtube')->nullable();
             $table->longText('address')->nullable();
+            $table->longText('address_bangla')->nullable();
             $table->timestamps();
         });
     }

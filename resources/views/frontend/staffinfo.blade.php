@@ -14,7 +14,7 @@
        <ul class="list-group p-0">
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
 
-       কর্মচারীদের তথ্য
+        @lang('frontend.staffinfo')
 
         </li>
       </ul>

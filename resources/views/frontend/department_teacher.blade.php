@@ -13,7 +13,7 @@
        <li class="list-group-item">
         @if($data)
         @foreach($data as $d)
-        <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;শিক্ষকবৃন্দের তথ্য ( {{$d->department}} )</span>
+        <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;{{$d->department}} @lang('frontend.department_info') </span>
         @endforeach
         @endif
       </li>

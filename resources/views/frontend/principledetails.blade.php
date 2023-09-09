@@ -14,7 +14,7 @@
 
       <ul class="list-group p-0">
         <li class="list-group-item bg-success text-white">
-          <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;অধ্যক্ষের তথ্য</span>
+          <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;@lang('frontend.principal_message')</span>
         </li>
 
 

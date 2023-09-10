@@ -10,6 +10,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TeachingPermissionController;
 use App\Http\Controllers\PrincipleController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\VideoController;
@@ -297,6 +298,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('role', RoleController::class);
 
     Route::resource('permission', PermissionController::class);
+
+    // tazim
+    Route::get('retrive_teachingpermission/{id}', [TeachingPermissionController::class, 'retrive_teachingpermission']);
+    Route::get('teachingpermissionDelete/{id}', [TeachingPermissionController::class, 'teachingpermissionDelete']);
+    Route::resource('teaching_permission', TeachingPermissionController::class);
 
     // My Route
 

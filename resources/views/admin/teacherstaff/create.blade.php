@@ -21,11 +21,11 @@
                 {{ route('dashboard') }}
             @endslot
             @if (\App\Traits\RolePermissionTrait::checkRoleHasPermission('role', 'create'))
-                @slot('action_button1')
-                    @lang('common.add_new')
+				@slot('action_button1')
+                  <i class="fa fa-eye"></i> @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
-                    {{ route('teacherstaff.create') }}
+                    {{ route('teacherstaff.index') }}
                 @endslot
             @endif
             @slot('action_button1_class')

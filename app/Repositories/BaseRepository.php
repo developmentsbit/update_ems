@@ -47,7 +47,7 @@ class BaseRepository
             ->addIndexColumn()
             ->addColumn('picture', function ($data) {
                 if ($data->picture) {
-                    $url = asset('storage/profile_images/' . $data->picture);
+                    $url = asset('/public/profile_images/' . $data->picture);
                 } else {
                     $url = asset('assets/images/users/avatar_blank.png');
                 }

@@ -203,7 +203,7 @@
 <li class="dropdown notification-list">
     <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
         <span class="account-user-avatar">
-            <img src="{{ auth()->user()->picture ? asset('storage/profile_images/' . auth()->user()->picture) : asset('assets/images/users/avatar_blank.png') }}" alt="user-image" class="rounded-circle" width="35" height="35">
+            <img src="{{ auth()->user()->picture ? asset('public/profile_images/' . auth()->user()->picture) : asset('assets/images/users/avatar_blank.png') }}" alt="user-image" class="rounded-circle" width="35" height="35">
         </span>
         <span>
             <span class="account-user-name">{{ auth()->user()->name }}</span>

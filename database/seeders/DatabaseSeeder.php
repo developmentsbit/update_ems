@@ -13,12 +13,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call(MenuActionsTableSeeder::class);
-        $this->call(MenusTableSeeder::class);
-        $this->call(PermissionsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
-        $this->call(RoleHasPermissionsTableSeeder::class);
         $this->call(UsersSeeder::class);
+        $this->call(MenusTableSeeder::class);
+        $this->call(MenuActionsTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
+        $this->call(RoleHasPermissionsTableSeeder::class);
         $this->call(ModelHasRolesTableSeeder::class);
         $this->call(ModelHasPermissionsTableSeeder::class);
         $this->call(UserMenuActionsTableSeeder::class);
@@ -34,10 +34,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PrinciplesTableSeeder::class);
         $this->call(VicePrincipalMessagesTableSeeder::class);
         $this->call(AdmissioninfoTableSeeder::class);
+        $this->call(ClassInfosTableSeeder::class);
+        $this->call(AddgroupTableSeeder::class);
         $this->call(AddsectionTableSeeder::class);
         $this->call(DepartmentTableSeeder::class);
-        $this->call(AddgroupTableSeeder::class);
-        $this->call(ClassInfosTableSeeder::class);
         $this->call(ExamroutineTableSeeder::class);
         $this->call(GroupInfosTableSeeder::class);
         $this->call(NoticesTableSeeder::class);
@@ -50,7 +50,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SubjectInfosTableSeeder::class);
         $this->call(TeacherstaffTableSeeder::class);
         $this->call(UsefullinksTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
         $this->call(VideogallerysTableSeeder::class);
     }
 }

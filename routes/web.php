@@ -54,6 +54,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/getSecondData',function(){
+
+    $data = DB::connection('mysql_second')->table('examsetup')->get();
+    dd($data);
+
+});
 
 Route::get('/complainbox', function() {
     return view('frontend.complainbox');

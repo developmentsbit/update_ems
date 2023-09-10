@@ -23,14 +23,14 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|string|min:1',
-            'email' => 'required|email|unique:users,email,'.@$this->user->id,
-            'mobile' => 'nullable|unique:users,mobile,'.@$this->user->id,
-            'dob' => 'nullable|date_format:d-m-Y',
-            'image_remote_url' => 'required',
-            'role_id' => 'required|integer|min:1',
-        ];
+        // return [
+        //     'name' => 'required|string|min:1',
+        //     'email' => 'required|email|unique:users,email,'.@$this->user->id,
+        //     'mobile' => 'nullable|unique:users,mobile,'.@$this->user->id,
+        //     'dob' => 'nullable|date_format:d-m-Y',
+        //     'image_remote_url' => 'required',
+        //     'role_id' => 'required|integer|min:1',
+        // ];
     }
 
     public function attributes(){

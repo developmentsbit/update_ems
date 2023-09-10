@@ -197,7 +197,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/user/status', [UserController::class, 'status'])->name('user.status');
     Route::get('/user/deleted-list', [UserController::class, 'deletedListIndex'])->name('user.deleted_list');
     Route::get('/user/restore/{id}', [UserController::class, 'restore'])->name('user.restore');
-    Route::delete('/user/force-delete/{id}', [UserController::class, 'forceDelete'])->name('user.force_destroy');
+    Route::get('/user/force-delete/{id}', [UserController::class, 'forceDelete'])->name('user.force_destroy');
     Route::resource('user', UserController::class);
 
     Route::post('/menu/status', 'MenuController@status')->name('menu.status');

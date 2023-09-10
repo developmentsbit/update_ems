@@ -352,6 +352,7 @@ right:0;
                  <div class="col-md-7">
 
                <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
+               @if($setting->type == 'college')
                @php
                 $department = DB::table('department')->limit(9)->get();
                @endphp
@@ -363,10 +364,12 @@ right:0;
                @endforeach
                @endif
 
+               @endif
+
                </div>
 
                 <div class="col-md-5">
-
+                @if($setting->type == 'college')
                 @php
                 $department2 = DB::table('department')->skip(9)->limit(9)->get();
                @endphp
@@ -376,6 +379,8 @@ right:0;
                <li><a href="{{ url('department_teacher/'.$d->id) }}">{{ $d->department }}</a></li>
 
                @endforeach
+               @endif
+
                @endif
 
                <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
@@ -408,8 +413,8 @@ right:0;
          </div>
        </ul>
      </li>
-         
-     
+
+
      <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           @lang('frontend.academic_information')
@@ -623,8 +628,8 @@ right:0;
         <li><a href="#">@lang('frontend.tenth_class_std_info')</a></li>
      </ul>
    </li>
-    
-   
+
+
    <li class="uk-parent">
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.academic_information')</a>
       <ul class="uk-nav-sub">

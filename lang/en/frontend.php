@@ -141,6 +141,18 @@ return array(
     'class_routine'=>'Class Routine',
     'holiday_list'=>'Holiday List',
     'department_info'=>'Department Teachers Information',
+    'teaching_permission_recognition'=>'Teaching permission and recognition',
+    'mpo_nationalization_info'=>'MPO/Nationalization Information',
+
+    'student'=>'Student',
+    'class_gender_based_education'=>'Class & gender wise student',
+    'cate_wise_approved_branch_info'=>'Category wise approved branch',
+    'student_attendance'=>'Student Attendance info',
+    'sixth_class_std_info'=>'6th Class Student Information',
+    'seventh_class_std_info'=>'7th Class Student Information',
+    'eighth_class_std_info'=>'8th Class Student Information',
+    'ninth_class_std_info'=>'9th Class Student Information',
+    'tenth_class_std_info'=>'10th Class Student Information',
 
 
 

@@ -124,7 +124,7 @@ right:0;
 @if(config('app.locale') == 'en')
 <style>
     li.nav-item a {
-      font-size: 10.6px;
+      font-size: 10.46px;
       padding: 14px 6px !important;
       text-transform: uppercase;
       font-weight: bold;
@@ -296,6 +296,8 @@ right:0;
                     <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
                     <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
+                    <li><a href="#">@lang('frontend.teaching_permission_recognition')</a></li>
+                    <li><a href="#">@lang('frontend.mpo_nationalization_info')</a></li>
 
 
                   </div>
@@ -385,15 +387,30 @@ right:0;
            </ul>
          </li>
 
-
-
-
-
-
-
-
-
          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          @lang('frontend.student')
+         </a>
+         <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
+
+          <div class="col-md-12 col-12 dmenu mt-3">
+
+           <li><a href="#">@lang('frontend.class_gender_based_education')</a></li>
+           <li><a href="#">@lang('frontend.cate_wise_approved_branch_info')</a></li>
+           <li><a href="#">@lang('frontend.student_attendance')</a></li>
+           <li><a href="#">@lang('frontend.sixth_class_std_info')</a></li>
+           <li><a href="#">@lang('frontend.seventh_class_std_info')</a></li>
+           <li><a href="#">@lang('frontend.eighth_class_std_info')</a></li>
+           <li><a href="#">@lang('frontend.ninth_class_std_info')</a></li>
+           <li><a href="#">@lang('frontend.tenth_class_std_info')</a></li>
+
+
+         </div>
+       </ul>
+     </li>
+         
+     
+     <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           @lang('frontend.academic_information')
          </a>
@@ -498,24 +515,6 @@ right:0;
 
 
 
-   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    @lang('frontend.result')
-    </a>
-    <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink">
-
-      <div class="col-md-12 col-12 dmenu mt-3">
-       <li><a href="#">@lang('frontend.internal_results')</a></li>
-       <li><a href="https://eboardresults.com/v2/home" target="blank">@lang('frontend.public_exam_result')</a></li>
-
-     </div>
-   </ul>
- </li>
-
-
-
-
-
  <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   @lang('frontend.gallery')
@@ -573,6 +572,8 @@ right:0;
         <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
         <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
         <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
+        <li><a href="#">@lang('frontend.teaching_permission_recognition')</a></li>
+        <li><a href="#">@lang('frontend.mpo_nationalization_info')</a></li>
       </ul>
     </li>
 
@@ -610,6 +611,21 @@ right:0;
 
 
     <li class="uk-parent">
+      <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.student')</a>
+      <ul class="uk-nav-sub">
+       <li><a href="#">@lang('frontend.class_gender_based_education')</a></li>
+        <li><a href="#">@lang('frontend.cate_wise_approved_branch_info')</a></li>
+        <li><a href="#">@lang('frontend.student_attendance')</a></li>
+        <li><a href="#">@lang('frontend.sixth_class_std_info')</a></li>
+        <li><a href="#">@lang('frontend.seventh_class_std_info')</a></li>
+        <li><a href="#">@lang('frontend.eighth_class_std_info')</a></li>
+        <li><a href="#">@lang('frontend.ninth_class_std_info')</a></li>
+        <li><a href="#">@lang('frontend.tenth_class_std_info')</a></li>
+     </ul>
+   </li>
+    
+   
+   <li class="uk-parent">
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.academic_information')</a>
       <ul class="uk-nav-sub">
        <li><a href="{{ url('page/9') }}">@lang('frontend.rules_regulation')</a></li>
@@ -674,17 +690,6 @@ right:0;
      <!--<li><a href="{{ url('examsuggession') }}">@lang('frontend.examsuggession')</a></li>-->
    </ul>
  </li>
-
-
- <li class="uk-parent">
-    <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.result')</a>
-    <ul class="uk-nav-sub">
-     <li><a href="#">@lang('frontend.internal_results')</a></li>
-     <li><a href="https://eboardresults.com/v2/home" target="blank">@lang('frontend.public_exam_result')</a></li>
-   </ul>
- </li>
-
-
 
 
  <li class="uk-parent">

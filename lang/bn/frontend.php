@@ -143,6 +143,18 @@ return array(
     'class_routine'=>'ক্লাস রুটিন',
     'holiday_list'=>'ছুটির তালিকা',
     'department_info'=>'বিভাগের শিক্ষকদের তথ্য',
+    'teaching_permission_recognition'=>'পাঠদানের অনুমতি ও স্বীকৃতি',
+    'mpo_nationalization_info'=>'এমপিও/জাতীয়করণ তথ্য',
+
+    'student'=>'শিক্ষার্থী',
+    'class_gender_based_education'=>'শ্রেণী ও লিংগ ভিত্তিক শিক্ষার্থী তথ্য',
+    'cate_wise_approved_branch_info'=>'শ্রেণী ভিত্তিক অনুমদিত শাখার তথ্য',
+    'student_attendance'=>'শিক্ষার্থী উপস্থিতি তথ্য',
+    'sixth_class_std_info'=>'৬ষ্ঠ শ্রেণী শিক্ষার্থী তথ্য',
+    'seventh_class_std_info'=>'৭ম শ্রেণী শিক্ষার্থী তথ্য',
+    'eighth_class_std_info'=>'৮ম শ্রেণী শিক্ষার্থী তথ্য',
+    'ninth_class_std_info'=>'৯ম শ্রেণী শিক্ষার্থী তথ্য',
+    'tenth_class_std_info'=>'১০ম শ্রেণী শিক্ষার্থী তথ্য',
 
 
     //tanim

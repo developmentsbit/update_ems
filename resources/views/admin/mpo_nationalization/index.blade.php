@@ -83,9 +83,11 @@
                                             <td>
                                                 {{$v->memorial_no}}
                                             </td> 
-                                            <td>
-                                                <img src="{{asset('admin/mpo_nationalization')}}/{{$v->image}}" alt="" style="height: 50px;width:50px;">
-                                            </td>
+                                            <td><a href="{{asset('admin/mpo_nationalization')}}/{{$v->image}}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
+                                            {{-- <td>
+                                                
+                                                <img src="" alt="" style="height: 50px;width:50px;">
+                                            </td> --}}
                                             <td>
                                                 <a class="btn btn-sm btn-info" href="{{route('mpo_nationalization.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
                                                 <form method="post" action="{{route('mpo_nationalization.destroy',$v->id)}}">
@@ -116,7 +118,7 @@
                                             <th>@lang('mpo_nationalization.layer')</th>
                                             <th>@lang('mpo_nationalization.memorial')</th>
                                           
-                                            <th>@lang('common.image')</th>
+                                           
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -135,9 +137,7 @@
                                             <td>
                                                 {{$v->memorial_no}}
                                             </td> 
-                                            <td>
-                                                <img src="{{asset('admin/mpo_nationalization')}}/{{$v->image}}" alt="" style="height: 50px;width:50px;">
-                                            </td>
+                                            
                                             <td>
                                                 <a href="{{ url('retrive_mpo') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
                                                 <a href="{{ url('delete_mpo') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>

@@ -129,9 +129,10 @@
 
 
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/principle_message') }}">@lang('frontend.principal_message')</a></li>
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/presidentmessage') }}">@lang('frontend.presidentmessage')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('/vice_principal_messages') }}">@lang('frontend.vice_principal_message')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('/principles') }}">@lang('frontend.principles')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/donar') }}">@lang('frontend.donar')</a></li>
+										{{--	<li><i class="fa fa-caret-right"></i><a href="{{ url('/donar') }}">@lang('frontend.donar')</a></li> --}}
 
 										</ul>
 									</div>
@@ -155,7 +156,7 @@
 										<ul class="menus">
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/staffinfo') }}">@lang('frontend.staffinfo')</a></li>
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/ex_member') }}" target="blank">@lang('frontend.ex_member')</a></li>
+											{{-- <li><i class="fa fa-caret-right"></i><a href="{{ url('/ex_member') }}" target="blank">@lang('frontend.ex_member')</a></li> --}}
 										</ul>
 									</div>
 								</div>
@@ -174,7 +175,7 @@
 
 									<div class="col-sm-9 col-9 p-0">
 										<ul class="menus">
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/allnotices') }}">@lang('frontend.notice')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('/allnotices') }}">@lang('frontend.notices')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/events') }}">@lang('frontend.events')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/page/26') }}">@lang('frontend.library')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/page/27') }}">@lang('frontend.dormitory')</a></li>
@@ -222,7 +223,7 @@
 										<ul class="menus">
 											<li><i class="fa fa-caret-right"></i><a href="">@lang('frontend.internal_results')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="https://eboardresults.com/v2/home" target="blank">@lang('frontend.public_exam_result')</a></li>
-											<li><i class="fa fa-caret-right"></i><a href="">@lang('frontend.scholarship')</a></li>
+											{{-- <li><i class="fa fa-caret-right"></i><a href="">@lang('frontend.scholarship')</a></li> --}}
 										</ul>
 									</div>
 								</div>

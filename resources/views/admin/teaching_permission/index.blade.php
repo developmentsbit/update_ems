@@ -119,8 +119,8 @@
                                             <td>{{$v->part}}</td>
                                             <td>{{$v->date}}</td>
                                             <td>
-                                                <a href="{{ url('retrive_teachingpermission') }}/{{ $v->id }}" class="btn btn-sm btn-info">@lang('common.restore')</a>
-                                                <a href="{{ url('teachingpermissionDelete') }}/{{ $v->id }}" class="btn btn-sm btn-danger">@lang('common.permenantly_delete')</a>  
+                                                <a href="{{ url('retrive_teachingpermission') }}/{{ $v->id }}"  onClick="return confirm('Are You Sure?')" class="btn btn-sm btn-info">@lang('common.restore')</a>
+                                                <a href="{{ url('teachingpermissionDelete') }}/{{ $v->id }}"  onClick="return confirm('Are You Sure?')" class="btn btn-sm btn-danger">@lang('common.permenantly_delete')</a>  
                                             </td> 
                                         </tr>
                                         @endforeach

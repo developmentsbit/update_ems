@@ -50,9 +50,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('page.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('page.title_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="title_bn" id="title_bn"  required="">
+								<input class="form-control" type="text" name="title_bn" id="title_bn"  >
 							</div>
 						</div>
 
@@ -63,9 +63,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('page.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('page.details_bn'): </label>
 							<div class="input-group mt-2">
-								<textarea id="summernote1"  class="form-control w-100" rows="10" type="text" name="details_bn" required=""></textarea>
+								<textarea id="summernote1"  class="form-control w-100" rows="10" type="text" name="details_bn" ></textarea>
 							</div>
 						</div>
 

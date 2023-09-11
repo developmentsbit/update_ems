@@ -72,9 +72,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('addsection.section_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('addsection.section_name_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="section_name_bn" id="section_name_bn" required="" value="{{$data->section_name_bn}}">
+								<input class="form-control" type="text" name="section_name_bn" id="section_name_bn" value="{{$data->section_name_bn}}">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">

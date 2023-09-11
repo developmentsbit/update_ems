@@ -65,9 +65,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('suggestion.title_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('suggestion.title_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="title_bn" id="title_bn"  required="">
+								<input class="form-control" type="text" name="title_bn" id="title_bn">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

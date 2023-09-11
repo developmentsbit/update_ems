@@ -47,9 +47,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('department.department_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('department.department_name_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="department_name_bn" id="department_name_bn"  required="" value="{{ $data->department_name_bn }}">
+								<input class="form-control" type="text" name="department_name_bn" id="department_name_bn" value="{{ $data->department_name_bn }}">
 							</div>
 						</div>
 						<div class="modal-footer border-0">

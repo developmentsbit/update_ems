@@ -62,6 +62,10 @@ Route::get('/getSecondData',function(){
 
 });
 
+Route::get('results',function(){
+    echo '<script>location="/result/adminloginpanel/index.php";</script>';
+});
+
 Route::get('/complainbox', function() {
     return view('frontend.complainbox');
 });

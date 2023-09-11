@@ -59,9 +59,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('lessonplan.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('lessonplan.title'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="title" id="title"  required="">
+								<input class="form-control" type="text" name="title" id="title">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">

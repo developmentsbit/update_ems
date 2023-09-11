@@ -65,7 +65,7 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-4">
-							<label>@lang('principle.name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('principle.name_bn'): </label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="text" name="name_bn" id="name_bn">
 							</div>
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('principle.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('principle.details_bn'): </label>
 							<div class="input-group mt-2">
 								<textarea id="summernote1"  class="form-control w-100" rows="10" type="text" name="details_bn"></textarea>
 							</div>

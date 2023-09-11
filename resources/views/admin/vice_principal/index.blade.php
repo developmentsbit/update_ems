@@ -45,9 +45,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('vice_principal.name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('vice_principal.name_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="name_bn" id="name_bn"  required="" value="{{$data->name_bn}}">
+								<input class="form-control" type="text" name="name_bn" id="name_bn"  value="{{$data->name_bn}}">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
@@ -57,9 +57,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('vice_principal.details_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('vice_principal.details_bn'): </label>
 							<div class="input-group mt-2">
-								<textarea id="summernote1"  class="form-control w-100" rows="8" type="text" name="details_bn" required="">{!! $data->details_bn !!}</textarea>
+								<textarea id="summernote1"  class="form-control w-100" rows="8" type="text" name="details_bn" >{!! $data->details_bn !!}</textarea>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">

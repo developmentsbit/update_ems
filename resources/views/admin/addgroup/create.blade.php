@@ -56,9 +56,9 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('addgroup.group_name_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('addgroup.group_name_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="group_name_bn" id="group_name_bn" required="">
+								<input class="form-control" type="text" name="group_name_bn" id="group_name_bn">
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">

@@ -10,7 +10,7 @@ class TeachingPermissionController extends Controller
     public function getDate($sign,$value)
     {
         $explode = explode($sign,$value);
-        
+
         $date = $explode[2].'-'.$explode[0].'-'.$explode[1];
 
         return $date;
@@ -19,7 +19,7 @@ class TeachingPermissionController extends Controller
     public function getOriginalDate($sign,$value)
     {
         $explode = explode($sign,$value);
-        
+
         $date = $explode[1].'-'.$explode[2].'-'.$explode[0];
 
         return $date;
@@ -172,11 +172,11 @@ class TeachingPermissionController extends Controller
 
         return redirect()->route('teaching_permission.index')->with('message','Teaching Permission Restore Successfully');
     }
-    
+
     public function teachingpermissionDelete($id)
     {
         $pathImage=teaching_permission::where('id',$id)->withTrashed()->select('image')->first();
-        
+
         $path=public_path().'/assets/images/teaching_permission/'.$pathImage->image;
         // return $path;
         if(file_exists($path))

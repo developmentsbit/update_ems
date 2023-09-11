@@ -32,6 +32,8 @@ public/syllabus_image
 public/teacherstaff_image
 public/vice_principal_image
 
+result/db_connect/conect.php
+
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot

@@ -211,7 +211,7 @@ right:0;
           <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
           <!-- Title Bar -->
           <span class="titleBar">
-            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif <p style="padding-left: 82px;  margin-top: -20px;">প্রতিষ্ঠাকাল - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
+            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif <p style="padding-left: 82px;  margin-top: -20px;">@lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
           </span>
         </div>
 
@@ -296,7 +296,7 @@ right:0;
                     <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
                     <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
-                    <li><a href="#">@lang('frontend.teaching_permission_recognition')</a></li>
+                    <li><a href="{{url('teacher_permission')}}">@lang('frontend.teaching_permission_recognition')</a></li>
                     <li><a href="#">@lang('frontend.mpo_nationalization_info')</a></li>
 
 

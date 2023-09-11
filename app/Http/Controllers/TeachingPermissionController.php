@@ -15,7 +15,7 @@ class TeachingPermissionController extends Controller
 
         return $date;
     }
-    //2023-01=01
+
     public function getOriginalDate($sign,$value)
     {
         $explode = explode($sign,$value);
@@ -82,7 +82,7 @@ class TeachingPermissionController extends Controller
         }
         else
         {
-            return redirect()->route('teaching_permission.index')->with('message','Teaching Permission Added Unsuccessfully');
+            return redirect()->route('teaching_permission.index')->with('error','Teaching Permission Added Unsuccessfully');
         }
     }
 
@@ -153,7 +153,7 @@ class TeachingPermissionController extends Controller
         }
         else
         {
-            return redirect()->route('teaching_permission.index')->with('message','Teaching Permission Update Unsuccessfully');
+            return redirect()->route('teaching_permission.index')->with('error','Teaching Permission Update Unsuccessfully');
         }
     }
 
@@ -164,7 +164,7 @@ class TeachingPermissionController extends Controller
     {
         teaching_permission::find($id)->delete();
 
-        return redirect()->route('teaching_permission.index')->with('message','Teaching Permission Deleted Successfully');
+        return redirect()->route('teaching_permission.index')->with('error','Teaching Permission Deleted Successfully');
     }
 
     public function retrive_teachingpermission($id){
@@ -186,6 +186,6 @@ class TeachingPermissionController extends Controller
 
         teaching_permission::where('id',$id)->withTrashed()->forceDelete();
 
-        return redirect()->route('teaching_permission.index')->with('message','Teaching Permission Permanently Deleted');
+        return redirect()->route('teaching_permission.index')->with('error','Teaching Permission Permanently Deleted');
     }
 }

@@ -68,6 +68,7 @@ return array(
     'administrative_information'=>'প্রশাসনিক তথ্য',
     'presidentmessage'=>'সভাপতির বার্তা',
     'principal_message'=>'অধ্যক্ষের বার্তা',
+    'vice_principal_message'=>'উপাধ্যক্ষের বার্তা',
     'managing_comitte'=>'পরিচালনা পর্ষদ তথ্য',
     'presidents'=>'সভাপতির তালিকা',
     'principles'=>'অধ্যক্ষদের তালিকা',
@@ -138,6 +139,7 @@ return array(
     'release_date'=>'প্রকাশের তারিখ',
     'title'=>'টাইটেল',
     'download'=>'ডাউনলোড',
+    'established'=>'প্রতিষ্ঠাকাল',
 
     'calendar'=>'ক্যালেন্ডার',
     'class_routine'=>'ক্লাস রুটিন',

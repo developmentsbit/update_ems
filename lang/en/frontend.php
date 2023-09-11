@@ -67,6 +67,7 @@ return array(
     'administrative_information'=>'Administrative Info',
     'presidentmessage'=>'President Message',
     'principal_message'=>'Principal Message',
+    'vice_principal_message'=>'Vice Principal Message',
     'managing_comitte'=>'Managing Comitte',
     'presidents'=>'Presidents',
     'principles'=>'Principals',
@@ -136,6 +137,7 @@ return array(
     'release_date'=>'Release Date',
     'title'=>'Title',
     'download'=>'Download',
+    'established'=>'Established',
 
     'calendar'=>'Academic Calendar',
     'class_routine'=>'Class Routine',

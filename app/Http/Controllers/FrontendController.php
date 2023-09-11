@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\teaching_permission;
 
 class FrontendController extends Controller
 {
@@ -17,7 +18,11 @@ class FrontendController extends Controller
 
 	}
 
-
+	public function teacher_permission()
+	{
+		$data = teaching_permission::get();
+		return view('frontend.teacher_permission',compact('data'));
+	}
 
 	public function principle_message()
 	{

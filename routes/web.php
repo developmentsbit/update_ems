@@ -41,6 +41,8 @@ use App\Http\Controllers\ViewAdmissionController;
 use App\Http\Controllers\VicePrincipalMessage;
 use App\Http\Controllers\MujibController;
 
+use App\Http\Controllers\MpoNationalizatioController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -340,6 +342,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::resource('setting', SettingController::class);
+
+    Route::resource('mpo_nationalization', MpoNationalizatioController::class);
+    route::get('retrive_mpo/{id}',[MpoNationalizatioController::class,'retrive_mpo']);  
+    route::get('delete_mpo/{id}',[MpoNationalizatioController::class,'delete_mpo']);
 
 
     Route::post('getStudentData', [ViewAdmissionController::class,'getStudentData']);

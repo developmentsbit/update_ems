@@ -446,5 +446,23 @@ class FrontendController extends Controller
 		return view('frontend.prevprincipledetails',compact('data'));
 	}
 
+    public function gender_wise_student_list()
+    {
+        // return 1;
+
+        $class = DB::connection('mysql_second')->table('add_class')->get();
+        $group = DB::connection('mysql_second')->table('add_group')->get();
+        return view('frontend.gender_wise_student',compact('class','group'));
+    }
+    public function section_wise_student_list()
+    {
+        // return 1;
+
+        $class = DB::connection('mysql_second')->table('add_class')->get();
+        $group = DB::connection('mysql_second')->table('add_group')->get();
+        $section = DB::connection('mysql_second')->table('add_section')->get();
+        return view('frontend.section_wise_student',compact('class','section','group'));
+    }
+
 
 }

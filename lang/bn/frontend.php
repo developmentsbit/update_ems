@@ -157,6 +157,8 @@ return array(
     'eighth_class_std_info'=>'৮ম শ্রেণী শিক্ষার্থী তথ্য',
     'ninth_class_std_info'=>'৯ম শ্রেণী শিক্ষার্থী তথ্য',
     'tenth_class_std_info'=>'১০ম শ্রেণী শিক্ষার্থী তথ্য',
+    'gender_wise_student_info'=>'লিঙ্গভিত্তিক শিক্ষার্থীর তথ্য',
+    'total'=>'মোট',
 
 
     //tanim

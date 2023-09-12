@@ -155,7 +155,8 @@ return array(
     'eighth_class_std_info'=>'8th Class Student Information',
     'ninth_class_std_info'=>'9th Class Student Information',
     'tenth_class_std_info'=>'10th Class Student Information',
-
+    'gender_wise_student_info'=>'Gender Wise Student Information',
+    'total'=>'Total',
 
 
     //tanim

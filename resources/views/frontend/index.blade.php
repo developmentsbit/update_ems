@@ -107,6 +107,22 @@ right:0;
 
 @media (max-width: 768px)
       {
+        #est{
+            padding-left : 55px !important;
+        }
+
+        span.titleBar {
+            /* text-align: center; */
+        }
+
+        .bangabondhu{
+            text-align: center !important;
+        }
+
+        #top_button{
+            font-size: 9px !important;
+        }
+
 #email label a {
     font-size: 12px;
     padding: 6px 17px 7px 4px;
@@ -145,28 +161,28 @@ right:0;
 
      <div class="col-sm-12 col-12  topheader">
       <div class="row">
-        <div class="col-sm-4 col-6 text-sm-left" id="email">
+        <div class="col-sm-4 col-12 bangabondhu" id="email">
 
           <label><a href="{{url('/time_line')}}"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;@lang('frontend.golden_jubilee_and_bangabandhu_corner')  </a></label>
 
         </div>
 
 
-        <div class="col-sm-8 col-8 text-right text-sm-right" id="email">
+        <div class="col-sm-8 col-12 text-right text-sm-right" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
-            <label><a target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
-            <label><a target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
-            <label><a target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
+            <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
+            <label><a id="top_button" target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
+            <label><a id="top_button" target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
             <label>
               <div class="site-lang" style="margin-top: -4px;">
                   @if(config('app.locale')=='bn')
-                  <a class="nav-link btn btn-outline-success" href="{{ route('lang', 'en') }}" role="button">
+                  <a id="top_button" class="nav-link btn btn-outline-success" href="{{ route('lang', 'en') }}" role="button">
                       <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
                       <span>{{'English'}}</span>
                   </a>
                   @else
-                  <a class="nav-link btn btn-outline-success" href="{{ route('lang', 'bn') }}" role="button">
+                  <a id="top_button" class="nav-link btn btn-outline-success" href="{{ route('lang', 'bn') }}" role="button">
                       <img src="{{ asset('assets/images/flags/bd.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
                       <span>{{'বাংলা'}}</span>
                   </a>
@@ -211,7 +227,7 @@ right:0;
           <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
           <!-- Title Bar -->
           <span class="titleBar">
-            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif <p style="padding-left: 82px;  margin-top: -20px;">@lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
+            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif <p id="est" style="padding-left: 82px;  margin-top: -20px;">@lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
           </span>
         </div>
 
@@ -391,7 +407,7 @@ right:0;
              </div>
            </ul>
          </li>
-
+         @if($setting->type == 'school')
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           @lang('frontend.student')
@@ -400,19 +416,28 @@ right:0;
 
           <div class="col-md-12 col-12 dmenu mt-3">
 
-           <li><a href="#">@lang('frontend.class_gender_based_education')</a></li>
-           <li><a href="#">@lang('frontend.cate_wise_approved_branch_info')</a></li>
+           <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
+           <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.cate_wise_approved_branch_info')</a></li>
            <li><a href="#">@lang('frontend.student_attendance')</a></li>
-           <li><a href="#">@lang('frontend.sixth_class_std_info')</a></li>
-           <li><a href="#">@lang('frontend.seventh_class_std_info')</a></li>
-           <li><a href="#">@lang('frontend.eighth_class_std_info')</a></li>
-           <li><a href="#">@lang('frontend.ninth_class_std_info')</a></li>
-           <li><a href="#">@lang('frontend.tenth_class_std_info')</a></li>
-
+           @php
+            $class = DB::connection('mysql_second')->table('add_class')->get();
+           @endphp
+           @if($class)
+           @foreach ($class as $c)
+           @php
+            $count_student = DB::connection('mysql_second')->table('running_student_info')->where('class_id',$c->id)->count();
+           @endphp
+           @if($count_student > 0)
+           <li><a href="#">{{$c->class_name}}</a></li>
+           @endif
+           @endforeach
+           @endif
 
          </div>
        </ul>
      </li>
+
+     @endif
 
 
      <li class="nav-item dropdown">

@@ -57,6 +57,26 @@
 		</li>
 	</div>
     @endif
+    
+	@if(request()->Is('vice_principal_messages'))
+
+    @else
+	<div class="col-sm-12 col-12 p-0 mt-2">
+		<ul class="list-group">
+			<li class="list-group-item" id="featureheads">@lang('frontend.vice_principal_message')</li>
+		</ul>
+		<li class="list-group-item p-0 pt-2" id="padd">
+			<a href="{{ url('vice_principal_message') }}"><center><img src="{{ asset('/vice_principal_image') }}/{{$v_principle->image}}" class="img-fluid"></center></a>
+			<center>
+
+				<div class="mt-2">
+					<span class="head">{{ $v_principle->name }}<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('vice_principal_message') }}" class="details">@lang('frontend.details')</a></span>
+
+				</div>
+			</center>
+		</li>
+	</div>
+    @endif
 
 
 

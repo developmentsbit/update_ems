@@ -150,7 +150,7 @@ return array(
 
     'student'=>'শিক্ষার্থী',
     'class_gender_based_education'=>'শ্রেণী ও লিংগ ভিত্তিক শিক্ষার্থী তথ্য',
-    'cate_wise_approved_branch_info'=>'শ্রেণী ভিত্তিক অনুমোদিত শাখার তথ্য',
+    'section_wise_student'=>'শ্রেণী ভিত্তিক অনুমোদিত শাখার তথ্য',
     'student_attendance'=>'শিক্ষার্থী উপস্থিতি তথ্য',
     'sixth_class_std_info'=>'৬ষ্ঠ শ্রেণী শিক্ষার্থী তথ্য',
     'seventh_class_std_info'=>'৭ম শ্রেণী শিক্ষার্থী তথ্য',

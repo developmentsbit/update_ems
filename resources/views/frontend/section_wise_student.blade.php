@@ -19,7 +19,7 @@
 
       <ul class="list-group p-0">
        <li class="list-group-item">
-        <span class="student">@lang('frontend.gender_wise_student_info') </span>
+        <span class="student">@lang('frontend.section_wise_student') </span>
       </li>
 
       <li class="list-group-item">

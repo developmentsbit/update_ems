@@ -80,7 +80,7 @@
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('admissioninfo.image'):</label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="file" name="image" id="image" required="">
+								<input class="form-control" type="file" name="image" id="image">
                               
                                 
 							</div>

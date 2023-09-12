@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('teaching_permissions', function (Blueprint $table) {
             $table->id();
             $table->string('subject')->nullable();
+            $table->string('subject_bn')->nullable();
             $table->string('part')->nullable();
+            $table->string('part_bn')->nullable();
             $table->string('memorial_no')->nullable();
             $table->string('date')->nullable();
             $table->string('image')->nullable();

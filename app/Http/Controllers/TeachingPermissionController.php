@@ -58,7 +58,9 @@ class TeachingPermissionController extends Controller
         $data = array(
             'date'=>$date,
             'subject'=>$request->subject,
+            'subject_bn'=>$request->subject_bn,
             'part'=>$request->part,
+            'part_bn'=>$request->part_bn,
             'memorial_no'=>$request->memorial_no,
         );
 
@@ -68,7 +70,7 @@ class TeachingPermissionController extends Controller
         {
             $imageName = rand().'.'.$file->getClientOriginalExtension();
 
-            $file->move(public_path().'/assets/images/teaching_permission/',$imageName);
+            $file->move(public_path().'/admin/teaching_permission/',$imageName);
 
             $data['image'] = $imageName;
 
@@ -119,7 +121,7 @@ class TeachingPermissionController extends Controller
         {
             $pathImage = teaching_permission::find($id);
 
-            $path = public_path().'/assets/images/teaching_permission/'.$pathImage->image;
+            $path = public_path().'/admin/teaching_permission/'.$pathImage->image;
 
             if(file_exists($path))
             {
@@ -132,7 +134,7 @@ class TeachingPermissionController extends Controller
         {
             $imageName = rand().'.'.$file->getClientOriginalExtension();
 
-            $file->move(public_path().'/assets/images/teaching_permission/',$imageName);
+            $file->move(public_path().'/admin/teaching_permission',$imageName);
 
             teaching_permission::where('id',$id)->update(['image'=>$imageName]);
 
@@ -143,7 +145,9 @@ class TeachingPermissionController extends Controller
         $update = teaching_permission::find($id)->update([
             'date'=>$date,
             'subject'=>$request->subject,
+            'subject_bn'=>$request->subject_bn,
             'part'=>$request->part,
+            'part_bn'=>$request->part_bn,
             'memorial_no'=>$request->memorial_no,
         ]);
 
@@ -177,7 +181,7 @@ class TeachingPermissionController extends Controller
     {
         $pathImage=teaching_permission::where('id',$id)->withTrashed()->select('image')->first();
 
-        $path=public_path().'/assets/images/teaching_permission/'.$pathImage->image;
+        $path=public_path().'/admin/teaching_permission/'.$pathImage->image;
         // return $path;
         if(file_exists($path))
         {

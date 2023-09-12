@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\teaching_permission;
+use App\Models\mpoNationalizatio;
 
 class FrontendController extends Controller
 {
@@ -22,6 +23,12 @@ class FrontendController extends Controller
 	{
 		$data = teaching_permission::get();
 		return view('frontend.teacher_permission',compact('data'));
+	}
+	
+	public function mpo_nationalizations()
+	{
+		$data = mpoNationalizatio::get();
+		return view('frontend.mpo_nationalizations',compact('data'));
 	}
 
 	public function principle_message()

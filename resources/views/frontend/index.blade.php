@@ -350,6 +350,9 @@ right:0;
                  @if($setting->type == 'school')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
                  @endif
+                 @if($setting->type == 'college')
+                 <li><a href="{{ url('vice_principal_message') }}">@lang('frontend.vice_principal_message') </a></li>
+                 @endif
                  <li><a href="{{ url('principal_message') }}">@lang('frontend.principal_message')</a></li>
                  {{-- <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
                  {{-- <li><a href="{{ url('presidents') }}"></a>@lang('frontend.presidents')</li> --}}

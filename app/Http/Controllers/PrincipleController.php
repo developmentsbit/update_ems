@@ -100,7 +100,11 @@ class PrincipleController extends Controller
 
         if ($image) {
 
-            unlink($old_image->image);
+            if(file_exists($old_image->image))
+            {
+
+                unlink($old_image->image);
+            }
 
             $image_name= rand(1111,9999);
             $ext=strtolower($image->getClientOriginalExtension());

@@ -64,7 +64,7 @@ Route::get('/getSecondData',function(){
 
 });
 
-Route::get('results',function(){
+Route::get('admin',function(){
     echo '<script>location="/result/adminloginpanel/index.php";</script>';
 });
 
@@ -109,6 +109,9 @@ Route::get('/examsuggession', [FrontendController::class, 'examsuggession']);
 Route::get('/academiccalenders', [FrontendController::class, 'academiccalenders']);
 Route::get('/classroutines', [FrontendController::class, 'classroutines']);
 Route::get('/holidaylists', [FrontendController::class, 'holidaylist']);
+
+Route::get('/gender_wise_student_list',[FrontendController::class,'gender_wise_student_list']);
+Route::get('/section_wise_student_list',[FrontendController::class,'section_wise_student_list']);
 
 
 
@@ -346,7 +349,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('setting', SettingController::class);
 
     Route::resource('mpo_nationalization', MpoNationalizatioController::class);
-    route::get('retrive_mpo/{id}',[MpoNationalizatioController::class,'retrive_mpo']);  
+    route::get('retrive_mpo/{id}',[MpoNationalizatioController::class,'retrive_mpo']);
     route::get('delete_mpo/{id}',[MpoNationalizatioController::class,'delete_mpo']);
 
 

@@ -63,6 +63,7 @@
                                             <th>@lang('teaching_permission.subject')</th>
                                             <th>@lang('teaching_permission.part')</th>
                                             <th>@lang('teaching_permission.memorial_no')</th>
+                                            <th>@lang('common.image')</th>
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -72,9 +73,10 @@
                                         <tr>
                                             <td>#</td>
                                             <td>{{$v->date}}</td>
-                                            <td>{{$v->subject}}</td>
-                                            <td>{{$v->part}}</td>
+                                            <td>@if($lang == 'en'){{$v->subject}}@elseif($lang == 'bn'){{$v->subject_bn}}@endif</td>
+                                            <td>@if($lang == 'en'){{$v->part}}@elseif($lang == 'bn'){{$v->part_bn}}@endif</td>
                                             <td>{{$v->memorial_no}}</td>
+                                            <td><a href="{{asset('/assets/images/teaching_permission')}}/{{$v->image}}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{route('teaching_permission.edit',$v->id)}}" class="btn btn-info border-0 edit text-light">@lang('common.edit')</a>
@@ -92,13 +94,13 @@
                                 </table>
                             </div> <!-- end all-->
 
+                            @php
+                            use App\Models\teaching_permission;
+                            $trashed=  teaching_permission::onlyTrashed()->get();
+                            $sl=1;
+                            @endphp
+                            
                             <div class="tab-pane" id="users-tab-deleted">
-                                @php
-                                use App\Models\teaching_permission;
-                                $trashed=  teaching_permission::onlyTrashed()->get();
-                                $sl=1;
-                                @endphp
-
                                 <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
                                     <thead>
                                         <tr>
@@ -115,8 +117,8 @@
                                         @foreach ($trashed as $v)
                                         <tr>
                                             <td>{{$sl++}}</td>
-                                            <td>{{$v->subject}}</td>
-                                            <td>{{$v->part}}</td>
+                                            <td>@if($lang == 'en'){{$v->subject}}@elseif($lang == 'bn'){{$v->subject_bn}}@endif</td>
+                                            <td>@if($lang == 'en'){{$v->part}}@elseif($lang == 'bn'){{$v->part_bn}}@endif</td>
                                             <td>{{$v->date}}</td>
                                             <td>
                                                 <a href="{{ url('retrive_teachingpermission') }}/{{ $v->id }}"  onClick="return confirm('Are You Sure?')" class="btn btn-sm btn-info">@lang('common.restore')</a>

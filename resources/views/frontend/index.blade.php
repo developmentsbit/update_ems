@@ -219,15 +219,20 @@ right:0;
 
         <div id="carouselExampleControls" class="carousel slide d-block d-sm-none" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="{{ asset('/') }}frontend/img/090521_07_04_08.jpg" class="d-block w-100" alt="...">
+          @php 
+          $i = 0;
+          @endphp
+          @if(isset($slider))
+          @foreach($slider as $s)
+
+          @php 
+          $i= $i +1;
+          @endphp
+            <div class="carousel-item @if($i == 1) active @endif">
+              <img src="{{ asset('/') }}{{ $s->image  }}" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item">
-              <img src="{{ asset('/') }}frontend/img/090521_07_04_08.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="{{ asset('/') }}frontend/img/090521_07_04_08.jpg" class="d-block w-100" alt="...">
-            </div>
+          @endforeach
+          @endif
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -297,7 +302,7 @@ right:0;
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
                     <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
                     <li><a href="{{url('teacher_permission')}}">@lang('frontend.teaching_permission_recognition')</a></li>
-                    <li><a href="#">@lang('frontend.mpo_nationalization_info')</a></li>
+                    <li><a href="{{url('mpo_nationalizations')}}">@lang('frontend.mpo_nationalization_info')</a></li>
 
 
                   </div>

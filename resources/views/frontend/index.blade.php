@@ -425,7 +425,7 @@ right:0;
           <div class="col-md-12 col-12 dmenu mt-3">
 
            <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
-           <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.cate_wise_approved_branch_info')</a></li>
+           <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
            <li><a href="#">@lang('frontend.student_attendance')</a></li>
            @php
             $class = DB::connection('mysql_second')->table('add_class')->get();

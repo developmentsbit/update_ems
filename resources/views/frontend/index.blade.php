@@ -350,6 +350,9 @@ right:0;
                  @if($setting->type == 'school')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
                  @endif
+                 @if($setting->type == 'college')
+                 <li><a href="{{ url('vice_principal_message') }}">@lang('frontend.vice_principal_message') </a></li>
+                 @endif
                  <li><a href="{{ url('principal_message') }}">@lang('frontend.principal_message')</a></li>
                  {{-- <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
                  {{-- <li><a href="{{ url('presidents') }}"></a>@lang('frontend.presidents')</li> --}}
@@ -422,7 +425,7 @@ right:0;
           <div class="col-md-12 col-12 dmenu mt-3">
 
            <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
-           <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.cate_wise_approved_branch_info')</a></li>
+           <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
            <li><a href="#">@lang('frontend.student_attendance')</a></li>
            @php
             $class = DB::connection('mysql_second')->table('add_class')->get();

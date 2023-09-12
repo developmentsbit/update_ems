@@ -148,7 +148,7 @@ return array(
 
     'student'=>'Student',
     'class_gender_based_education'=>'Class & gender wise student',
-    'cate_wise_approved_branch_info'=>'Category wise approved branch',
+    'section_wise_student'=>'Information of Section wise student',
     'student_attendance'=>'Student Attendance info',
     'sixth_class_std_info'=>'6th Class Student Information',
     'seventh_class_std_info'=>'7th Class Student Information',

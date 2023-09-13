@@ -470,6 +470,14 @@ class FrontendController extends Controller
         $section = DB::connection('mysql_second')->table('add_section')->get();
         return view('frontend.section_wise_student',compact('class','section','group'));
     }
+	public function student_attendance()
+    {
+        // return 1;
+
+        $data = DB::table("student_attendance_infos")->first();
+        
+        return view('frontend.student_attendance',compact('data'));
+    }
 
 
 }

@@ -394,7 +394,7 @@ right:0;
                @endforeach
                @endif
 
-              
+
 
                </div>
 
@@ -416,7 +416,7 @@ right:0;
                <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
 
                </div>
-               @else 
+               @else
                <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
                <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
                @endif
@@ -648,7 +648,7 @@ right:0;
         <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
         <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
         @endif
-        
+
         @if($setting->type == 'college')
         <li><a href="{{ url('vice_principal_messages') }}">@lang('frontend.vice_principal_message') </a></li>
         <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>

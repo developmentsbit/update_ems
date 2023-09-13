@@ -79,7 +79,7 @@
     </div>
 
     @else
-     Not Found...
+     <img src="{{ asset('frontend/empty1.png') }}" alt="">
     @endif
   </div>
 

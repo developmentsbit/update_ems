@@ -18,5 +18,6 @@ return [
      'name_bangla'=>'Name Bangla',
      'address_bangla'=>'Adress Bangla',
      'established_bangla'=>'Established Bangla',
+     'type'=>'Type Of Institute',
 
 ];

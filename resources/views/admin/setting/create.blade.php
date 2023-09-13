@@ -126,6 +126,15 @@
 								<textarea  class="form-control w-100" rows="5" type="text" name="address_bangla">{{ $data->address_bangla }}</textarea>
 							</div>
 						</div>
+						<div class="form-group mb-3 col-md-12">
+							<label>@lang('setting.type'):</label>
+							<div class="input-group mt-2">
+								<select class="form-control" name="type">
+									<option @if($data->type == 'school') selected @endif value="school">School</option>
+									<option @if($data->type == 'college') selected @endif value="college">College</option>
+								</select>
+							</div>
+						</div>
 						<div class="modal-footer border-0">
 							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
 							<button type="submit" class="btn btn-success button border-0">@lang('common.update')</button>

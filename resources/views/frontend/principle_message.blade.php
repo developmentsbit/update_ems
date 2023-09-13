@@ -14,9 +14,9 @@
        <ul class="list-group p-0">
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
         @if($data->type == 1)
-        অধ্যক্ষের বার্তা
+        @lang('frontend.principal_message')
         @else
-        সভাপতির বাণী
+        @lang('frontend.presidentmessage')
         @endif
       </li>
       </ul>

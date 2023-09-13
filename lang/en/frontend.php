@@ -1,6 +1,8 @@
 <?php
 
-return array(
+$setting = DB::table('setting')->first();
+
+$array = array(
     'admission_form'=>'Admission Form',
     'viewtitle'=>'View Applied Students Info',
     'result'=>'Result Processing',
@@ -71,7 +73,7 @@ return array(
     'vice_principal_message'=>'Vice Principal Message',
     'managing_comitte'=>'Managing Comitte',
     'presidents'=>'Presidents',
-    'principles'=>'Former Principals List',
+    'principles'=>'Principals List',
     'donar'=>'Donar Members List',
     'ex_member'=>'Ex Members List',
     'teachers_and_staff'=>'Teachers and staff',
@@ -166,3 +168,16 @@ return array(
     'details' => 'Details...',
 
 );
+
+if($setting->type == 'school')
+{
+    
+        $array['principal_message'] = 'Head Teacher Message';
+    
+}
+else
+{
+    $array['principal_message'] = 'Principal Message';
+}
+
+return $array;

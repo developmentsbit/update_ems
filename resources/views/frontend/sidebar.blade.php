@@ -46,8 +46,8 @@
 		<ul class="list-group">
 			<li class="list-group-item" id="featureheads">
 				@if($setting->type == 'school')
-				@lang('frontend.principal_messages')
-				@else($setting->type == 'college')
+				@lang('frontend.principal_message')
+				@else
 				@lang('frontend.principal_message')
 				@endif
 			</li>

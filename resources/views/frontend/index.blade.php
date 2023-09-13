@@ -103,6 +103,7 @@ right:0;
 
 
 
+
 @media (max-width: 768px)
       {
         #est{
@@ -147,6 +148,7 @@ right:0;
       text-transform: uppercase;
       font-weight: bold;
   }
+
 </style>
 @endif
 
@@ -154,15 +156,18 @@ right:0;
 @if($setting->type == 'college')
 <style>
   .container{
-  max-width : 1198px !important;
+  max-width : 1258px !important;
 }
 </style>
-@else($setting->type == 'school')
+
+@else
+
 <style>
-  .container{
-  max-width : 1272px !important;
+    .container{
+  max-width : 1140px !important;
 }
 </style>
+
 @endif
 
 
@@ -247,7 +252,7 @@ right:0;
             <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif
             <p id="est" style="padding-left: 82px;  margin-top: -20px;">
             @lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
-            
+
           </span>
         </div>
 
@@ -255,13 +260,13 @@ right:0;
 
         <div id="carouselExampleControls" class="carousel slide d-block d-sm-none" data-bs-ride="carousel">
           <div class="carousel-inner">
-          @php 
+          @php
           $i = 0;
           @endphp
           @if(isset($slider))
           @foreach($slider as $s)
 
-          @php 
+          @php
           $i= $i +1;
           @endphp
             <div class="carousel-item @if($i == 1) active @endif">
@@ -280,23 +285,7 @@ right:0;
           </button>
         </div>
 
-
-
-
-
-
-
       </div><!---------------End Slider------------------->
-
-
-
-
-
-
-
-
-
-
 
       <nav class="navbar navbar-expand-lg navbar-light btco-hover-menu menubar" style="background: #fff; border-bottom: 1px solid #e5e5e5; padding: 0px; box-shadow: 0 1px 5px -2px #999;">
 
@@ -313,16 +302,6 @@ right:0;
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true" style="font-size: 15px;"></i></a>
             </li>
-
-
-
-
-
-
-
-
-
-
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -381,7 +360,7 @@ right:0;
                  <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
                  <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
                  @endif
-                 
+
                  @if($setting->type == 'college')
                  <li><a href="{{ url('vice_principal_messages') }}">@lang('frontend.vice_principal_message') </a></li>
                  <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>

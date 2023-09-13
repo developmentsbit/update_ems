@@ -37,13 +37,20 @@
 	@endif
 
     @endif
-
+	
+	
     @if(request()->Is('principal_message'))
 
     @else
 	<div class="col-sm-12 col-12 p-0 mt-2">
 		<ul class="list-group">
-			<li class="list-group-item" id="featureheads">@lang('frontend.principal_message')</li>
+			<li class="list-group-item" id="featureheads">
+				@if($setting->type == 'school')
+				@lang('frontend.principal_messages')
+				@else($setting->type == 'college')
+				@lang('frontend.principal_message')
+				@endif
+			</li>
 		</ul>
 		<li class="list-group-item p-0 pt-2" id="padd">
 			<a href="{{ url('principal_message') }}"><center><img src="{{ asset($principle->image) }}" class="img-fluid"></center></a>
@@ -57,7 +64,9 @@
 		</li>
 	</div>
     @endif
-    
+
+    @if($setting->type == 'college')
+
 	@if(request()->Is('vice_principal_messages'))
 
     @else
@@ -77,6 +86,8 @@
 		</li>
 	</div>
     @endif
+
+	@endif
 
 
 

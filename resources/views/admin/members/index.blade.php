@@ -20,7 +20,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <div class="container mt-2">
 		@component('components.breadcrumb')
             @slot('title')
-                @lang('member.addtitle')
+                @lang('member.viewtitle')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -43,7 +43,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	<div class="col-12">
 		<div class="card">
 			<div class="card-body">
-				<h3>@lang('member.addtitle')</h3><br>
+				<h3>@lang('member.managetitle')</h3><br>
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>

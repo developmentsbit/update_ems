@@ -58,7 +58,7 @@ class StudentAttendanceInfoController extends Controller
         $data['title']      = $request->title;
         $data['title_bn']      = $request->title_bn;
         $data['details']    = $request->details;
-        $data['details_bn']    = $request->details_bn;
+        // $data['details_bn']    = $request->details_bn;
  
         $file              = $request->file('image');
 

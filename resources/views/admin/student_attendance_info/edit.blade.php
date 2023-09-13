@@ -57,18 +57,18 @@
 							</div>
 						</div>
 
-						<div class="form-group mb-3 col-md-6">
+						<div class="form-group mb-3 col-12">
 							<label>@lang('page.details'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<textarea id="summernote"  class="form-control w-100" rows="10" type="text" name="details" required="">{{ $data->details }}</textarea>
+								<textarea id="summernote"  class="form-control w-100" rows="" type="text" name="details" required="">{{ $data->details }}</textarea>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-6">
+						{{-- <div class="form-group mb-3 col-md-6">
 							<label>@lang('page.details_bn'):</label>
 							<div class="input-group mt-2">
 								<textarea id="summernote1"  class="form-control w-100" rows="10" type="text" name="details_bn" >{{ $data->details_bn }}</textarea>
 							</div>
-						</div>
+						</div> --}}
 
 
 							<div class="form-group mb-3 col-md-12">

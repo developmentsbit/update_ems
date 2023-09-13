@@ -1262,6 +1262,116 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'updated_at' => '2023-09-10 09:48:59',
             ),
+            113 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 185,
+                'name' => 'Student Attendance Information List',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            114 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 186,
+                'name' => 'Student Attendance Information Create',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            115 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 187,
+                'name' => 'Student Attendance Information Edit',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            116 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 188,
+                'name' => 'Student Attendance Information Delete',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            117 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 189,
+                'name' => 'Student Attendance Information View',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            118 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 190,
+                'name' => 'Student Attendance Information Print',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            119 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 191,
+                'name' => 'Student Attendance Information Edit_history',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            120 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 192,
+                'name' => 'Student Attendance Information Deleted_list',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            121 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 193,
+                'name' => 'Student Attendance Information Restore',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
+            122 => 
+            array (
+                'created_at' => '2023-09-12 06:41:24',
+                'deleted_at' => NULL,
+                'guard_name' => 'web',
+                'id' => 194,
+                'name' => 'Student Attendance Information Permanent_delete',
+                'parent' => 'Student Attendance Information',
+                'status' => 1,
+                'updated_at' => '2023-09-12 06:41:24',
+            ),
         ));
         
         

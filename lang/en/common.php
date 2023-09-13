@@ -110,5 +110,5 @@ return [
     "not_restored" => "Data not restored!",
     "kept_deleted" => "Your data is kept deleted!",
     // ----- delete script ----- end
-
+    "title_bn" => "Title Bangla",
 ];

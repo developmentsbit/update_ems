@@ -52,5 +52,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsefullinksTableSeeder::class);
         $this->call(VideogallerysTableSeeder::class);
         $this->call(TeachingPermissionsTableSeeder::class);
+        $this->call(StudentAttendanceInfosTableSeeder::class);
     }
 }

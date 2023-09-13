@@ -455,7 +455,7 @@ right:0;
 
            <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
            <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
-           <li><a href="#">@lang('frontend.student_attendance')</a></li>
+           <li><a href="{{ url('student_attendance') }}">@lang('frontend.student_attendance')</a></li>
            @php
             $class = DB::connection('mysql_second')->table('add_class')->get();
            @endphp

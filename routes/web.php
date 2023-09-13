@@ -114,6 +114,7 @@ Route::get('/holidaylists', [FrontendController::class, 'holidaylist']);
 
 Route::get('/gender_wise_student_list',[FrontendController::class,'gender_wise_student_list']);
 Route::get('/section_wise_student_list',[FrontendController::class,'section_wise_student_list']);
+Route::get('/student_attendance',[FrontendController::class,'student_attendance']);
 
 
 

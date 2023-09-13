@@ -175,7 +175,7 @@
 
 									<div class="col-sm-9 col-9 p-0">
 										<ul class="menus">
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/allnotices') }}">@lang('frontend.notices')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('/allnotices') }}">@lang('frontend.notice_board')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/events') }}">@lang('frontend.events')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/page/26') }}">@lang('frontend.library')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/page/27') }}">@lang('frontend.dormitory')</a></li>
@@ -289,9 +289,11 @@
 
 
 
-						<div class="col-12 mt-4">
+						{{--
+							<div class="col-12 mt-4">
 							<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZZpp4WMokZ0" title="FENI GOVERNMENT COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-						</div>
+						</div>	
+						--}}
 
 
 

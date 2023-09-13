@@ -370,24 +370,25 @@ right:0;
               <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width:260px; max-width:100%;">
 
                 <div class="col-md-12 col-12 dmenu mt-3">
-                 @if($setting->type == 'school')
-                 <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
-                 @endif
-                 <li><a href="{{ url('principal_message') }}">
+                <li><a href="{{ url('principal_message') }}">
                   @if($setting->type == 'school')
-                  @lang('frontend.principal_messages')
-                  @else($setting->type == 'college')
+                  @lang('frontend.principal_message')
+                  @else
                   @lang('frontend.principal_message')
                   @endif
                  </a></li>
+                 @if($setting->type == 'school')
+                 <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
+                 <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
+                 <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
+                 <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
+                 <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
+                 @endif
+                 
                  @if($setting->type == 'college')
                  <li><a href="{{ url('vice_principal_messages') }}">@lang('frontend.vice_principal_message') </a></li>
                  <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
                  @endif
-                 {{-- <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
-                 {{-- <li><a href="{{ url('presidents') }}"></a>@lang('frontend.presidents')</li> --}}
-                 {{-- <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li> --}}
-                 {{-- <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li> --}}
                </div>
              </ul>
            </li>

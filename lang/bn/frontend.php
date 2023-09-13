@@ -1,6 +1,12 @@
 <?php
 
-return array(
+// use DB;
+
+$setting = DB::table('setting')->first();
+
+
+
+$array = array(
     'admission_form'=>'ভর্তি ফরম',
     'viewtitle'=>'আবেদনকৃত ছাত্রদের তথ্য দেখুন',
     'result'=>'ফলাফল প্রক্রিয়াকরণ',
@@ -67,12 +73,12 @@ return array(
     'citizen_charter'=>'সিটিজেন চার্টার',
     'administrative_information'=>'প্রশাসনিক তথ্য',
     'presidentmessage'=>'সভাপতির বার্তা',
-    'principal_message'=>'অধ্যক্ষের বার্তা',
-    'principal_messages'=>'প্রধান শিক্ষকের বার্তা',
+    
+    // 'principal_messages'=>'প্রধান শিক্ষকের বার্তা',
     'vice_principal_message'=>'উপাধ্যক্ষের বার্তা',
     'managing_comitte'=>'পরিচালনা পর্ষদ তথ্য',
     'presidents'=>'সভাপতির তালিকা',
-    'principles'=>'প্রাক্তন অধ্যক্ষদের তালিকা',
+    'principles'=>'অধ্যক্ষদের তালিকা',
     'donar'=>'দাতা সদস্যদের তালিকা',
     'ex_member'=>'প্রাক্তন সদস্যদের তালিকা',
     'teachers_and_staff'=>'শিক্ষক এবং কর্মচারী',
@@ -168,3 +174,16 @@ return array(
     'details' => 'বিস্তারিত...',
 
 );
+
+if($setting->type == 'school')
+{
+    
+        $array['principal_message'] = 'প্রধান শিক্ষকের বার্তা';
+    
+}
+else
+{
+    $array['principal_message'] = 'অধ্যক্ষের বার্তা';
+}
+
+return $array;

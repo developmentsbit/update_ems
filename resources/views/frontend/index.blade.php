@@ -381,8 +381,8 @@ right:0;
                <div class="row">
                  <div class="col-md-7">
 
+                @if($setting->type == 'college')
                <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
-               @if($setting->type == 'college')
                @php
                 $department = DB::table('department')->limit(9)->get();
                @endphp
@@ -394,7 +394,7 @@ right:0;
                @endforeach
                @endif
 
-               @endif
+              
 
                </div>
 
@@ -416,6 +416,10 @@ right:0;
                <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
 
                </div>
+               @else 
+               <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
+               <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
+               @endif
                </div>
 
              </div>

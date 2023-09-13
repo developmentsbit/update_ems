@@ -18,7 +18,7 @@
         <div style="font-size: 14px; line-height: 25px; text-align: justify;">
 
           <p>
-           {!! $data->details !!}
+          @if($lang == 'en'){!! $data->details !!}@elseif($lang == 'bn'){!! $data->details_bn !!}@endif
           </p> 
 
           <br><br>

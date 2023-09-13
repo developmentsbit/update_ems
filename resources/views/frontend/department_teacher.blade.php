@@ -13,7 +13,7 @@
        <li class="list-group-item">
         @if($data)
         @foreach($data as $d)
-        <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;{{$d->department}} @lang('frontend.department_info') </span>
+        <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;@if($lang == 'en'){{$d->department}}@elseif($lang == 'bn'){{$d->department_name_bn}}@endif @lang('frontend.department_info') </span>
         @endforeach
         @endif
       </li>

@@ -26,7 +26,7 @@
           <img src="{{ asset($data->image) }}" class="img-fluid p-2 img-thumbnail" style="max-height: 300px;"><br><br>
 
           <p>
-           {!! $data->details !!}
+          @if($lang == 'en'){!! $data->details !!}@elseif($lang == 'bn'){!! $data->details_bn !!}@endif
           </p>
 
           <br><br>

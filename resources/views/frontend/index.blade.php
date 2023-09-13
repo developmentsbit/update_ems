@@ -9,7 +9,7 @@ $setting = DB::table("setting")->first();
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $setting->name }}</title>
+  <title>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}}@endif</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="icon" href="{{ asset($setting->image) }}" type="image/gif" sizes="16x16">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -100,10 +100,10 @@ color:#ffffff;
 left:unset;
 right:0;
 }
-
 .container{
-  max-width : 1274px !important;
+  max-width : 1258px !important;
 }
+
 
 @media (max-width: 768px)
       {
@@ -121,15 +121,19 @@ right:0;
 
         #top_button{
             font-size: 9px !important;
+            padding: 9px 5px !important;
         }
 
-#email label a {
-    font-size: 12px;
-    padding: 6px 17px 7px 4px;
-    text-align: center;
-    /* justify-content: center; */
-}
-}
+        #email label a {
+          font-size: 12px;
+          padding: 6px 17px 7px 4px;
+          text-align: center;
+          /* justify-content: center; */
+        }
+        .site-lang a img{
+          width: 26px;
+        }
+      }
 
 .btn-success {
     background : #05c76a
@@ -148,6 +152,22 @@ right:0;
 </style>
 
 @endif
+
+
+  @if($setting->type == 'college')
+<style>
+  .container{
+  max-width : 1198px !important;
+}
+</style>
+@else($setting->type == 'school')
+<style>
+  .container{
+  max-width : 1272px !important;
+}
+</style>
+@endif
+
 
 <body>
 
@@ -227,7 +247,10 @@ right:0;
           <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
           <!-- Title Bar -->
           <span class="titleBar">
-            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif <p id="est" style="padding-left: 82px;  margin-top: -20px;">@lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
+            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif
+            <p id="est" style="padding-left: 82px;  margin-top: -20px;">
+            @lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
+            
           </span>
         </div>
 
@@ -317,10 +340,10 @@ right:0;
                     <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
                     <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
+                    @if($setting->type == 'school')
                     <li><a href="{{url('teacher_permission')}}">@lang('frontend.teaching_permission_recognition')</a></li>
                     <li><a href="{{url('mpo_nationalizations')}}">@lang('frontend.mpo_nationalization_info')</a></li>
-
-
+                    @endif
                   </div>
 
                   <div class="col-md-6 col-12 dmenu mt-3">
@@ -389,7 +412,7 @@ right:0;
 
                @if(isset($department))
                @foreach($department as $d)
-               <li><a href="{{ url('department_teacher/'.$d->id) }}">{{ $d->department }}</a></li>
+               <li><a href="{{ url('department_teacher/'.$d->id) }}">@if($lang == 'en'){{$d->department}}@elseif($lang == 'bn'){{$d->department_name_bn}}@endif</a></li>
 
                @endforeach
                @endif
@@ -406,7 +429,7 @@ right:0;
 
                @if(isset($department2))
                @foreach($department2 as $d)
-               <li><a href="{{ url('department_teacher/'.$d->id) }}">{{ $d->department }}</a></li>
+               <li><a href="{{ url('department_teacher/'.$d->id) }}">@if($lang == 'en'){{$d->department}}@elseif($lang == 'bn'){{$d->department_name_bn}}@endif</a></li>
 
                @endforeach
                @endif
@@ -616,8 +639,10 @@ right:0;
         <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
         <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
         <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
+        @if($setting->type == 'school')
         <li><a href="#">@lang('frontend.teaching_permission_recognition')</a></li>
         <li><a href="#">@lang('frontend.mpo_nationalization_info')</a></li>
+        @endif
       </ul>
     </li>
 
@@ -654,19 +679,29 @@ right:0;
 
 
 
+    @if($setting->type == 'school')
     <li class="uk-parent">
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.student')</a>
       <ul class="uk-nav-sub">
-       <li><a href="#">@lang('frontend.class_gender_based_education')</a></li>
-        <li><a href="#">@lang('frontend.cate_wise_approved_branch_info')</a></li>
+       <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
+        <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
         <li><a href="#">@lang('frontend.student_attendance')</a></li>
-        <li><a href="#">@lang('frontend.sixth_class_std_info')</a></li>
-        <li><a href="#">@lang('frontend.seventh_class_std_info')</a></li>
-        <li><a href="#">@lang('frontend.eighth_class_std_info')</a></li>
-        <li><a href="#">@lang('frontend.ninth_class_std_info')</a></li>
-        <li><a href="#">@lang('frontend.tenth_class_std_info')</a></li>
+        @php
+        $class = DB::connection('mysql_second')->table('add_class')->get();
+        @endphp
+        @if($class)
+        @foreach ($class as $c)
+        @php
+        $count_student = DB::connection('mysql_second')->table('running_student_info')->where('class_id',$c->id)->count();
+        @endphp
+        @if($count_student > 0)
+        <li><a href="#">{{$c->class_name}}</a></li>
+        @endif
+        @endforeach
+        @endif
      </ul>
    </li>
+   @endif
 
 
    <li class="uk-parent">

@@ -128,10 +128,10 @@
 
 
 
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/principle_message') }}">@lang('frontend.principal_message')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('/principal_message') }}">@lang('frontend.principal_message')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/vice_principal_messages') }}">@lang('frontend.vice_principal_message')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('/principles') }}">@lang('frontend.principles')</a></li>
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('/managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
+											{{-- <li><i class="fa fa-caret-right"></i><a href="{{ url('/managing_comitte') }}">@lang('frontend.managing_comitte')</a></li> --}}
 										{{--	<li><i class="fa fa-caret-right"></i><a href="{{ url('/donar') }}">@lang('frontend.donar')</a></li> --}}
 
 										</ul>
@@ -290,7 +290,8 @@
 
 
 						<div class="col-12 mt-4">
-					<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZZpp4WMokZ0" title="FENI GOVERNMENT COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>	</div>
+							<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZZpp4WMokZ0" title="FENI GOVERNMENT COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						</div>
 
 
 

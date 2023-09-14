@@ -101,17 +101,46 @@ left:unset;
 right:0;
 }
 
+.logo-sm-header{
+    display: block;
+    background: none;
+    border-top: none;
+    padding: 0px;
+}
+
+
+
 
 
 
 @media (max-width: 768px)
       {
-        #est{
-            padding-left : 55px !important;
+        .logo-sm-header {
+            display: block;
+            background: #683091;
+            border-top: 1px solid white;
+            padding: 16px 0px;
+        }
+        #slider1{
+            display: none;
+        }
+        .logoName{
+            position: relative !important;
+        }
+        .logoName.d-flex {
+            margin-top: 0px !important;
         }
 
-        span.titleBar {
-            /* text-align: center; */
+        .logoName.d-flex img {
+            max-width: 59px !important;
+        }
+
+        .logoName.d-flex span {
+            font-size: 15px !important;
+        }
+
+        .siteNameEst {
+            margin-top: 12px !important;
         }
 
         .bangabondhu{
@@ -138,6 +167,39 @@ right:0;
     background : #05c76a
 
 }
+.logoName {
+    position: absolute;
+    z-index: 2;
+}
+
+.logoName span{
+    color: white;
+}
+
+.logoName img {
+    max-width : 80px;
+    border-radius : 5px ;
+}
+.siteNameEst {
+    margin-top: 29px;
+    padding-left: 12px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.siteNameEst span:first-child{
+    font-size: 25px;
+}
+
+.siteNameEst span {
+    text-shadow: -1px -1px 10px #000, 1px -1px 10px #000, -1px 1px 10px #000, 1px 1px 10px #000;
+}
+
+.logoName.d-flex {
+    margin-top: 55px;
+    margin-left: 18px;
+    transition: .3s;
+}
 </style>
 
 @if(config('app.locale') == 'en')
@@ -153,7 +215,7 @@ right:0;
 @endif
 
 
-@if($setting->type == 'college')
+@if($lang == 'en')
 <style>
   .container{
   max-width : 1258px !important;
@@ -190,7 +252,7 @@ right:0;
         </div>
 
 
-        <div class="col-sm-8 col-12 text-right text-sm-right" id="email">
+        <div class="col-sm-8 col-12 text-center text-sm-center text-lg-right" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
             <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
@@ -218,14 +280,26 @@ right:0;
         </div>
       </div><!------------Top Header End---------------->
 
-
-
+      <div class="logo-sm-header">
+          <div class="logoName d-flex">
+              <div class="siteLogo">
+                  <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid" style="height: 100px;width : 100px;"></a>
+                </div>
+                <div class="siteNameEst">
+                    <span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif</span>
+                    <br>
+                    <span id="" style="">
+                    @lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </span>
+                </div>
+            </div>
+        </div>
 
 
 
 
 
       <div class="col-sm-12 col-12 p-0">
+
         <div class="slider" id="slider1">
           <!-- Slides -->
 
@@ -248,44 +322,35 @@ right:0;
           <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
           <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
           <!-- Title Bar -->
-          <span class="titleBar">
-            <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid"></a>&nbsp;&nbsp;<span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif
-            <p id="est" style="padding-left: 82px;  margin-top: -20px;">
-            @lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </p></span><br>
-
-          </span>
-        </div>
-
-
-
-        <div id="carouselExampleControls" class="carousel slide d-block d-sm-none" data-bs-ride="carousel">
-          <div class="carousel-inner">
-          @php
-          $i = 0;
-          @endphp
-          @if(isset($slider))
-          @foreach($slider as $s)
-
-          @php
-          $i= $i +1;
-          @endphp
-            <div class="carousel-item @if($i == 1) active @endif">
-              <img src="{{ asset('/') }}{{ $s->image  }}" class="d-block w-100" alt="...">
-            </div>
-          @endforeach
-          @endif
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-
       </div><!---------------End Slider------------------->
+
+
+      <div id="carouselExampleControls" class="carousel slide d-block d-sm-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @php
+            $i = 0;
+            @endphp
+            @if(isset($slider))
+            @foreach($slider as $s)
+
+            @php
+            $i= $i +1;
+            @endphp
+              <div class="carousel-item @if($i == 1) active @endif">
+                <img src="{{ asset('/') }}{{ $s->image  }}" class="d-block w-100" alt="...">
+              </div>
+            @endforeach
+            @endif
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
       <nav class="navbar navbar-expand-lg navbar-light btco-hover-menu menubar" style="background: #fff; border-bottom: 1px solid #e5e5e5; padding: 0px; box-shadow: 0 1px 5px -2px #999;">
 

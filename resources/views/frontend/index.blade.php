@@ -311,7 +311,7 @@ right:0;
           @foreach($slider as $s)
 
 
-          <div style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ asset('/') }}{{ $s->image  }}'); "></div>
+          <div style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ asset('/') }}{{ $s->image  }}'); background-size:cover;background-repeat:no-repeat;"></div>
 
 
           @endforeach

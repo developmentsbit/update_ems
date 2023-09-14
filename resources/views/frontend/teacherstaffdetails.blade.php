@@ -32,13 +32,13 @@
 							<table class="table table-bordered table-hover">
 								<tbody>
 									<tr>
-										<td width="100">Name</td>
+										<td width="100">@lang('frontend.name')</td>
 										<td width="3" align="center">:</td>
 										<td width="230">{{ $data->name }}</td>
 									</tr>
 
 									<tr>
-										<td>Designation</td>
+										<td>@lang('frontend.designation')</td>
 										<td align="center">:</td>
 										<td>{{ $data->designation }}</td>
 									</tr>
@@ -59,30 +59,30 @@
 
 
 											<tr>
-												<td>Mobile</td>
+												<td>@lang('frontend.mobile')</td>
 												<td align="center">:</td>
 												<td>{{ $data->mobile }}</td>
 											</tr>
 
 											<tr>
-												<td>Email</td>
+												<td>@lang('frontend.mail')</td>
 												<td align="center">:</td>
 												<td>{{ $data->email }}</td>
 											</tr>	
 
 											<tr>
-												<td>Gender</td>
+												<td>@lang('frontend.gender')</td>
 												<td align="center">:</td>
 												<td>{{ $data->gender }}</td>
 											</tr>
 
 											<tr>
-												<td>Blood Group</td>
+												<td>@lang('frontend.blood_group')</td>
 												<td align="center">:</td>
 												<td>{{ $data->blood }}</td>
 											</tr>
 											<tr>
-												<td>Religion</td>
+												<td>@lang('frontend.religion')</td>
 												<td align="center">:</td>
 												<td>{{ $data->religion }}</td>
 											</tr>
@@ -94,21 +94,21 @@
 												<!--</tr>-->
 
 												<tr>
-													<td>Join Date</td>
+													<td>@lang('frontend.join_date')</td>
 													<td align="center">:</td>
 													<td>{{ $data->join_date }}</td>
 												</tr>
 
 
 												<tr>
-													<td>Present Address</td>
+													<td>@lang('frontend.present_adress')</td>
 													<td align="center">:</td>
 													<td>{{ $data->present_address }}</td>
 												</tr>
 
 
 												<tr>
-													<td>Parmanent Address</td>
+													<td>@lang('frontend.permenant_adress')</td>
 													<td align="center">:</td>
 													<td>{{ $data->parmanent_address }}</td>
 												</tr>
@@ -116,7 +116,7 @@
 
 
 												<tr>
-													<td>Education</td>
+													<td>@lang('frontend.education')</td>
 													<td align="center">:</td>
 													<td><p><font color="#333333" face="Roboto, sans-serif">{!! $data->education !!}</font></p></td>
 												</tr>	

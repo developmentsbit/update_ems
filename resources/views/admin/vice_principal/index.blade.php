@@ -71,7 +71,7 @@
 						</div>
 						<div class="modal-footer border-0">
 							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
-							<button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
+							<button type="update" class="btn btn-success button border-0">@lang('common.update')</button>
 						</div>
 					</div>
 				</form>

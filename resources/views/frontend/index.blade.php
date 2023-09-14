@@ -153,10 +153,10 @@ right:0;
 @endif
 
 
-@if($setting->type == 'college')
+@if($setting->type == 'school')
 <style>
   .container{
-  max-width : 1258px !important;
+  max-width : 1272px !important;
 }
 </style>
 
@@ -164,7 +164,7 @@ right:0;
 
 <style>
     .container{
-  max-width : 1140px !important;
+  max-width : 1198px !important;
 }
 </style>
 
@@ -804,7 +804,7 @@ right:0;
   <div class="col-sm-12 col-12 developerdiv">
 
     <center>
-      <span class="develop">@lang('frontend.crights') © <?php echo date('Y'); ?> {{ $setting->name }} @lang('frontend.rights')</span><br>
+      <span class="develop">@lang('frontend.crights') © <?php echo date('Y'); ?> @if($lang == 'en'){{ $setting->name }}@elseif($lang == 'bn'){{ $setting->name_bangla }}@endif @lang('frontend.rights')</span><br>
       <span class="develop">@lang('frontend.drights')</span>&nbsp;&nbsp;<a href="http://sbit.com.bd" target="blank" class="it">@lang('frontend.sbit')</a></center>
 
     </div>

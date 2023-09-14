@@ -15,15 +15,15 @@
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
 
           @if($data[0]->type == 3)
-          পরিচালনা পর্ষদ তথ্য
+          @lang('frontend.managing_comitte')
           @elseif($data[0]->type == 2)
-          সভাপতির তালিকা
+          @lang('frontend.presidents')
           @elseif($data[0]->type == 1)
-          প্রধান শিক্ষকদের তালিকা
+          @lang('frontend.principles')
           @elseif($data[0]->type == 4)
-          দাতা সদস্যদের তালিকা
+          @lang('frontend.donar')
           @else
-          প্রাক্তন সদস্যদের তালিকা
+          @lang('frontend.ex_member')
           @endif
 
         </li>
@@ -43,27 +43,27 @@
                <td rowspan="4">
                 <center><img src="{{ asset($d->image) }}" class="img-fluid" id="" style="max-height: 100px;"><br></center>
               </td>
-              <td>নাম</td>
+              <td>@lang('frontend.name')</td>
               <td>{{ $d->name }}</td>
             </tr>
 
             <tr>
-              <td>পদবী</td>
+              <td>@lang('frontend.designation')</td>
               <td>{{ $d->designation }}</td>
             </tr>
 
             <tr>
-              <td>মোবাইল</td>
+              <td>@lang('frontend.mobile')</td>
               <td>{{ $d->mobile }}</td>
             </tr>
 
             <tr>
-              <td>ই-মেইল</td>
+              <td>@lang('frontend.mail')</td>
               <td>{{ $d->email }}</td>
             </tr>
 
             <tr>
-              <td colspan="3"><center><a href="{{ url("memberdetails",$d->id) }}" class="btn btn-warning text-white btn-sm float-end">বিস্তারিত দেখুন</a></center></td> 
+              <td colspan="3"><center><a href="{{ url("memberdetails",$d->id) }}" class="btn btn-warning text-white btn-sm float-end">@lang('frontend.detail')</a></center></td> 
             </tr>               
           </table>
         </div><!-----------End Teacher Information----------------------->

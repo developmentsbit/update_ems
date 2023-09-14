@@ -28,7 +28,7 @@
 			<center>
 
 				<div class="mt-2">
-					<span class="head">{{ $president->name }}<br><a class="btn btn-success btn-sm w-100" style="border-radius: 0px;" href="{{ url('presidentmessage') }}" class="details">@lang('frontend.details')</a></span>
+					<span class="head">@if($lang == 'en'){{$president->name}}@elseif($lang == 'bn'){{$president->name_bn}}@endif<br><a class="btn btn-success btn-sm w-100" style="border-radius: 0px;" href="{{ url('presidentmessage') }}" class="details">@lang('frontend.details')</a></span>
 
 				</div>
 			</center>
@@ -57,7 +57,7 @@
 			<center>
 
 				<div class="mt-2">
-					<span class="head">{{ $principle->name }}<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('principal_message') }}" class="details">@lang('frontend.details')</a></span>
+					<span class="head">@if($lang == 'en'){{ $principle->name }}@elseif($lang == 'bn'){{ $principle->name_bn }}@endif<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('principal_message') }}" class="details">@lang('frontend.details')</a></span>
 
 				</div>
 			</center>
@@ -79,7 +79,7 @@
 			<center>
 
 				<div class="mt-2">
-					<span class="head">{{ $v_principle->name }}<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('vice_principal_message') }}" class="details">@lang('frontend.details')</a></span>
+					<span class="head">@if($lang == 'en'){{ $v_principle->name }}@elseif($lang == 'bn'){{ $v_principle->name_bn }}@endif<br><a class="btn btn-sm btn-success w-100" style="border-radius: 0px;" href="{{ url('vice_principal_messages') }}" class="details">@lang('frontend.details')</a></span>
 
 				</div>
 			</center>
@@ -109,7 +109,7 @@
 			@if(isset($usefullink))
 			@foreach($usefullink as $link)
 
-			<a href="{{ $link->linkurl }}" target="blank"><li style='font-size:12px;'><span uk-icon="icon: triangle-right; ratio: 0.7"></span>&nbsp;&nbsp;{{ $link->title }}</li></a>
+			<a href="{{ $link->linkurl }}" target="blank"><li style='font-size:12px;'><span uk-icon="icon: triangle-right; ratio: 0.7"></span>&nbsp;&nbsp;@if($lang == 'en'){{ $link->title }}@elseif($lang == 'bn'){{ $link->title_bn }}@endif</li></a>
 
 
 			@endforeach

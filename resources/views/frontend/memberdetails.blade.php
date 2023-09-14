@@ -33,60 +33,60 @@
 							<table class="table table-bordered table-hover">
 								<tbody>
 									<tr>
-										<td width="100">Name</td>
+										<td width="100">@lang('frontend.name')</td>
 										<td width="3" align="center">:</td>
 										<td width="230">{{ $data->name }}</td>
 									</tr>
 
 									<tr>
-										<td>Designation</td>
+										<td>@lang('frontend.designation')</td>
 										<td align="center">:</td>
 										<td>{{ $data->designation }}</td>
 									</tr>
 
 									<tr>
-										<td>Profession</td>
+										<td>@lang('frontend.profession')</td>
 										<td align="center">:</td>
 										<td>{{ $data->profession }}</td>
 									</tr>
 
 
 									<tr>
-										<td>Father's Name</td>
+										<td>@lang('frontend.father_name')</td>
 										<td align="center">:</td>
 										<td>{{ $data->father_name }}</td>
 									</tr>	
 
 
 									<tr>
-										<td>Mother's Name</td>
+										<td>@lang('frontend.mother_name')</td>
 										<td align="center">:</td>
 										<td>{{ $data->mother_name }}</td>
 									</tr>	
 
 
 									<tr>
-										<td>Mobile</td>
+										<td>@lang('frontend.mobile')</td>
 										<td align="center">:</td>
 										<td>{{ $data->mobile }}</td>
 									</tr>
 
 									<tr>
-										<td>Email</td>
+										<td>@lang('frontend.mail')</td>
 										<td align="center">:</td>
 										<td>{{ $data->email }}</td>
 									</tr>	
 
 
 									<tr>
-										<td>Duration</td>
+										<td>@lang('frontend.duration')</td>
 										<td align="center">:</td>
 										<td>{{ $data->duration }}</td>
 									</tr>
 
 
 									<tr>
-										<td>Address</td>
+										<td>@lang('frontend.adress')</td>
 										<td align="center">:</td>
 										<td>{{ $data->address }}</td>
 									</tr>

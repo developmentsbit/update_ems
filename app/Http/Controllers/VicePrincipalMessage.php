@@ -33,7 +33,7 @@ class VicePrincipalMessage extends Controller
             'name'=>$request->name,
             'name_bn'=>$request->name_bn,
             'details'=>$request->details,
-            'details'=>$request->details_bn,
+            'details_bn'=>$request->details_bn,
         );
 
         $file = $request->file('image');

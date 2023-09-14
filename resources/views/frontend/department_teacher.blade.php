@@ -34,26 +34,26 @@
               </tr>
               
                <tr>
-                  <th>Name</th>
+                  <th>@lang('frontend.mobile')</th>
                 <td>{{$view->name}}</td>
               </tr>
 
               <tr>
-                <th>Designation</th>
+                <th>@lang('frontend.designation')</th>
                 <td>{{$view->designation}}</td>
               </tr>
               <tr>
-                <th>Mobile</th>
+                <th>@lang('frontend.mobile')</th>
                 <td>{{$view->mobile}}</td>
               </tr>
 
               <tr>
-                <th>Email</th>
+                <th>@lang('frontend.mail')</th>
                 <td>{{$view->email}}</td>
               </tr>
 
               <tr>
-                <td colspan="3"><center><a href="{{url('teacherstaffdetails')}}/{{$view->id}}" class="btn btn-outline-success btn-sm">DETAILS</a></center></td> 
+                <td colspan="3"><center><a href="{{url('teacherstaffdetails')}}/{{$view->id}}" class="btn btn-outline-success btn-sm">@lang('frontend.detail')</a></center></td> 
               </tr>               
             </table>
           </div><!-----------End Teacher Information----------------------->

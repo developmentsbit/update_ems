@@ -132,6 +132,7 @@
 								<select class="form-control" name="type">
 									<option @if($data->type == 'school') selected @endif value="school">School</option>
 									<option @if($data->type == 'college') selected @endif value="college">College</option>
+									<option @if($data->type == 'madrasah') selected @endif value="madrasah">Madrasah</option>
 								</select>
 							</div>
 						</div>

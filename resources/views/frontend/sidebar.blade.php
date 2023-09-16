@@ -15,7 +15,7 @@
 
 <div class="col-sm-3 col-12">
 
-    @if($setting->type == 'school')
+    @if($setting->type == 'school' || $setting->type == 'madrasah')
 	@if(request()->Is('presidentmessage'))
 
 	@else
@@ -65,7 +65,7 @@
 	</div>
     @endif
 
-    @if($setting->type == 'college')
+    @if($setting->type == 'college' || $setting->type == 'madrasah')
 
 	@if(request()->Is('vice_principal_messages'))
 

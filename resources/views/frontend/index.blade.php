@@ -421,15 +421,16 @@ right:0;
                   @lang('frontend.principal_message')
                   @endif
                  </a></li>
-                 @if($setting->type == 'school')
+                 @if($setting->type == 'school' || $setting->type == 'madrasah')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
+                 @elseif($setting->type == 'school')
                  <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
                  <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
                  <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
                  <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
                  @endif
 
-                 @if($setting->type == 'college')
+                 @if($setting->type == 'college' || $setting->type == 'madrasah')
                  <li><a href="{{ url('vice_principal_messages') }}">@lang('frontend.vice_principal_message') </a></li>
                  <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
                  @endif

@@ -95,10 +95,16 @@ class SuggestionController extends Controller
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
 
-      $old_image = DB::table("suggestion")->where('id',$id)->first();
-
       if ($image) {
 
+        $old_image = DB::table("suggestion")->where('id',$id)->first();
+
+        $path = public_path().'/'.$old_image->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
 
 
         $image_name= rand(1111,9999);
@@ -130,6 +136,15 @@ class SuggestionController extends Controller
         $data = DB::table("suggestion")->where('id',$id)->first();
 
         if ($data) {
+
+            $old_image = DB::table("suggestion")->where('id',$id)->first();
+
+        $path = public_path().'/'.$old_image->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
 
            DB::table("suggestion")->where("id",$id)->delete();
            return redirect()->route('suggestion.index')->with('message','Suggestion Delete Successfully');

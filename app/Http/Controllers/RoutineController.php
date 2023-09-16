@@ -95,10 +95,17 @@ class RoutineController extends Controller
       $data['class_id']   = $request->class_id;
       $image              = $request->file('image');
 
-      $old_image = DB::table("classroutine")->where('id',$id)->first();
 
       if ($image) {
 
+        $old_image = DB::table("classroutine")->where('id',$id)->first();
+
+        $path = public_path().'/'.$old_image->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
 
 
         $image_name= rand(1111,9999);
@@ -130,6 +137,15 @@ class RoutineController extends Controller
         $data = DB::table("classroutine")->where('id',$id)->first();
 
         if ($data) {
+
+            $old_image = DB::table("classroutine")->where('id',$id)->first();
+
+            $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
 
            DB::table("classroutine")->where("id",$id)->delete();
            return redirect()->route('classroutine.index')->with('message','Routine Delete Successfully');

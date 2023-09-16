@@ -104,11 +104,16 @@ class MemberController extends Controller
       $data['status']         = $request->status;
       $image              = $request->file('image');
 
-      $old_image = DB::table("members")->where('id',$id)->first();
-
       if ($image) {
 
-          
+        $old_image = DB::table("members")->where('id',$id)->first();
+
+        $path = public_path().'/'.$old_image->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
 
         $image_name= rand(1111,9999);
         $ext=strtolower($image->getClientOriginalExtension());
@@ -121,7 +126,7 @@ class MemberController extends Controller
 
     }else{
         $update = DB::table('members')->where('id', $id)->update($data);
-    }       
+    }
 
     if ($update) {
      return redirect()->route('members.index')->with('message','members Update Successfully');
@@ -139,7 +144,16 @@ class MemberController extends Controller
         $data = DB::table("members")->where('id',$id)->first();
 
         if ($data) {
-           
+
+            $old_image = DB::table("members")->where('id',$id)->first();
+
+            $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
+
            DB::table("members")->where("id",$id)->delete();
            return redirect()->route('members.index')->with('message','members Delete Successfully');
        }

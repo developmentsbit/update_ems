@@ -14,12 +14,12 @@ class PhotogallerysTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('photogallerys')->delete();
-        
+
         \DB::table('photogallerys')->insert(array (
-            0 => 
+            0 =>
             array (
                 'created_at' => NULL,
                 'id' => 8,
@@ -29,7 +29,7 @@ class PhotogallerysTableSeeder extends Seeder
                 'title_bn' => NULL,
                 'updated_at' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'created_at' => NULL,
                 'id' => 9,
@@ -39,7 +39,7 @@ class PhotogallerysTableSeeder extends Seeder
                 'title_bn' => NULL,
                 'updated_at' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'created_at' => NULL,
                 'id' => 10,
@@ -50,7 +50,7 @@ class PhotogallerysTableSeeder extends Seeder
                 'updated_at' => NULL,
             ),
         ));
-        
-        
+
+
     }
 }

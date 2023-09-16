@@ -53,5 +53,6 @@ class DatabaseSeeder extends Seeder
         $this->call(VideogallerysTableSeeder::class);
         $this->call(TeachingPermissionsTableSeeder::class);
         $this->call(StudentAttendanceInfosTableSeeder::class);
+        $this->call(MembersTableSeeder::class);
     }
 }

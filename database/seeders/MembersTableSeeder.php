@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ClassroutineTableSeeder extends Seeder
+class MembersTableSeeder extends Seeder
 {
 
     /**
@@ -16,7 +16,7 @@ class ClassroutineTableSeeder extends Seeder
     {
         
 
-        \DB::table('classroutine')->delete();
+        \DB::table('members')->delete();
         
         
         

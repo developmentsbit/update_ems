@@ -128,9 +128,16 @@ class TeacherstaffController extends Controller
         $data['type']                 = $request->type;
         $image              = $request->file('image');
 
-        $old_image = DB::table("teacherstaff")->where('id',$id)->first();
 
         if ($image) {
+            $old_image = DB::table("teacherstaff")->where('id',$id)->first();
+
+            $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
 
             $image_name= rand(1111,9999);
             $ext=strtolower($image->getClientOriginalExtension());
@@ -143,7 +150,7 @@ class TeacherstaffController extends Controller
 
         }else{
             $update = DB::table('teacherstaff')->where('id', $id)->update($data);
-        }       
+        }
 
         if ($update) {
            return redirect()->route('teacherstaff.index')->with('message','Teacher/Staff Update Successfully');
@@ -161,6 +168,15 @@ class TeacherstaffController extends Controller
         $data = DB::table("teacherstaff")->where('id',$id)->first();
 
         if ($data) {
+
+            $old_image = DB::table("teacherstaff")->where('id',$id)->first();
+
+            $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
 
          DB::table("teacherstaff")->where("id",$id)->delete();
          return redirect()->route('teacherstaff.index')->with('message','Teacher/Staff Delete Successfully');

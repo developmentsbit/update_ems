@@ -91,9 +91,16 @@ class HolidaylistController extends Controller
        $data['date']       = $request->date;
        $image              = $request->file('image');
 
-       $old_image = DB::table("holidaylist")->where('id',$id)->first();
-
        if ($image) {
+
+        $old_image = DB::table("holidaylist")->where('id',$id)->first();
+
+        $path = public_path().'/'.$old_image->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
 
 
 
@@ -126,6 +133,15 @@ class HolidaylistController extends Controller
         $data = DB::table("holidaylist")->where('id',$id)->first();
 
         if ($data) {
+
+            $old_image = DB::table("holidaylist")->where('id',$id)->first();
+
+            $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
 
            DB::table("holidaylist")->where("id",$id)->delete();
            return redirect()->route('holidaylist.index')->with('message','Holiday List Delete Successfully');

@@ -91,9 +91,16 @@ class AcademiccalenderController extends Controller
        $data['date']       = $request->date;
        $image              = $request->file('image');
 
-       $old_image = DB::table("academiccalender")->where('id',$id)->first();
 
        if ($image) {
+           $old_image = DB::table("academiccalender")->where('id',$id)->first();
+
+           $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
 
 
 
@@ -126,6 +133,15 @@ class AcademiccalenderController extends Controller
         $data = DB::table("academiccalender")->where('id',$id)->first();
 
         if ($data) {
+
+            $old_image = DB::table("academiccalender")->where('id',$id)->first();
+
+           $path = public_path().'/'.$old_image->image;
+
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
 
            DB::table("academiccalender")->where("id",$id)->delete();
            return redirect()->route('academiccalender.index')->with('message','Academic Calender Delete Successfully');

@@ -98,6 +98,15 @@ class NoticesController extends Controller
 
       if ($image) {
 
+        $data = DB::table('notices')->where('id',$id)->first();
+
+        $path = public_path().'/'.$data->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
+
 
 
         $image_name= rand(1111,9999);
@@ -129,6 +138,13 @@ class NoticesController extends Controller
         $data = DB::table("notices")->where('id',$id)->first();
 
        if ($data) {
+
+        $path = public_path().'/'.$data->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
 
          DB::table("notices")->where("id",$id)->delete();
          return redirect()->route('notices.index')->with('message','Notices Delete Successfully');

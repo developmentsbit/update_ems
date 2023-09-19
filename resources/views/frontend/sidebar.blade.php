@@ -37,8 +37,8 @@
 	@endif
 
     @endif
-	
-	
+
+
     @if(request()->Is('principal_message'))
 
     @else
@@ -179,7 +179,7 @@
 			<li class="list-group-item" id="featurehead">@lang('frontend.national_anthem')</li>
 			<audio class="mt-2 w-100" controls>
 				<source src="{{ asset('/') }}frontend/img/bd_national_anthem.mp3" type="audio/ogg">
-					<source src="{{ asset('/') }}frontend/img/bd_national_anthem.mp3" type="audio/mpeg">
+					<source src="{{ asset('/') }}/national_anthem.mp3" type="audio/mpeg">
 					</audio>
 				</ul>
 			</div>

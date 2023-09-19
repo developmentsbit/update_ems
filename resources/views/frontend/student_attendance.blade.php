@@ -19,14 +19,14 @@
 
       <ul class="list-group p-0">
        <li class="list-group-item">
-        <span class="student">@if($lang == 'en'){{ $data->title }}@elseif($lang == 'bn'){{$v->title_bn}}@endif </span>
+        <span class="student">@if($lang == 'en'){{ $data->title }}@elseif($lang == 'bn'){{$data->title_bn}}@endif </span>
       </li>
 
       <li class="list-group-item">
 
         <div class="col-12">
             {!! $data->details !!}
-            
+
 
         </div>
 

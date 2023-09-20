@@ -103,7 +103,7 @@ class FrontendController extends Controller
 	{
 	    $teacherview = DB::table('teacherstaff')
 		->where('type',1)
-		->where('status',NULL)
+		->where('status',1)
 		->where('department_id',$id)
         ->orderby('sl','ASC')
 		->simplePaginate(12);

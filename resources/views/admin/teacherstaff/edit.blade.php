@@ -52,7 +52,13 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-8">
+                        <div class="form-group mb-3 col-md-4">
+							<label>@lang('teacherstaff.sl'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="sl" id="sl"  required="" value="{{ $data->sl }}">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-4">
 							<label>@lang('teacherstaff.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group -mt-2">
 								<input class="form-control" type="text" name="name" id="name"  required="" value="{{ $data->name }}">

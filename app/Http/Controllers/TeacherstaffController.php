@@ -44,6 +44,7 @@ class TeacherstaffController extends Controller
 
        $data = array();
        $data['department_id']        = $request->department_id;
+       $data['sl']        = $request->sl;
        $data['name']                 = $request->name;
        $data['designation']          = $request->designation;
        $data['nid']                  = $request->nid;
@@ -109,6 +110,7 @@ class TeacherstaffController extends Controller
 
         $data = array();
         $data['department_id']        = $request->department_id;
+        $data['sl']        = $request->sl;
         $data['name']                 = $request->name;
         $data['designation']          = $request->designation;
         $data['nid']                  = $request->nid;

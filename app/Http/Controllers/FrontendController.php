@@ -24,7 +24,7 @@ class FrontendController extends Controller
 		$data = teaching_permission::get();
 		return view('frontend.teacher_permission',compact('data'));
 	}
-	
+
 	public function mpo_nationalizations()
 	{
 		$data = mpoNationalizatio::get();
@@ -91,7 +91,10 @@ class FrontendController extends Controller
 
 
 	public function teacherinfo(){
-		$data = DB::table("teacherstaff")->where('type',1)->get();
+		$data = DB::table("teacherstaff")
+        ->where('type',1)
+        ->orderby('sl','ASC')
+        ->get();
 		return view('frontend.teacherinfo',compact('data'));
 
 	}
@@ -102,6 +105,7 @@ class FrontendController extends Controller
 		->where('type',1)
 		->where('status',NULL)
 		->where('department_id',$id)
+        ->orderby('sl','ASC')
 		->simplePaginate(12);
 
 		$data = DB::table("department")->where('id',$id)->get();
@@ -111,7 +115,10 @@ class FrontendController extends Controller
 	}
 
 	public function staffinfo(){
-		$data = DB::table("teacherstaff")->where('type',2)->get();
+		$data = DB::table("teacherstaff")
+        ->where('type',2)
+        ->orderby('sl','ASC')
+        ->get();
 		return view('frontend.staffinfo',compact('data'));
 
 	}
@@ -119,7 +126,10 @@ class FrontendController extends Controller
 
 
 	public function teacherstaffdetails($id){
-		$data = DB::table("teacherstaff")->where('id',$id)->first();
+		$data = DB::table("teacherstaff")
+        ->where('id',$id)
+        ->orderby('sl','ASC')
+        ->first();
 		return view('frontend.teacherstaffdetails',compact('data'));
 
 	}
@@ -475,7 +485,7 @@ class FrontendController extends Controller
         // return 1;
 
         $data = DB::table("student_attendance_infos")->first();
-        
+
         return view('frontend.student_attendance',compact('data'));
     }
 

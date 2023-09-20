@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('teacherstaff', function (Blueprint $table) {
             $table->id();
+            $table->integer('sl')->default(1);
             $table->foreignId('department_id')->nullable()->constrained('department')->cascadeOnDelete();
             $table->string('name');
             $table->string('designation')->nullable();
@@ -29,10 +30,10 @@ return new class extends Migration
             $table->string('mpo_date')->nullable();
             $table->text('present_address')->nullable();
             $table->text('parmanent_address')->nullable();
-            $table->string('education')->nullable();
+            $table->text('education')->nullable();
             $table->string('gender')->nullable();
             $table->string('type')->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('status')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

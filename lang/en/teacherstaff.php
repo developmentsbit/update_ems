@@ -27,7 +27,8 @@ return [
      'type' => 'Type',
      'image' => 'Image',
      'download' => 'Download/File Image',
+     'sl'=>'Serial No.',
 
- 
+
 
 ];

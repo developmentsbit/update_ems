@@ -54,5 +54,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TeachingPermissionsTableSeeder::class);
         $this->call(StudentAttendanceInfosTableSeeder::class);
         $this->call(MembersTableSeeder::class);
+        $this->call(GenderWisesTableSeeder::class);
+        $this->call(SectionWisesTableSeeder::class);
     }
 }

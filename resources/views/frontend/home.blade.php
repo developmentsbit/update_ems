@@ -31,7 +31,9 @@ $setting = DB::table("setting")->first();
 								@if(isset($notice))
 								@foreach($notice as $n)
 
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >{{ $n->title }}</a></li>
+								{{-- <li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >@if($lang == 'en'){{$n->title}}@elseif($lang == 'bn'){{$n->title_bn}}@endif</a></li> --}}
+
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >{{$n->title}}</a></li>
 
 								@endforeach
 								@endif
@@ -133,16 +135,17 @@ $setting = DB::table("setting")->first();
 											@lang('frontend.principal_message')
 											@endif
 											</a></li>
-											@if($setting->type == 'school' || $setting->type == 'madrasah')
+											@if($setting->type == 'madrasah')
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
 											@elseif($setting->type == 'school')
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
 											@endif
-											
-											@if($setting->type == 'college')
+
+											@if($setting->type == 'college' || $setting->type == 'madrasah')
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('vice_principal_messages') }}">@lang('frontend.vice_principal_message') </a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
 											@endif

@@ -33,7 +33,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">@lang('teaching_permission.edittitle')</h4>
+                        <h3>@lang('teaching_permission.edittitle')</h3>
                         <div class="tab-content">
                             <div class="row">
                                 <div class="form-groupform-group col-sm-12 col-md-12 col-lg-6 mt-3 mt-3">

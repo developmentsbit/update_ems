@@ -39,8 +39,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-
-                        <h4 class="header-title">@lang('teaching_permission.managetitle')</h4>
+                        <h3>@lang('teaching_permission.managetitle')</h3>
                         <ul class="nav nav-tabs nav-bordered mb-3">
                             <li class="nav-item">
                                 <a href="#users-tab-all" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">

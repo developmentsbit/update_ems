@@ -39,6 +39,8 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ViewAdmissionController;
 use App\Http\Controllers\VicePrincipalMessage;
+use App\Http\Controllers\GenderWiseController;
+use App\Http\Controllers\SectionWiseController;
 use App\Http\Controllers\MujibController;
 
 use App\Http\Controllers\MpoNationalizatioController;
@@ -114,6 +116,8 @@ Route::get('/holidaylists', [FrontendController::class, 'holidaylist']);
 
 Route::get('/gender_wise_student_list',[FrontendController::class,'gender_wise_student_list']);
 Route::get('/section_wise_student_list',[FrontendController::class,'section_wise_student_list']);
+Route::get('/gender_wise_students',[FrontendController::class,'gender_wise_students']);
+Route::get('/section_wise_students',[FrontendController::class,'section_wise_students']);
 Route::get('/student_attendance',[FrontendController::class,'student_attendance']);
 
 
@@ -256,6 +260,8 @@ Route::group(['middleware' => 'auth'], function () {
         'vedio_gallery' => VedioGallery::class,
         'admission_info' => ViewAdmissionController::class,
         'vice_principal_message' => VicePrincipalMessage::class,
+        'gender_wise' => GenderWiseController::class,
+        'section_wise' => SectionWiseController::class,
     ]);
 
     Route::get('retrive_message/{id}', [MessageController::class, 'retrive_message']);

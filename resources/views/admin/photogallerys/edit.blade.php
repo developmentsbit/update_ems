@@ -54,7 +54,7 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">
-							<label>@lang('common.image'):</label>
+							<label>@lang('common.image'): &nbsp;<span class="text-danger" style="font-size: 15px; font-weight:bold;">@lang('common.image_text')</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="file" name="image" id="image">
 								<br>

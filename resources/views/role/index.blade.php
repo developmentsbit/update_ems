@@ -64,6 +64,32 @@
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        @if($data)
+                                        @foreach ($data as $v)
+                                        <tr>
+                                            <td>{{$i++}}</td>
+                                            <td>{{$v->name}}</td>
+                                            <td>
+                                                @if($v->status == 1)
+                                                <span class="badge bg-success">@lang('common.active')</span>
+                                                @else
+                                                <span class="badge bg-danger">@lang('common.inactive')</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a style="float: left" href="{{route('role.edit',$v->id)}}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                <form method="post" action="{{route('role.destroy',$v->id)}}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                <button onclick="return confirm('Are You Sure ?')" type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                                </form>
+                                                <a style="float: left" href="{{url('role/'.$v->id.'/permission')}}" class="btn btn-sm btn-info"><i class="fa fa-lock"></i></a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                        @endif
+                                    </tbody>
                                 </table>
                             </div> <!-- end all-->
 
@@ -147,29 +173,7 @@
                 },
             ]
 
-            $('#datatable-roles-all').DataTable({
-                processing: true,
-                serverSide: true,
-                pageLength: 25,
-                serverMethod: 'get',
-                lengthMenu: [10, 25, 50, 100],
-                order: [0, "asc"],
-                language: {
-                    'loadingRecords': '&nbsp;',
-                    'processing': 'Loading ...'
-                },
-                ajax: {
-                    url: '{{ route('role.index') }}',
-                    type: 'get',
-                    dataType: 'JSON',
-                    cache: false,
-                },
-                columns: datatable_columns,
-                search: {
-                    "regex": true
-                },
-                columnDefs: datatable_columns_defs,
-            });
+            $('#datatable-roles-all').DataTable();
 
             $('#datatable-roles-deleted').DataTable({
                 processing: true,

@@ -31,6 +31,9 @@ public/suggestion_image
 public/syllabus_image
 public/teacherstaff_image
 public/vice_principal_image
+public/class_wise_student_image
+public/section_wise
+public/gender_wise
 
 result/db_connect/conect.php
 

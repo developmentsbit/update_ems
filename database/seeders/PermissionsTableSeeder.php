@@ -1592,6 +1592,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-19 17:59:47',
                 'deleted_at' => NULL,
             ),
+            143 => 
+            array (
+                'id' => 229,
+                'name' => 'Class Wise Student Information List',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            144 => 
+            array (
+                'id' => 230,
+                'name' => 'Class Wise Student Information Create',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            145 => 
+            array (
+                'id' => 231,
+                'name' => 'Class Wise Student Information Edit',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            146 => 
+            array (
+                'id' => 232,
+                'name' => 'Class Wise Student Information Delete',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            147 => 
+            array (
+                'id' => 233,
+                'name' => 'Class Wise Student Information View',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            148 => 
+            array (
+                'id' => 234,
+                'name' => 'Class Wise Student Information Print',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            149 => 
+            array (
+                'id' => 235,
+                'name' => 'Class Wise Student Information Edit_history',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            150 => 
+            array (
+                'id' => 236,
+                'name' => 'Class Wise Student Information Deleted_list',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            151 => 
+            array (
+                'id' => 237,
+                'name' => 'Class Wise Student Information Restore',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
+            152 => 
+            array (
+                'id' => 238,
+                'name' => 'Class Wise Student Information Permanent_delete',
+                'parent' => 'Class Wise Student Information',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

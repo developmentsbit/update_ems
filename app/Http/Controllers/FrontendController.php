@@ -497,12 +497,19 @@ class FrontendController extends Controller
 
         return view('frontend.gender_wise_students',compact('data'));
     }
-	
+
 	public function section_wise_students()
     {
         $data= section_wise::get();
 
         return view('frontend.section_wise_students',compact('data'));
+    }
+
+    public function classWiseStudent($id)
+    {
+        $data = DB::table('class_wise_student_infos')
+        ->where('class_wise_student_infos.class_id',$id)->first();
+        return view('frontend.class_wise_student',compact('data'));
     }
 
 

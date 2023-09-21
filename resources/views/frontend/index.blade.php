@@ -26,9 +26,15 @@ $setting = DB::table("setting")->first();
   <link href="{{ asset('/') }}frontend/css/sliderResponsive.css" rel="stylesheet" type="text/css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script type="text/javascript" src="{{ asset('/') }}frontend/js/main.js"></script>
+
 </head>
 
+
+
 <style type="text/css">
+.container{
+    background: white;
+}
 .site-lang {
 
 display: flex;
@@ -204,26 +210,34 @@ right:0;
 
 @if(config('app.locale') == 'en')
 <style>
+    .container{
+    max-width : 1272px !important;
+  }
+  </style>
+<style>
     li.nav-item a {
-      font-size: 10.46px;
+      font-size: 12.46px;
       padding: 14px 6px !important;
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: bold;
   }
 
 </style>
 @endif
 
+@if(config('app.locale') == 'bn')
+<style>
+      .container{
+        max-width: 1135px !important;
+        }
+</style>
+@endif
 
 
 @if($setting->type == 'school')
 
 
-<style>
-  .container{
-  max-width : 1272px !important;
-}
-</style>
+
 
 @else
 
@@ -384,10 +398,10 @@ right:0;
                     <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
                     <li><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
-                    @if($setting->type == 'school')
+
                     <li><a href="{{url('teacher_permission')}}">@lang('frontend.teaching_permission_recognition')</a></li>
                     <li><a href="{{url('mpo_nationalizations')}}">@lang('frontend.mpo_nationalization_info')</a></li>
-                    @endif
+
                   </div>
 
                   <div class="col-md-6 col-12 dmenu mt-3">
@@ -445,13 +459,17 @@ right:0;
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               @lang('frontend.teachers_and_staff')
             </a>
+            @if($setting->type == 'college')
             <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 500px;  max-width:100%;">
+            @else
+            <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 217px;  max-width:100%;">
+            @endif
 
               <div class="col-md-12 col-12 dmenu mt-3">
                <div class="row">
-                 <div class="col-md-7">
-
                 @if($setting->type == 'college')
+                <div class="col-md-7">
+
                <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
                @php
                 $department = DB::table('department')->limit(9)->get();
@@ -481,14 +499,17 @@ right:0;
                @endforeach
                @endif
 
-               @endif
 
                <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
 
-               </div>
+            </div>
+            @endif
                @else
-               <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
-               <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
+               <div class="col-12">
+
+                    <li><a href="{{ url('teacherinfo') }}">@lang('frontend.teacherinfo')</a></li>
+                    <li><a href="{{ url('staffinfo') }}">@lang('frontend.staffinfo')</a></li>
+               </div>
                @endif
                </div>
 
@@ -508,22 +529,23 @@ right:0;
             <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
            <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
             --}}
-           
+
           <li><a href="{{url('gender_wise_students')}}">@lang('frontend.class_gender_based_education')</a></li>
            <li><a href="{{url('section_wise_students')}}">@lang('frontend.section_wise_student')</a></li>
-            
+
            <li><a href="{{ url('student_attendance') }}">@lang('frontend.student_attendance')</a></li>
            @php
-            $class = DB::connection('mysql_second')->table('add_class')->get();
+            $class = DB::table('addclass')->get();
            @endphp
            @if($class)
            @foreach ($class as $c)
-           @php
-            $count_student = DB::connection('mysql_second')->table('running_student_info')->where('class_id',$c->id)->count();
-           @endphp
-           @if($count_student > 0)
-           <li><a href="#">{{$c->class_name}}</a></li>
-           @endif
+            @php
+            $check = DB::table('class_wise_student_infos')->where('class_id',$c->id)->count();
+            @endphp
+
+            @if($check > 0)
+           <li><a href="{{url('classWiseStudent')}}/{{$c->id}}">@if($lang == 'en'){{$c->class_name}}@else {{$c->class_name_bn}}@endif</a></li>
+            @endif
            @endforeach
            @endif
 
@@ -754,7 +776,7 @@ right:0;
     <li class="uk-parent">
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.student')</a>
       <ul class="uk-nav-sub">
-        
+
         {{--
           <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
         <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>

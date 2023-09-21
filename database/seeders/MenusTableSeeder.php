@@ -912,6 +912,25 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-09-19 19:27:16',
                 'deleted_at' => NULL,
             ),
+            47 => 
+            array (
+                'id' => 77,
+                'parent_id' => 69,
+                'name' => 'Class Wise Student Information',
+                'bn_name' => 'শ্রেণীভিত্তিক শিক্ষার্থীর তথ্য',
+                'system_name' => 'Class Wise Student Information',
+                'route_name' => 'class_wise_student.index',
+                'icon' => NULL,
+                'order_by' => 4,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-09-21 07:28:43',
+                'updated_at' => '2023-09-21 07:28:43',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

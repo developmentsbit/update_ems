@@ -52,7 +52,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<th>@lang('teacherstaff.name')</th>
 							<th>@lang('teacherstaff.email')</th>
 							<th>@lang('teacherstaff.mobile')</th>
-							<th>@lang('teacherstaff.present_address')</th>
 							<th>@lang('teacherstaff.type')</th>
 							<th>@lang('common.image')</th>
 							<th>@lang('common.action')</th>
@@ -68,7 +67,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $d->name }}</td>
 							<td>{{ $d->email }}</td>
 							<td>{{ $d->mobile }}</td>
-							<td>{{ $d->present_address }}</td>
 							<td>
 								@if($d->type == 1)
 								Teacher

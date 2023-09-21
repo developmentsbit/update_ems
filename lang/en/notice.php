@@ -13,6 +13,8 @@ return [
      'date' => 'Date',
      'title_bn'=>'Title Bangla',
      'details_bn'=>'Details Bangla',
+     'notice'=>'Notice',
+     'magazine'=>'Magazine',
 
 
 

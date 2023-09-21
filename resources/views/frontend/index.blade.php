@@ -421,9 +421,10 @@ right:0;
                   @lang('frontend.principal_message')
                   @endif
                  </a></li>
-                 @if($setting->type == 'school' || $setting->type == 'madrasah')
+                 @if($setting->type == 'madrasah')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
                  @elseif($setting->type == 'school')
+                 <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
                  <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
                  <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
                  <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
@@ -503,8 +504,14 @@ right:0;
 
           <div class="col-md-12 col-12 dmenu mt-3">
 
-           <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
+           {{--
+            <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
            <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
+            --}}
+           
+          <li><a href="{{url('gender_wise_students')}}">@lang('frontend.class_gender_based_education')</a></li>
+           <li><a href="{{url('section_wise_students')}}">@lang('frontend.section_wise_student')</a></li>
+            
            <li><a href="{{ url('student_attendance') }}">@lang('frontend.student_attendance')</a></li>
            @php
             $class = DB::connection('mysql_second')->table('add_class')->get();
@@ -710,7 +717,9 @@ right:0;
         @lang('frontend.principal_message')
         @endif
         </a></li>
-        @if($setting->type == 'school')
+        @if($setting->type == 'madrasah')
+        <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
+        @elseif($setting->type == 'school')
         <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
         <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
         <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
@@ -718,7 +727,7 @@ right:0;
         <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
         @endif
 
-        @if($setting->type == 'college')
+        @if($setting->type == 'college' || $setting->type == 'madrasah')
         <li><a href="{{ url('vice_principal_messages') }}">@lang('frontend.vice_principal_message') </a></li>
         <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
         @endif
@@ -745,8 +754,15 @@ right:0;
     <li class="uk-parent">
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.student')</a>
       <ul class="uk-nav-sub">
-       <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
+        
+        {{--
+          <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
         <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
+          --}}
+
+        <li><a href="{{url('gender_wise_students')}}">@lang('frontend.class_gender_based_education')</a></li>
+        <li><a href="{{url('section_wise_students')}}">@lang('frontend.section_wise_student')</a></li>
+
         <li><a href="#">@lang('frontend.student_attendance')</a></li>
         @php
         $class = DB::connection('mysql_second')->table('add_class')->get();

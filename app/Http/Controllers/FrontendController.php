@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\teaching_permission;
 use App\Models\mpoNationalizatio;
+use App\Models\gender_wise;
+use App\Models\section_wise;
 
 class FrontendController extends Controller
 {
@@ -477,6 +479,20 @@ class FrontendController extends Controller
         $data = DB::table("student_attendance_infos")->first();
         
         return view('frontend.student_attendance',compact('data'));
+    }
+
+	public function gender_wise_students()
+    {
+        $data= gender_wise::get();
+
+        return view('frontend.gender_wise_students',compact('data'));
+    }
+	
+	public function section_wise_students()
+    {
+        $data= section_wise::get();
+
+        return view('frontend.section_wise_students',compact('data'));
     }
 
 

@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">
-							<label>@lang('common.image'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('common.image'): &nbsp;<span class="text-danger" style="font-size: 15px; font-weight:bold;">@lang('common.image_text')</span><span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<input class="form-control" type="file" name="image" id="image" required="">
 							</div>
@@ -58,7 +58,7 @@
 						<div class="form-group mb-3 col-md-12">
 							<label>@lang('photo.slider'):</label>
 							<div class="input-group mt-2">
-								<input type="checkbox" value="1" name="slider" id="slider">&nbsp;&nbsp;&nbsp;@lang('photo.slider_image'):
+								<input type="checkbox" value="1" name="slider" id="slider">&nbsp;&nbsp;&nbsp;@lang('photo.slider_image') 
 							</div>
 						</div>
 						<div class="modal-footer border-0">

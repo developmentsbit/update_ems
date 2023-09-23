@@ -47,6 +47,7 @@ use App\Http\Controllers\MpoNationalizatioController;
 
 use App\Http\Controllers\StudentAttendanceInfoController;
 use App\Http\Controllers\ClassWiseStudentinfo;
+use App\Http\Controllers\BackupController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -213,6 +214,14 @@ Route::any('lang/{lang}', function ($lang) {
 
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::group(['prefix' => '/backup'], function () {
+        Route::get('/index', [BackupController::class, 'index'])->name('backup.index');
+        Route::get('/create', [BackupController::class, 'create'])->name('backup.create');
+        Route::get('/clean', [BackupController::class, 'clean'])->name('backup.clean');
+        Route::get('/download/{file_name}', [BackupController::class, 'download'])->name('backup.download');
+        Route::get('/delete/{file_name}', [BackupController::class, 'delete'])->name('backup.delete');
+    });
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     //    Route::get('user/permission/{id}', 'UserController@permission')->name('user.permission');
@@ -376,3 +385,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 });
+
+Route::get('/backups', function() {
+    Artisan::call('backup:run');
+  });

@@ -43,6 +43,7 @@ class NoticesController extends Controller
        $data['date']       = $request->date;
        $data['details']    = $request->details;
        $data['details_bn']    = $request->details_bn;
+       $data['image'] = '0';
        $image              = $request->file('image');
 
        if ($image) {

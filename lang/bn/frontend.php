@@ -81,7 +81,7 @@ $array = array(
     'citizen_charter'=>'সিটিজেন চার্টার',
     'administrative_information'=>'প্রশাসনিক তথ্য',
     'presidentmessage'=>'সভাপতির বার্তা',
-    
+
     // 'principal_messages'=>'প্রধান শিক্ষকের বার্তা',
     'vice_principal_message'=>'উপাধ্যক্ষের বার্তা',
     'managing_comitte'=>'পরিচালনা পর্ষদ তথ্য',
@@ -174,6 +174,11 @@ $array = array(
     'tenth_class_std_info'=>'১০ম শ্রেণী শিক্ষার্থী তথ্য',
     'gender_wise_student_info'=>'লিঙ্গভিত্তিক শিক্ষার্থীর তথ্য',
     'total'=>'মোট',
+    'class_wise_student'=>'শ্রেণী ভিত্তিক শিক্ষার্থীর তথ্য',
+    'student_id'=>'ছাত্র/ছাত্রীর আইডি',
+    'roll_no'=>'রোল নং',
+    'phone'=>'ফোন',
+    'details'=>'বিস্তারিত',
 
 
     //tanim
@@ -185,9 +190,9 @@ $array = array(
 
 if($setting->type == 'school')
 {
-    
+
         $array['principal_message'] = 'প্রধান শিক্ষকের বার্তা';
-    
+
 }
 else
 {

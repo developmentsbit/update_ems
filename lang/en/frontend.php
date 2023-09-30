@@ -168,6 +168,11 @@ $array = array(
     'tenth_class_std_info'=>'10th Class Student Information',
     'gender_wise_student_info'=>'Gender Wise Student Information',
     'total'=>'Total',
+    'class_wise_student'=>'Class Wise Student',
+    'student_id'=>'Student ID',
+    'roll_no'=>'Roll No',
+    'phone'=>'Phone',
+    'details'=>'Details',
 
 
     //tanim
@@ -179,9 +184,9 @@ $array = array(
 
 if($setting->type == 'school')
 {
-    
+
         $array['principal_message'] = 'Head Teacher Message';
-    
+
 }
 else
 {

@@ -44,6 +44,7 @@
 							<label>@lang('teacherstaff.department'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group -mt-2">
 								<select class="form-control" name="department_id" id="department_id">
+                                    <option value="">@lang("common.select_one")</option>
 									@if(isset($department))
 									@foreach($department as $c)
 									<option @if($data->department_id == $c->id) selected @endif value="{{ $c->id }}" @php $c->id == $data->department_id ?  "selected" : '' @endphp>{{ $c->department }}</option>

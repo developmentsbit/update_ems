@@ -170,6 +170,8 @@ Route::get('/principledetails', [FrontendController::class, 'principledetails'])
 Route::get('/viceprincipledetails', [FrontendController::class, 'viceprincipledetails']);
 Route::get('/Previous_Principles', [FrontendController::class, 'Previous_Principles']);
 
+Route::get('/class_student_info/{id}',[FrontendController::class,'class_student_info']);
+
 //admission_form
 
 Route::get('/admission_form',[AdmissionController::class,'admission_form']);

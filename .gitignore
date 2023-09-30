@@ -4,7 +4,8 @@ npm-debug.log
 yarn-error.log
 /.cpanel.yml
 
-# /config/backup.php
+/config/backup.php
+
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -37,7 +38,7 @@ public/class_wise_student_image
 public/section_wise
 public/gender_wise
 
-result/db_connect/conect.php
+# result/db_connect/conect.php
 
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage

@@ -525,16 +525,20 @@ right:0;
 
           <div class="col-md-12 col-12 dmenu mt-3">
 
-           {{--
+
             <li><a href="{{url('gender_wise_student_list')}}">@lang('frontend.class_gender_based_education')</a></li>
            <li><a href="{{url('section_wise_student_list')}}">@lang('frontend.section_wise_student')</a></li>
-            --}}
 
-          <li><a href="{{url('gender_wise_students')}}">@lang('frontend.class_gender_based_education')</a></li>
-           <li><a href="{{url('section_wise_students')}}">@lang('frontend.section_wise_student')</a></li>
+
+          {{-- <li><a href="{{url('gender_wise_students')}}">@lang('frontend.class_gender_based_education')</a></li>
+           <li><a href="{{url('section_wise_students')}}">@lang('frontend.section_wise_student')</a></li> --}}
 
            <li><a href="{{ url('student_attendance') }}">@lang('frontend.student_attendance')</a></li>
-           @php
+           {{--
+
+            this is from original database
+
+            @php
             $class = DB::table('addclass')->get();
            @endphp
            @if($class)
@@ -548,6 +552,26 @@ right:0;
             @endif
            @endforeach
            @endif
+           --}}
+
+           {{-- this is from secondary database --}}
+
+           @php
+           $class = DB::connection('mysql_second')->table('add_class')->get();
+           @endphp
+
+                @if($class)
+                @foreach ($class as $c)
+
+                @php
+                $count = DB::connection('mysql_second')->table('running_student_info')->where('class_id',$c->id)->count();
+                @endphp
+
+                @if($count > 0)
+                <li><a href="{{url('class_student_info')}}/{{$c->id}}">{{$c->class_name}}</a></li>
+                @endif
+                @endforeach
+                @endif
 
          </div>
        </ul>

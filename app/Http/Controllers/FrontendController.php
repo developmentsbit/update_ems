@@ -512,5 +512,17 @@ class FrontendController extends Controller
         return view('frontend.class_wise_student',compact('data'));
     }
 
+    public function class_student_info($id)
+    {
+        // $class = DB::
+        $student = DB::connection('mysql_second')->table('running_student_info')->where('running_student_info.class_id',$id)
+                ->leftjoin('student_personal_info','student_personal_info.id','running_student_info.student_id')
+                ->leftjoin('student_guardian_information','student_guardian_information.id','running_student_info.student_id')
+                ->leftjoin('add_group','add_group.id','running_student_info.group_id')
+                ->select('running_student_info.*','student_personal_info.student_name','student_personal_info.father_name','student_personal_info.mother_name','student_personal_info.gender','student_personal_info.contact_no','student_personal_info.religious','add_group.group_name')
+                ->paginate('50');
+        return view('frontend.class_student_info',compact('student'));
+    }
+
 
 }

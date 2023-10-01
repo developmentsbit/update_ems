@@ -306,7 +306,7 @@ right:0;
                     <span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif</span>
                     <br>
                     <span id="" style="">
-                    @lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} ইং@endif </span>
+                    @lang('frontend.established') - @if($lang == 'en'){{ $setting->established }}@else {{$setting->established_bangla}} খ্রিঃ@endif </span>
                 </div>
             </div>
         </div>

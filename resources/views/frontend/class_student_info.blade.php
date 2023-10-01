@@ -19,7 +19,7 @@
 
       <ul class="list-group p-0">
        <li class="list-group-item">
-        <span class="student">@lang('frontend.class_wise_student') </span>
+        <span class="student">@lang('frontend.class_wise_student') ({{$class->class_name}}) </span>
       </li>
 
       @php
@@ -28,7 +28,15 @@
 
       <li class="list-group-item">
         <div class="col-12">
-            <table class="table table-bordered" style="font-size: 13px;">
+            <div class="row">
+                <div class="col-8">
+                    <input type="hidden" id="class_id" name="class_id" value="{{$class->id}}">
+                </div>
+                <div class="col-lg-4 col-12">
+                    <input type="text" class="form-control form-control-sm" placeholder="Search by name or roll or phone number" id="search_data" name="search_data" onkeyup="loadSearchStudent()">
+                </div>
+            </div>
+            <table class="table table-bordered mt-2" style="font-size: 13px;">
                 <thead>
                     <tr>
                         <th>@lang('frontend.sl')</th>
@@ -45,7 +53,7 @@
                         <th>@lang('frontend.details')</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="showData">
                     @if($student)
                     @foreach($student as $s)
                     <tr>
@@ -103,3 +111,40 @@
 
 
 @endsection
+
+
+<script>
+    function loadSearchStudent()
+    {
+        let class_id = $('#class_id').val();
+
+        // console.log(class_id);
+        let search_data = $('#search_data').val();
+
+        if(search_data != '')
+        {
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{csrf_token()}}'
+                },
+
+                url : '{{url('loadSearchStudent')}}',
+
+                type : 'POST',
+
+                data : {class_id,search_data},
+
+                beforeSend : function(r)
+                {
+                    var loading = "<img src='https://i.gifer.com/ZKZg.gif' style='margin:auto;height:100px;width:100px;'>";
+                    $('#showData').html(loading);
+                },
+
+                success : function(data)
+                {
+                    $('#showData').html(data);
+                }
+            })
+        }
+    }
+</script>

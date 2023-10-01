@@ -171,6 +171,7 @@ Route::get('/viceprincipledetails', [FrontendController::class, 'viceprinciplede
 Route::get('/Previous_Principles', [FrontendController::class, 'Previous_Principles']);
 
 Route::get('/class_student_info/{id}',[FrontendController::class,'class_student_info']);
+Route::post('/loadSearchStudent',[FrontendController::class,'loadSearchStudent']);
 
 //admission_form
 

@@ -521,7 +521,28 @@ class FrontendController extends Controller
                 ->leftjoin('add_group','add_group.id','running_student_info.group_id')
                 ->select('running_student_info.*','student_personal_info.student_name','student_personal_info.father_name','student_personal_info.mother_name','student_personal_info.gender','student_personal_info.contact_no','student_personal_info.religious','add_group.group_name')
                 ->paginate('50');
-        return view('frontend.class_student_info',compact('student'));
+        $class = DB::connection('mysql_second')->table('add_class')->where('id',$id)->first();
+        return view('frontend.class_student_info',compact('student','class'));
+    }
+
+    public function loadSearchStudent(Request $r)
+    {
+        $class_id = $r->class_id;
+        $search_data = $r->search_data;
+        // return $search_data;x
+        $student = DB::connection('mysql_second')->table('running_student_info')
+                ->where('running_student_info.class_id',$class_id)
+                ->leftjoin('student_personal_info','student_personal_info.id','running_student_info.student_id')
+                ->leftjoin('student_guardian_information','student_guardian_information.id','running_student_info.student_id')
+                ->leftjoin('add_group','add_group.id','running_student_info.group_id')
+                ->where('student_personal_info.student_name','LIKE','%'.$r->search_data.'%')
+                ->orWhere('student_personal_info.contact_no','LIKE','%'.$r->search_data.'%')
+                ->orWhere('running_student_info.class_roll','LIKE','%'.$r->search_data.'%')
+                ->orWhere('running_student_info.student_id','LIKE','%'.$r->search_data.'%')
+                ->select('running_student_info.*','student_personal_info.student_name','student_personal_info.father_name','student_personal_info.mother_name','student_personal_info.gender','student_personal_info.contact_no','student_personal_info.religious','add_group.group_name')
+                ->get();
+        $i = 1;
+        return view('frontend.load_search_data',compact('student','i'));
     }
 
 

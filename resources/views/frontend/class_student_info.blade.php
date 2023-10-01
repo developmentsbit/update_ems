@@ -83,7 +83,7 @@
                         <td>{{$s->contact_no}}</td>
                         <td>{{$s->gender}}</td>
                         <td>{{$s->religious}}</td>
-                        <td><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-eye"></i></a></td>
+                        <td><a target="_blank" href="{{url('view_student_details')}}/{{$s->student_id}}" class="btn btn-sm btn-danger"><i class="fa fa-eye"></i></a></td>
                     </tr>
                     @endforeach
                     @endif
@@ -145,6 +145,9 @@
                     $('#showData').html(data);
                 }
             })
+        }
+        else{
+
         }
     }
 </script>

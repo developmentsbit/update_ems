@@ -545,5 +545,44 @@ class FrontendController extends Controller
         return view('frontend.load_search_data',compact('student','i'));
     }
 
+    public function view_student_details($student_id)
+    {
+        $running_info = DB::connection('mysql_second')->table('running_student_info')
+        ->join('add_class','add_class.id','running_student_info.class_id')
+        ->leftjoin('add_group','add_group.id','running_student_info.group_id')
+        ->where('running_student_info.student_id',$student_id)
+        ->select('running_student_info.*','add_class.class_name','add_group.group_name')
+        ->first();
+
+        $personal_info = DB::connection('mysql_second')->table('student_personal_info')->where('id',$student_id)->first();
+
+        $guardian_info = DB::connection('mysql_second')->table('student_guardian_information')->where('id',$student_id)->first();
+
+        $academic_information = DB::connection('mysql_second')->table('student_acadamic_information')->where('id',$student_id)->first();
+
+        $adress_information = DB::connection('mysql_second')->table('student_address_info')->where('id',$student_id)->first();
+
+        $data = [
+            'running_info'=>$running_info,
+            'personal_info'=>$personal_info,
+            'guardian_info'=>$guardian_info,
+            'academic_information'=>$academic_information,
+            'adress_information'=>$adress_information,
+        ];
+
+        $subject = DB::connection('mysql_second')->table('subject_registration_table')
+        ->join('add_subject_info','add_subject_info.id','subject_registration_table.subject_id')
+        ->where('subject_registration_table.std_id',$student_id)
+        ->where('subject_registration_table.class_id',$data['running_info']->class_id)
+        ->select('subject_registration_table.*','add_subject_info.subject_name','add_subject_info.subject_code','add_subject_info.select_subject_type')
+        ->get();
+
+        $setting = DB::table('setting')->first();
+
+        // return $data['running_info']->student_id;
+
+        return view('frontend.view_student_details',compact('data','setting','subject'));
+    }
+
 
 }

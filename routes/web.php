@@ -173,6 +173,7 @@ Route::get('/Previous_Principles', [FrontendController::class, 'Previous_Princip
 Route::get('/class_student_info/{id}',[FrontendController::class,'class_student_info']);
 Route::post('/loadSearchStudent',[FrontendController::class,'loadSearchStudent']);
 Route::get('/view_student_details/{student_id}',[FrontendController::class,'view_student_details']);
+Route::post('/getDateAttData',[FrontendController::class,'getDateAttData']);
 
 //admission_form
 

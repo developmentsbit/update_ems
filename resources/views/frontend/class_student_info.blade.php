@@ -63,7 +63,7 @@
                             $path = base_path().'/ems/others_img/'.$s->student_id.'.jpg';
                             @endphp
                             @if(file_exists($path))
-                            <img src="{{base_path().'/ems/others_img'}}/{{$s->student_id.'.jpg'}}" alt="" style="height: 60px;width:60px;">
+                            <img src="{{env('APP_URL').'/ems/others_img'}}/{{$s->student_id.'.jpg'}}" alt="" style="height: 60px;width:60px;">
                             @else
                             <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="" style="height:60px;width:60px;">
                             @endif

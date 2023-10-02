@@ -16,6 +16,8 @@ use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\Models\branch_info;
 use Brian2694\Toastr\Facades\Toastr;
+use DB;
+use Log;
 
 class UserController extends Controller
 {
@@ -264,7 +266,27 @@ class UserController extends Controller
 
     public function changePassword(ChangePasswordRequest $request)
     {
-        return $this->user->changePassword($request, $request->user_id);
+        // return $this->user->changePassword($request, $request->user_id);
+
+        // dd($request->all());
+
+        $user = User::find($request->user_id);
+
+            if (!Hash::check($request->current_password, $user->password)) {
+                return back()->withInput()->withErrors('Current Password Wrong');
+            }
+
+            if ($request->password) {
+                $user->update([
+                    'password' => Hash::make($request->password)
+                ]);
+            } else {
+                return back()->withInput()->withErrors('Password not found');
+            }
+
+            \Toastr::success('Password Updated', 'Success');
+            return redirect()->back();
+
     }
 
     public function status(Request $request)

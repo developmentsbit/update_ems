@@ -98,7 +98,7 @@
     });
 </script>
 
-<script>
+{{-- <script>
     $(document).ready(function() {
         $("#change-password").on('submit', (function(e) {
             e.preventDefault();
@@ -160,7 +160,7 @@
             });
         }));
     });
-</script>
+</script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <script>

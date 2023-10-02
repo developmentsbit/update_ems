@@ -93,11 +93,13 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-sm btn-info" href="{{route('user.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
+                                                @if($v->email != "super@admin.com")
                                                 <form method="post" action="{{route('user.destroy',$v->id)}}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
                                                 </form>
+                                                @endif
                                             </td>
                                         </tr>
                                         @endforeach

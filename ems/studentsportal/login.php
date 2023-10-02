@@ -1,7 +1,7 @@
 
 <?php
 
-error_reporting(1);
+error_reporting(0);
 @session_start();
 
 @date_default_timezone_set('Asia/Dhaka');

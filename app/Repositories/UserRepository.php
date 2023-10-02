@@ -161,11 +161,11 @@ class UserRepository extends BaseRepository implements UserInterface
             }
 
             \Toastr::success('Password Updated', 'Success');
-            return back();
+            return redirect()->back();
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Method: ' . __METHOD__ . ' Exception:' . $e->getMessage(), $this->log_context);
-            return back()->withInput()->withErrors($e->getMessage());
+            return redirect()->back()->withInput()->withErrors($e->getMessage());
         }
     }
 

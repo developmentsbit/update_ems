@@ -8,6 +8,8 @@ use App\Models\teaching_permission;
 use App\Models\mpoNationalizatio;
 use App\Models\gender_wise;
 use App\Models\section_wise;
+use PDF;
+use App;
 
 class FrontendController extends Controller
 {
@@ -486,9 +488,9 @@ class FrontendController extends Controller
     {
         // return 1;
 
-        $data = DB::table("student_attendance_infos")->first();
-
-        return view('frontend.student_attendance',compact('data'));
+        // $data = DB::table("student_attendance_infos")->first();
+        $class = DB::connection('mysql_second')->table('add_class')->get();
+        return view('frontend.student_attendance',compact('class'));
     }
 
 	public function gender_wise_students()
@@ -578,10 +580,23 @@ class FrontendController extends Controller
         ->get();
 
         $setting = DB::table('setting')->first();
+        // // $pdf = PDF::loadView('frontend.view_student_details',compact('data','setting','subject'));
+        // // return $pdf->download('test.pdf');
 
-        // return $data['running_info']->student_id;
+        $pdf = PDF::loadView('frontend.view_student_details',compact('data','setting','subject'));
+        return $pdf->stream($data['personal_info']->student_name.'.pdf');
 
-        return view('frontend.view_student_details',compact('data','setting','subject'));
+
+        // return view('frontend.view_student_details',compact('data','setting','subject'));
+
+
+    }
+
+    public function getDateAttData(Request $request)
+    {
+        $class = DB::connection('mysql_second')->table('add_class')->get();
+        $from_date = $request->from_date;
+        return view('frontend.load_date_wise_att_data',compact('class','from_date'));
     }
 
 

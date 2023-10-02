@@ -24,7 +24,7 @@
             position : absolute;
             top: 0px;
             right: 0px;
-            bottom: -482px;
+            bottom: 0px;
             left: 0px;
             opacity : 0.1;
 
@@ -36,8 +36,8 @@
         }
         .full-paper-wrap{
             border: 1px solid black;
-            width: 210mm;
-            height: 297mm;
+            /* width: 210mm; */
+            /* height: 297mm; */
             margin: auto;
             padding : 10px;
         }
@@ -69,47 +69,48 @@
 
     <div class="full-paper-wrap" style="">
         <table>
-            <tr>
-                <td colspan="6">
-                    <div class="logo">
-                        <img src="{{asset($setting->image)}}" style="height: 80px;width:70px;">
-                    </div>
-                    <div class="name_adress" style="text-align: center">
-                        <b>{{$setting->name}}</b><br>
-                        <span>{{$setting->address}}</span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="6" style="text-align: center;padding:10px 8px;">
-                    <b style="text-transform: uppercase;">Student Information</b>
-                </td>
-            </tr>
+                <tr>
+                    <td style="height:90px;padding: 8px 5px;" colspan="6">
+                        <div class="logo">
+                            <img src="{{asset($setting->image)}}" style="height: 80px;width:70px;">
+                        </div>
+                        <div class="name_adress" style="text-align: center">
+                            <b>{{$setting->name}}</b><br>
+                            <span>{{$setting->address}}</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 5px;" colspan="6" style="text-align: center;padding:10px 8px;">
+                        <b style="text-transform: uppercase;">Student Information</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th style="padding: 8px 5px;">Present Year</th>
+                    <td style="padding: 8px 5px;width:15%;">{{$data['running_info']->year}}</td>
+                    <th style="padding: 8px 5px;">Class</th>
+                    <td style="padding: 8px 5px;">{{$data['running_info']->class_name}}</td>
+                    <th style="padding: 8px 5px;">Group</th>
+                    <td style="padding: 8px 5px;">{{$data['running_info']->group_name}}</td>
+                </tr>
+
+                <tr>
+                    <th style="padding: 8px 5px;">Student ID</th>
+                    <td style="padding: 8px 5px;">{{$data['running_info']->student_id}}</td>
+                    <th style="padding: 8px 5px;">Class Roll</th>
+                    <td colspan="3" style="padding: 8px 5px;">{{$data['running_info']->class_roll}}</td>
+                </tr>
 
             <tr>
-                <th style="padding: 8px 5px;">Present Year</th>
-                <td style="padding: 8px 5px;width:15%;">{{$data['running_info']->year}}</td>
-                <th style="padding: 8px 5px;">Class</th>
-                <td style="padding: 8px 5px;">{{$data['running_info']->class_name}}</td>
-                <th style="padding: 8px 5px;">Group</th>
-                <td style="padding: 8px 5px;">{{$data['running_info']->group_name}}</td>
-            </tr>
-
-            <tr>
-                <th style="padding: 8px 5px;">Student ID</th>
-                <td style="padding: 8px 5px;">{{$data['running_info']->student_id}}</td>
-                <th style="padding: 8px 5px;">Class Roll</th>
-                <td colspan="3" style="padding: 8px 5px;">{{$data['running_info']->class_roll}}</td>
-            </tr>
-
-            <tr>
-                <td style="padding: 8px 5px;" colspan="3">Session : {{$data['academic_information']->session2}}</td>
-                <td colspan="3" style="width: 20%;text-align:center;" rowspan="5">
+                <td style="padding: 8px 5px;" colspan="4">Session : {{$data['academic_information']->session2}}</td>
+                <td colspan="2" style="width: 20%;text-align:center;" rowspan="5">
+                    {{-- data:image/png;base64,{{base64_encode(file_get_contents('http://localhost/sbitaccounts/public/public/Backend/images/logo.png')) }} --}}
                 @php
                 $path = base_path().'/ems/others_img/'.$data['running_info']->student_id.'.jpg';
                 @endphp
                 @if(file_exists($path))
-                <img src="{{base_path().'/ems/others_img'}}/{{$data['running_info']->student_id.'.jpg'}}" alt="" style="height: 120px;width:120px;">
+                <img src="{{env('APP_URL').'/ems/others_img'}}/{{$data['running_info']->student_id.'.jpg'}}" alt="" style="height: 120px;width:120px;">
                 @else
                 <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="" style="height:60px;width:60px;">
                 @endif
@@ -117,19 +118,19 @@
             </tr>
             <tr>
                 <td style="padding: 8px 5px;width:15%;">Student Name</td>
-                <td style="padding: 8px 5px;text-transform:uppercase;width:30%;">{{$data['personal_info']->student_name}}</td>
+                <td colspan="3" style="padding: 8px 5px;text-transform:uppercase;width:30%;">{{$data['personal_info']->student_name}}</td>
             </tr>
             <tr>
                 <td style="padding: 8px 5px;width:15%;">Father Name</td>
-                <td style="padding: 8px 5px;text-transform:uppercase;">{{$data['personal_info']->father_name}}</td>
+                <td  colspan="3"  style="padding: 8px 5px;text-transform:uppercase;">{{$data['personal_info']->father_name}}</td>
             </tr>
             <tr>
                 <td style="padding: 8px 5px;width:15%;">Mother Name</td>
-                <td style="padding: 8px 5px;text-transform:uppercase;">{{$data['personal_info']->mother_name}}</td>
+                <td  colspan="3"  style="padding: 8px 5px;text-transform:uppercase;">{{$data['personal_info']->mother_name}}</td>
             </tr>
             <tr>
                 <td style="padding: 8px 5px;width:20%;">Permenant Adress</td>
-                <td style="padding: 8px 5px;">{{$data['adress_information']->permanent_house_name}},{{$data['adress_information']->permanent_village}},{{$data['adress_information']->permanent_village}},{{$data['adress_information']->permanent_PO}},{{$data['adress_information']->permanent_post_code}},{{$data['adress_information']->permanent_upazila}},{{$data['adress_information']->permanent_distric}}</td>
+                <td  colspan="3"  style="padding: 8px 5px;">{{$data['adress_information']->permanent_house_name}},{{$data['adress_information']->permanent_village}},{{$data['adress_information']->permanent_village}},{{$data['adress_information']->permanent_PO}},{{$data['adress_information']->permanent_post_code}},{{$data['adress_information']->permanent_upazila}},{{$data['adress_information']->permanent_distric}}</td>
             </tr>
             <tr>
                 <td style="padding: 5px 5px;">Date of birth</td>

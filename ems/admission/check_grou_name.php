@@ -1,18 +1,22 @@
 <?php
-	require_once("../db_connect/config.php");
-	require_once("../db_connect/conect.php");
+	
+error_reporting(0);
+@session_start();
 
-	$db = new database();
+@date_default_timezone_set('Asia/Dhaka');
+require_once("../db_connect/config.php");
+require_once("../db_connect/conect.php");
+$db = new database();
+
 	@$explode=explode('and',$_REQUEST['className']);
 	$select_group="SELECT * FROM `add_group` WHERE `class_id`='$explode[0]'";
 	$chek_query=$db->select_query($select_group);
 
-	if($chek_query)
+	if($chek_query->num_rows>0)
 	{
-		if($chek_query>0)
-		{
-			print '<option value="" disabled selected >Select Group</option>';
-		}
+		
+			print '<option value="" disabled="" selected="">নির্বাচন করুন</option>';
+		
 
 		while($fetch=$chek_query->fetch_array())
 			{

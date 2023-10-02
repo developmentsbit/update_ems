@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+   error_reporting(0);
 @session_start();
 
 @date_default_timezone_set('Asia/Dhaka');
@@ -12,7 +12,7 @@ $db = new database();
     require_once(__DIR__."/lib/AdnSmsNotification.php");
     $adnsms = new AdnSmsNotification();
 
-
+    
     unset($_SESSION['stdid']);
     unset($_SESSION['stdPhone']);
     unset($_SESSION['reg_logstatus']);
@@ -29,46 +29,22 @@ $db = new database();
 
         if(isset($_POST['submit']))
         {
-            $name=mysqli_real_escape_string($db->link,$_POST['stdName']);
-            $roll=mysqli_real_escape_string($db->link,$_POST['stdID']); 
-            $phone=intval(mysqli_real_escape_string($db->link,$_POST['stdPhone']));
-            $phonelenth=strlen($phone);
-            if($phonelenth==10)
-            {
+            $sscroll=mysqli_real_escape_string($db->link,$_POST['sscroll']);
+         
             
-                if(!empty($phone) && !empty($roll))
+                if(!empty($sscroll))
                 {
                    // echo "SELECT * FROM `online_applicant_approval_list` WHERE `roll`='$roll' AND `status`='0' ";
                     
-                    $sql=$db->link->query("SELECT * FROM `online_applicant_approval_list` WHERE `roll`='$roll' AND `status`='0' ");
+                    $sql=$db->link->query("SELECT * FROM `online_reg_std_info` WHERE `board_exam_roll_no`='$sscroll'");
                     if($sql->num_rows>0)
                     {
-                        session_start();
+                       
                         
                         if($fetch=$sql->fetch_array())
                         {
-                            $_SESSION['stdid']=$roll;
-                            $_SESSION['stdPhone']=$phone;
-                            $_SESSION['reg_logstatus']=true;
-                            $_SESSION['name']=$fetch[1];
-                            
-                            
-                            $otp=mt_rand(100000,999999);
-
-                            $message=" Student Reg. OTP : $otp  from ".$fetch_school_information['institute_name'];
-                            $recipient  = "880".$phone;     
-                            $requestType = 'SINGLE_SMS';    
-                            $messageType = 'TEXT';  
-                            $sms = new AdnSmsNotification();
-                            $sms->sendSms($requestType, $message, $recipient, $messageType);
-                           
-                            $db->link->query("INSERT INTO `reg_otp`(`phone`, `otp`) VALUES ('$phone','$otp')");
-                                                
-                            $_SESSION['stdid']=$roll;
-                            $_SESSION['stdPhone']=$phone;
-                            $_SESSION['reg_logstatus']=true;
-                             $_SESSION['name']=$fetch[1];
-                            print "<script>location='reg_otp.php'</script>";
+                        
+                            print "<script>location='https://imc.edu.bd/studentportal/view_students_details.php?id=$sscroll'</script>";
                             
                         }
                         
@@ -79,15 +55,7 @@ $db = new database();
                         $msg='<div class="alert alert-danger" role="alert"><h3> Please Check Your Roll No. </h3></div>';
                     }
                 }
-                else
-                {
-                    $msg='<div class="alert alert-danger" role="alert"><h3> Entry Your Roll No. & Phone Number </h3></div>';
-                }
-            }
-            else
-            {
-                $msg='<div class="alert alert-danger" role="alert"><h3> Please Check Your Phone Number</h3></div>';
-            }
+                
             
         }
 
@@ -147,25 +115,16 @@ $db = new database();
 							<table class="table table-resposive table-bordered col-lg-offset-6" style="margin-top:50px; width:100%; background: #fff;" align="center">
 									
 									<tr align="center" class="success">
-										<td colspan="3"> <h1 class="text-success">Verification your info.</h1></td>
+										<td colspan="3"> <h1 class="text-success"> Students Information Form (HSC Admission-2023) Print </h1></td>
 
 								</tr>
 								
 								<tr>
-										<td width="37%" align="center">Name</td>
+										<td width="37%" align="center">Enter SSC Roll</td>
 										<td width="3%" align="center">:</td>
-										<td width="48%"><input type="text" name="stdName" class="form-control" placeholder="Enter Your Name"  required> </td>
+										<td width="48%"><input type="text" name="sscroll" class="form-control" placeholder="Enter Your SSC Roll"  required> </td>
 								</tr>
-								<tr>
-										<td align="center">SSC Roll No.</td>
-										<td align="center">:</td>
-										<td><input type="number" name="stdID" class="form-control" placeholder="Enter Your Roll No." required> </td>
-								</tr>
-								<tr>
-										<td align="center">Phone</td>
-										<td align="center">:</td>
-										<td><input type="number" name="stdPhone" class="form-control" Placeholder="Enter Your Phone Number" required> </td>
-								</tr>
+								
 								
 								<tr class="noneBtnForprin" align="center">
 										<td  colspan="3">

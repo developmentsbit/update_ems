@@ -173,6 +173,11 @@ $array = array(
     'roll_no'=>'Roll No',
     'phone'=>'Phone',
     'details'=>'Details',
+    'class'=>'Class',
+    'total_student'=>'Total Student',
+    'present'=>'Present Student',
+    'absent'=>'Absent Student',
+    'search'=>'Search',
 
 
     //tanim

@@ -273,7 +273,7 @@ right:0;
           <div class="btn-group" role="group" aria-label="Basic example">
 
             <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
-            <label><a id="top_button" target="_blank" href="{{url('admission_form')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
+            <label><a id="top_button" target="_blank" href="/ems/admission/" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
             <label><a id="top_button" target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
             <label>
               <div class="site-lang" style="margin-top: -4px;">
@@ -516,7 +516,7 @@ right:0;
              </div>
            </ul>
          </li>
-         @if($setting->type == 'school')
+
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           @lang('frontend.student')
@@ -577,7 +577,7 @@ right:0;
        </ul>
      </li>
 
-     @endif
+
 
 
      <li class="nav-item dropdown">

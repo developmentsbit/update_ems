@@ -55,9 +55,9 @@ if($cheke_query){
   move_uploaded_file($_FILES['sicon']['tmp_name'],$image1);
   @chmod($image1,0644); 
 
-  $image1="../logo.jpg";
-  move_uploaded_file($_FILES['logo']['tmp_name'],$image1);
-  @chmod($image1,0644);
+  $logoimage="../admission/logo.jpg";
+  move_uploaded_file($_FILES['logo']['tmp_name'],$logoimage);
+  @chmod($logoimage,0644);
   
   //............2nd...................//
     $image2="all_image/"."school_mark_sheet".$id.".jpg";

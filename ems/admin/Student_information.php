@@ -21,38 +21,15 @@
         if(!empty($_POST["studentname"]) && !empty($_POST["gender"]) && $classname!="Select One" && !empty($class_section) && !empty($_POST['Session1'])  && $_POST['Session1']!='Select One'  && !empty($_POST["addmissiondate"]))
         {
 			
-				   if($explode_Class[1] == "Six"){
-					
-						 $cls = "06";
-					}
-					else if($explode_Class[1] == "Seven"){
-						 $cls = "07";
-					}
-					else if($explode_Class[1] == "Eight"){
-						 $cls = "08";
-					
-					}
-					
-					else if($explode_Class[1] == "Nine"){
-						 $cls = "09";
-					
-					}
-
-					
-					else if($explode_Class[1] == "Ten"){
-						 $cls = "10";
-					}
-						
+				   
 					
 					
 					//print $cls;
 		
-		    $prefix=$_POST['addmissiondate'];
-			$pureprefix =  str_replace('/', '0', $prefix);
-			$substronly2 =  substr($pureprefix,8,2); 
+		    $prefix=date('y');
 			
-   		    $fetch_Student[0]=$db->NeAdmisiion('student_personal_info','id',$substronly2.$cls,'8');
-			//print  $fetch_Student[0];
+   		    $fetch_Student[0]=$db->NeAdmisiion('student_personal_info','id',$prefix,'8');
+		
 
 
                
@@ -103,7 +80,7 @@
               
          if(isset($_GET["formid"])){
             $formid=$_GET["formid"];
-            $filePath = '../OnlineRegistration/img/'.$formid.'jpg';
+            $filePath = '../admission/stdimage/'.$formid.'jpg';
              rename($filePath, $strfimg);
             $selectstd="UPDATE `admission_attendance`  set `status`='2' where  `stdid`='$formid'";
             $db->link->query($selectstd);
@@ -145,37 +122,11 @@
                 
             }else{
             
-                     if($explode_Class[1] == "Six"){
-					
-						 $cls = "06";
-					}
-					else if($explode_Class[1] == "Seven"){
-						 $cls = "07";
-					}
-					else if($explode_Class[1] == "Eight"){
-						 $cls = "08";
-					
-					}
-					
-					else if($explode_Class[1] == "Nine"){
-						 $cls = "09";
-					
-					}
-
-					
-					else if($explode_Class[1] == "Ten"){
-						 $cls = "10";
-					}
-						
-                    //print $cls;
+            $prefix=date('y');
+            
+            $fetch_Student[0]=$db->NeAdmisiion('student_personal_info','id',$prefix,'8');
         
-          $prefix=$_POST['addmissiondate'];
-            
-          $pureprefix =  str_replace('/', '0', $prefix);
-          $substronly2 =  substr($pureprefix,8,2); 
-            
-         $fetch_Student[0]=$db->NeAdmisiion('student_personal_info','id',$substronly2.$cls,'8');
-                //print  $fetch_Student[0];
+   
 
             }
              if(isset($_FILES['file'])){

@@ -134,77 +134,7 @@
     <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
     <!-- end demo js-->
 
-    <script>
-        $(function() {
 
-            let datatable_columns = [{
-                    data: 'DT_RowIndex',
-                    name: "DT_RowIndex",
-                    orderable: false,
-                    searchable: false
-                },
-                {
-                    data: 'name',
-                    name: 'name',
-                },
-                {
-                    data: 'status',
-                    name: 'status',
-                },
-                {
-                    data: 'action',
-                    name: 'action',
-                    orderable: false,
-                    searchable: false
-                },
-            ]
-
-            let datatable_columns_defs = [{
-                    'bSortable': true,
-                    'aTargets': [0, 1, 2, 3]
-                },
-                {
-                    'bSearchable': false,
-                    'aTargets': [0]
-                },
-                {
-                    className: 'text-center',
-                    targets: [0, 2, 3]
-                },
-            ]
-
-            $('#datatable-roles-all').DataTable();
-
-            $('#datatable-roles-deleted').DataTable({
-                processing: true,
-                serverSide: true,
-                pageLength: 25,
-                serverMethod: 'get',
-                lengthMenu: [10, 25, 50, 100],
-                order: [0, "asc"],
-                language: {
-                    'loadingRecords': '&nbsp;',
-                    'processing': 'Loading ...'
-                },
-                ajax: {
-                    url: '{{ route('role.deleted_list') }}',
-                    type: 'get',
-                    dataType: 'JSON',
-                    cache: false,
-                },
-                columns: datatable_columns,
-                search: {
-                    "regex": true
-                },
-                columnDefs: datatable_columns_defs,
-            });
-
-        })
-
-        function statusChange(id) {
-            statusUpdate(id, '{{ route('role.status') }}')
-        }
-    </script>
 
     @include('components.delete_script')
 @endpush

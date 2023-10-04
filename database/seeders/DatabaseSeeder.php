@@ -12,9 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
+        
         $this->call(RolesTableSeeder::class);
-        $this->call(UsersSeeder::class);
+        // $this->call(UsersSeeder::class);
+        $this->call(UsersTableSeeder::class);
         $this->call(MenusTableSeeder::class);
         $this->call(MenuActionsTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AddgroupTableSeeder::class);
         $this->call(AddsectionTableSeeder::class);
         $this->call(DepartmentTableSeeder::class);
+        $this->call(TeacherstaffTableSeeder::class);
         $this->call(ExamroutineTableSeeder::class);
         $this->call(GroupInfosTableSeeder::class);
         $this->call(NoticesTableSeeder::class);
@@ -48,7 +50,6 @@ class DatabaseSeeder extends Seeder
         $this->call(StudentInformationsTableSeeder::class);
         $this->call(StudentRegistrationsTableSeeder::class);
         $this->call(SubjectInfosTableSeeder::class);
-        $this->call(TeacherstaffTableSeeder::class);
         $this->call(UsefullinksTableSeeder::class);
         $this->call(VideogallerysTableSeeder::class);
         $this->call(TeachingPermissionsTableSeeder::class);
@@ -56,6 +57,5 @@ class DatabaseSeeder extends Seeder
         $this->call(MembersTableSeeder::class);
         $this->call(GenderWisesTableSeeder::class);
         $this->call(SectionWisesTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
     }
 }

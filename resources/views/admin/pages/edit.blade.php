@@ -47,13 +47,13 @@
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('page.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="title" id="title"  required="" value="{{ $data->title }}">
+								<input class="form-control" type="text" name="title" id="title"  required="" value="{{ $data->title }}" readonly>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('page.title_bn'): </label>
 							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="title_bn" id="title_bn"  value="{{ $data->title_bn }}">
+								<input class="form-control" type="text" name="title_bn" id="title_bn"  value="{{ $data->title_bn }}" readonly>
 							</div>
 						</div>
 

@@ -20,7 +20,7 @@ class TeacherstaffController extends Controller
     public function index()
     {
         $data = DB::table("teacherstaff")
-        ->join('department','department.id','teacherstaff.department_id')
+        ->leftjoin('department','department.id','teacherstaff.department_id')
         ->select("teacherstaff.*",'department.department')
         ->get();
         return view('admin.teacherstaff.index',compact('data'));

@@ -14,64 +14,64 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::statement('SET FOREIGN_KEY_CHECKS = 0'); // enable foreign key constraints
+        
 
         \DB::table('users')->delete();
-
+        
         \DB::table('users')->insert(array (
-            0 =>
+            0 => 
             array (
-                'created_at' => '2023-03-18 19:07:28',
-                'deleted_at' => NULL,
-                'deleted_by' => NULL,
-                'dob' => NULL,
-                'email' => 'super@admin.com',
-                'email_verified_at' => NULL,
                 'id' => 1,
-                'mobile' => NULL,
                 'name' => 'Super Admin',
-                'password' => '$2y$10$tsTwmoEc9KOp4ie.ZZIXaeU2e/hIZW5kBb/xFhUr0I6suCc5tsefy',
+                'email' => 'super@admin.com',
+                'mobile' => NULL,
+                'dob' => NULL,
                 'picture' => NULL,
-                'remember_token' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$tsTwmoEc9KOp4ie.ZZIXaeU2e/hIZW5kBb/xFhUr0I6suCc5tsefy',
+                'deleted_by' => NULL,
                 'status' => 1,
+                'deleted_at' => NULL,
+                'remember_token' => NULL,
+                'created_at' => '2023-03-18 19:07:28',
                 'updated_at' => '2023-10-02 10:05:49',
             ),
-            1 =>
+            1 => 
             array (
-                'created_at' => '2023-03-18 19:07:28',
-                'deleted_at' => '2023-10-02 10:07:16',
-                'deleted_by' => NULL,
-                'dob' => NULL,
-                'email' => 'admin@admin.com',
-                'email_verified_at' => NULL,
                 'id' => 2,
-                'mobile' => NULL,
                 'name' => 'Admin',
-                'password' => '$2y$10$avqu.cFfoARivdEGFj8etusRTELEB8C7It8G9hyoYf8pfJ8Wc7FC2',
+                'email' => 'admin@admin.com',
+                'mobile' => NULL,
+                'dob' => NULL,
                 'picture' => NULL,
-                'remember_token' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$avqu.cFfoARivdEGFj8etusRTELEB8C7It8G9hyoYf8pfJ8Wc7FC2',
+                'deleted_by' => NULL,
                 'status' => 1,
+                'deleted_at' => '2023-10-02 10:07:16',
+                'remember_token' => NULL,
+                'created_at' => '2023-03-18 19:07:28',
                 'updated_at' => '2023-10-02 10:07:16',
             ),
-            2 =>
+            2 => 
             array (
-                'created_at' => '2023-10-02 10:08:19',
-                'deleted_at' => NULL,
-                'deleted_by' => NULL,
-                'dob' => '01-01-2011',
-                'email' => 'admin@gmail.com',
-                'email_verified_at' => NULL,
                 'id' => 3,
-                'mobile' => '+8800000000',
                 'name' => 'Admin',
-                'password' => '$2y$10$ABjRPwk3o556BY2LHNUaMu2HR//UWOSIHlCAAWjncBoNOTUZER/yK',
+                'email' => 'admin@gmail.com',
+                'mobile' => '+8800000000',
+                'dob' => NULL,
                 'picture' => '1150004412.png',
-                'remember_token' => NULL,
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$ABjRPwk3o556BY2LHNUaMu2HR//UWOSIHlCAAWjncBoNOTUZER/yK',
+                'deleted_by' => NULL,
                 'status' => 1,
-                'updated_at' => '2023-10-02 10:08:19',
+                'deleted_at' => NULL,
+                'remember_token' => NULL,
+                'created_at' => '2023-10-02 10:08:19',
+                'updated_at' => '2023-10-04 09:02:10',
             ),
         ));
-
-
+        
+        
     }
 }

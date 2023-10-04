@@ -14,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0'); // enable foreign key constraints
         \DB::table('users')->delete();
-        
+
         \DB::table('users')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'name' => 'Super Admin',
@@ -36,7 +36,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-18 19:07:28',
                 'updated_at' => '2023-10-02 10:05:49',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'name' => 'Admin',
@@ -53,7 +53,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2023-03-18 19:07:28',
                 'updated_at' => '2023-10-02 10:07:16',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'name' => 'Admin',
@@ -71,7 +71,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2023-10-04 09:02:10',
             ),
         ));
-        
-        
+
+
     }
 }

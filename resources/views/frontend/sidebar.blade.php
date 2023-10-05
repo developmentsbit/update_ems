@@ -4,6 +4,7 @@
 
   $principle = DB::table('principles')->where('type',1)->first();
   $president = DB::table('principles')->where('type',2)->first();
+  $president_check = DB::table('principles')->where('type',2)->count();
   $v_principle = DB::table('vice_principal_messages')->first();
   $usefullink = DB::table('usefullinks')->get();
   $setting = DB::table('setting')->first();
@@ -15,7 +16,7 @@
 
 <div class="col-sm-3 col-12">
 
-    @if($setting->type == 'school' || $setting->type == 'madrasah')
+    @if($president_check > 0)
 	@if(request()->Is('presidentmessage'))
 
 	@else
@@ -35,8 +36,8 @@
 		</li>
 	</div>
 	@endif
-
     @endif
+
 
 
     @if(request()->Is('principal_message'))

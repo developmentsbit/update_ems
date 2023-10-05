@@ -136,7 +136,12 @@ class PrincipleController extends Controller
         $data = DB::table("principles")->where("id",$id)->first();
 
         if ($data) {
-            unlink($data->image);
+            $path = public_path().'/'.$data->image;
+            if(file_exists($path))
+            {
+
+                unlink($path);
+            }
             DB::table("principles")->where("id",$id)->delete();
             return redirect()->route('principle.index')->with('error','Principle Message Delete Successfully');
         }

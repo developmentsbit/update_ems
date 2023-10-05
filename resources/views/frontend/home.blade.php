@@ -33,7 +33,7 @@ $setting = DB::table("setting")->first();
 
 								{{-- <li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >@if($lang == 'en'){{$n->title}}@elseif($lang == 'bn'){{$n->title_bn}}@endif</a></li> --}}
 
-								<li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >{{$n->title}}</a></li>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >@if($lang == 'en'){{$n->title ?: $n->title_bn}}@else {{$n->title_bn ?: $n->title}}@endif</a></li>
 
 								@endforeach
 								@endif
@@ -308,7 +308,7 @@ $setting = DB::table("setting")->first();
 						{{--
 							<div class="col-12 mt-4">
 							<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZZpp4WMokZ0" title="FENI GOVERNMENT COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-						</div>	
+						</div>
 						--}}
 
 

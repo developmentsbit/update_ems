@@ -70,7 +70,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 								<span>@lang('notice.magazine')</span>
 								@endif
 							</td>
-							<td>@if($lang == 'en'){{ $d->title }}@else {{$d->title_bn}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->title ?: $d->title_bn}} @else {{$d->title_bn ?: $d->title}}@endif</td>
 							<td><a href="{{ asset($d->image) }}" download="" class="btn btn-success">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">

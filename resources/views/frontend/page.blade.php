@@ -12,13 +12,13 @@
 
      <div class="col-sm-12 col-12 p-0"  data-aos="fade-in" data-aos-duration="2000" >
        <ul class="list-group p-0">
-        <li class="list-group-item font-weight-bold bg-success text-light" id="about">@if($lang == 'en'){{$data->title}}@elseif($lang == 'bn'){{$data->title_bn}}@endif</li>
+        <li class="list-group-item font-weight-bold bg-success text-light" id="about">@if($lang == 'en'){{ $data->title ?: $data->title_bn}}@else {{$data->title_bn ?: $data->title}}@endif</li>
       </ul>
       <li class="list-group-item">
         <div style="font-size: 14px; line-height: 25px; text-align: justify;">
 
           <p>
-           @if($lang == 'en'){!! $data->details !!}@elseif($lang == 'bn'){!! $data->details_bn !!}@endif
+           @if($lang == 'en'){!! $data->details ?: $data->details_bn !!}@elseif($lang == 'bn'){!! $data->details_bn ?: $data->details !!}@endif
          </p>
 
          @if($data->image)

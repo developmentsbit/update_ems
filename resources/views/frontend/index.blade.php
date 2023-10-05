@@ -427,6 +427,10 @@ right:0;
               </a>
               <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width:260px; max-width:100%;">
 
+                @php
+                 $president_check = DB::table('principles')->where('type',2)->count();
+                @endphp
+
                 <div class="col-md-12 col-12 dmenu mt-3">
                 <li><a href="{{ url('principal_message') }}">
                   @if($setting->type == 'school')
@@ -440,7 +444,11 @@ right:0;
                  @elseif($setting->type == 'school')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
                  <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
+
+                 @if($president_check)
                  <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
+                 @endif
+
                  <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
                  <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
                  @endif

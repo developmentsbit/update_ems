@@ -69,8 +69,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
 							<td>{{ $d->date }}</td>
-							<td>@if($lang == 'en'){{ $d->class_name }}@else {{$d->class_name_bn}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->title }}@else {{$d->title_bn}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->class_name ?: $d->class_name_bn }}@else {{$d->class_name_bn ?: $d->class_name}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->title ?: $d->title_bn}}@else {{$d->title_bn ?: $d->title}}@endif</td>
 							<td><a href="{{ asset($d->image) }}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
 							<td>
 								<div class="btn-group">

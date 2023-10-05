@@ -72,8 +72,8 @@
                                         <tr>
                                             <td>#</td>
                                             <td>{{$v->date}}</td>
-                                            <td>@if($lang == 'en'){{$v->subject}}@elseif($lang == 'bn'){{$v->subject_bn}}@endif</td>
-                                            <td>@if($lang == 'en'){{$v->part}}@elseif($lang == 'bn'){{$v->part_bn}}@endif</td>
+                                            <td>@if($lang == 'en'){{$v->subject ?: $v->subject_bn}}@elseif($lang == 'bn'){{$v->subject_bn ?: $v->subject}}@endif</td>
+                                            <td>@if($lang == 'en'){{$v->part ?: $v->part_bn}}@elseif($lang == 'bn'){{$v->part_bn ?: $v->part}}@endif</td>
                                             <td>{{$v->memorial_no}}</td>
                                             <td><a href="{{asset('/assets/images/teaching_permission')}}/{{$v->image}}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>
                                             <td>

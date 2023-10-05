@@ -75,10 +75,10 @@
                                             <td>{{$i++}}</td>
                                             <td>{{$v->date}}</td>
                                             <td>
-                                                @if($lang == 'en'){{ $v->subject }}@else {{$v->subject_bn}}@endif
+                                                @if($lang == 'en'){{ $v->subject ?: $v->subject_bn}}@else {{$v->subject_bn ?: $v->subject}}@endif
                                             </td> 
                                             <td>
-                                                @if($lang == 'en'){{ $v->layer }}@else {{$v->layer_bn}}@endif
+                                                @if($lang == 'en'){{ $v->layer ?: $v->layer_bn}}@else {{$v->layer_bn ?: $v->layer}}@endif
                                             </td>  
                                             <td>
                                                 {{$v->memorial_no}}

@@ -58,7 +58,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						@foreach($data as $d)
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
-							<td>@if($lang == 'en'){{ $d->title }}@else {{$d->title_bn}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->title ?: $d->title_bn}}@else {{$d->title_bn ?: $d->title}}@endif</td>
 							<td><img src="{{ asset($d->image) }}" style="max-height: 100px;"></td>
 							<td>
 								<div class="btn-group">

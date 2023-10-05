@@ -65,9 +65,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $d->date }}</td>
 							<td>
                                 @if($lang == 'en')
-                                {{ $d->title }}
+                                {{ $d->title ?: $d->title_bn}}
                                 @else
-                                {{$d->title_bn}}
+                                {{$d->title_bn ?: $d->title}}
                                 @endif
                             </td>
 							<td><a href="{{ $d->image }}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td>

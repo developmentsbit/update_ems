@@ -58,7 +58,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						@foreach($data as $d)
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
-							<td>@if($lang == 'en'){{ $d->department }}@else {{$d->department_name_bn}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->department ?: $department_name_bn}}@else {{$d->department_name_bn ?:$d->department}}@endif</td>
 							<td>
 								<div class="btn-group">
 									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("department.edit",$d->id) }}">@lang('common.edit')</a>

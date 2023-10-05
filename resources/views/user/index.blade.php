@@ -151,7 +151,7 @@
                                             </td>
                                             <td>
                                                 <a href="{{route('user.restore',$v->id)}}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
-                                                <a href="{{route('user.force_destroy',$v->id)}}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
+                                                <a href="{{route('user.force_destroy',$v->id)}}" class="btn btn-danger btn-sm">@lang('common.permenantly_delete')</a>
                                             </td>
                                         </tr>
                                         @endforeach

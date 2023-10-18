@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ClassController extends Controller
 {
@@ -43,8 +44,8 @@ class ClassController extends Controller
 
      DB::table('addclass')->insert($data);
 
-
-     return redirect()->route('addclass.index')->with('message','New Class Added Successfully');
+     Toastr::success(__('New Class Added Successfully'));
+     return redirect()->route('addclass.index');
  }
 
     /**
@@ -77,10 +78,12 @@ class ClassController extends Controller
         $update = DB::table('addclass')->where('id', $id)->update($data);
 
         if ($update) {
-            return redirect()->route('addclass.index')->with('message','New Class Update Successfully');
+            Toastr::success(__('New Class Update Successfully'));
+            return redirect()->route('addclass.index');
         }
         else{
-            return redirect()->route('addclass.index')->with('error','New Class Update Unsuccessfully');
+            Toastr::error(__('New Class Update Unsuccessfully'));
+            return redirect()->route('addclass.index');
         }
     }
 
@@ -93,10 +96,12 @@ class ClassController extends Controller
 
        if ($data) {
            DB::table("addclass")->where("id",$id)->delete();
-           return redirect()->route('addclass.index')->with('message','New Class Delete Successfully');
-       }
+           Toastr::success(__('New Class Delete Successfully'));
+           return redirect()->route('addclass.index');
+        }
        else{
-        return redirect()->route('addclass.index')->with('error','New Class Delete Unsuccessfully');
+        Toastr::success(__('New Class Delete Unsuccessfully'));
+        return redirect()->route('addclass.index');
     }
 }
 

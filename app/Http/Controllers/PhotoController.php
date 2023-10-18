@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Brian2694\Toastr\Facades\Toastr;
 
 class PhotoController extends Controller
 {
@@ -57,7 +57,8 @@ class PhotoController extends Controller
         DB::table('photogallerys')->insert($data);
     }
 
-    return redirect()->route('photogallerys.index')->with('message','Photo Added Successfully');
+    Toastr::success(__('Photo Added Successfully'));
+        return redirect()->route('photogallerys.index');
 }
 
     /**
@@ -108,11 +109,13 @@ class PhotoController extends Controller
     }
 
     if ($update) {
-       return redirect()->route('photogallerys.index')->with('message','Photo Update Successfully');
-   }
-   else{
-    return redirect()->route('photogallerys.index')->with('error','Photo Update Unsuccessfully');
-}
+        Toastr::success(__('Photo Update Successfully'));
+        return redirect()->route('photogallerys.index');
+    }
+    else{
+    Toastr::error(__('Photo Update Unsuccessfully'));
+        return redirect()->route('photogallerys.index');
+    }
 }
 
     /**
@@ -125,10 +128,12 @@ class PhotoController extends Controller
        if ($data) {
          unlink($data->image);
          DB::table("photogallerys")->where("id",$id)->delete();
-         return redirect()->route('photogallerys.index')->with('message','Photo Delete Successfully');
+         Toastr::success(__('Photo Delete Successfully'));
+            return redirect()->back();
      }
      else{
-       return redirect()->route('photogallerys.index')->with('error','Photo Delete Unsuccessfully');
+        Toastr::error(__('Photo Delete Unsuccessfully'));
+            return redirect()->back();
    }
 }
 }

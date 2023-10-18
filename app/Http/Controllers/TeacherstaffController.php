@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class TeacherstaffController extends Controller
 {
@@ -80,7 +81,8 @@ class TeacherstaffController extends Controller
         DB::table('teacherstaff')->insert($data);
     }
 
-    return redirect()->route('teacherstaff.index')->with('message','Teacher/Staff Added Successfully');
+    Toastr::success(__('Teacher/Staff Added Successfully'));
+        return redirect()->back();
 
 }
 
@@ -156,10 +158,12 @@ class TeacherstaffController extends Controller
         }
 
         if ($update) {
-           return redirect()->route('teacherstaff.index')->with('message','Teacher/Staff Update Successfully');
+            Toastr::success(__('Teacher/Staff Update Successfully'));
+            return redirect()->back();
        }
        else{
-        return redirect()->route('teacherstaff.index')->with('error','Teacher/Staff Update Unsuccessfully');
+        Toastr::error(__('Teacher/Staff Update Unsuccessfull'));
+        return redirect()->back();
     }
 }
 
@@ -182,12 +186,9 @@ class TeacherstaffController extends Controller
             }
 
          DB::table("teacherstaff")->where("id",$id)->delete();
-         return redirect()->route('teacherstaff.index')->with('message','Teacher/Staff Delete Successfully');
      }
-     else{
-       return redirect()->route('teacherstaff.index')->with('error','Teacher/Staff Delete Unsuccessfully');
-   }
-
+     Toastr::success(__('Teacher/Staff Delete Successfully'));
+        return redirect()->back();
 
 }
 }

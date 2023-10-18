@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class GroupController extends Controller
 {
@@ -48,8 +49,8 @@ class GroupController extends Controller
 
      DB::table('addgroup')->insert($data);
 
-
-     return redirect()->route('addgroup.index')->with('message','Group Added Successfully');
+     Toastr::success(__('Group Added Successfully'));
+     return redirect()->route('addgroup.index');
  }
 
     /**
@@ -84,10 +85,12 @@ class GroupController extends Controller
         $update = DB::table('addgroup')->where('id', $id)->update($data);
 
         if ($update) {
-            return redirect()->route('addgroup.index')->with('message','Group Update Successfully');
+            Toastr::success(__('Group Update Successfully'));
+            return redirect()->route('addgroup.index');
         }
         else{
-            return redirect()->route('addgroup.index')->with('error','Group Update Unsuccessfully');
+            Toastr::error(__('Group Update Successfully'));
+            return redirect()->route('addgroup.index');
         }
     }
 
@@ -100,10 +103,12 @@ class GroupController extends Controller
 
        if ($data) {
            DB::table("addgroup")->where("id",$id)->delete();
-           return redirect()->route('addgroup.index')->with('message','Group Delete Successfully');
+           Toastr::success(__('Group Delete Successfully'));
+        return redirect()->route('addgroup.index');
        }
        else{
-        return redirect()->route('addgroup.index')->with('error','Group Delete Unsuccessfully');
+        Toastr::error(__('Group Delete Unsuccessfully'));
+        return redirect()->route('addgroup.index');
     }
 }
 

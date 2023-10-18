@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 
 class LessonplanController extends Controller
@@ -62,7 +63,8 @@ class LessonplanController extends Controller
         DB::table('lessonplan')->insert($data);
     }
 
-    return redirect()->route('lessonplan.index')->with('message','Lesson Plan Added Successfully');
+    Toastr::success(__('Lesson Plan Added Successfully'));
+    return redirect()->route('lessonplan.index');
 }
 
     /**
@@ -121,10 +123,12 @@ class LessonplanController extends Controller
     }
 
     if ($update) {
-        return redirect()->route('lessonplan.index')->with('message','Lesson Plan Update Successfully');
+        Toastr::success(__('Lesson Plan Update Successfully'));
+        return redirect()->route('lessonplan.index');
     }
     else{
-        return redirect()->route('lessonplan.index')->with('error','Lesson Plan Update Unsuccessfully');
+        Toastr::error(__('Lesson Plan Update Unsuccessfully'));
+        return redirect()->route('lessonplan.index');
     }
 }
 
@@ -147,10 +151,12 @@ class LessonplanController extends Controller
         }
 
            DB::table("lessonplan")->where("id",$id)->delete();
-           return redirect()->route('lessonplan.index')->with('message','Lesson Plan Delete Successfully');
+           Toastr::success(__('Lesson Plan Delete Successfully'));
+           return redirect()->route('lessonplan.index');
        }
        else{
-        return redirect()->route('lessonplan.index')->with('error','Lesson Plan Delete Unsuccessfully');
+           Toastr::error(__('Lesson Plan Delete Successfully'));
+           return redirect()->route('lessonplan.index');
     }
 }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Brian2694\Toastr\Facades\Toastr;
 
 class NoticesController extends Controller
 {
@@ -61,7 +61,8 @@ class NoticesController extends Controller
         DB::table('notices')->insert($data);
     }
 
-    return redirect()->route('notices.index')->with('message','Notices Added Successfully');
+    Toastr::success(__('Notices Added Successfully'));
+    return redirect()->route('notices.index');
 }
 
     /**
@@ -124,10 +125,12 @@ class NoticesController extends Controller
     }
 
     if ($update) {
-       return redirect()->route('notices.index')->with('message','Notices Update Successfully');
+        Toastr::success(__('Notices Update Successfully'));
+        return redirect()->route('notices.index');
    }
    else{
-    return redirect()->route('notices.index')->with('error','Notices Update Unsuccessfully');
+        Toastr::error(__('Notices Update Unsuccessfully'));
+        return redirect()->route('notices.index');
 }
 }
 
@@ -148,10 +151,12 @@ class NoticesController extends Controller
         }
 
          DB::table("notices")->where("id",$id)->delete();
-         return redirect()->route('notices.index')->with('message','Notices Delete Successfully');
+            Toastr::success(__('Notices Delete Successfully'));
+            return redirect()->route('notices.index');
      }
      else{
-       return redirect()->route('notices.index')->with('error','Notices Delete Unsuccessfully');
+            Toastr::error(__('Notices Delete Successfully'));
+            return redirect()->route('notices.index');
    }
 }
 }

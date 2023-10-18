@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class DepartmentController extends Controller
 {
@@ -43,8 +44,10 @@ class DepartmentController extends Controller
 
      DB::table('department')->insert($data);
 
+     Toastr::success(__('Department Added Successfully'));
+        return redirect()->route('department.index');
 
-     return redirect()->route('department.index')->with('message','Department Added Successfully');
+
  }
 
     /**
@@ -77,10 +80,12 @@ class DepartmentController extends Controller
         $update = DB::table('department')->where('id', $id)->update($data);
 
         if ($update) {
-            return redirect()->route('department.index')->with('message','Department Update Successfully');
+            Toastr::success(__('Department Update Successfully'));
+            return redirect()->route('department.index');
         }
         else{
-            return redirect()->route('department.index')->with('error','Department Update Unsuccessfully');
+            Toastr::error(__('Department Update Unsuccessfully'));
+            return redirect()->route('department.index');
         }
     }
 
@@ -93,10 +98,12 @@ class DepartmentController extends Controller
 
        if ($data) {
            DB::table("department")->where("id",$id)->delete();
-           return redirect()->route('department.index')->with('message','Department Delete Successfully');
+           Toastr::success(__('Department Delete Successfully'));
+           return redirect()->route('department.index');
        }
        else{
-        return redirect()->route('department.index')->with('error','Department Delete Unsuccessfully');
+        Toastr::error(__('Department Delete Unsuccessfully'));
+        return redirect()->route('department.index');
     }
 }
 

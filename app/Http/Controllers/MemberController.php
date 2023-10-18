@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 
 class MemberController extends Controller
@@ -65,7 +66,8 @@ class MemberController extends Controller
         DB::table('members')->insert($data);
     }
 
-    return redirect()->route('members.index')->with('message','members Added Successfully');
+    Toastr::success(__('Members Added Successfully'));
+    return redirect()->route('members.index');
 }
 
     /**
@@ -129,10 +131,12 @@ class MemberController extends Controller
     }
 
     if ($update) {
-     return redirect()->route('members.index')->with('message','members Update Successfully');
+        Toastr::success(__('Members Update Successfully'));
+        return redirect()->route('members.index');
  }
  else{
-    return redirect()->route('members.index')->with('error','members Update Unsuccessfully');
+    Toastr::error(__('Members Update Unsuccessfully'));
+    return redirect()->route('members.index');
 }
 }
 
@@ -155,10 +159,12 @@ class MemberController extends Controller
             }
 
            DB::table("members")->where("id",$id)->delete();
-           return redirect()->route('members.index')->with('message','members Delete Successfully');
+            Toastr::success(__('Members Delete Successfully'));
+            return redirect()->route('members.index');
        }
        else{
-         return redirect()->route('members.index')->with('error','members Delete Unsuccessfully');
+            Toastr::error(__('Members Delete Unsuccessfully'));
+            return redirect()->route('members.index');
      }
  }
 }

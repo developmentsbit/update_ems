@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 
 class ExamroutineController extends Controller
@@ -62,7 +63,8 @@ class ExamroutineController extends Controller
         DB::table('examroutine')->insert($data);
     }
 
-    return redirect()->route('examroutine.index')->with('message','Exam Routine Added Successfully');
+    Toastr::success(__('Exam Routine Added Successfully'));
+    return redirect()->route('examroutine.index');
 }
 
     /**
@@ -122,10 +124,12 @@ class ExamroutineController extends Controller
     }
 
     if ($update) {
-        return redirect()->route('examroutine.index')->with('message','Exam Routine Update Successfully');
+        Toastr::success(__('Exam Routine Update Successfully'));
+        return redirect()->route('examroutine.index');
     }
     else{
-        return redirect()->route('examroutine.index')->with('error','Exam Routine Update Unsuccessfully');
+        Toastr::error(__('Exam Routine Update Unsuccessfully'));
+        return redirect()->route('examroutine.index');
     }
 }
 
@@ -148,10 +152,12 @@ class ExamroutineController extends Controller
             }
 
            DB::table("examroutine")->where("id",$id)->delete();
-           return redirect()->route('examroutine.index')->with('message','Exam Routine Delete Successfully');
-       }
+           Toastr::success(__('Exam Routine Delete Successfully'));
+           return redirect()->route('examroutine.index');
+        }
        else{
-        return redirect()->route('examroutine.index')->with('error','Exam Routine Delete Unsuccessfully');
-    }
+           Toastr::error(__('Exam Routine Delete Unsuccessfully'));
+           return redirect()->route('examroutine.index');
+        }
 }
 }

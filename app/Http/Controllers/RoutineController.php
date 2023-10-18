@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 
 class RoutineController extends Controller
@@ -62,7 +63,8 @@ class RoutineController extends Controller
         DB::table('classroutine')->insert($data);
     }
 
-    return redirect()->route('classroutine.index')->with('message','Routine Added Successfully');
+    Toastr::success(__('Class Routine Added Successfully'));
+    return redirect()->route('classroutine.index');
 }
 
     /**
@@ -122,10 +124,12 @@ class RoutineController extends Controller
     }
 
     if ($update) {
-        return redirect()->route('classroutine.index')->with('message','Routine Update Successfully');
+        Toastr::success(__('Class Routine Update Successfully'));
+        return redirect()->route('classroutine.index');
     }
     else{
-        return redirect()->route('classroutine.index')->with('error','Routine Update Unsuccessfully');
+        Toastr::error(__('Class Routine Update Unsuccessfully'));
+        return redirect()->route('classroutine.index');
     }
 }
 
@@ -148,10 +152,12 @@ class RoutineController extends Controller
             }
 
            DB::table("classroutine")->where("id",$id)->delete();
-           return redirect()->route('classroutine.index')->with('message','Routine Delete Successfully');
+            Toastr::success(__('Class Routine Delete Successfully'));
+            return redirect()->route('classroutine.index');
        }
        else{
-        return redirect()->route('classroutine.index')->with('error','Routine Delete Unsuccessfully');
+            Toastr::error(__('Class Routine Delete Unsuccessfully'));
+            return redirect()->route('classroutine.index');
     }
 }
 }

@@ -60,7 +60,8 @@ class PrincipleController extends Controller
 
     }
 
-    return redirect()->route('principle.index')->with('message','Principle Message Added Successfully');
+    Toastr::success(__('Principle Message Added Successfully'));
+    return redirect()->route('principle.index');
 
 }
 
@@ -120,10 +121,12 @@ class PrincipleController extends Controller
         }
 
         if ($update) {
-           return redirect()->route('principle.index')->with('message','Principle Message Update Successfully');
+            Toastr::success(__('Principle Message Update Successfully'));
+            return redirect()->route('principle.index');
         }
         else{
-            return redirect()->route('principle.index')->with('error','Principle Message Update Unsuccessfully');
+            Toastr::error(__('Principle Message Update Unsuccessfully'));
+            return redirect()->route('principle.index');
         }
 
     }
@@ -143,10 +146,12 @@ class PrincipleController extends Controller
                 unlink($path);
             }
             DB::table("principles")->where("id",$id)->delete();
-            return redirect()->route('principle.index')->with('error','Principle Message Delete Successfully');
+            Toastr::success(__('Principle Message Delete Successfully'));
+            return redirect()->route('principle.index');
         }
         else{
-         return redirect()->route('principle.index')->with('warning','Principle Message Delete Unsuccessfully');
+            Toastr::error(__('Principle Message Delete Unsuccessfully'));
+            return redirect()->route('principle.index');
      }
 
 

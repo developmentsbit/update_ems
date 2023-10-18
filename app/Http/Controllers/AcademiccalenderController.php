@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class AcademiccalenderController extends Controller
 {
@@ -58,8 +59,8 @@ class AcademiccalenderController extends Controller
         DB::table('academiccalender')->insert($data);
     }
 
-    return redirect()->route('academiccalender.index')->with('message','Academic Calender Added Successfully');
-
+    Toastr::success(__('Academic Calender Added Successfully'));
+    return redirect()->route('academiccalender.index');
 }
 
     /**
@@ -118,10 +119,12 @@ class AcademiccalenderController extends Controller
     }
 
     if ($update) {
-     return redirect()->route('academiccalender.index')->with('message','Academic Calender Update Successfully');
+    Toastr::success(__('Academic Calender Update Successfully'));
+    return redirect()->route('academiccalender.index');
  }
  else{
-    return redirect()->route('academiccalender.index')->with('error','Academic Calender Update Unsuccessfully');
+    Toastr::error(__('Academic Calender Update Unsuccessfully'));
+    return redirect()->route('academiccalender.index');
 }
 }
 
@@ -144,10 +147,12 @@ class AcademiccalenderController extends Controller
             }
 
            DB::table("academiccalender")->where("id",$id)->delete();
-           return redirect()->route('academiccalender.index')->with('message','Academic Calender Delete Successfully');
+            Toastr::success(__('Academic Calender Delete Successfully'));
+            return redirect()->route('academiccalender.index');
        }
        else{
-         return redirect()->route('academiccalender.index')->with('error','Academic Calender Delete Unsuccessfully');
+            Toastr::error(__('Academic Calender Delete Unsuccessfully'));
+            return redirect()->route('academiccalender.index');
      }
 
 

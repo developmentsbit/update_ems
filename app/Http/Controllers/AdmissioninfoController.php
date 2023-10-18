@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class AdmissioninfoController extends Controller
 {
@@ -58,8 +59,8 @@ class AdmissioninfoController extends Controller
     }else{
         DB::table('admissioninfo')->insert($data);
     }
-
-    return redirect()->route('admissioninfo.index')->with('message','Admission Info. Added Successfully');
+    Toastr::success(__('Admission Info. Added Successfully'));
+    return redirect()->route('admissioninfo.index');
 
 }
 
@@ -113,11 +114,13 @@ class AdmissioninfoController extends Controller
     }
 
     if ($update) {
-     return redirect()->route('admissioninfo.index')->with('message','Admission Info. Update Successfully');
- }
+        Toastr::success(__('Admission Info. Update Successfully'));
+        return redirect()->route('admissioninfo.index');
+    }
  else{
-    return redirect()->route('admissioninfo.index')->with('error','Admission Info. Update Unsuccessfully');
-}
+        Toastr::error(__('Admission Info. Update Unsuccessfully'));
+        return redirect()->route('admissioninfo.index');
+    }
 }
 
     /**
@@ -130,11 +133,12 @@ class AdmissioninfoController extends Controller
         if ($data) {
 
            DB::table("admissioninfo")->where("id",$id)->delete();
-           return redirect()->route('admissioninfo.index')->with('message','Admission Info. Delete Successfully');
+           Toastr::success(__('Admission Info. Delete Successfully'));
+           return redirect()->route('admissioninfo.index');
        }
        else{
-         return redirect()->route('admissioninfo.index')->with('error','Admission Info. Delete Unsuccessfully');
-     }
+        Toastr::error(__('Admission Info. Delete Unsuccessfully'));
+        return redirect()->route('admissioninfo.index');     }
 
 
  }

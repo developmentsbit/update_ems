@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class PagesController extends Controller
 {
@@ -59,7 +60,8 @@ class PagesController extends Controller
         DB::table('pages')->insert($data);
     }
 
-    return redirect()->route('pages.index')->with('message','Page Added Successfully');
+    Toastr::success(__('Page Added Successfully'));
+    return redirect()->route('pages.index');
 
 }
 
@@ -113,10 +115,12 @@ class PagesController extends Controller
     }
 
     if ($update) {
-     return redirect()->route('pages.index')->with('message','Page Update Successfully');
+        Toastr::success(__('Page Delete Successfully'));
+        return redirect()->route('pages.index');
  }
  else{
-    return redirect()->route('pages.index')->with('error','Page Update Unsuccessfully');
+        Toastr::error(__('Page Delete Unsuccessfully'));
+        return redirect()->route('pages.index');
 }
 }
 
@@ -130,10 +134,12 @@ class PagesController extends Controller
         if ($data) {
 
            DB::table("pages")->where("id",$id)->delete();
-           return redirect()->route('pages.index')->with('message','Page Delete Successfully');
+            Toastr::success(__('Page Delete Successfully'));
+            return redirect()->route('pages.index');
        }
        else{
-         return redirect()->route('pages.index')->with('error','Page Delete Unsuccessfully');
+            Toastr::error(__('Page Delete Unsuccessfully'));
+            return redirect()->route('pages.index');
      }
 
 

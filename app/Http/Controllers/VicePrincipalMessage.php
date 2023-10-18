@@ -57,7 +57,7 @@ class VicePrincipalMessage extends Controller
         }
 
         vice_principal_message::find(1)->update($data);
-        return redirect()->back()->with('message','Vice Principal Message Added Successfully');
+        return redirect()->back()->with('message','Vice Principal Message Update Successfully');
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 
 class SyllabusController extends Controller
@@ -62,7 +63,8 @@ class SyllabusController extends Controller
         DB::table('syllabus')->insert($data);
     }
 
-    return redirect()->route('syllabus.index')->with('message','Syllabus Added Successfully');
+    Toastr::success(__('Syllabus Added Successfully'));
+    return redirect()->route('syllabus.index');
 }
 
     /**
@@ -120,10 +122,12 @@ class SyllabusController extends Controller
     }
 
     if ($update) {
-        return redirect()->route('syllabus.index')->with('message','Syllabus Update Successfully');
+        Toastr::success(__('Syllabus Update Successfully'));
+        return redirect()->route('syllabus.index');
     }
     else{
-        return redirect()->route('syllabus.index')->with('error','Syllabus Update Unsuccessfully');
+        Toastr::error(__('Syllabus Update Unsuccessfully'));
+        return redirect()->route('syllabus.index');
     }
 }
 
@@ -146,10 +150,12 @@ class SyllabusController extends Controller
         }
 
            DB::table("syllabus")->where("id",$id)->delete();
-           return redirect()->route('syllabus.index')->with('message','Syllabus Delete Successfully');
-       }
+           Toastr::success(__('Syllabus Delete Successfully'));
+           return redirect()->route('syllabus.index');
+        }
        else{
-        return redirect()->route('syllabus.index')->with('error','Syllabus Delete Unsuccessfully');
+        Toastr::error(__('Syllabus Delete Unsuccessfully'));
+        return redirect()->route('syllabus.index');
     }
 }
 }

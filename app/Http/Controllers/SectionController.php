@@ -50,8 +50,8 @@ class SectionController extends Controller
 
      DB::table('addsection')->insert($data);
 
-
-     return redirect()->route('addsection.index')->with('message','Section Added Successfully');
+     Toastr::success(__('Section Added Successfully'));
+     return redirect()->route('addsection.index');
  }
 
     /**
@@ -88,10 +88,12 @@ class SectionController extends Controller
         $update = DB::table('addsection')->where('id', $id)->update($data);
 
         if ($update) {
-            return redirect()->route('addsection.index')->with('message','Section Update Successfully');
+            Toastr::success(__('Section Update Successfully'));
+            return redirect()->route('addsection.index');
         }
         else{
-            return redirect()->route('addsection.index')->with('error','Section Update Unsuccessfully');
+            Toastr::error(__('Section Update Unsuccessfully'));
+            return redirect()->route('addsection.index');
         }
     }
 
@@ -104,10 +106,12 @@ class SectionController extends Controller
 
        if ($data) {
            DB::table("addsection")->where("id",$id)->delete();
-           return redirect()->route('addsection.index')->with('message','Section Delete Successfully');
+           Toastr::success(__('Section Delete Successfully'));
+           return redirect()->route('addsection.index');
        }
        else{
-        return redirect()->route('addsection.index')->with('error','Section Delete Unsuccessfully');
+        Toastr::error(__('Section Delete Unsuccessfully'));
+        return redirect()->route('addsection.index');
     }
 }
 

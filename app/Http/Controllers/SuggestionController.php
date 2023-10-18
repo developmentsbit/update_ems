@@ -62,7 +62,8 @@ class SuggestionController extends Controller
         DB::table('suggestion')->insert($data);
     }
 
-    return redirect()->route('suggestion.index')->with('message','Suggestion Added Successfully');
+    Toastr::success(__('Suggestion Added Successfully'));
+    return redirect()->route('suggestion.index');
 }
 
     /**
@@ -121,11 +122,11 @@ class SuggestionController extends Controller
     }
 
     if ($update) {
-        return redirect()->route('suggestion.index')->with('message','Suggestion Update Successfully');
-    }
+        Toastr::success(__('Suggestion Update Successfully'));
+        return redirect()->route('suggestion.index');    }
     else{
-        return redirect()->route('suggestion.index')->with('error','Suggestion Update Unsuccessfully');
-    }
+        Toastr::error(__('Suggestion Update Unsuccessfully'));
+        return redirect()->route('suggestion.index');    }
 }
 
     /**
@@ -147,10 +148,12 @@ class SuggestionController extends Controller
         }
 
            DB::table("suggestion")->where("id",$id)->delete();
-           return redirect()->route('suggestion.index')->with('message','Suggestion Delete Successfully');
+           Toastr::success(__('Suggestion Delete Successfully'));
+           return redirect()->route('suggestion.index');
        }
        else{
-        return redirect()->route('suggestion.index')->with('error','Suggestion Delete Unsuccessfully');
+           Toastr::error(__('Suggestion Delete Unsuccessfully'));
+           return redirect()->route('suggestion.index');
     }
 }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class VideoController extends Controller
 {
@@ -45,7 +46,8 @@ class VideoController extends Controller
        DB::table('videogallerys')->insert($data);
 
 
-       return redirect()->route('videogallerys.index')->with('message','Video Added Successfully');
+       Toastr::success(__('VIdeo Added Successfully'));
+        return redirect()->route('videogallerys.index');
    }
 
     /**
@@ -79,10 +81,12 @@ class VideoController extends Controller
       $update = DB::table('videogallerys')->where('id', $id)->update($data);
 
       if ($update) {
-        return redirect()->route('videogallerys.index')->with('message','Video Update Successfully');
+        Toastr::success(__('Video Update Successfully'));
+        return redirect()->route('videogallerys.index');
     }
     else{
-        return redirect()->route('videogallerys.index')->with('error','Video Update Unsuccessfully');
+        Toastr::error(__('Video Update Successfully'));
+        return redirect()->route('videogallerys.index');
     }
 }
 
@@ -95,10 +99,12 @@ class VideoController extends Controller
 
      if ($data) {
          DB::table("videogallerys")->where("id",$id)->delete();
-         return redirect()->route('videogallerys.index')->with('message','Video Delete Successfully');
+         Toastr::success(__('Video Delete Successfully'));
+        return redirect()->route('videogallerys.index');
      }
      else{
-        return redirect()->route('videogallerys.index')->with('error','Video Delete Unsuccessfully');
+        Toastr::error(__('Video Delete Successfully'));
+        return redirect()->route('videogallerys.index');
     }
 }
 }

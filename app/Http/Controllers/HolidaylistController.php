@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class HolidaylistController extends Controller
 {
@@ -58,7 +59,8 @@ class HolidaylistController extends Controller
         DB::table('holidaylist')->insert($data);
     }
 
-    return redirect()->route('holidaylist.index')->with('message','Holiday List Added Successfully');
+    Toastr::success(__('Holiday List Added Successfully'));
+    return redirect()->route('holidaylist.index');
 
 }
 
@@ -118,10 +120,12 @@ class HolidaylistController extends Controller
     }
 
     if ($update) {
-     return redirect()->route('holidaylist.index')->with('message','Holiday List Update Successfully');
+        Toastr::success(__('Holiday List Update Successfully'));
+        return redirect()->route('holidaylist.index');
  }
  else{
-    return redirect()->route('holidaylist.index')->with('error','Holiday List Update Unsuccessfully');
+        Toastr::error(__('Holiday List Update Unsuccessfully'));
+        return redirect()->route('holidaylist.index');
 }
 }
 
@@ -144,10 +148,12 @@ class HolidaylistController extends Controller
             }
 
            DB::table("holidaylist")->where("id",$id)->delete();
-           return redirect()->route('holidaylist.index')->with('message','Holiday List Delete Successfully');
+            Toastr::success(__('Holiday List Delete Successfully'));
+            return redirect()->route('holidaylist.index');
        }
        else{
-         return redirect()->route('holidaylist.index')->with('error','Holiday List Delete Unsuccessfully');
+            Toastr::error(__('Holiday List Delete Unsuccessfully'));
+            return redirect()->route('holidaylist.index');
      }
 
 

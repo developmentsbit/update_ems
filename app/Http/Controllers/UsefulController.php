@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Brian2694\Toastr\Facades\Toastr;
 
 class UsefulController extends Controller
 {
@@ -43,8 +44,8 @@ class UsefulController extends Controller
 
      DB::table('usefullinks')->insert($data);
 
-
-     return redirect()->route('usefullink.index')->with('message','Link Added Successfully');
+    Toastr::success(__('Link Added Successfully'));
+    return redirect()->route('usefullink.index');
  }
 
     /**
@@ -77,10 +78,12 @@ class UsefulController extends Controller
         $update = DB::table('usefullinks')->where('id', $id)->update($data);
 
         if ($update) {
-            return redirect()->route('usefullink.index')->with('message','Link Update Successfully');
+            Toastr::success(__('Link Update Successfully'));
+            return redirect()->route('usefullink.index');
         }
         else{
-            return redirect()->route('usefullink.index')->with('error','Link Update Unsuccessfully');
+            Toastr::error(__('Link Update Unsuccessfully'));
+        return redirect()->route('usefullink.index');
         }
     }
 
@@ -93,10 +96,12 @@ class UsefulController extends Controller
 
        if ($data) {
            DB::table("usefullinks")->where("id",$id)->delete();
-           return redirect()->route('usefullink.index')->with('message','Link Delete Successfully');
+           Toastr::success(__('Link Delete Successfully'));
+           return redirect()->route('usefullink.index');
        }
        else{
-        return redirect()->route('usefullink.index')->with('error','Link Delete Unsuccessfully');
+        Toastr::success(__('Link Delete Successfully'));
+        return redirect()->route('usefullink.index');
     }
 }
 

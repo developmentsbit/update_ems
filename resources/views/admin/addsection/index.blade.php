@@ -67,8 +67,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
 							<td>@if($lang == 'en'){{ $d->class_name ?: $d->class_name_bn}}@else {{$d->class_name_bn ?: $d->class_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->group_name ?: $d->group_name_bn}}@else {{$d->group_name_bn ?: $d->gorup_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->section_name ?: $d->section_name_bn}}@else {{$d->section_name_bn $d->section_name}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->group_name ?: $d->group_name_bn}}@else {{$d->group_name_bn ?: $d->group_name}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->section_name ?: $d->section_name_bn}}@else {{$d->section_name_bn ?: $d->section_name}}@endif</td>
 							<td>
 								@if($d->status == 1)
 								<span class="btn btn-success btn-sm">@lang('common.active')</span>

@@ -60,7 +60,7 @@ $setting = DB::table("setting")->first();
 				@endphp
 
 
-				<div class="col-md-12 col-12 p-0 mt-3 about">
+				{{-- <div class="col-md-12 col-12 p-0 mt-3 about">
 					<ul class="list-group p-0">
 						<li class="list-group-item" id="header">@lang('frontend.introduction')</li>
 						<div class="details2 p-2 border">
@@ -71,7 +71,7 @@ $setting = DB::table("setting")->first();
 						</div>
 
 					</ul>
-				</div>
+				</div> --}}
 
 
 

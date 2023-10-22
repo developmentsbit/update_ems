@@ -75,24 +75,8 @@ $setting = DB::table("setting")->first();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 				<div class="col-sm-12 col-12 p-0">
 					<div class="row">
-
-
-
-
 						<div class="col-sm-6 col-12 ">
 							<div class="col-sm-12 col-12 pt-3 pb-2" id="cart" data-aos="fade-in" data-aos-duration="1000" >
 								<p class="session">&nbsp;&nbsp;@lang('frontend.about_us')</p>
@@ -113,10 +97,6 @@ $setting = DB::table("setting")->first();
 								</div>
 							</div>
 						</div><!-------------------------End Card----------------------->
-
-
-
-
 
 						<div class="col-sm-6 col-12 ">
 							<div class="col-sm-12 col-12 pt-3 pb-2" id="cart" data-aos="fade-in" data-aos-duration="1000" >
@@ -302,29 +282,12 @@ $setting = DB::table("setting")->first();
 						@php
 						$setting = DB::table("setting")->first();
 						@endphp
-
-
-
-						{{--
-							<div class="col-12 mt-4">
-							<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZZpp4WMokZ0" title="FENI GOVERNMENT COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						
+						<div class="col-12 mt-4">
+							<iframe width="100%" height="400" src="{{ $setting->youtube }}" title="METROPOLITAN SCHOOL & COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>
-						--}}
-
-
-
-
-
-
 
 						<!-------------------------------------End Full Card---------------------------------->
-
-
-
-
-
-
-
 
 					</div>
 				</div>

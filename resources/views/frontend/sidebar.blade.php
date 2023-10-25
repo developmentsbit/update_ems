@@ -17,8 +17,9 @@
 <div class="col-sm-3 col-12">
 
     @if($president_check > 0)
-	@if(request()->Is('presidentmessage'))
 	@if($setting->type == 'school' || $setting->type == 'madrasah')
+	@if(request()->Is('presidentmessage'))
+	
 	@else
 	<div class="col-sm-12 col-12 p-0 mt-2">
 		<ul class="list-group">

@@ -19,5 +19,6 @@ return [
      'address_bangla'=>'ঠিকানা বাংলা',
      'established_bangla'=>'স্থাপিত বাংলা',
      'type'=>'প্রতিষ্ঠানের ধরণ',
+     'scrolling_text' => 'চলমান নোটিশ',
 
 ];

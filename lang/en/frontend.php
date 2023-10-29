@@ -178,6 +178,7 @@ $array = array(
     'present'=>'Present Student',
     'absent'=>'Absent Student',
     'search'=>'Search',
+    'announcement' => 'Announcement',
 
 
     //tanim

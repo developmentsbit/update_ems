@@ -81,6 +81,7 @@ class SettingController extends Controller
       $data['youtube']      = $request->youtube;
       $data['address']      = $request->address;
       $data['address_bangla']      = $request->address_bangla;
+      $data['scrolling_text']      = $request->scrolling_text;
       $data['type']      = $request->type;
       $image                = $request->file('image');
 

@@ -127,6 +127,12 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-12">
+							<label>@lang('setting.scrolling_text'):</label>
+							<div class="input-group mt-2">
+								<textarea  class="form-control w-100" rows="5" type="text" name="scrolling_text">{{ $data->scrolling_text }}</textarea>
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-12">
 							<label>@lang('setting.type'):</label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="type">

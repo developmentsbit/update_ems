@@ -19,5 +19,5 @@ return [
      'address_bangla'=>'Adress Bangla',
      'established_bangla'=>'Established Bangla',
      'type'=>'Type Of Institute',
-
+     'scrolling_text' => 'Running Notice',
 ];

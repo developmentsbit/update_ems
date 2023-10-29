@@ -12,8 +12,20 @@ $setting = DB::table("setting")->first();
 		<div class="row">
 
 			<div class="col-sm-9 col-12">
-
-
+                @if($setting->scrolling_text != NULL)
+                <div class=" bg-light" style="">
+                    <div class="row">
+                         <div class="col-3 bg-info pt-1">
+                            @lang('frontend.announcement')
+                         </div>
+                         <div class="col-9 pt-1">
+                             <marquee behavior="scroll" direction="left">
+                                 {{$setting->scrolling_text}}
+                             </marquee>
+                         </div>
+                    </div>
+                </div>
+                @endif
 
 
 				<div class="col-sm-12 col-12 mt-3 p-0 pb-2 cnotice">
@@ -282,7 +294,7 @@ $setting = DB::table("setting")->first();
 						@php
 						$setting = DB::table("setting")->first();
 						@endphp
-						
+
 						<div class="col-12 mt-4">
 							<iframe width="100%" height="400" src="{{ $setting->youtube }}" title="METROPOLITAN SCHOOL & COLLEGE Documentary." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 						</div>

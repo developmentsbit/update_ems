@@ -17,7 +17,6 @@
 <div class="col-sm-3 col-12">
 
     @if($president_check > 0)
-	@if($setting->type == 'school' || $setting->type == 'madrasah')
 	@if(request()->Is('presidentmessage'))
 	
 	@else

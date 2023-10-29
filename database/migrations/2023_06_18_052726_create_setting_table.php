@@ -29,6 +29,7 @@ return new class extends Migration
             $table->longText('youtube')->nullable();
             $table->longText('address')->nullable();
             $table->longText('address_bangla')->nullable();
+            $table->longText('scrolling_text')->nullable();
             $table->timestamps();
         });
     }

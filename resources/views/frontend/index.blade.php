@@ -187,7 +187,7 @@ right:0;
     border-radius : 5px ;
 }
 .siteNameEst {
-    margin-top: 29px;
+    margin-top: 17px;
     padding-left: 12px;
     font-weight: bold;
     font-size: 19px;
@@ -300,7 +300,7 @@ right:0;
       <div class="logo-sm-header">
           <div class="logoName d-flex">
               <div class="siteLogo">
-                  <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid" style="height: 100px;width : 100px;"></a>
+                  <a href="{{ url('/') }}"><img src="{{ asset($setting->image) }}" class="img-fluid" style="height: 90px;width : 100px;"></a>
                 </div>
                 <div class="siteNameEst">
                     <span>@if($lang == 'en'){{ $setting->name }}@else {{$setting->name_bangla}} @endif</span>

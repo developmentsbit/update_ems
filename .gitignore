@@ -5,7 +5,7 @@ yarn-error.log
 /.cpanel.yml
 
 config/backup.php
-ems/db_connect/conect.php
+/ems/db_connect/
 ems/others_img/
 
 # Laravel 4 specific

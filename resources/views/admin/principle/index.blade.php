@@ -72,6 +72,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>
 								<div class="btn-group">
 									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("principle.edit",$d->id) }}">@lang('common.edit')</a>
+									<form action="{{ route('principle.destroy',$d->id) }}" method="post">
+										@csrf
+										@method('DELETE')
+										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
+
+									</form>
 								</div>
 							</td>
 						</tr>

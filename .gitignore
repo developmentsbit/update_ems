@@ -4,9 +4,7 @@ npm-debug.log
 yarn-error.log
 /.cpanel.yml
 
-config/backup.php
-/ems/db_connect/
-ems/others_img/
+
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -50,7 +48,7 @@ public/setting_image
 public/vice_principal_image
 
 # result/db_connect/conect.php
-
+/ems/db_connect/
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot

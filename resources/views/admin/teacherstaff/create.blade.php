@@ -39,10 +39,11 @@
 				<form method="post" class="btn-submit" action="{{ route('teacherstaff.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="row myinput">
+						@if($settings->type == 'college')
 						<div class="form-group mb-3 col-md-4">
 							<label>@lang('teacherstaff.department'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-								<select class="form-control" name="department_id" id="department_id">
+								<select class="form-control" name="department_id" id="department_id" @if($settings->type == 'college') required @endif>
                                     <option value="">@lang("common.select_one")</option>
 									@if(isset($department))
 									@foreach($department as $c)
@@ -52,6 +53,7 @@
 								</select>
 							</div>
 						</div>
+						@endif
 						<div class="form-group mb-3 col-md-4">
 							<label>@lang('teacherstaff.sl'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">

@@ -41,8 +41,8 @@ public/mujib100
 public/profile_images
 
 # result/db_connect/conect.php
-ems/db_connect/
-ems/admin/all_image/
+ems/db_connect
+ems/admin/all_image
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot

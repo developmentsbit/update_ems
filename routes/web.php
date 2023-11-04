@@ -48,6 +48,7 @@ use App\Http\Controllers\MpoNationalizatioController;
 use App\Http\Controllers\StudentAttendanceInfoController;
 use App\Http\Controllers\ClassWiseStudentinfo;
 use App\Http\Controllers\BackupController;
+use App\Http\Controllers\StudentInfoController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -389,6 +390,10 @@ Route::group(['middleware' => 'auth'], function () {
     //Mujib Corner
 
 
+    // student info 
+    
+    Route::resource('student_info', StudentInfoController::class);
+    Route::get('student_info_from', [StudentInfoController::class, 'from']);
 });
 
 Route::get('/backups', function() {

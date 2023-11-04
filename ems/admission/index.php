@@ -102,7 +102,7 @@ $db = new database();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="<?php echo $fetch_school_information['meta_tag'] ?>" />
 		<title><?php print $fetch_school_information['title'] ?></title>
-		<link rel="shortcut icon" href="logo.jpg" />
+		<link rel="shortcut icon" href="all_image/<?php echo "logoSDMS2015"?>.png" />
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -122,7 +122,7 @@ $db = new database();
       <div class="container">
         <div class="row">
         <div class="col-md-1 col-3 bg-">
-              <img src="logo.jpg" style="height: 100px; text-align: right;" class="img-responsive" >
+              <img src="all_image/<?php echo "logoSDMS2015"?>.png" style="height: 100px; text-align: right;" class="img-responsive" >
        </div>
 
         <div class="col-md-10 col-9">

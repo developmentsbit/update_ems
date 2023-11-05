@@ -48,40 +48,40 @@ input.form-control ,.form-select{
 			<div class="card-body">
             <div class="container">
                 <div class="main_from mt-1 ">
-                    <h5 class="bg-primary text-light p-2 border-bottom border-3 border-dark rounded">STUDENT INFORMATION</h5>
+                    <h5 class="bg-primary text-light p-2 border-bottom border-3 border-dark rounded">@lang('student_info.addtitle')</h5>
                 </div>
                 <div class="from">
                  
                     <form class="row g-3 mt-0">
                       <div class="col-md-4 mt-0">
-                        <label  class="form-label text-dark">Addmission Date :</label>
+                        <label  class="form-label text-dark">@lang('student_info.Addmission_date') :</label>
                         <input type="date" class="form-control" name="admission_date" id="admission_date">
                       </div>
                         <div class="col-md-4 mt-0 ">
-                          <label for="" class="form-label text-dark">শিক্ষার্থীর নাম: <span class="text-danger" style="font-size: 15px;">*</span> </label>
+                          <label for="" class="form-label text-dark">@lang('student_info.name')  : <span class="text-danger" style="font-size: 15px;">*</span> </label>
                           <input type="text" class="form-control" name="name" id="name" required>
                         </div>
                         <div class="col-md-4 mt-0 ">
-                          <label for="" class="form-label text-dark">শিক্ষার্থীর নাম:(ইংরেজি ) <span class="text-danger" style="font-size: 15px;">*</span></label>
+                          <label for="" class="form-label text-dark">@lang('student_info.name_en')<span class="text-danger" style="font-size: 15px;">*</span></label>
                           <input type="text" class="form-control" name="name_en" id="name_en" required>
                         </div>
                         <div class="col-md-4 mt-1">
-                          <label for="" class="form-label text-dark">Fathers Name : <span class="text-danger" style="font-size: 15px;">*</span> </label>
+                          <label for="" class="form-label text-dark">@lang('student_info.father_name') :<span class="text-danger" style="font-size: 15px;">*</span> </label>
                           <input type="text" class="form-control" name="father_name" id="father_name" required>
                         </div>
                         <div class="col-md-4 mt-1">
-                          <label for="" class="form-label text-dark">Mothers Name :	 <span class="text-danger" style="font-size: 15px;">*</span> </label>
+                          <label for="" class="form-label text-dark">@lang('student_info.mother_name') :<span class="text-danger" style="font-size: 15px;">*</span> </label>
                           <input type="text" class="form-control" name="mother_name" id="mother_name" required>
                         </div>
                         
                         <div class="col-md-4 mt-1">
-                          <label  class="form-label text-dark">জন্ম তারিখ : <span class="text-danger" style="font-size: 15px;">*</span>  </label>
+                          <label  class="form-label text-dark">@lang('student_info.date') : <span class="text-danger" style="font-size: 15px;">*</span>  </label>
                           <input type="date" class="form-control" name="date" id="date" >
                         </div>
                     
                         <div class="col-md-3 col-6 ">
                             <div class="row">
-                                <label for="" class="col-sm-4 col-form-label text-dark" >জেন্ডার : <span class="text-danger" style="font-size: 15px;">*</span></label>
+                                <label for="" class="col-sm-4 col-form-label text-dark" >@lang('student_info.gender') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-8">
                                   <select class="form-select" id="" name="gender" id="gender">
                                     <option selected>Choose...</option>
@@ -94,8 +94,8 @@ input.form-control ,.form-select{
                         </div>
                         <div class="col-md-3  col-6">
                             <div class="row ">
-                                <label for="" class="col-sm-4 col-form-label text-dark">জাতীয়তা  : <span class="text-danger" style="font-size: 15px;">*</span></label>
-                                <div class="col-sm-8">
+                                <label for="" class="col-sm-5 col-form-label text-dark">@lang('student_info.nationality') : <span class="text-danger" style="font-size: 15px;">*</span></label>
+                                <div class="col-sm-7">
                                   <select class="form-select" id="nationality" name="nationality">
                                     <option value="1">Bangladeshi</option>
                                     <option value="2">Others</option>
@@ -106,7 +106,7 @@ input.form-control ,.form-select{
                         </div>
                         <div class="col-md-3 col-6 ">
                             <div class="row ">
-                                <label for="" class="col-sm-4  col-form-label text-dark">ধর্ম : <span class="text-danger" style="font-size: 15px;">*</span></label>
+                                <label for="" class="col-sm-4  col-form-label text-dark">@lang('student_info.religion') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-8">
                                   <select class="form-select" id="religion" name="religion">
                                     <option selected>Choose...</option>
@@ -122,8 +122,8 @@ input.form-control ,.form-select{
                         
                         <div class="col-md-3 col-6 ">
                             <div class="row ">
-                                <label for="" class="col-sm-4 col-form-label text-dark">রক্তের গ্রুপ:</label>
-                                <div class="col-sm-8">
+                                <label for="" class="col-sm-5 col-form-label text-dark">@lang('student_info.blood_group') :</label>
+                                <div class="col-sm-7">
                                   <select class="form-select" id="blood_grp" name="blood_grp">
                                     <option selected>Choose...</option>
                                     <option value="1">A+</option>
@@ -140,7 +140,7 @@ input.form-control ,.form-select{
                             </div>
                         </div>
                         <div class="col-md-12">
-                          <label for="" class="form-label text-dark">শিক্ষার্থীর ছবি (পাসপোর্ট সাইজ) :</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.student_image') :</label>
                           <input type="file" class="form-control" id="image" name="image">
                         </div>
 
@@ -152,68 +152,68 @@ input.form-control ,.form-select{
                 {{-- Present Address:  --}}
 
                         <div class="main_from mt-2">
-                          <h6 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2">PRESENT ADDRESS:</h6>
+                          <h6 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2">@lang('student_info.present_address') :</h6>
                         </div>
 
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="" class="form-label text-dark">House No./Name:</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.house_name'):</label>
                           <input type="text" class="form-control" id="present_houses" name="present_houses">
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="" class="form-label text-dark">Village:</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.village'):</label>
                           <input type="text" class="form-control" id="present_village" name="present_village">
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="" class="form-label text-dark">Post Office:</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.post_office'):</label>
                           <input type="text" class="form-control" id="present_post_office" name="present_post_office">
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="" class="form-label text-dark">Post Code:</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.post_code'):</label>
                           <input type="text" class="form-control" id="present_post_code" name="present_post_code">
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="" class="form-label text-dark">Upazilla:</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.upazilla'):</label>
                           <input type="text" class="form-control" id="present_upazilla" name="present_upazilla">
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="" class="form-label text-dark">District:</label>
+                          <label for="" class="form-label text-dark">@lang('student_info.district'):</label>
                           <input type="text" class="form-control" id="present_district" name="present_district">
                         </div>
 
                         <div class="main_from mt-0 p-2">
                           <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
                           <label class="form-check-label text-warning fs-5" for="flexCheckDefault">
-                            If both address are same, Click the check box.
+                            @lang('student_info.address_message')
                           </label>
 
                  {{-- Parmanenet Address --}}
 
                         </div>
                         <div class="main_from mt-0">
-                          <h6 class="bg-dark text-light border-bottom border-3 border-success rounded-bottom fs-5 p-2">PARMANENET ADDRESS :</h6>
+                          <h6 class="bg-dark text-light border-bottom border-3 border-success rounded-bottom fs-5 p-2">@lang('student_info.permanent_address') :</h6>
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                            <label for="" class="form-label text-dark">House No./Name:</label>
+                            <label for="" class="form-label text-dark">@lang('student_info.house_name'):</label>
                             <input type="text" class="form-control" id="parmanenet_house" name="parmanenet_house">
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="" class="form-label text-dark">Village:</label>
+                            <label for="" class="form-label text-dark">@lang('student_info.village'):</label>
                             <input type="text" class="form-control" id="parmanenet_village" name="parmanenet_village">
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="" class="form-label text-dark">Post Office:</label>
+                            <label for="" class="form-label text-dark">@lang('student_info.post_office'):</label>
                             <input type="text" class="form-control" id="parmanenet_post_office" name="parmanenet_post_office">
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="" class="form-label text-dark">Post Code:</label>
+                            <label for="" class="form-label text-dark">@lang('student_info.post_code'):</label>
                             <input type="text" class="form-control" id="parmanenet_post_code" name="parmanenet_post_code">
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="" class="form-label text-dark">Upazilla:</label>
+                            <label for="" class="form-label text-dark">@lang('student_info.upazilla'):</label>
                             <input type="text" class="form-control" id="parmanenet_upazilla" name="parmanenet_upazilla">
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="" class="form-label text-dark">District:</label>
+                            <label for="" class="form-label text-dark">@lang('student_info.district') :</label>
                             <input type="text" class="form-control" id="parmanenet_district" name="parmanenet_district">
                           </div>
 

@@ -85,16 +85,16 @@
         },
         {
             "name": "brian2694/laravel-toastr",
-            "version": "5.57",
+            "version": "5.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brian2694/laravel-toastr.git",
-                "reference": "1274f58564b9d845dfe82d5aca60b99b6fbb5a71"
+                "reference": "6c7d1c6a959b7042757865d3df0c2f57b912f2c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brian2694/laravel-toastr/zipball/1274f58564b9d845dfe82d5aca60b99b6fbb5a71",
-                "reference": "1274f58564b9d845dfe82d5aca60b99b6fbb5a71",
+                "url": "https://api.github.com/repos/brian2694/laravel-toastr/zipball/6c7d1c6a959b7042757865d3df0c2f57b912f2c1",
+                "reference": "6c7d1c6a959b7042757865d3df0c2f57b912f2c1",
                 "shasum": ""
             },
             "require": {
@@ -141,9 +141,9 @@
             ],
             "support": {
                 "issues": "https://github.com/brian2694/laravel-toastr/issues",
-                "source": "https://github.com/brian2694/laravel-toastr/tree/5.57"
+                "source": "https://github.com/brian2694/laravel-toastr/tree/5.58"
             },
-            "time": "2022-02-21T04:34:55+00:00"
+            "time": "2023-10-31T20:35:36+00:00"
         },
         {
             "name": "brick/math",
@@ -1173,16 +1173,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.29.0",
+            "version": "v10.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2d002849a16ad131110a50cbea4d64dbb78515a3"
+                "reference": "7a2da50258c4d0f693b738d3f3c69b2693aea6c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2d002849a16ad131110a50cbea4d64dbb78515a3",
-                "reference": "2d002849a16ad131110a50cbea4d64dbb78515a3",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7a2da50258c4d0f693b738d3f3c69b2693aea6c1",
+                "reference": "7a2da50258c4d0f693b738d3f3c69b2693aea6c1",
                 "shasum": ""
             },
             "require": {
@@ -1371,20 +1371,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-10-24T13:48:53+00:00"
+            "time": "2023-11-01T13:52:17+00:00"
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.1.12",
+            "version": "v0.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "b35f249028c22016e45e48626e19e5d42fd827ff"
+                "reference": "e1379d8ead15edd6cc4369c22274345982edc95a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/b35f249028c22016e45e48626e19e5d42fd827ff",
-                "reference": "b35f249028c22016e45e48626e19e5d42fd827ff",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/e1379d8ead15edd6cc4369c22274345982edc95a",
+                "reference": "e1379d8ead15edd6cc4369c22274345982edc95a",
                 "shasum": ""
             },
             "require": {
@@ -1426,9 +1426,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.1.12"
+                "source": "https://github.com/laravel/prompts/tree/v0.1.13"
             },
-            "time": "2023-10-18T14:18:57+00:00"
+            "time": "2023-10-27T13:53:59+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -6956,16 +6956,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v10.10.0",
+            "version": "v10.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "b4943a3ee422e0a390d85a4cb01dee9360137b61"
+                "reference": "6badd623d6352284a926de604b55db881057ca67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/b4943a3ee422e0a390d85a4cb01dee9360137b61",
-                "reference": "b4943a3ee422e0a390d85a4cb01dee9360137b61",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/6badd623d6352284a926de604b55db881057ca67",
+                "reference": "6badd623d6352284a926de604b55db881057ca67",
                 "shasum": ""
             },
             "require": {
@@ -6977,6 +6977,9 @@
                 "php": "^8.0.2"
             },
             "require-dev": {
+                "algolia/algoliasearch-client-php": "^3.4",
+                "laravel/scout": "^10.5",
+                "meilisearch/meilisearch-php": "^1.4",
                 "nunomaduro/larastan": "^2.4",
                 "orchestra/testbench": "^8",
                 "yajra/laravel-datatables-html": "^9.3.4|^10"
@@ -7028,7 +7031,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables/issues",
-                "source": "https://github.com/yajra/laravel-datatables/tree/v10.10.0"
+                "source": "https://github.com/yajra/laravel-datatables/tree/v10.11.0"
             },
             "funding": [
                 {
@@ -7036,7 +7039,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-04T02:26:02+00:00"
+            "time": "2023-11-04T01:21:13+00:00"
         }
     ],
     "packages-dev": [
@@ -7194,16 +7197,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.15.3",
+            "version": "2.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187"
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/c83e88a30524f9360b11f585f71e6b17313b7187",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a139776fa3f5985a50b509f2a02ff0f709d2a546",
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546",
                 "shasum": ""
             },
             "require": {
@@ -7253,7 +7256,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.15.3"
+                "source": "https://github.com/filp/whoops/tree/2.15.4"
             },
             "funding": [
                 {
@@ -7261,7 +7264,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-13T12:00:00+00:00"
+            "time": "2023-11-03T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",

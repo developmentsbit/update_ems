@@ -725,6 +725,17 @@ class PermissionsTableSeeder extends Seeder
             ),
             64 => 
             array (
+                'id' => 136,
+                'name' => 'Notices List',
+                'parent' => 'Notices',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-06-11 14:02:50',
+                'updated_at' => '2023-06-11 14:02:50',
+                'deleted_at' => NULL,
+            ),
+            65 => 
+            array (
                 'id' => 137,
                 'name' => 'Link List',
                 'parent' => 'Link',
@@ -734,7 +745,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-11 14:09:57',
                 'deleted_at' => NULL,
             ),
-            65 => 
+            66 => 
             array (
                 'id' => 138,
                 'name' => 'Add Members List',
@@ -745,7 +756,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-11 14:28:27',
                 'deleted_at' => NULL,
             ),
-            66 => 
+            67 => 
             array (
                 'id' => 139,
                 'name' => 'Academic Calender List',
@@ -756,7 +767,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:35:34',
                 'deleted_at' => NULL,
             ),
-            67 => 
+            68 => 
             array (
                 'id' => 140,
                 'name' => 'Class Routine List',
@@ -767,7 +778,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:36:26',
                 'deleted_at' => NULL,
             ),
-            68 => 
+            69 => 
             array (
                 'id' => 141,
                 'name' => 'Holiday List List',
@@ -778,7 +789,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:38:27',
                 'deleted_at' => NULL,
             ),
-            69 => 
+            70 => 
             array (
                 'id' => 142,
                 'name' => 'Prospects List',
@@ -789,7 +800,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:41:20',
                 'deleted_at' => NULL,
             ),
-            70 => 
+            71 => 
             array (
                 'id' => 143,
                 'name' => 'Admission Rules List',
@@ -800,7 +811,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:41:54',
                 'deleted_at' => NULL,
             ),
-            71 => 
+            72 => 
             array (
                 'id' => 144,
                 'name' => 'Admission Procedure List',
@@ -811,7 +822,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:42:38',
                 'deleted_at' => NULL,
             ),
-            72 => 
+            73 => 
             array (
                 'id' => 145,
                 'name' => 'Admission Result List',
@@ -822,7 +833,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:43:41',
                 'deleted_at' => NULL,
             ),
-            73 => 
+            74 => 
             array (
                 'id' => 146,
                 'name' => 'Exam Question List',
@@ -833,7 +844,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 13:44:26',
                 'deleted_at' => NULL,
             ),
-            74 => 
+            75 => 
             array (
                 'id' => 147,
                 'name' => 'Admission Info. List',
@@ -844,7 +855,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-13 14:24:49',
                 'deleted_at' => NULL,
             ),
-            75 => 
+            76 => 
             array (
                 'id' => 148,
                 'name' => 'Add Class List',
@@ -855,7 +866,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-14 05:55:09',
                 'deleted_at' => NULL,
             ),
-            76 => 
+            77 => 
             array (
                 'id' => 149,
                 'name' => 'Add Group List',
@@ -866,7 +877,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-14 05:55:42',
                 'deleted_at' => NULL,
             ),
-            77 => 
+            78 => 
             array (
                 'id' => 150,
                 'name' => 'Add Section List',
@@ -877,7 +888,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-14 05:56:11',
                 'deleted_at' => NULL,
             ),
-            78 => 
+            79 => 
             array (
                 'id' => 151,
                 'name' => 'Exam Routine List',
@@ -888,7 +899,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-15 05:54:02',
                 'deleted_at' => NULL,
             ),
-            79 => 
+            80 => 
             array (
                 'id' => 152,
                 'name' => 'Syllabus List',
@@ -899,7 +910,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-15 05:54:32',
                 'deleted_at' => NULL,
             ),
-            80 => 
+            81 => 
             array (
                 'id' => 153,
                 'name' => 'Lesson Plan List',
@@ -910,7 +921,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-15 05:54:59',
                 'deleted_at' => NULL,
             ),
-            81 => 
+            82 => 
             array (
                 'id' => 154,
                 'name' => 'Suggestion List',
@@ -921,7 +932,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-15 05:55:51',
                 'deleted_at' => NULL,
             ),
-            82 => 
+            83 => 
             array (
                 'id' => 155,
                 'name' => 'Department List',
@@ -932,7 +943,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-15 06:31:38',
                 'deleted_at' => NULL,
             ),
-            83 => 
+            84 => 
             array (
                 'id' => 156,
                 'name' => 'Teacher & Staff List',
@@ -943,7 +954,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-15 06:32:10',
                 'deleted_at' => NULL,
             ),
-            84 => 
+            85 => 
             array (
                 'id' => 157,
                 'name' => 'Website Setting',
@@ -954,7 +965,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-18 05:29:49',
                 'deleted_at' => NULL,
             ),
-            85 => 
+            86 => 
             array (
                 'id' => 158,
                 'name' => 'View Admission Data List',
@@ -965,7 +976,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-27 09:20:56',
                 'deleted_at' => NULL,
             ),
-            86 => 
+            87 => 
             array (
                 'id' => 159,
                 'name' => 'View Admission Data View',
@@ -976,7 +987,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-06-27 09:20:56',
                 'deleted_at' => NULL,
             ),
-            87 => 
+            88 => 
             array (
                 'id' => 160,
                 'name' => 'Vice Principal Message List',
@@ -987,7 +998,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-07-16 05:09:11',
                 'deleted_at' => NULL,
             ),
-            88 => 
+            89 => 
             array (
                 'id' => 161,
                 'name' => 'Vice Principal Message Create',
@@ -998,7 +1009,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-07-16 05:09:11',
                 'deleted_at' => NULL,
             ),
-            89 => 
+            90 => 
             array (
                 'id' => 162,
                 'name' => 'Vice Principal Message Edit',
@@ -1009,7 +1020,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-07-16 05:09:11',
                 'deleted_at' => NULL,
             ),
-            90 => 
+            91 => 
             array (
                 'id' => 163,
                 'name' => 'Vice Principal Message Delete',
@@ -1020,7 +1031,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-07-16 05:09:11',
                 'deleted_at' => NULL,
             ),
-            91 => 
+            92 => 
             array (
                 'id' => 164,
                 'name' => 'Vice Principal Message View',
@@ -1031,7 +1042,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-07-16 05:09:11',
                 'deleted_at' => NULL,
             ),
-            92 => 
+            93 => 
             array (
                 'id' => 165,
                 'name' => 'Teaching permission and recognition List',
@@ -1042,7 +1053,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:13',
                 'deleted_at' => NULL,
             ),
-            93 => 
+            94 => 
             array (
                 'id' => 166,
                 'name' => 'Teaching permission and recognition Create',
@@ -1053,7 +1064,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:13',
                 'deleted_at' => NULL,
             ),
-            94 => 
+            95 => 
             array (
                 'id' => 167,
                 'name' => 'Teaching permission and recognition Edit',
@@ -1064,7 +1075,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:13',
                 'deleted_at' => NULL,
             ),
-            95 => 
+            96 => 
             array (
                 'id' => 168,
                 'name' => 'Teaching permission and recognition Delete',
@@ -1075,7 +1086,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            96 => 
+            97 => 
             array (
                 'id' => 169,
                 'name' => 'Teaching permission and recognition View',
@@ -1086,7 +1097,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            97 => 
+            98 => 
             array (
                 'id' => 170,
                 'name' => 'Teaching permission and recognition Print',
@@ -1097,7 +1108,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            98 => 
+            99 => 
             array (
                 'id' => 171,
                 'name' => 'Teaching permission and recognition Edit_history',
@@ -1108,7 +1119,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            99 => 
+            100 => 
             array (
                 'id' => 172,
                 'name' => 'Teaching permission and recognition Deleted_list',
@@ -1119,7 +1130,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            100 => 
+            101 => 
             array (
                 'id' => 173,
                 'name' => 'Teaching permission and recognition Restore',
@@ -1130,7 +1141,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            101 => 
+            102 => 
             array (
                 'id' => 174,
                 'name' => 'Teaching permission and recognition Permanent_delete',
@@ -1141,7 +1152,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:47:14',
                 'deleted_at' => NULL,
             ),
-            102 => 
+            103 => 
             array (
                 'id' => 175,
                 'name' => 'MPO_Nationalization Info List',
@@ -1152,7 +1163,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            103 => 
+            104 => 
             array (
                 'id' => 176,
                 'name' => 'MPO_Nationalization Info Create',
@@ -1163,7 +1174,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            104 => 
+            105 => 
             array (
                 'id' => 177,
                 'name' => 'MPO_Nationalization Info Edit',
@@ -1174,7 +1185,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            105 => 
+            106 => 
             array (
                 'id' => 178,
                 'name' => 'MPO_Nationalization Info Delete',
@@ -1185,7 +1196,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            106 => 
+            107 => 
             array (
                 'id' => 179,
                 'name' => 'MPO_Nationalization Info View',
@@ -1196,7 +1207,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            107 => 
+            108 => 
             array (
                 'id' => 180,
                 'name' => 'MPO_Nationalization Info Print',
@@ -1207,7 +1218,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            108 => 
+            109 => 
             array (
                 'id' => 181,
                 'name' => 'MPO_Nationalization Info Edit_history',
@@ -1218,7 +1229,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            109 => 
+            110 => 
             array (
                 'id' => 182,
                 'name' => 'MPO_Nationalization Info Deleted_list',
@@ -1229,7 +1240,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            110 => 
+            111 => 
             array (
                 'id' => 183,
                 'name' => 'MPO_Nationalization Info Restore',
@@ -1240,7 +1251,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            111 => 
+            112 => 
             array (
                 'id' => 184,
                 'name' => 'MPO_Nationalization Info Permanent_delete',
@@ -1251,587 +1262,224 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-09-10 09:48:59',
                 'deleted_at' => NULL,
             ),
-            112 => 
+            113 => 
             array (
-                'id' => 199,
+                'id' => 185,
                 'name' => 'Student Attendance Information List',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
-                'deleted_at' => NULL,
-            ),
-            113 => 
-            array (
-                'id' => 200,
-                'name' => 'Student Attendance Information Create',
-                'parent' => 'Student Attendance Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             114 => 
             array (
-                'id' => 201,
-                'name' => 'Student Attendance Information Edit',
+                'id' => 186,
+                'name' => 'Student Attendance Information Create',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             115 => 
             array (
-                'id' => 202,
-                'name' => 'Student Attendance Information Delete',
+                'id' => 187,
+                'name' => 'Student Attendance Information Edit',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             116 => 
             array (
-                'id' => 203,
-                'name' => 'Student Attendance Information View',
+                'id' => 188,
+                'name' => 'Student Attendance Information Delete',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             117 => 
             array (
-                'id' => 204,
-                'name' => 'Student Attendance Information Print',
+                'id' => 189,
+                'name' => 'Student Attendance Information View',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             118 => 
             array (
-                'id' => 205,
-                'name' => 'Student Attendance Information Edit_history',
+                'id' => 190,
+                'name' => 'Student Attendance Information Print',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             119 => 
             array (
-                'id' => 206,
-                'name' => 'Student Attendance Information Deleted_list',
+                'id' => 191,
+                'name' => 'Student Attendance Information Edit_history',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             120 => 
             array (
-                'id' => 207,
-                'name' => 'Student Attendance Information Restore',
+                'id' => 192,
+                'name' => 'Student Attendance Information Deleted_list',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             121 => 
             array (
-                'id' => 208,
-                'name' => 'Student Attendance Information Permanent_delete',
+                'id' => 193,
+                'name' => 'Student Attendance Information Restore',
                 'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-14 11:47:58',
-                'updated_at' => '2023-09-14 11:47:58',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             122 => 
             array (
-                'id' => 209,
-                'name' => 'Gender Wise Student List List',
-                'parent' => 'Gender Wise Student List',
+                'id' => 194,
+                'name' => 'Student Attendance Information Permanent_delete',
+                'parent' => 'Student Attendance Information',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-09-12 06:41:24',
+                'updated_at' => '2023-09-12 06:41:24',
                 'deleted_at' => NULL,
             ),
             123 => 
             array (
-                'id' => 210,
-                'name' => 'Gender Wise Student List Create',
-                'parent' => 'Gender Wise Student List',
+                'id' => 195,
+                'name' => 'Student info List',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             124 => 
             array (
-                'id' => 211,
-                'name' => 'Gender Wise Student List Edit',
-                'parent' => 'Gender Wise Student List',
+                'id' => 196,
+                'name' => 'Student info Create',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             125 => 
             array (
-                'id' => 212,
-                'name' => 'Gender Wise Student List Delete',
-                'parent' => 'Gender Wise Student List',
+                'id' => 197,
+                'name' => 'Student info Edit',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             126 => 
             array (
-                'id' => 213,
-                'name' => 'Gender Wise Student List View',
-                'parent' => 'Gender Wise Student List',
+                'id' => 198,
+                'name' => 'Student info Delete',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             127 => 
             array (
-                'id' => 214,
-                'name' => 'Gender Wise Student List Print',
-                'parent' => 'Gender Wise Student List',
+                'id' => 199,
+                'name' => 'Student info View',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             128 => 
             array (
-                'id' => 215,
-                'name' => 'Gender Wise Student List Edit_history',
-                'parent' => 'Gender Wise Student List',
+                'id' => 200,
+                'name' => 'Student info Print',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             129 => 
             array (
-                'id' => 216,
-                'name' => 'Gender Wise Student List Deleted_list',
-                'parent' => 'Gender Wise Student List',
+                'id' => 201,
+                'name' => 'Student info Edit_history',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             130 => 
             array (
-                'id' => 217,
-                'name' => 'Gender Wise Student List Restore',
-                'parent' => 'Gender Wise Student List',
+                'id' => 202,
+                'name' => 'Student info Deleted_list',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             131 => 
             array (
-                'id' => 218,
-                'name' => 'Gender Wise Student List Permanent_delete',
-                'parent' => 'Gender Wise Student List',
+                'id' => 203,
+                'name' => 'Student info Restore',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:48:54',
-                'updated_at' => '2023-09-19 17:48:54',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
             132 => 
             array (
-                'id' => 219,
-                'name' => 'Section Wise Student List List',
-                'parent' => 'Section Wise Student List',
+                'id' => 204,
+                'name' => 'Student info Permanent_delete',
+                'parent' => 'Student info',
                 'guard_name' => 'web',
                 'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            133 => 
-            array (
-                'id' => 220,
-                'name' => 'Section Wise Student List Create',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            134 => 
-            array (
-                'id' => 221,
-                'name' => 'Section Wise Student List Edit',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            135 => 
-            array (
-                'id' => 222,
-                'name' => 'Section Wise Student List Delete',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            136 => 
-            array (
-                'id' => 223,
-                'name' => 'Section Wise Student List View',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            137 => 
-            array (
-                'id' => 224,
-                'name' => 'Section Wise Student List Print',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            138 => 
-            array (
-                'id' => 225,
-                'name' => 'Section Wise Student List Edit_history',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            139 => 
-            array (
-                'id' => 226,
-                'name' => 'Section Wise Student List Deleted_list',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            140 => 
-            array (
-                'id' => 227,
-                'name' => 'Section Wise Student List Restore',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            141 => 
-            array (
-                'id' => 228,
-                'name' => 'Section Wise Student List Permanent_delete',
-                'parent' => 'Section Wise Student List',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-19 17:59:47',
-                'updated_at' => '2023-09-19 17:59:47',
-                'deleted_at' => NULL,
-            ),
-            142 => 
-            array (
-                'id' => 229,
-                'name' => 'Class Wise Student Information List',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            143 => 
-            array (
-                'id' => 230,
-                'name' => 'Class Wise Student Information Create',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            144 => 
-            array (
-                'id' => 231,
-                'name' => 'Class Wise Student Information Edit',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            145 => 
-            array (
-                'id' => 232,
-                'name' => 'Class Wise Student Information Delete',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            146 => 
-            array (
-                'id' => 233,
-                'name' => 'Class Wise Student Information View',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            147 => 
-            array (
-                'id' => 234,
-                'name' => 'Class Wise Student Information Print',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            148 => 
-            array (
-                'id' => 235,
-                'name' => 'Class Wise Student Information Edit_history',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            149 => 
-            array (
-                'id' => 236,
-                'name' => 'Class Wise Student Information Deleted_list',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            150 => 
-            array (
-                'id' => 237,
-                'name' => 'Class Wise Student Information Restore',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            151 => 
-            array (
-                'id' => 238,
-                'name' => 'Class Wise Student Information Permanent_delete',
-                'parent' => 'Class Wise Student Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-21 07:28:43',
-                'updated_at' => '2023-09-21 07:28:43',
-                'deleted_at' => NULL,
-            ),
-            152 => 
-            array (
-                'id' => 240,
-                'name' => 'Backup List',
-                'parent' => 'Project Settings',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-23 09:56:24',
-                'updated_at' => '2023-09-23 09:56:24',
-                'deleted_at' => NULL,
-            ),
-            153 => 
-            array (
-                'id' => 241,
-                'name' => 'Backup Create',
-                'parent' => 'Project Settings',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-23 09:56:24',
-                'updated_at' => '2023-09-23 09:56:24',
-                'deleted_at' => NULL,
-            ),
-            154 => 
-            array (
-                'id' => 242,
-                'name' => 'Backup View',
-                'parent' => 'Project Settings',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-09-23 09:56:24',
-                'updated_at' => '2023-09-23 09:56:24',
-                'deleted_at' => NULL,
-            ),
-            155 => 
-            array (
-                'id' => 243,
-                'name' => 'Notices List',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            156 => 
-            array (
-                'id' => 244,
-                'name' => 'Notices Create',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            157 => 
-            array (
-                'id' => 245,
-                'name' => 'Notices Edit',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            158 => 
-            array (
-                'id' => 246,
-                'name' => 'Notices Delete',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            159 => 
-            array (
-                'id' => 247,
-                'name' => 'Notices View',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            160 => 
-            array (
-                'id' => 248,
-                'name' => 'Notices Print',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            161 => 
-            array (
-                'id' => 249,
-                'name' => 'Notices Edit_history',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            162 => 
-            array (
-                'id' => 250,
-                'name' => 'Notices Deleted_list',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            163 => 
-            array (
-                'id' => 251,
-                'name' => 'Notices Restore',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
-                'deleted_at' => NULL,
-            ),
-            164 => 
-            array (
-                'id' => 252,
-                'name' => 'Notices Permanent_delete',
-                'parent' => 'Notices',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-10-04 05:33:50',
-                'updated_at' => '2023-10-04 05:33:50',
+                'created_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-10-31 11:33:10',
                 'deleted_at' => NULL,
             ),
         ));

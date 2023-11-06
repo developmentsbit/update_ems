@@ -3,7 +3,7 @@
     <link href="{{asset('assets')}}/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets')}}/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets')}}/css/vendor/quill.bubble.css" rel="stylesheet" type="text/css">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">
     <!-- SimpleMDE css -->
     <link href="{{asset('assets')}}/css/vendor/simplemde.min.css" rel="stylesheet" type="text/css" />
 <!-- third party css -->

@@ -1,4 +1,5 @@
-﻿<script src="{{asset('assets')}}/js/vendor.min.js"></script>
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+<script src="{{asset('assets')}}/js/vendor.min.js"></script>
 <script src="{{asset('assets')}}/js/app.min.js"></script>
 <!-- quill js -->
 <script src="{{asset('assets')}}/js/vendor/quill.min.js"></script>
@@ -199,4 +200,19 @@
 	}
 	toastr.warning("{{ session('warning') }}");
 	@endif
+</script>
+
+<script>
+    $( ".datepicker" ).datepicker({
+        format : 'dd/mm/yyyy',
+    });
+</script>
+
+<script>
+    imageFile.onchange = evt => {
+        const [file] = imageFile.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+        }
 </script>

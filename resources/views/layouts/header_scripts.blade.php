@@ -3,7 +3,7 @@
     <link href="{{asset('assets')}}/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets')}}/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets')}}/css/vendor/quill.bubble.css" rel="stylesheet" type="text/css">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">
     <!-- SimpleMDE css -->
     <link href="{{asset('assets')}}/css/vendor/simplemde.min.css" rel="stylesheet" type="text/css" />
 <!-- third party css -->
@@ -41,5 +41,11 @@
     {
         font-family: 'Hind Siliguri', sans-serif;
     }
+    span.select2-selection.select2-selection--single {
+    border-radius: 0px;
+    padding:  4p;
+    height: 34px !important;
+    padding-top: 2px;
+}
 </style>
 @endif

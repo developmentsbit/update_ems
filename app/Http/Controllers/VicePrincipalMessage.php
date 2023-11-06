@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\vice_principal_message;
+use Brian2694\Toastr\Facades\Toastr;
+
 
 class VicePrincipalMessage extends Controller
 {

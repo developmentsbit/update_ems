@@ -395,8 +395,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Mujib Corner
 
 
-    // student info 
-    
+    // student info
+
     Route::resource('student_info', StudentInfoController::class);
     Route::resource('add_marks', AddMarksController::class);
     Route::resource('view_marks', ViewMarksController::class);

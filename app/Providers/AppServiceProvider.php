@@ -6,6 +6,7 @@ use App\Helpers\MenuHelper;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
                 $view->with([
                     'side_menus' => $menus,
                     'lang' => config('app.locale'),
+                    'settings' => DB::table('setting')->first(),
                 ]);
             });
         }

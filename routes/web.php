@@ -49,6 +49,9 @@ use App\Http\Controllers\StudentAttendanceInfoController;
 use App\Http\Controllers\ClassWiseStudentinfo;
 use App\Http\Controllers\BackupController;
 use App\Http\Controllers\StudentInfoController;
+use App\Http\Controllers\AddSubjectController;
+use App\Http\Controllers\SubjectPartController;
+use App\Http\Controllers\MarkDistributionController;
 use App\Http\Controllers\AddMarksController;
 use App\Http\Controllers\ViewMarksController;
 use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
@@ -285,6 +288,9 @@ Route::group(['middleware' => 'auth'], function () {
         'vice_principal_message' => VicePrincipalMessage::class,
         'gender_wise' => GenderWiseController::class,
         'section_wise' => SectionWiseController::class,
+        'add_subject' => AddSubjectController::class,
+        'add_subject_part' => SubjectPartController::class,
+        'mark_distribution' => MarkDistributionController::class,
     ]);
 
     Route::get('retrive_message/{id}', [MessageController::class, 'retrive_message']);

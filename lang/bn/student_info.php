@@ -24,11 +24,16 @@ return [
      'upazilla' => 'উপজেলা',
      'district' => 'জেলা',
      'address_message' => 'উভয় ঠিকানা একই হলে, চেক বক্সে ক্লিক করুন।',
-     'guardian_info' => 'অভিভাবকদের তথ্য:',
-     'guardian_name' => 'অভিভাবকদের নাম:',
-     'guardian_contact' => 'অভিভাবকদের তথ্য:',
-     'guardian_email' => 'অভিভাবকদের তথ্য:',
-     'relation' => 'অভিভাবকদের তথ্য:',
+     'guardian_info' => 'অভিভাবকের তথ্য',
+     'guardian_name' => 'অভিভাবকের নাম',
+     'guardian_contact' => 'অভিভাবকের নম্বর',
+     'guardian_email' => 'অভিভাবকের ইমেল',
+     'relation' => 'ছাত্রের সাথে সম্পর্ক',
+     'academic_info' => 'একাডেমিক তথ্য',
+     'admission_class' => 'কোন শ্রেণীতে ভর্তি হতে ইচ্ছুক',
+     'admission_group' => 'কোন শ্রেণীতে গ্রুপে হতে ইচ্ছুক',
+     'session' => 'সেশন',
+
      
 
 

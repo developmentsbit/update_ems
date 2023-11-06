@@ -25,6 +25,14 @@ return [
      'district' => 'District',
      'address_message' => 'If both address are same, Click the check box.',
      'guardian_info' => 'Guardian Information',
+     'guardian_name' => 'Guardian Name',
+     'guardian_contact' => 'Guardian Contact No',
+     'guardian_email' => 'Guardian Email',
+     'relation' => 'Relation With Student',
+     'academic_info' => 'Academic information',
+     'admission_class' => 'Admission Desire( Class)',
+     'admission_group' => 'Admission Desire(Group)',
+     'session' => 'Session',
 
 
      

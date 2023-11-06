@@ -83,7 +83,7 @@ input.form-control ,.form-select{
                             <div class="row">
                                 <label for="" class="col-sm-4 col-form-label text-dark" >@lang('student_info.gender') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-8">
-                                  <select class="form-select" id="" name="gender" id="gender">
+                                  <select class="form-select select2" data-toggle="select2" name="gender" id="gender">
                                     <option selected>Choose...</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
@@ -96,7 +96,7 @@ input.form-control ,.form-select{
                             <div class="row ">
                                 <label for="" class="col-sm-5 col-form-label text-dark">@lang('student_info.nationality') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-7">
-                                  <select class="form-select" id="nationality" name="nationality">
+                                  <select class="form-select select2" data-toggle="select2" id="nationality" name="nationality">
                                     <option value="1">Bangladeshi</option>
                                     <option value="2">Others</option>
 
@@ -108,7 +108,7 @@ input.form-control ,.form-select{
                             <div class="row ">
                                 <label for="" class="col-sm-4  col-form-label text-dark">@lang('student_info.religion') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-8">
-                                  <select class="form-select" id="religion" name="religion">
+                                  <select class="form-select select2" data-toggle="select2" id="religion" name="religion">
                                     <option selected>Choose...</option>
                                     <option value="1">Islam</option>
                                     <option value="2">Hindu</option>
@@ -124,7 +124,7 @@ input.form-control ,.form-select{
                             <div class="row ">
                                 <label for="" class="col-sm-5 col-form-label text-dark">@lang('student_info.blood_group') :</label>
                                 <div class="col-sm-7">
-                                  <select class="form-select" id="blood_grp" name="blood_grp">
+                                  <select class="form-select select2" data-toggle="select2" id="blood_grp" name="blood_grp">
                                     <option selected>Choose...</option>
                                     <option value="1">A+</option>
                                     <option value="2">A-</option>
@@ -141,7 +141,8 @@ input.form-control ,.form-select{
                         </div>
                         <div class="col-md-12">
                           <label for="" class="form-label text-dark">@lang('student_info.student_image') :</label>
-                          <input type="file" class="form-control" id="image" name="image">
+                          <input type="file" class="form-control" id="imageFile" name="image">
+                          <img id="blah" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="your image" style="height: 80px;" />
                         </div>
 
                   {{-- STUDENT'S ADDRESS   --}}
@@ -275,7 +276,7 @@ input.form-control ,.form-select{
                             <div class="row mb-3">
                                 <label for="" class="col-sm-6 col-form-label text-dark">Admission Desire( Class) :</label>
                                 <div class="col-sm-6">
-                                  <select class="form-select" id="class" name="class">
+                                  <select class="form-select select2" data-toggle="select2" id="class" name="class">
                                     <option selected>Choose...</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
@@ -288,7 +289,7 @@ input.form-control ,.form-select{
                             <div class="row mb-3">
                                 <label for="" class="col-sm-6 col-form-label text-dark">Admission Desire(Group) :</label>
                                 <div class="col-sm-6">
-                                  <select class="form-select" id="group" name="group">
+                                  <select class="form-select select2" data-toggle="select2" id="group" name="group">
                                     <option selected>Choose...</option>
                                     <option value="1">Bangladeshi</option>
 
@@ -300,7 +301,7 @@ input.form-control ,.form-select{
                             <div class="row mb-3">
                                 <label for="" class="col-sm-4 col-form-label text-dark">Session :</label>
                                 <div class="col-sm-8">
-                                  <select class="form-select" id="session" name="session">
+                                  <select class="form-select select2" data-toggle="select2" id="session" name="session">
                                     <option selected>Choose...</option>
                                     <option value="1">Bangladeshi</option>
 

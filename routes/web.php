@@ -390,8 +390,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Mujib Corner
 
 
-    // student info 
-    
+    // student info
+
     Route::resource('student_info', StudentInfoController::class);
     Route::get('student_info_from', [StudentInfoController::class, 'from']);
 });

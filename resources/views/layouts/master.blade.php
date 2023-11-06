@@ -208,7 +208,7 @@
     </div><!-- /.modal -->
 
     <script>
-        
+
         //profile_image preview
         function preview_profile_image(input){
             let file = $("#profile_image").get(0).files[0];
@@ -224,6 +224,9 @@
         }
 
     </script>
+
+
+    
 
     @include('layouts.right_sidebar')
 

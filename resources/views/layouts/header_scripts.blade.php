@@ -41,5 +41,11 @@
     {
         font-family: 'Hind Siliguri', sans-serif;
     }
+    span.select2-selection.select2-selection--single {
+    border-radius: 0px;
+    padding:  4p;
+    height: 34px !important;
+    padding-top: 2px;
+}
 </style>
 @endif

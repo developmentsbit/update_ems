@@ -49,6 +49,11 @@ use App\Http\Controllers\StudentAttendanceInfoController;
 use App\Http\Controllers\ClassWiseStudentinfo;
 use App\Http\Controllers\BackupController;
 use App\Http\Controllers\StudentInfoController;
+use App\Http\Controllers\AddMarksController;
+use App\Http\Controllers\ViewMarksController;
+use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
+use App\Http\Controllers\ViewCompletedSubjectController; 
+use App\Http\Controllers\GenerateGPAController; 
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -393,6 +398,12 @@ Route::group(['middleware' => 'auth'], function () {
     // student info
 
     Route::resource('student_info', StudentInfoController::class);
+    Route::resource('add_marks', AddMarksController::class);
+    Route::resource('view_marks', ViewMarksController::class);
+    Route::resource('view_total _subject_marks', ViewTotalSubjectMarksEntryController::class);
+    Route::resource('view_completed_subject', ViewCompletedSubjectController::class);
+    Route::resource('generate_gpa', GenerateGPAController::class);
+
     Route::get('student_info_from', [StudentInfoController::class, 'from']);
 });
 

@@ -56,7 +56,9 @@ use App\Http\Controllers\AddMarksController;
 use App\Http\Controllers\ViewMarksController;
 use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
 use App\Http\Controllers\ViewCompletedSubjectController; 
-use App\Http\Controllers\GenerateGPAController; 
+use App\Http\Controllers\GenerateGPAController;
+use App\Http\Controllers\OnlineLectureUploadController;
+use App\Http\Controllers\UploadDownloadFileController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -130,6 +132,7 @@ Route::get('/section_wise_student_list',[FrontendController::class,'section_wise
 Route::get('/gender_wise_students',[FrontendController::class,'gender_wise_students']);
 Route::get('/section_wise_students',[FrontendController::class,'section_wise_students']);
 Route::get('/student_attendance',[FrontendController::class,'student_attendance']);
+Route::get('/online_lecture',[FrontendController::class,'OnlineLectureUpload']);
 
 Route::get('/classWiseStudent/{id}',[FrontendController::class,'classWiseStudent']);
 
@@ -291,6 +294,8 @@ Route::group(['middleware' => 'auth'], function () {
         'add_subject' => AddSubjectController::class,
         'add_subject_part' => SubjectPartController::class,
         'mark_distribution' => MarkDistributionController::class,
+        'online_lecture_upload' => OnlineLectureUploadController::class,
+        'upload_download_file' => UploadDownloadFileController::class,
     ]);
 
     Route::get('retrive_message/{id}', [MessageController::class, 'retrive_message']);

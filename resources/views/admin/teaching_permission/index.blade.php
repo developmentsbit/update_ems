@@ -54,6 +54,9 @@
                         </ul> <!-- end nav-->
                         <div class="tab-content">
                             <div class="tab-pane show active" id="users-tab-all">
+                                @php
+                                $sl=1;
+                                @endphp
                                 <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
                                     <thead>
                                         <tr>
@@ -70,7 +73,7 @@
                                         @if($data)
                                         @foreach($data as $v)
                                         <tr>
-                                            <td>#</td>
+                                            <td>{{$sl++}}</td>
                                             <td>{{$v->date}}</td>
                                             <td>@if($lang == 'en'){{$v->subject ?: $v->subject_bn}}@elseif($lang == 'bn'){{$v->subject_bn ?: $v->subject}}@endif</td>
                                             <td>@if($lang == 'en'){{$v->part ?: $v->part_bn}}@elseif($lang == 'bn'){{$v->part_bn ?: $v->part}}@endif</td>

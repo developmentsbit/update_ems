@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class group_info extends Model
+class online_lecture_upload extends Model
 {
     use HasFactory;
-
-    protected $table = 'addgroup';
 
     protected $guarded = [];
 }

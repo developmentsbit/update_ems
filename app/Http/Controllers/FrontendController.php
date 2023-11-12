@@ -8,6 +8,9 @@ use App\Models\teaching_permission;
 use App\Models\mpoNationalizatio;
 use App\Models\gender_wise;
 use App\Models\section_wise;
+use App\Models\online_lecture_upload;
+use App\Models\class_info;
+use App\Models\group_info;
 use PDF;
 use App;
 
@@ -597,6 +600,19 @@ class FrontendController extends Controller
         $class = DB::connection('mysql_second')->table('add_class')->get();
         $from_date = $request->from_date;
         return view('frontend.load_date_wise_att_data',compact('class','from_date'));
+    }
+    
+	public function OnlineLectureUpload(Request $request)
+    {
+		$class = class_info::all();
+        $group = group_info::all();
+
+        $data = online_lecture_upload::leftjoin("addclass",'addclass.id','online_lecture_uploads.class_id')
+        ->leftjoin("addgroup",'addgroup.id','online_lecture_uploads.group_id')
+        ->select("online_lecture_uploads.*",'addclass.class_name','addgroup.group_name','addclass.class_name_bn','addgroup.group_name_bn')
+        ->get();
+        $sl=1;
+        return view('frontend.online_lecture',compact('sl','data','class','group'));
     }
 
 

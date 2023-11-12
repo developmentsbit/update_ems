@@ -154,7 +154,7 @@ right:0;
         }
 
         #top_button{
-            font-size: 9px !important;
+            font-size: 8px !important;
             padding: 9px 5px !important;
         }
 
@@ -272,6 +272,7 @@ right:0;
         <div class="col-sm-8 col-12 text-center text-sm-center text-lg-right" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
+            <label><a id="top_button" target="_blank" href="{{url('/online_lecture')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.online_lecture_upload')</a></label>
             <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
             <label><a id="top_button" target="_blank" href="/ems/admission/" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
             <label><a id="top_button" target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>

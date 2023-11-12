@@ -15,6 +15,7 @@ return [
      'religion' => 'ধর্ম',
      'blood_group' => 'রক্তের গ্রুপ',
      'student_image' => 'ছবি (পাসপোর্ট সাইজ)',
+     'address' => 'ঠিকানা',
      'present_address' => 'বর্তমান ঠিকানা',
      'permanent_address' => 'স্থায়ী ঠিকানা',
      'house_name' => 'বাড়ির নম্বর/নাম',
@@ -31,7 +32,7 @@ return [
      'relation' => 'ছাত্রের সাথে সম্পর্ক',
      'academic_info' => 'একাডেমিক তথ্য',
      'admission_class' => 'কোন শ্রেণীতে ভর্তি হতে ইচ্ছুক',
-     'admission_group' => 'কোন শ্রেণীতে গ্রুপে হতে ইচ্ছুক',
+     'admission_group' => 'কোন  গ্রুপে হতে ইচ্ছুক',
      'session' => 'সেশন',
 
      

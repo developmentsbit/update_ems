@@ -13,10 +13,16 @@
     padding: 3px;
     /* font-size: 20px; */
 }
-input.form-control ,.form-select{
-    border: 1px solid black;
+input.form-control ,.select2, .form-check-input{
+    border: 1px solid black !important;
+    border-radius: 0px !important;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    /* border:1px solid #aaa; */
     border-radius: 0px;
 }
+
 </style>
 
 
@@ -48,7 +54,7 @@ input.form-control ,.form-select{
 			<div class="card-body">
             <div class="container">
                 <div class="main_from mt-1 ">
-                    <h5 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2">@lang('student_info.addtitle')</h5>
+                    <h5 class="bg-primary   text-light border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.addtitle')</h5>
                 </div>
                 <div class="from">
 
@@ -142,13 +148,20 @@ input.form-control ,.form-select{
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6 mt-1">
 
                           <label for="" class="form-label text-dark">@lang('student_info.student_image') :</label>
                           <input type="file" class="form-control" id="imageFile" name="image">
-                          <img id="blah" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="your image" style="height: 80px;" />
+                          
 
                         </div>
+                        <div class="col-md-6 mt-1 ">
+
+                          <img id="blah" src="" alt="" style="height: 80px;" />
+                          
+
+                        </div>
+
 
                   {{-- STUDENT'S ADDRESS   --}}
                         {{-- <div class="main_from mt-1">
@@ -157,77 +170,141 @@ input.form-control ,.form-select{
 
                 {{-- Present Address:  --}}
 
-                        <div class="main_from mt-2">
-                          <h6 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2">@lang('student_info.present_address') :</h6>
+                        <div class="main_from mt-0">
+                          <h6 class="bg-primary text-light border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.address') :</h6>
                         </div>
-
+                        <div class="main_from mt-1 mb-1 fs-5 ">
+                          <b class="text-dark">@lang('student_info.present_address') :</b>
+                        </div>
+                        
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="present_houses" class="form-label text-dark">@lang('student_info.house_name'):</label>
-                          <input type="text" class="form-control" id="present_houses" name="present_houses">
+                          <label for="division" class="form-label text-dark">@lang('student_info.division') :</label>
+
+                          <select class="form-select select2" data-toggle="select2" id="division" name="division" onchange="return loadDistrict()">
+                            <option selected>Choose...</option>
+                            @if ($division)
+                            @foreach ($division as $d)
+                            <option value="{{ $d->id }}">{{ $d->division_name }}</option>
+                            @endforeach
+                              
+                            @endif
+                          
+                          </select>
+                       
                         </div>
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="present_district" class="form-label text-dark">@lang('student_info.district'):</label>
+                          <select class="form-select select2" data-toggle="select2" id="present_district" name="present_district" onchange=" return loadUpazilla()">
+                            <option selected>Choose...</option>
+                          
+                          
+                          </select>
+                         
+                        </div>
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="present_upazilla" class="form-label text-dark">@lang('student_info.upazilla'):</label>
+                          <select class="form-select select2" data-toggle="select2" id="present_upazilla" name="present_upazilla">
+                            <option selected>Choose...</option>
+                          
+                          
+                          </select>
+                         
+                        </div>
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="present_post_office" class="form-label text-dark">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
+                          <input type="text" class="form-control" id="present_post_office" name="present_post_office">
+                        </div>
+                        {{-- <div class="col-md-1 col-6 mt-0">
+                          <label for="present_post_code" class="form-label text-dark">:</label>
+                          <input type="text" class="form-control" id="present_post_code" name="present_post_code">
+                        </div> --}}
                         <div class="col-md-2 col-6 mt-0">
                           <label for="present_village" class="form-label text-dark">@lang('student_info.village'):</label>
                           <input type="text" class="form-control" id="present_village" name="present_village">
                         </div>
                         <div class="col-md-2 col-6 mt-0">
-                          <label for="present_post_office" class="form-label text-dark">@lang('student_info.post_office'):</label>
-                          <input type="text" class="form-control" id="present_post_office" name="present_post_office">
+                          <label for="present_houses" class="form-label text-dark">@lang('student_info.house_name'):</label>
+                          <input type="text" class="form-control" id="present_houses" name="present_houses">
                         </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_post_code" class="form-label text-dark">@lang('student_info.post_code'):</label>
-                          <input type="text" class="form-control" id="present_post_code" name="present_post_code">
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_upazilla" class="form-label text-dark">@lang('student_info.upazilla'):</label>
-                          <input type="text" class="form-control" id="present_upazilla" name="present_upazilla">
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_district" class="form-label text-dark">@lang('student_info.district'):</label>
-                          <input type="text" class="form-control" id="present_district" name="present_district">
-                        </div>
+                     
+                       
+                       
+                      
+                       
 
                       
                       {{-- Parmanenet Address --}}
 
 
-                        <div class="main_from mt-1">
-                          <h6 class="bg-dark text-light border-bottom border-3 border-success rounded-bottom fs-5 p-2">@lang('student_info.permanent_address') :</h6>
-                        </div>
-                        <div class="main_from mt-0 p-2">
+                        <div class="main_from mt-2 mb-2">
+                          <b class="text-dark fs-5">@lang('student_info.permanent_address') :</b>
+                            &nbsp &nbsp
                           <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
                           <label class="form-check-label text-warning fs-5" for="flexCheckDefault">
                             @lang('student_info.address_message')
                           </label>
                         </div>
+  
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="parmanenet_division" class="form-label text-dark">@lang('student_info.division') :</label>
+
+                          <select class="form-select select2" data-toggle="select2" id="parmanenet_division" name="parmanenet_division" onchange="return loadParmanenetDistrict()">
+                            <option selected>Choose...</option>
+                            @if ($division)
+                            @foreach ($division as $d)
+                            <option value="{{ $d->id }}">{{ $d->division_name }}</option>
+                            @endforeach
+                              
+                            @endif
+                          
+                          </select>
+                        </div>
+
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="parmanenet_district" class="form-label text-dark">@lang('student_info.district'):</label>
+                          <select class="form-select select2" data-toggle="select2" id="parmanenet_district" name="parmanenet_district" onchange=" return loadParmanenetUpazilla()">
+                            <option selected>Choose...</option>
+                          
+                          
+                          </select>
+                         
+                        </div>
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="parmanenet_upazilla" class="form-label text-dark">@lang('student_info.upazilla'):</label>
+                          <select class="form-select select2" data-toggle="select2" id="parmanenet_upazilla" name="parmanenet_upazilla">
+                            <option selected>Choose...</option>
+                          
+                          
+                          </select>
+                         
+                        </div>
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="parmanenet_post_office" class="form-label text-dark">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
+                          <input type="text" class="form-control" id="parmanenet_post_office" name="parmanenet_post_office">
+                        </div>
+
+                        <div class="col-md-2 col-6 mt-0">
+                          <label for="parmanenet_village" class="form-label text-dark">@lang('student_info.village'):</label>
+                          <input type="text" class="form-control" id="parmanenet_village" name="parmanenet_village">
+                        </div>
+                        
                         <div class="col-md-2 col-6 mt-0">
                             <label for="parmanenet_house" class="form-label text-dark">@lang('student_info.house_name'):</label>
                             <input type="text" class="form-control" id="parmanenet_house" name="parmanenet_house">
                           </div>
-                          <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_village" class="form-label text-dark">@lang('student_info.village'):</label>
-                            <input type="text" class="form-control" id="parmanenet_village" name="parmanenet_village">
-                          </div>
-                          <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_post_office" class="form-label text-dark">@lang('student_info.post_office'):</label>
-                            <input type="text" class="form-control" id="parmanenet_post_office" name="parmanenet_post_office">
-                          </div>
-                          <div class="col-md-2 col-6 mt-0">
+                         
+                          
+                          {{-- <div class="col-md-2 col-6 mt-0">
                             <label for="parmanenet_post_code" class="form-label text-dark">@lang('student_info.post_code'):</label>
                             <input type="text" class="form-control" id="parmanenet_post_code" name="parmanenet_post_code">
-                          </div>
-                          <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_upazilla" class="form-label text-dark">@lang('student_info.upazilla'):</label>
-                            <input type="text" class="form-control" id="parmanenet_upazilla" name="parmanenet_upazilla">
-                          </div>
-                          <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_district" class="form-label text-dark">@lang('student_info.district') :</label>
-                            <input type="text" class="form-control" id="parmanenet_district" name="parmanenet_district">
-                          </div>
+                          </div> --}}
+                         
+                          
 
                    {{-- GUARDIAN'S INFORMATION --}}
 
                           <div class="main_from mt-1 ">
-                            <h5 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2">@lang('student_info.guardian_info') :</h5>
+                            <h5 class="bg-primary text-light border-bottom border-3 border-dark  rounded-bottom fs-5 p-2">@lang('student_info.guardian_info') :</h5>
                           </div>
                           <div class="col-md-3 col-6 mt-0">
                             <label for="guardian_name" class="form-label text-dark">@lang('student_info.guardian_name') :</label>
@@ -248,12 +325,12 @@ input.form-control ,.form-select{
                           
 
                           <div class="main_from mt-1 ">
-                            <h5 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2">@lang('student_info.academic_info') :</h5>
+                            <h5 class="bg-primary text-light border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.academic_info') :</h5>
                           </div>
                           <div class="col-md-4 col-4 mt-0">
-                            <div class="row mb-3">
+                            <div class="row ">
 
-                                <label for="" class="col-sm-6 col-form-label text-dark">Admission Desire( Class) :</label>
+                                <label for="" class="col-sm-6 col-form-label text-dark">@lang('student_info.admission_class')  :</label>
                                 <div class="col-sm-6">
                                   <select class="form-select select2" data-toggle="select2" id="class" name="class">
                                     <option selected>Choose...</option>
@@ -263,9 +340,9 @@ input.form-control ,.form-select{
                           </div>
                         </div>
                         <div class="col-md-4 col-4 mt-0">
-                            <div class="row mb-3">
+                            <div class="row ">
 
-                                <label for="" class="col-sm-6 col-form-label text-dark">Admission Desire(Group) :</label>
+                                <label for="" class="col-sm-6 col-form-label text-dark">@lang('student_info.admission_group') :</label>
                                 <div class="col-sm-6">
                                   <select class="form-select select2" data-toggle="select2" id="group" name="group">
                                     <option selected>Choose...</option>
@@ -277,9 +354,9 @@ input.form-control ,.form-select{
                             </div>
                         </div>
                         <div class="col-md-4 col-4 mt-md-0 mt-3">
-                            <div class="row mb-3">
+                            <div class="row ">
 
-                                <label for="" class="col-sm-4 col-form-label text-dark">Session :</label>
+                                <label for="" class="col-sm-4 col-form-label text-dark">@lang('student_info.session') :</label>
                                 <div class="col-sm-8">
                                   <select class="form-select select2" data-toggle="select2" id="session" name="session">
                                     <option selected>Choose...</option>
@@ -290,7 +367,7 @@ input.form-control ,.form-select{
                             </div>
                         </div>
 
-                          <div class="text-center mt-4 ">
+                          <div class="text-center mt-2 ">
                          
                             <button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
                           </div>
@@ -302,55 +379,7 @@ input.form-control ,.form-select{
 				<form method="post" class="btn-submit" action="{{ route('mpo_nationalization.store') }}" enctype="multipart/form-data">
 					@csrf
 
-					<div class="row myinput">
-
-						<div class="form-group mb-3 col-md-6">
-							<label>@lang('common.date'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="date" name="date" id="date"  required="">
-							</div>
-						</div>
-						<div class="form-group mb-3 col-md-6">
-							<label>@lang('mpo_nationalization.subject'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="subject" id="subject"  required="">
-							</div>
-						</div>
-						<div class="form-group mb-3 col-md-6">
-							<label>@lang('mpo_nationalization.subject_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="subject_bn" id="subject_bn"  required="">
-							</div>
-						</div>
-                        <div class="form-group mb-3 col-md-6">
-							<label>@lang('mpo_nationalization.layer'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="layer" id="layer"  required="">
-							</div>
-						</div>
-                        <div class="form-group mb-3 col-md-6">
-							<label>@lang('mpo_nationalization.layer_bn'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="layer_bn" id="layer_bn"  required="">
-							</div>
-						</div>
-						<div class="form-group mb-3 col-md-6">
-							<label>@lang('mpo_nationalization.memorial'): <span class="text-danger" style="font-size: 15px;">*</span></label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="text" name="memorial_no" id="memorial_no"  required="">
-							</div>
-						</div>
-						<div class="form-group mb-3 col-md-12">
-							<label>@lang('admissioninfo.image'):</label>
-							<div class="input-group mt-2">
-								<input class="form-control" type="file" name="image" id="image">
-							</div>
-						</div>
-						<div class="modal-footer border-0">
-							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
-							<button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
-						</div>
-					</div>
+					
 
 				</form> --}}
 			</div> <!-- end card body-->
@@ -364,6 +393,101 @@ input.form-control ,.form-select{
 <script src="{{ asset('assets/js/vendor/quill.min.js') }}"></script>
 <script src="{{ asset('assets/js/pages/demo.quilljs.js') }}"></script>
 
+<script>
+
+  function loadDistrict()
+  {
+    var division_id = $('#division').val();
+    // alert(division_id);
+    $.ajax({
+      headers : {
+        'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+      },
+
+      url : '{{ url('loadDistrict') }}',
+
+      type : 'POST',
+
+      data : {division_id},
+
+      success : function(data)
+      {
+        $('#present_district').html(data);
+      }
+
+    });
+  }
+  function loadUpazilla()
+  {
+    var district_id = $('#present_district').val();
+    // alert(district_id);
+    $.ajax({
+      headers : {
+        'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+      },
+
+      url : '{{ url('loadUpazilla') }}',
+
+      type : 'POST',
+
+      data : {district_id},
+
+      success : function(data)
+      {
+        $('#present_upazilla').html(data);
+      }
+
+    });
+  }
+</script>
+
+<script>
+
+  function loadParmanenetDistrict()
+  {
+    var division_id = $('#parmanenet_division').val();
+    // alert(division_id);
+    $.ajax({
+      headers : {
+        'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+      },
+
+      url : '{{ url('loadParmanenetDistrict') }}',
+
+      type : 'POST',
+
+      data : {division_id},
+
+      success : function(data)
+      {
+        $('#parmanenet_district').html(data);
+      }
+
+    });
+  }
+  function loadParmanenetUpazilla()
+  {
+    var district_id = $('#parmanenet_district').val();
+    // alert(district_id);
+    $.ajax({
+      headers : {
+        'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+      },
+
+      url : '{{ url('loadParmanenetUpazilla') }}',
+
+      type : 'POST',
+
+      data : {district_id},
+
+      success : function(data)
+      {
+        $('#parmanenet_upazilla').html(data);
+      }
+
+    });
+  }
+</script>
 
 
 @endsection

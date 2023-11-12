@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\studentInfo;
 use Illuminate\Http\Request;
+use App\Models\division_information;
+use App\Models\district_information;
+use App\Models\upazila_information;
 
 class StudentInfoController extends Controller
 {
@@ -20,7 +23,8 @@ class StudentInfoController extends Controller
      */
     public function create()
     {
-        return view('admin.student_info.create');
+        $division = division_information::all();
+        return view('admin.student_info.create',compact('division'));
     }
 
     /**
@@ -65,5 +69,47 @@ class StudentInfoController extends Controller
     public function from()
     {
         return view('admin.student_info.from');
+    }
+    public function loadDistrict(Request $request)
+    {
+        $data = district_information::where('division_id',$request->division_id)->get();
+        $output = '';
+        foreach($data as $v)
+        {
+            $output .= '<option value="'.$v->id.'" >'.$v->district_name.'</option>';
+        }
+        return $output;
+    }
+    public function loadUpazilla(Request $request)
+    {
+        $data = upazila_information::where('district_id',$request->district_id)->get();
+        $output = '';
+        
+        foreach($data as $v)
+        {
+            $output .= '<option value="'.$v->id.'" >'.$v->upazila_name.'</option>';
+        }
+        return $output;
+    }
+    public function loadParmanenetDistrict(Request $request)
+    {
+        $data = district_information::where('division_id',$request->division_id)->get();
+        $output = '';
+        foreach($data as $v)
+        {
+            $output .= '<option value="'.$v->id.'" >'.$v->district_name.'</option>';
+        }
+        return $output;
+    }
+    public function loadParmanenetUpazilla(Request $request)
+    {
+        $data = upazila_information::where('district_id',$request->district_id)->get();
+        $output = '';
+        
+        foreach($data as $v)
+        {
+            $output .= '<option value="'.$v->id.'" >'.$v->upazila_name.'</option>';
+        }
+        return $output;
     }
 }

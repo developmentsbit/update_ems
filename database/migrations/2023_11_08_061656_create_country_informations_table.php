@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('add_marks', function (Blueprint $table) {
+        Schema::create('country_informations', function (Blueprint $table) {
             $table->id();
+            $table->string('country_name')->nullable();
+            $table->integer('status')->default(1);
+            $table->date('deleted_at')->nullable();
+
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('add_marks');
+        Schema::dropIfExists('country_informations');
     }
 };

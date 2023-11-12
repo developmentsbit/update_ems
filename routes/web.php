@@ -411,6 +411,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('generate_gpa', GenerateGPAController::class);
 
     Route::get('student_info_from', [StudentInfoController::class, 'from']);
+    Route::post('loadDistrict', [StudentInfoController::class, 'loadDistrict']);
+    Route::post('loadUpazilla', [StudentInfoController::class, 'loadUpazilla']);
+    Route::post('loadParmanenetDistrict', [StudentInfoController::class, 'loadParmanenetDistrict']);
+    Route::post('loadParmanenetUpazilla', [StudentInfoController::class, 'loadParmanenetUpazilla']);
 });
 
 Route::get('/backups', function() {

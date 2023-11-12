@@ -15,6 +15,7 @@ return [
      'religion' => 'Religion',
      'blood_group' => 'Blood Group',
      'student_image' => 'Image (Passport Size)',
+     'address' => 'Address',
      'present_address' => 'Present Address',
      'permanent_address' => 'Permanent Address',
      'house_name' => 'House No./Name',

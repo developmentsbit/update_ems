@@ -118,6 +118,7 @@ $array = array(
     'examsyllabus'=>'Exam Syllabus',
     'examsuggession'=>'Exam Suggession',
     'result'=>'Result',
+    'online_lecture_upload'=>'Online Lecture Upload',
     'internal_results'=>'Internal Results',
     'public_exam_result'=>'Public Exam Result',
     'scholarship'=>'Scholarship Exam Result',

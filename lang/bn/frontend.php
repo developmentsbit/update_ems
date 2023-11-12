@@ -123,6 +123,7 @@ $array = array(
     'examsyllabus'=>'পরীক্ষার সিলেবাস',
     'examsuggession'=>'পরীক্ষার সাজেশন্স',
     'result'=>'ফলাফল',
+    'online_lecture_upload'=>'অনলাইন লেকচার আপলোড',
     'internal_results'=>'অভ্যন্তরীণ ফলাফল',
     'public_exam_result'=>'পাবলিক পরীক্ষার ফলাফল',
     'scholarship'=>'বৃত্তি পরীক্ষার ফলাফল',

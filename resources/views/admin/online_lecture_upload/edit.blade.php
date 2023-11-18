@@ -71,7 +71,7 @@ input.form-control ,.form-select{
                         </div>
                         <div class="form-group col-sm-12 col-md-12 col-lg-6 mt-3">
                             <label class="col-sm-4 col-form-label" >@lang('online_lecture_upload.group_name') : <span class="text-danger" style="font-size: 15px;">*</span></label>
-                            <select class="form-select" name="group_id" id="group_id">
+                            <select class="form-select select2" data-toggle="select2" name="group_id" id="group_id">
                                 @if($group)
                                 @foreach ($group as $g)
                                 <option @if($g->id == $data->group_id) selected @endif value="{{$g->id}}">@if($lang == 'en'){{$g->group_name}}@else{{$g->group_name_bn}}@endif</option>

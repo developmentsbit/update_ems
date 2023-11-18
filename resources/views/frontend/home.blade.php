@@ -120,7 +120,7 @@ $setting = DB::table("setting")->first();
 									</div>
 
 									<div class="col-sm-9 col-9 p-0">
-										<ul class="menus" style="margin-top: -22px;">
+										<ul class="menus" style="margin-top: -41px;">
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('principal_message') }}">
 											@if($setting->type == 'school')
 											@lang('frontend.principal_message')
@@ -132,8 +132,9 @@ $setting = DB::table("setting")->first();
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
 											@elseif($setting->type == 'school')
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
 											@endif

@@ -66,10 +66,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>{{ $i++ }}</td>
 							<td>
 								@if($d->type == 1)
-								<span>Principle</span>
+								<span>Principal/Head Teacher</span>
 								@endif
 								@if($d->type == 2)
-								<span>Chairman</span>
+								<span>President</span>
 								@endif
 
 								@if($d->type == 3)

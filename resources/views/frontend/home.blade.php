@@ -133,7 +133,7 @@ $setting = DB::table("setting")->first();
 											@elseif($setting->type == 'school')
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
-											<li><i class="fa fa-caret-right"></i><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('principles') }}">@lang('frontend.principals')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>

@@ -444,12 +444,13 @@ right:0;
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
                  @elseif($setting->type == 'school')
                  <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
-                 <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
-
+                 
                  @if($president_check)
                  <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
+                 <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
                  @endif
-
+                 
+                 <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
                  <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
                  <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
                  @endif
@@ -776,8 +777,9 @@ right:0;
         <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
         @elseif($setting->type == 'school')
         <li><a href="{{ url('presidentmessage') }}">@lang('frontend.presidentmessage') </a></li>
-        <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
         <li><a href="{{ url('presidents') }}">@lang('frontend.presidents')</a></li>
+        <li><a href="{{ url('principles') }}">@lang('frontend.principles')</a></li>
+        <li><a href="{{ url('managing_comitte') }}">@lang('frontend.managing_comitte')</a></li>
         <li><a href="{{ url('donar') }}">@lang('frontend.donar')</a></li>
         <li><a href="{{ url('ex_member') }}">@lang('frontend.ex_member')</a></li>
         @endif

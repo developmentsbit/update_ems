@@ -61,21 +61,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 						</tr>
 					</thead>
 					<tbody class="tbody" id="showtdata">
-						{{--
-                            @php $i=1;  @endphp
+
+                        @php $i=1;  @endphp
 						@if(isset($data))
 						@foreach($data as $d)
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
-							<td>@if($lang == 'en'){{ $d->class_name ?: $d->class_name_bn}}@else {{$d->class_name_bn ?: $d->class_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->group_name ?: $d->group_name_bn}}@else {{$d->group_name_bn ?: $d->group_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->section_name ?: $d->section_name_bn}}@else {{$d->section_name_bn ?: $d->section_name}}@endif</td>
 							<td>
-								@if($d->status == 1)
-								<span class="btn btn-success btn-sm">@lang('common.active')</span>
-								@else
-								<span class="btn btn-danger btn-sm">@lang('common.inactive')</span>
-								@endif
+                                {{-- {{ $d->className->class_name }} --}}
+                                @if($lang == 'en')
+                                {{ $d->className->class_name ?: $d->className->class_name_bn}}
+                                @else
+                                {{$d->className->class_name_bn ?: $d->className->class_name}}
+                                @endif
+                            </td>
+
+							<td>
+                                @if($lang == 'en')
+                                {{ $d->groupName->group_name ?: $d->groupName->group_name_bn}}
+                                @else
+                                {{$d->groupName->group_name_bn ?: $d->groupName->group_name}}
+                                @endif
+                            </td>
+							<td>
+                                @if($lang == 'en')
+                                {{ $d->subject_name ?: $d->subject_name_bn}}
+                                @else
+                                {{$d->subject_name_bn ?: $d->subject_name}}
+                                @endif</td>
+							<td>
+								<input  type="checkbox" id="status" data-switch="none"/ @if($d->status == 1) checked @endif>
+                                <label onclick="subjectStatusChange({{$d->id}})" for="status" data-on-label="" data-off-label=""></label>
 							</td>
 							<td>
 								<div class="btn-group">
@@ -89,7 +105,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							</td>
 						</tr>
 						@endforeach
-						@endif --}}
+						@endif
 					</tbody>
 				</table>
 			</div> <!-- end card body-->
@@ -125,6 +141,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
 <!-- end demo js-->
 
+
+<script>
+    function subjectStatusChange(id)
+    {
+        // alert(id);
+        $.ajax({
+            headers : {
+                'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+            },
+
+            url : '{{ url('subjectStatusChanged') }}/'+id,
+
+            type : 'GET',
+
+            success : function(res)
+            {
+                toastr.success("Status Changed Successfully");
+            }
+        });
+    }
+</script>
 
 @endpush
 

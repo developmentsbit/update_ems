@@ -55,8 +55,9 @@ use App\Http\Controllers\MarkDistributionController;
 use App\Http\Controllers\AddMarksController;
 use App\Http\Controllers\ViewMarksController;
 use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
-use App\Http\Controllers\ViewCompletedSubjectController; 
+use App\Http\Controllers\ViewCompletedSubjectController;
 use App\Http\Controllers\GenerateGPAController;
+use App\Http\Controllers\GenerateGradePointController;
 use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
 use App\Http\Controllers\AddExamTypeController;
@@ -74,6 +75,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/getSecondData',function(){
 
@@ -105,6 +107,8 @@ Route::get('/mpo_nationalizations', [FrontendController::class, 'mpo_nationaliza
 Route::get('/principal_message', [FrontendController::class, 'principle_message']);
 Route::get('/vice_principal_messages', [FrontendController::class, 'vice_principal_message']);
 Route::get('/presidentmessage', [FrontendController::class, 'presidentmessage']);
+Route::get('/ministerofstatemessage', [FrontendController::class, 'ministerofstatemessage']);
+Route::get('/chairmanmessage', [FrontendController::class, 'chairmanmessage']);
 
 Route::get('/managing_comitte', [FrontendController::class, 'managing_comitte']);
 Route::get('/presidents', [FrontendController::class, 'presidents']);
@@ -416,13 +420,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('view_total_subject_marks', ViewTotalSubjectMarksEntryController::class);
     Route::resource('view_completed_subject', ViewCompletedSubjectController::class);
     Route::resource('generate_gpa', GenerateGPAController::class);
+    Route::resource('generate_grade_point', GenerateGradePointController::class);
 
     Route::get('student_info_from', [StudentInfoController::class, 'from']);
     Route::post('loadDistrict', [StudentInfoController::class, 'loadDistrict']);
     Route::post('loadUpazilla', [StudentInfoController::class, 'loadUpazilla']);
     Route::post('loadParmanenetDistrict', [StudentInfoController::class, 'loadParmanenetDistrict']);
     Route::post('loadParmanenetUpazilla', [StudentInfoController::class, 'loadParmanenetUpazilla']);
+
     Route::resource('add_exam_type', AddExamTypeController::class);
+
+
+    // subejct group routes
+    Route::post('getClassGroup',[AddSubjectController::class,'getClassGroup']);
+    Route::get('subjectStatusChanged/{id}',[AddSubjectController::class,'subjectStatusChanged']);
+
 });
 
 Route::get('/backups', function() {

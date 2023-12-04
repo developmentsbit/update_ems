@@ -2585,67 +2585,119 @@ class PermissionsTableSeeder extends Seeder
             233 => 
             array (
                 'id' => 353,
+
                 'name' => 'Add Exam Type List',
                 'parent' => 'Add Exam Type',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+
+            'name' => 'Generate Grade Point Avg. (GPA) List',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
+
                 'deleted_at' => NULL,
             ),
             234 => 
             array (
                 'id' => 354,
+
                 'name' => 'Add Exam Type Create',
                 'parent' => 'Add Exam Type',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+
+            'name' => 'Generate Grade Point Avg. (GPA) Create',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
+
                 'deleted_at' => NULL,
             ),
             235 => 
             array (
                 'id' => 355,
+
                 'name' => 'Add Exam Type Edit',
                 'parent' => 'Add Exam Type',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+
+            'name' => 'Generate Grade Point Avg. (GPA) Edit',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
+
                 'deleted_at' => NULL,
             ),
             236 => 
             array (
                 'id' => 356,
+
                 'name' => 'Add Exam Type Delete',
                 'parent' => 'Add Exam Type',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+
+            'name' => 'Generate Grade Point Avg. (GPA) Delete',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
+
                 'deleted_at' => NULL,
             ),
             237 => 
             array (
                 'id' => 357,
+
                 'name' => 'Add Exam Type View',
                 'parent' => 'Add Exam Type',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+
+            'name' => 'Generate Grade Point Avg. (GPA) View',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
+
                 'deleted_at' => NULL,
             ),
             238 => 
             array (
                 'id' => 358,
+
                 'name' => 'Add Exam Type Print',
                 'parent' => 'Add Exam Type',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+            'name' => 'Generate Grade Point Avg. (GPA) Print',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
                 'deleted_at' => NULL,
             ),
             239 => 
@@ -2657,6 +2709,12 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+            'name' => 'Generate Grade Point Avg. (GPA) Edit_history',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
                 'deleted_at' => NULL,
             ),
             240 => 
@@ -2668,6 +2726,12 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+            'name' => 'Generate Grade Point Avg. (GPA) Deleted_list',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
                 'deleted_at' => NULL,
             ),
             241 => 
@@ -2679,6 +2743,12 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+            'name' => 'Generate Grade Point Avg. (GPA) Restore',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
                 'deleted_at' => NULL,
             ),
             242 => 
@@ -2690,6 +2760,122 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2023-12-04 06:58:57',
                 'updated_at' => '2023-12-04 06:58:57',
+            'name' => 'Generate Grade Point Avg. (GPA) Permanent_delete',
+            'parent' => 'Generate Grade Point Avg. (GPA)',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 04:50:31',
+                'updated_at' => '2023-12-02 04:50:31',
+                'deleted_at' => NULL,
+            ),
+            243 => 
+            array (
+                'id' => 363,
+                'name' => 'Exam Type List',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            244 => 
+            array (
+                'id' => 364,
+                'name' => 'Exam Type Create',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            245 => 
+            array (
+                'id' => 365,
+                'name' => 'Exam Type Edit',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            246 => 
+            array (
+                'id' => 366,
+                'name' => 'Exam Type Delete',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            247 => 
+            array (
+                'id' => 367,
+                'name' => 'Exam Type View',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            248 => 
+            array (
+                'id' => 368,
+                'name' => 'Exam Type Print',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            249 => 
+            array (
+                'id' => 369,
+                'name' => 'Exam Type Edit_history',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            250 => 
+            array (
+                'id' => 370,
+                'name' => 'Exam Type Deleted_list',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            251 => 
+            array (
+                'id' => 371,
+                'name' => 'Exam Type Restore',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
+                'deleted_at' => NULL,
+            ),
+            252 => 
+            array (
+                'id' => 372,
+                'name' => 'Exam Type Permanent_delete',
+                'parent' => 'Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-02 05:28:10',
+                'updated_at' => '2023-12-02 05:28:10',
                 'deleted_at' => NULL,
             ),
         ));

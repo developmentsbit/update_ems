@@ -42,7 +42,7 @@
 					@csrf
 					<div class="row myinput">
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('add_subject_part.class_name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<label>@lang('add_subject_part.classname'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="class_id" id="class_id" onchange="return getgroup();">
                                     <option value="">@lang('common.select_one')</option>
@@ -68,7 +68,7 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('add_subject_part.group_name'):</label>
+							<label>@lang('add_subject_part.groupname'):</label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="class_id" id="class_id" onchange="return getgroup();">
                                     <option value="">@lang('common.select_one')</option>

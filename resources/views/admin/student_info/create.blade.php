@@ -152,13 +152,13 @@ input.form-control ,.select2, .form-check-input{
 
                           <label for="" class="form-label text-dark">@lang('student_info.student_image') :</label>
                           <input type="file" class="form-control" id="imageFile" name="image">
-                          
+
 
                         </div>
                         <div class="col-md-6 mt-1 ">
 
                           <img id="blah" src="" alt="" style="height: 80px;" />
-                          
+
 
                         </div>
 
@@ -176,7 +176,7 @@ input.form-control ,.select2, .form-check-input{
                         <div class="main_from mt-1 mb-1 fs-5 ">
                           <b class="text-dark">@lang('student_info.present_address') :</b>
                         </div>
-                        
+
                         <div class="col-md-2 col-6 mt-0">
                           <label for="division" class="form-label text-dark">@lang('student_info.division') :</label>
 
@@ -186,29 +186,29 @@ input.form-control ,.select2, .form-check-input{
                             @foreach ($division as $d)
                             <option value="{{ $d->id }}">{{ $d->division_name }}</option>
                             @endforeach
-                              
+
                             @endif
-                          
+
                           </select>
-                       
+
                         </div>
                         <div class="col-md-2 col-6 mt-0">
                           <label for="present_district" class="form-label text-dark">@lang('student_info.district'):</label>
                           <select class="form-select select2" data-toggle="select2" id="present_district" name="present_district" onchange=" return loadUpazilla()">
                             <option selected>Choose...</option>
-                          
-                          
+
+
                           </select>
-                         
+
                         </div>
                         <div class="col-md-2 col-6 mt-0">
                           <label for="present_upazilla" class="form-label text-dark">@lang('student_info.upazilla'):</label>
                           <select class="form-select select2" data-toggle="select2" id="present_upazilla" name="present_upazilla">
                             <option selected>Choose...</option>
-                          
-                          
+
+
                           </select>
-                         
+
                         </div>
                         <div class="col-md-2 col-6 mt-0">
                           <label for="present_post_office" class="form-label text-dark">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
@@ -226,13 +226,13 @@ input.form-control ,.select2, .form-check-input{
                           <label for="present_houses" class="form-label text-dark">@lang('student_info.house_name'):</label>
                           <input type="text" class="form-control" id="present_houses" name="present_houses">
                         </div>
-                     
-                       
-                       
-                      
-                       
 
-                      
+
+
+
+
+
+
                       {{-- Parmanenet Address --}}
 
 
@@ -244,7 +244,7 @@ input.form-control ,.select2, .form-check-input{
                             @lang('student_info.address_message')
                           </label>
                         </div>
-  
+
                         <div class="col-md-2 col-6 mt-0">
                           <label for="parmanenet_division" class="form-label text-dark">@lang('student_info.division') :</label>
 
@@ -254,9 +254,9 @@ input.form-control ,.select2, .form-check-input{
                             @foreach ($division as $d)
                             <option value="{{ $d->id }}">{{ $d->division_name }}</option>
                             @endforeach
-                              
+
                             @endif
-                          
+
                           </select>
                         </div>
 
@@ -264,19 +264,19 @@ input.form-control ,.select2, .form-check-input{
                           <label for="parmanenet_district" class="form-label text-dark">@lang('student_info.district'):</label>
                           <select class="form-select select2" data-toggle="select2" id="parmanenet_district" name="parmanenet_district" onchange=" return loadParmanenetUpazilla()">
                             <option selected>Choose...</option>
-                          
-                          
+
+
                           </select>
-                         
+
                         </div>
                         <div class="col-md-2 col-6 mt-0">
                           <label for="parmanenet_upazilla" class="form-label text-dark">@lang('student_info.upazilla'):</label>
                           <select class="form-select select2" data-toggle="select2" id="parmanenet_upazilla" name="parmanenet_upazilla">
                             <option selected>Choose...</option>
-                          
-                          
+
+
                           </select>
-                         
+
                         </div>
                         <div class="col-md-2 col-6 mt-0">
                           <label for="parmanenet_post_office" class="form-label text-dark">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
@@ -287,19 +287,19 @@ input.form-control ,.select2, .form-check-input{
                           <label for="parmanenet_village" class="form-label text-dark">@lang('student_info.village'):</label>
                           <input type="text" class="form-control" id="parmanenet_village" name="parmanenet_village">
                         </div>
-                        
+
                         <div class="col-md-2 col-6 mt-0">
                             <label for="parmanenet_house" class="form-label text-dark">@lang('student_info.house_name'):</label>
                             <input type="text" class="form-control" id="parmanenet_house" name="parmanenet_house">
                           </div>
-                         
-                          
+
+
                           {{-- <div class="col-md-2 col-6 mt-0">
                             <label for="parmanenet_post_code" class="form-label text-dark">@lang('student_info.post_code'):</label>
                             <input type="text" class="form-control" id="parmanenet_post_code" name="parmanenet_post_code">
                           </div> --}}
-                         
-                          
+
+
 
                    {{-- GUARDIAN'S INFORMATION --}}
 
@@ -322,7 +322,7 @@ input.form-control ,.select2, .form-check-input{
                             <label for="rel_with_student" class="form-label text-dark">@lang('student_info.relation')</label>
                             <input type="text" class="form-control" id="rel_with_student" name="rel_with_student">
                           </div>
-                          
+
 
                           <div class="main_from mt-1 ">
                             <h5 class="bg-primary text-light border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.academic_info') :</h5>
@@ -334,7 +334,7 @@ input.form-control ,.select2, .form-check-input{
                                 <div class="col-sm-6">
                                   <select class="form-select select2" data-toggle="select2" id="class" name="class">
                                     <option selected>Choose...</option>
-                                  
+
                                   </select>
                                 </div>
                           </div>
@@ -368,7 +368,7 @@ input.form-control ,.select2, .form-check-input{
                         </div>
 
                           <div class="text-center mt-2 ">
-                         
+
                             <button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
                           </div>
 
@@ -379,7 +379,7 @@ input.form-control ,.select2, .form-check-input{
 				<form method="post" class="btn-submit" action="{{ route('mpo_nationalization.store') }}" enctype="multipart/form-data">
 					@csrf
 
-					
+
 
 				</form> --}}
 			</div> <!-- end card body-->

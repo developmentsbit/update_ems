@@ -54,11 +54,28 @@
 							<div class="input-group mt-2">
 								<select class="form-control" name="type">
 									@if($data->type == 1)
-									<option value="1">Principal</option>
-									<option value="2">President</option>
-									@else
-									<option value="2">President</option>
-									<option value="1">Principal</option>
+									<option value="1">@lang('principle.principal')</option>
+									<option value="2">@lang('principle.president')</option>
+									<option value="3">@lang('principle.minister_of_state')</option>
+									<option value="4">@lang('principle.chairman')</option>
+									@endif
+									@if($data->type == 2)
+									<option value="2">@lang('principle.president')</option>
+									<option value="1">@lang('principle.principal')</option>
+									<option value="3">@lang('principle.minister_of_state')</option>
+									<option value="4">@lang('principle.chairman')</option>
+									@endif
+									@if($data->type == 3)
+									<option value="3">@lang('principle.minister_of_state')</option>
+									<option value="1">@lang('principle.principal')</option>
+									<option value="2">@lang('principle.president')</option>
+									<option value="4">@lang('principle.chairman')</option>
+									@endif
+									@if($data->type == 4)
+									<option value="4">@lang('principle.chairman')</option>
+									<option value="1">@lang('principle.principal')</option>
+									<option value="2">@lang('principle.president')</option>
+									<option value="3">@lang('principle.minister_of_state')</option>
 									@endif
 								</select>
 							</div>

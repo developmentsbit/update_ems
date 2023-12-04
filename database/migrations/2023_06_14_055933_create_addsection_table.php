@@ -17,7 +17,9 @@ return new class extends Migration
             $table->foreignId('group_id')->nullable()->constrained('addgroup')->cascadeOnDelete();
             $table->string('section_name')->nullable();
             $table->string('section_name_bn')->nullable();
-            $table->string('status');
+            $table->string('status')->comment(' 0 = Inactive & 1 = Active')->default(0);
+            $table->integer('order_by')->default(0)->nullable();
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('addsection');
     }
 };

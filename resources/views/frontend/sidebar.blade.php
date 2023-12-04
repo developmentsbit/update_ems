@@ -4,6 +4,8 @@
 
   $principle = DB::table('principles')->where('type',1)->first();
   $president = DB::table('principles')->where('type',2)->first();
+  $minister_of_state = DB::table('principles')->where('type',3)->first();
+  $chairman = DB::table('principles')->where('type',4)->first();
   $president_check = DB::table('principles')->where('type',2)->count();
   $v_principle = DB::table('vice_principal_messages')->first();
   $usefullink = DB::table('usefullinks')->get();
@@ -15,8 +17,55 @@
 
 
 <div class="col-sm-3 col-12">
+	@if(env('APP_URL') == 'https://ahrsc.edu.bd')
+	<!-- ============ -->
+	@if(request()->Is('ministerofstatemessage'))
+	
+	@else
+	<div class="col-sm-12 col-12 p-0 mt-2">
+		<ul class="list-group">
+			<li class="list-group-item" id="featureheads">@lang('frontend.ministerofstatemessage')</li>
+		</ul>
+		<li class="list-group-item p-0" id="padd">
+			<a href="{{ url('ministerofstatemessage') }}"><center><img src="{{ asset($minister_of_state->image) }}" class="img-fluid"></center></a>
+			<center>
 
-    @if($president_check > 0)
+				<div class="mt-2">
+					<span class="head">@if($lang == 'en'){{ $minister_of_state->name ?: $minister_of_state->name_bn}}@else {{$minister_of_state->name_bn ?: $minister_of_state->name}}@endif<br><a class="btn btn-success btn-sm w-100" style="border-radius: 0px;" href="{{ url('ministerofstatemessage') }}" class="details">@lang('frontend.details')</a></span>
+
+				</div>
+			</center>
+		</li>
+	</div>
+	@endif
+
+	@if(request()->Is('chairmanmessage'))
+	
+	@else
+	<div class="col-sm-12 col-12 p-0 mt-2">
+		<ul class="list-group">
+			<li class="list-group-item" id="featureheads">@lang('frontend.chairmanmessage')</li>
+		</ul>
+		<li class="list-group-item p-0" id="padd">
+			<a href="{{ url('chairman') }}"><center><img src="{{ asset($chairman->image) }}" class="img-fluid"></center></a>
+			<center>
+
+				<div class="mt-2">
+					<span class="head">@if($lang == 'en'){{ $chairman->name ?: $chairman->name_bn}}@else {{$chairman->name_bn ?: $chairman->name}}@endif<br><a class="btn btn-success btn-sm w-100" style="border-radius: 0px;" href="{{ url('chairmanmessage') }}" class="details">@lang('frontend.details')</a></span>
+
+				</div>
+			</center>
+		</li>
+	</div>
+	@endif
+
+
+
+	<!-- ====== -->
+
+	@endif
+
+	@if($president_check > 0)
 	@if(request()->Is('presidentmessage'))
 	
 	@else

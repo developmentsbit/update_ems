@@ -8,11 +8,12 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class SectionController extends Controller
 {
-
+    protected $path;
    public function __construct()
    {
-    $this->middleware('auth');
-}
+        $this->path = 'admin.addsection';
+        $this->middleware('auth');
+   }
 
 
     /**
@@ -25,7 +26,7 @@ class SectionController extends Controller
      ->leftjoin("addgroup",'addgroup.id','addsection.group_id')
      ->select("addsection.*",'addclass.class_name','addgroup.group_name','addclass.class_name_bn','addgroup.group_name_bn')
      ->get();
-     return view('admin.addsection.index',compact('data'));
+     return view($this->path.'.index',compact('data'));
  }
 
     /**
@@ -43,6 +44,7 @@ class SectionController extends Controller
     public function store(Request $request)
     {
      $data = array();
+     $data['order_by']      = $request->order_by;
      $data['class_id']      = $request->class_id;
      $data['group_id']      = $request->group_id;
      $data['section_name']  = $request->section_name;
@@ -80,6 +82,7 @@ class SectionController extends Controller
     public function update(Request $request, string $id)
     {
         $data = array();
+        $data['order_by']      = $request->order_by;
         $data['class_id']      = $request->class_id;
         $data['group_id']      = $request->group_id;
         $data['section_name']  = $request->section_name;

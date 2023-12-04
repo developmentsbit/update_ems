@@ -111,6 +111,7 @@ return [
     "kept_deleted" => "Your data is kept deleted!",
     // ----- delete script ----- end
     "title_bn" => "Title Bangla",
+    "sl" => "Sl",
     
     "image_text" => "300*80 Pixel (width*height) and size should be maximum 60 kb.",
 ];

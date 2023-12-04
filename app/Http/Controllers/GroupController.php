@@ -46,6 +46,7 @@ class GroupController extends Controller
      $data['group_name']    = $request->group_name;
      $data['group_name_bn']    = $request->group_name_bn;
      $data['status']         = $request->status;
+     $data['order_by']         = $request->order_by;
 
      DB::table('addgroup')->insert($data);
 

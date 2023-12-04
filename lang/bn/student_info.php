@@ -34,6 +34,7 @@ return [
      'admission_class' => 'কোন শ্রেণীতে ভর্তি হতে ইচ্ছুক',
      'admission_group' => 'কোন  গ্রুপে হতে ইচ্ছুক',
      'session' => 'সেশন',
+     'division' => 'বিভাগ',
 
      
 

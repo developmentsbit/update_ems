@@ -1105,6 +1105,13 @@ class MenusTableSeeder extends Seeder
             57 => 
             array (
                 'id' => 97,
+                'parent_id' => 55,
+                'name' => 'Add Exam Type',
+                'bn_name' => 'পরীক্ষার ধরন যোগ করুন',
+                'system_name' => 'Add Exam Type',
+                'route_name' => 'add_exam_type.index',
+                'icon' => NULL,
+                'order_by' => 5,
                 'parent_id' => 91,
             'name' => 'Generate Grade Point Avg. (GPA)',
             'bn_name' => 'গ্রেড পয়েন্ট গড় তৈরি করুন (জিপিএ)',
@@ -1112,11 +1119,16 @@ class MenusTableSeeder extends Seeder
                 'route_name' => 'generate_grade_point.index',
                 'icon' => NULL,
                 'order_by' => 6,
+
                 'is_hidden' => 'No',
                 'status' => 1,
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
+
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+
                 'created_at' => '2023-12-02 04:50:31',
                 'updated_at' => '2023-12-02 04:50:31',
                 'deleted_at' => NULL,
@@ -1138,6 +1150,7 @@ class MenusTableSeeder extends Seeder
                 'deleted_by' => NULL,
                 'created_at' => '2023-12-02 05:28:10',
                 'updated_at' => '2023-12-02 05:28:10',
+
                 'deleted_at' => NULL,
             ),
         ));

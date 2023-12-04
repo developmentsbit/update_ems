@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('addgroup', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('class_id')->constrained('addclass')->cascadeOnDelete();
+            $table->foreignId('class_id')->constrained('addclass')->cascadeOnDel();
             $table->string('group_name')->nullable();
             $table->string('group_name_bn')->nullable();
-            $table->string('status');
+            $table->integer('status')->default(1)->comment('1 -> active, 0 -> inactive');
+            $table->integer('order_by')->nullable();
             $table->timestamps();
         });
     }
@@ -28,5 +29,6 @@ return new class extends Migration
     {
         // Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('addgroup');
+        
     }
 };

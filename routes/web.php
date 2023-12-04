@@ -60,6 +60,7 @@ use App\Http\Controllers\GenerateGPAController;
 use App\Http\Controllers\GenerateGradePointController;
 use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
+use App\Http\Controllers\AddExamTypeController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -413,9 +414,10 @@ Route::group(['middleware' => 'auth'], function () {
     // student info
 
     Route::resource('student_info', StudentInfoController::class);
+   
     Route::resource('add_marks', AddMarksController::class);
     Route::resource('view_marks', ViewMarksController::class);
-    Route::resource('view_total _subject_marks', ViewTotalSubjectMarksEntryController::class);
+    Route::resource('view_total_subject_marks', ViewTotalSubjectMarksEntryController::class);
     Route::resource('view_completed_subject', ViewCompletedSubjectController::class);
     Route::resource('generate_gpa', GenerateGPAController::class);
     Route::resource('generate_grade_point', GenerateGradePointController::class);
@@ -425,6 +427,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('loadUpazilla', [StudentInfoController::class, 'loadUpazilla']);
     Route::post('loadParmanenetDistrict', [StudentInfoController::class, 'loadParmanenetDistrict']);
     Route::post('loadParmanenetUpazilla', [StudentInfoController::class, 'loadParmanenetUpazilla']);
+
+    Route::resource('add_exam_type', AddExamTypeController::class);
+
 
     // subejct group routes
     Route::post('getClassGroup',[AddSubjectController::class,'getClassGroup']);

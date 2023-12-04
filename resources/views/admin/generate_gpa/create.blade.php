@@ -25,7 +25,7 @@ input.form-control ,.form-select{
 <div class="container mt-2">
 		@component('components.breadcrumb')
             @slot('title')
-                @lang('student_info.addtitle')
+            @lang('result_entry.generate_gpa')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -38,7 +38,7 @@ input.form-control ,.form-select{
                   <i class="fa fa-eye"></i>  @lang('common.view')
                 @endslot
                 @slot('action_button1_link')
-                    {{ route('student_info.index') }}
+                    {{ route('generate_gpa.index') }}
                 @endslot
             @endif
             @slot('action_button1_class')
@@ -51,7 +51,7 @@ input.form-control ,.form-select{
             <div class="container">
                 <div class="main_from mt-1 ">
                     <div class="main_from mt-2">
-                        <h5 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2 ">Generate GPA :</h5>
+                        <h5 class="bg-primary   text-light border-bottom border-3 border-dark rounded-bottom fs-5 p-2 ">@lang('result_entry.generate_gpa') :</h5>
                       </div>
                  
                 </div>

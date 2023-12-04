@@ -112,6 +112,6 @@ return [
     "kept_deleted" => "Your data is kept deleted!",
     // ----- delete script ----- end
     "title_bn" => "শিরোনাম বাংলায়",
-
+    "sl" => "ক্রম",
     "image_text" => "১৮০০*৩৩০ Pixel (width*height) এবং সাইজ সর্বোচ্চ ২০০ kb এর মধ্যে থাকতে হবে",
 ];

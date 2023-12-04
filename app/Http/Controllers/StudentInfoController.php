@@ -74,6 +74,7 @@ class StudentInfoController extends Controller
     {
         $data = district_information::where('division_id',$request->division_id)->get();
         $output = '';
+        $output .= '<option >Choose...</option>';
         foreach($data as $v)
         {
             $output .= '<option value="'.$v->id.'" >'.$v->district_name.'</option>';
@@ -84,7 +85,7 @@ class StudentInfoController extends Controller
     {
         $data = upazila_information::where('district_id',$request->district_id)->get();
         $output = '';
-        
+        $output .= '<option >Choose...</option>';
         foreach($data as $v)
         {
             $output .= '<option value="'.$v->id.'" >'.$v->upazila_name.'</option>';
@@ -95,6 +96,7 @@ class StudentInfoController extends Controller
     {
         $data = district_information::where('division_id',$request->division_id)->get();
         $output = '';
+        $output .= '<option >Choose...</option>';
         foreach($data as $v)
         {
             $output .= '<option value="'.$v->id.'" >'.$v->district_name.'</option>';
@@ -103,9 +105,10 @@ class StudentInfoController extends Controller
     }
     public function loadParmanenetUpazilla(Request $request)
     {
+        
         $data = upazila_information::where('district_id',$request->district_id)->get();
         $output = '';
-        
+        $output .= '<option  >Choose...</option>';
         foreach($data as $v)
         {
             $output .= '<option value="'.$v->id.'" >'.$v->upazila_name.'</option>';

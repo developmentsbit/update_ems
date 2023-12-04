@@ -1102,6 +1102,25 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-11-12 12:25:25',
                 'deleted_at' => NULL,
             ),
+            57 => 
+            array (
+                'id' => 97,
+                'parent_id' => 55,
+                'name' => 'Add Exam Type',
+                'bn_name' => 'পরীক্ষার ধরন যোগ করুন',
+                'system_name' => 'Add Exam Type',
+                'route_name' => 'add_exam_type.index',
+                'icon' => NULL,
+                'order_by' => 5,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

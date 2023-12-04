@@ -34,6 +34,7 @@ return [
      'admission_class' => 'Admission Desire( Class)',
      'admission_group' => 'Admission Desire(Group)',
      'session' => 'Session',
+     'division' => 'Division',
 
 
      

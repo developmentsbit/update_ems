@@ -2582,6 +2582,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-11-12 12:23:41',
                 'deleted_at' => NULL,
             ),
+            233 => 
+            array (
+                'id' => 353,
+                'name' => 'Add Exam Type List',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            234 => 
+            array (
+                'id' => 354,
+                'name' => 'Add Exam Type Create',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            235 => 
+            array (
+                'id' => 355,
+                'name' => 'Add Exam Type Edit',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            236 => 
+            array (
+                'id' => 356,
+                'name' => 'Add Exam Type Delete',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            237 => 
+            array (
+                'id' => 357,
+                'name' => 'Add Exam Type View',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            238 => 
+            array (
+                'id' => 358,
+                'name' => 'Add Exam Type Print',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            239 => 
+            array (
+                'id' => 359,
+                'name' => 'Add Exam Type Edit_history',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            240 => 
+            array (
+                'id' => 360,
+                'name' => 'Add Exam Type Deleted_list',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            241 => 
+            array (
+                'id' => 361,
+                'name' => 'Add Exam Type Restore',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
+            242 => 
+            array (
+                'id' => 362,
+                'name' => 'Add Exam Type Permanent_delete',
+                'parent' => 'Add Exam Type',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-04 06:58:57',
+                'updated_at' => '2023-12-04 06:58:57',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

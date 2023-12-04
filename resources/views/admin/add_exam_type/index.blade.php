@@ -14,7 +14,7 @@
 
         @component('components.breadcrumb')
             @slot('title')
-            @lang('result_entry.add_mark')
+            @lang('add_exam_type.add_exam_type')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -27,7 +27,7 @@
                     @lang('common.add_new')
                 @endslot
                 @slot('action_button1_link')
-                    {{ route('add_marks.create') }}
+                    {{ route('add_exam_type.create') }}
                 @endslot
             @endif
             @slot('action_button1_class')

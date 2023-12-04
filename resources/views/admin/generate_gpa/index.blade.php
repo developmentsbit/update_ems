@@ -14,7 +14,7 @@
 
         @component('components.breadcrumb')
             @slot('title')
-                @lang('mpo_nationalization.title')
+            @lang('result_entry.generate_gpa')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -40,7 +40,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="header-title">Generate GPA</h4>
+                        <h4 class="header-title">  @lang('result_entry.generate_gpa')</h4>
                         <ul class="nav nav-tabs nav-bordered mb-3">
                             <li class="nav-item">
                                 <a href="#users-tab-all" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">

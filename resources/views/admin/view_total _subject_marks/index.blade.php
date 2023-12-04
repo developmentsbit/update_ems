@@ -14,7 +14,7 @@
 
         @component('components.breadcrumb')
             @slot('title')
-                @lang('mpo_nationalization.title')
+            @lang('result_entry.total_mark')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -27,7 +27,7 @@
                     @lang('common.add_new')
                 @endslot
                 @slot('action_button1_link')
-                    {{ route('view_total _subject_marks.create') }}
+                    {{ route('view_total_subject_marks.create') }}
                 @endslot
             @endif
             @slot('action_button1_class')
@@ -40,7 +40,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="header-title">View Total subject marks</h4>
+                        <h4 class="header-title">@lang('result_entry.total_mark')</h4>
                         <ul class="nav nav-tabs nav-bordered mb-3">
                             <li class="nav-item">
                                 <a href="#users-tab-all" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">

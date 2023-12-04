@@ -54,6 +54,18 @@ class FrontendController extends Controller
 		$data = DB::table("principles")->where('type',2)->first();
 		return view('frontend.principle_message',compact('data'));
 	}
+	
+	public function ministerofstatemessage()
+	{
+		$data = DB::table("principles")->where('type',3)->first();
+		return view('frontend.principle_message',compact('data'));
+	}
+	
+	public function chairmanmessage()
+	{
+		$data = DB::table("principles")->where('type',4)->first();
+		return view('frontend.principle_message',compact('data'));
+	}
 
 
 	public function managing_comitte(){

@@ -121,6 +121,11 @@ $setting = DB::table("setting")->first();
 
 									<div class="col-sm-9 col-9 p-0">
 										<ul class="menus" style="margin-top: -41px;">
+											@if(env('APP_URL') == 'https://ahrsc.edu.bd')
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('ministerofstatemessage') }}">@lang('frontend.ministerofstatemessage') </a></li>
+											<li><i class="fa fa-caret-right"></i><a href="{{ url('chairmanmessage') }}">@lang('frontend.chairmanmessage') </a></li>
+											@endif
+
 											<li><i class="fa fa-caret-right"></i><a href="{{ url('principal_message') }}">
 											@if($setting->type == 'school')
 											@lang('frontend.principal_message')

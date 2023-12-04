@@ -433,7 +433,13 @@ right:0;
                 @endphp
 
                 <div class="col-md-12 col-12 dmenu mt-3">
-                <li><a href="{{ url('principal_message') }}">
+
+                @if(env('APP_URL') == 'https://ahrsc.edu.bd')
+                 <li><a href="{{ url('ministerofstatemessage') }}">@lang('frontend.ministerofstatemessage') </a></li>
+                 <li><a href="{{ url('chairmanmessage') }}">@lang('frontend.chairmanmessage') </a></li>
+                 @endif
+                
+                 <li><a href="{{ url('principal_message') }}">
                   @if($setting->type == 'school')
                   @lang('frontend.principal_message')
                   @else
@@ -766,6 +772,12 @@ right:0;
     <li class="uk-parent">
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.administrative_information') </a>
       <ul class="uk-nav-sub">
+        
+      @if(env('APP_URL') == 'https://ahrsc.edu.bd')
+        <li><a href="{{ url('ministerofstatemessage') }}">@lang('frontend.ministerofstatemessage') </a></li>
+        <li><a href="{{ url('chairmanmessage') }}">@lang('frontend.chairmanmessage') </a></li>
+      @endif
+
       <li><a href="{{ url('principal_message') }}">
         @if($setting->type == 'school')
         @lang('frontend.principal_message')

@@ -83,6 +83,8 @@ $array = array(
     'presidentmessage'=>'সভাপতির বার্তা',
 
     // 'principal_messages'=>'প্রধান শিক্ষকের বার্তা',
+    'ministerofstatemessage'=>'প্রতিমন্ত্রীর বার্তা',
+    'chairmanmessage'=>'চেয়ারম্যানের বার্তা',
     'vice_principal_message'=>'উপাধ্যক্ষের বার্তা',
     'managing_comitte'=>'পরিচালনা পর্ষদ তথ্য',
     'presidents'=>'প্রাক্তন সভাপতির তালিকা',

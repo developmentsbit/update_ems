@@ -821,8 +821,8 @@ class MenusTableSeeder extends Seeder
             array (
                 'id' => 82,
                 'parent_id' => NULL,
-                'name' => 'student info',
-                'bn_name' => 'ছাত্র তথ্য',
+                'name' => 'Student Panel',
+                'bn_name' => 'শিক্ষার্থী প্যানেল',
                 'system_name' => 'student_info',
                 'route_name' => NULL,
                 'icon' => NULL,
@@ -833,15 +833,15 @@ class MenusTableSeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_by' => NULL,
                 'created_at' => '2023-10-31 11:31:10',
-                'updated_at' => '2023-11-12 12:23:41',
+                'updated_at' => '2023-12-04 07:05:33',
                 'deleted_at' => NULL,
             ),
             43 => 
             array (
                 'id' => 83,
                 'parent_id' => 82,
-                'name' => 'student info',
-                'bn_name' => 'ছাত্র তথ্য',
+                'name' => 'Add Student Info',
+                'bn_name' => 'শিক্ষার্থী তথ্য যোগ করুন',
                 'system_name' => 'student info',
                 'route_name' => 'student_info.index',
                 'icon' => NULL,
@@ -852,7 +852,7 @@ class MenusTableSeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_by' => NULL,
                 'created_at' => '2023-10-31 11:33:10',
-                'updated_at' => '2023-10-31 11:33:10',
+                'updated_at' => '2023-12-04 07:07:00',
                 'deleted_at' => NULL,
             ),
             44 => 

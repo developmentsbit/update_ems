@@ -51,12 +51,7 @@ input.form-control ,.form-select{
 		<div class="card">
 			<div class="card-body">
             <div class="container">
-                <div class="main_from mt-1 ">
-                    <div class="main_from mt-2">
-                        <h5 class="bg-dark text-light border-bottom border-3 border-info rounded-bottom fs-5 p-2 ">@lang('mark_distribution.addtitle')  :</h5>
-                    </div>
-                </div>
-				<form class="">
+				<form>
 					<div class="row">
 						<div class="col-md-6 mt-2">
 							<div class="row ">
@@ -64,9 +59,9 @@ input.form-control ,.form-select{
 									@lang('mark_distribution.select_class') :</label>
 								<div class="col-sm-7">
 									<select class="form-select" id="session" name="session">
-										<option selected>
-											Select One</option>
-										</select>
+										<option selected>Select One</option>
+										
+									</select>
 								</div>
 							</div>
 						</div>

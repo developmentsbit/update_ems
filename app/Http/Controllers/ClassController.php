@@ -8,11 +8,12 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class ClassController extends Controller
 {
-
+   protected $path;
    public function __construct()
    {
-    $this->middleware('auth');
-}
+        $this->path = 'admin.addclass';
+        $this->middleware('auth');
+   }
 
 
     /**
@@ -21,7 +22,7 @@ class ClassController extends Controller
     public function index()
     {
      $data = DB::table("addclass")->get();
-     return view('admin.addclass.index',compact('data'));
+     return view($this->path.'.index',compact('data'));
  }
 
     /**
@@ -29,7 +30,7 @@ class ClassController extends Controller
      */
     public function create()
     {
-     return view('admin.addclass.create');
+     return view($this->path.'.create');
  }
 
     /**
@@ -38,9 +39,10 @@ class ClassController extends Controller
     public function store(Request $request)
     {
      $data = array();
-     $data['class_name']      = $request->class_name;
-     $data['class_name_bn']      = $request->class_name_bn;
-     $data['status']         = $request->status;
+     $data['order_by']          = $request->order_by;
+     $data['class_name']        = $request->class_name;
+     $data['class_name_bn']     = $request->class_name_bn;
+     $data['status']            = $request->status;
 
      DB::table('addclass')->insert($data);
 
@@ -62,7 +64,7 @@ class ClassController extends Controller
     public function edit(string $id)
     {
         $data = DB::table("addclass")->where('id',$id)->first();
-        return view('admin.addclass.edit',compact('data'));
+        return view($this->path.'.edit',compact('data'));
     }
 
     /**
@@ -71,6 +73,7 @@ class ClassController extends Controller
     public function update(Request $request, string $id)
     {
         $data = array();
+        $data['order_by']          = $request->order_by;
         $data['class_name']      = $request->class_name;
         $data['class_name_bn']      = $request->class_name_bn;
         $data['status']    = $request->status;

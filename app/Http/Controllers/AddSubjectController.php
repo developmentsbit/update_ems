@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\class_info;
+use App\Models\group_info;
+use App\Models\subject_info;
+use Brian2694\Toastr\Facades\Toastr;
 
 class AddSubjectController extends Controller
 {
+    protected $path;
+    public function __construct()
+    {
+        $this->path = 'admin.add_subject';
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.add_subject.index');
+        $data = subject_info::with('className','groupName')->get();
+        // dd($data);
+        return view($this->path.'.index',compact('data'));
     }
 
     /**
@@ -19,7 +30,9 @@ class AddSubjectController extends Controller
      */
     public function create()
     {
-        return view('admin.add_subject.create');
+        $data = [];
+        $data['class'] = class_info::where('status',1)->get();
+        return view($this->path.'.create',compact('data'));
     }
 
     /**
@@ -27,7 +40,21 @@ class AddSubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data =array(
+            'serial'            => $request->serial,
+            'class_id'          => $request->class_id,
+            'group_id'          => $request->group_id,
+            'subject_name'   => $request->subject_name_en,
+            'subject_name_bn'   => $request->subject_name_bn,
+            'subject_code'      => $request->subject_code,
+            'subject_type'      => $request->subject_type,
+            'status'            => $request->status,
+        );
+
+        $insert = subject_info::create($data);
+        Toastr::success(__('Subject Create Successfully'));
+        return redirect()->route('add_subject.index');
+
     }
 
     /**
@@ -43,7 +70,11 @@ class AddSubjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [];
+        $data['class'] = class_info::where('status',1)->get();
+        $data['data'] = subject_info::where('id',$id)->first();
+        $data['group'] = group_info::where('class_id',$data['data']->class_id)->get();
+        return view($this->path.'.edit',compact('data'));
     }
 
     /**
@@ -51,7 +82,20 @@ class AddSubjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data =array(
+            'serial'            => $request->serial,
+            'class_id'          => $request->class_id,
+            'group_id'          => $request->group_id,
+            'subject_name'      => $request->subject_name_en,
+            'subject_name_bn'   => $request->subject_name_bn,
+            'subject_code'      => $request->subject_code,
+            'subject_type'      => $request->subject_type,
+            'status'            => $request->status,
+        );
+
+        $insert = subject_info::find($id)->update($data);
+        Toastr::success(__('Subject Update Successfully'));
+        return redirect()->route('add_subject.index');
     }
 
     /**
@@ -59,6 +103,47 @@ class AddSubjectController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        subject_info::where('id',$id)->delete();
+        Toastr::success(__('Subject Delete Successfully'));
+        return redirect()->route('add_subject.index');
+    }
+
+    public function getClassGroup(Request $request)
+    {
+        $data = group_info::where('class_id',$request->class_id)->get();
+        $output = '<label>'.__("add_subject.groupname").':</label>
+        <div class="input-group mt-2">
+            <select class="form-control form-control-sm" name="group_id" id="group_id" onchange="" required>
+        <option value="">== নির্বাচন করুন ==</option>';
+        if($data)
+        {
+            foreach($data as $g)
+            {
+                $output .= '<option value="'.$g->id.'">'.$g->group_name.'</option>';
+            }
+        }
+
+        $output.='</select>';
+
+        return $output;
+    }
+
+    public function subjectStatusChanged($id)
+    {
+        $data = subject_info::find($id);
+        if($data->status == 1)
+        {
+            subject_info::find($id)->update([
+                'status' => 0,
+            ]);
+        }
+        else
+        {
+            subject_info::find($id)->update([
+                'status' => 1,
+            ]);
+        }
+
+        return 1;
     }
 }

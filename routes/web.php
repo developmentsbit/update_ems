@@ -57,6 +57,8 @@ use App\Http\Controllers\ViewMarksController;
 use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
 use App\Http\Controllers\ViewCompletedSubjectController; 
 use App\Http\Controllers\GenerateGPAController;
+use App\Http\Controllers\GenerateGradePointController;
+use App\Http\Controllers\ExamTypeController;
 use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
 
@@ -104,6 +106,8 @@ Route::get('/mpo_nationalizations', [FrontendController::class, 'mpo_nationaliza
 Route::get('/principal_message', [FrontendController::class, 'principle_message']);
 Route::get('/vice_principal_messages', [FrontendController::class, 'vice_principal_message']);
 Route::get('/presidentmessage', [FrontendController::class, 'presidentmessage']);
+Route::get('/ministerofstatemessage', [FrontendController::class, 'ministerofstatemessage']);
+Route::get('/chairmanmessage', [FrontendController::class, 'chairmanmessage']);
 
 Route::get('/managing_comitte', [FrontendController::class, 'managing_comitte']);
 Route::get('/presidents', [FrontendController::class, 'presidents']);
@@ -414,6 +418,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('view_total _subject_marks', ViewTotalSubjectMarksEntryController::class);
     Route::resource('view_completed_subject', ViewCompletedSubjectController::class);
     Route::resource('generate_gpa', GenerateGPAController::class);
+    Route::resource('generate_grade_point', GenerateGradePointController::class);
+    Route::resource('exam_type', ExamTypeController::class);
 
     Route::get('student_info_from', [StudentInfoController::class, 'from']);
     Route::post('loadDistrict', [StudentInfoController::class, 'loadDistrict']);

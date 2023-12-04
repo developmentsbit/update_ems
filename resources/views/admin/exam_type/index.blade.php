@@ -16,10 +16,13 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
+
+
 <div class="container mt-2">
 		@component('components.breadcrumb')
             @slot('title')
-                @lang('principle.viewtitle')
+                @lang('exam_type.viewtitle')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -32,7 +35,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
                     @lang('common.add_new')
                 @endslot
                 @slot('action_button1_link')
-                    {{ route('principle.create') }}
+                    {{ route('exam_type.create') }}
                 @endslot
             @endif
             @slot('action_button1_class')
@@ -43,53 +46,49 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 		<div class="card">
 			<div class="card-body">
-				<h3>@lang('principle.managetitle')</h3><br>
+
+				<h3>@lang('exam_type.managetitle')</h3><br>
+
 				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 					<thead class="mythead">
 						<tr>
 							<th>#</th>
-							<th>@lang('principle.type')</th>
-							<th>@lang('principle.name')</th>
-							<th>@lang('principle.image')</th>
+							<th>@lang('exam_type.classname')</th>
+							<th>@lang('exam_type.name')</th>
+							<th>@lang('exam_type.compulsory_subject')</th>
 							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
 					<tbody class="tbody" id="showtdata">
-						@php $i=1;  @endphp
+						{{--
+                            @php $i=1;  @endphp
 						@if(isset($data))
 						@foreach($data as $d)
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
+							<td>@if($lang == 'en'){{ $d->class_name ?: $d->class_name_bn}}@else {{$d->class_name_bn ?: $d->class_name}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->group_name ?: $d->group_name_bn}}@else {{$d->group_name_bn ?: $d->group_name}}@endif</td>
+							<td>@if($lang == 'en'){{ $d->section_name ?: $d->section_name_bn}}@else {{$d->section_name_bn ?: $d->section_name}}@endif</td>
 							<td>
-								@if($d->type == 1)
-									@lang('principle.principal')
-								@endif
-								@if($d->type == 2)
-									@lang('principle.president')
-								@endif
-								@if($d->type == 3)
-								  @lang('principle.minister_of_state')
-								@endif
-								@if($d->type == 4)
-									@lang('principle.chairman')
+								@if($d->status == 1)
+								<span class="btn btn-success btn-sm">@lang('common.active')</span>
+								@else
+								<span class="btn btn-danger btn-sm">@lang('common.inactive')</span>
 								@endif
 							</td>
-							<td>@if($lang == 'en'){{ $d->name ?: $d->name_bn}}@else {{$d->name_bn ?: $d->name}}@endif</td>
-							<td><img src="{{ asset($d->image) }}" style="max-height: 100px;"></td>
 							<td>
 								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("principle.edit",$d->id) }}">@lang('common.edit')</a>
-									<form action="{{ route('principle.destroy',$d->id) }}" method="post">
+									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("exam_type.edit",$d->id) }}">@lang('common.edit')</a>
+									<form action="{{ route('exam_type.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
 										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
-
 									</form>
 								</div>
 							</td>
 						</tr>
 						@endforeach
-						@endif
+						@endif --}}
 					</tbody>
 				</table>
 			</div> <!-- end card body-->

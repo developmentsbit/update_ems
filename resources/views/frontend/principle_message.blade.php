@@ -13,10 +13,15 @@
      <div class="col-sm-12 col-12 p-0"  data-aos="fade-in" data-aos-duration="2000" >
        <ul class="list-group p-0">
         <li class="list-group-item font-weight-bold bg-success text-light" id="about">
+          <!-- {{$data->type}} -->
         @if($data->type == 1)
         @lang('frontend.principal_message')
-        @else
+        @elseif($data->type == 2)
         @lang('frontend.presidentmessage')
+        @elseif($data->type == 3)
+        @lang('frontend.ministerofstatemessage')
+        @elseif($data->type == 4)
+        @lang('frontend.chairmanmessage')
         @endif
       </li>
       </ul>
@@ -26,8 +31,8 @@
           <img src="{{ asset($data->image) }}" class="img-fluid p-2 img-thumbnail" style="max-height: 300px;"><br><br>
 
           <p>
-          @if($lang == 'en'){!! $data->details !!}@elseif($lang == 'bn'){!! $data->details_bn !!}@endif
-          </p>
+           @if($lang == 'en'){!! $data->details ?: $data->details_bn !!}@elseif($lang == 'bn'){!! $data->details_bn ?: $data->details !!}@endif
+         </p>
 
           <br><br>
 

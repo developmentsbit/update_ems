@@ -2,10 +2,10 @@
 
 return [
 
-     'managetitle' => 'Principal/President/Head Teacher Message',
-     'addtitle' => 'Add Principal/President/Head Teacher',
-     'edittitle' => 'Edit Principal/President/Head Teacher',
-     'viewtitle' => 'View Principal/President/Head Teacher',
+     'managetitle' => 'Administrative Messages',
+     'addtitle' => 'Add Administrative Messages',
+     'edittitle' => 'Edit Administrative Messages',
+     'viewtitle' => 'View Administrative Messages',
      'type' => 'Type',
      'name' => 'Name',
      'image' => 'Image',
@@ -13,6 +13,8 @@ return [
      'download' => 'Download/File Image',
      'principal'=>'Principal/Head Teacher',
      'president'=>'President',
+     'minister_of_state'=>'Minister of State',
+     'chairman'=>'Chairman',
      'name_bn'=>'Name (Bangla)',
      'details_bn'=>'Details (Bangla)',
 

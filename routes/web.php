@@ -55,7 +55,7 @@ use App\Http\Controllers\MarkDistributionController;
 use App\Http\Controllers\AddMarksController;
 use App\Http\Controllers\ViewMarksController;
 use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
-use App\Http\Controllers\ViewCompletedSubjectController; 
+use App\Http\Controllers\ViewCompletedSubjectController;
 use App\Http\Controllers\GenerateGPAController;
 use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
@@ -73,6 +73,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/getSecondData',function(){
 
@@ -420,6 +421,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('loadUpazilla', [StudentInfoController::class, 'loadUpazilla']);
     Route::post('loadParmanenetDistrict', [StudentInfoController::class, 'loadParmanenetDistrict']);
     Route::post('loadParmanenetUpazilla', [StudentInfoController::class, 'loadParmanenetUpazilla']);
+
+    // subejct group routes
+    Route::post('getClassGroup',[AddSubjectController::class,'getClassGroup']);
+    Route::get('subjectStatusChanged/{id}',[AddSubjectController::class,'subjectStatusChanged']);
+
 });
 
 Route::get('/backups', function() {

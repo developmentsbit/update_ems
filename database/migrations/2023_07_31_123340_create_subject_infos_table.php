@@ -14,13 +14,17 @@ return new class extends Migration
         Schema::create('subject_infos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('class_id')->unsigned();
-            $table->foreign('class_id')->references('id')->on('class_infos');
+            $table->foreign('class_id')->references('id')->on('addclass');
             $table->bigInteger('group_id')->unsigned();
-            $table->foreign('group_id')->references('id')->on('group_infos');
+            $table->foreign('group_id')->references('id')->on('addgroup');
             $table->string('subject_name')->nullable();
+            $table->string('subject_name_bn')->nullable();
             $table->string('subject_code')->nullable();
-            $table->string('select_subject_type')->nullable();
+            $table->string('subject_code_bn')->nullable();
+            $table->integer('subject_type')->comment(' 1 = Compulsory | 2 = Group Subject | 3 = Optional Subject')->nullable();
             $table->integer('serial')->nullable();
+            $table->integer('status')->nullable();
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +34,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('subject_infos');
     }
 };

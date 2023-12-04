@@ -40,6 +40,12 @@
 				<form method="post" class="btn-submit" action="{{ route('addclass.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="row myinput">
+						<div class="form-group mb-3 col-md-12">
+							<label>@lang('common.sl'): <span class="text-danger" style="font-size: 15px;">*</span></label>
+							<div class="input-group mt-2">
+								<input class="form-control" type="text" name="order_by" id="order_by"  required="">
+							</div>
+						</div>
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('addclass.name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">

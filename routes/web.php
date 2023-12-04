@@ -58,7 +58,6 @@ use App\Http\Controllers\ViewTotalSubjectMarksEntryController;
 use App\Http\Controllers\ViewCompletedSubjectController;
 use App\Http\Controllers\GenerateGPAController;
 use App\Http\Controllers\GenerateGradePointController;
-use App\Http\Controllers\ExamTypeController;
 use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
 
@@ -420,7 +419,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('view_completed_subject', ViewCompletedSubjectController::class);
     Route::resource('generate_gpa', GenerateGPAController::class);
     Route::resource('generate_grade_point', GenerateGradePointController::class);
-    Route::resource('exam_type', ExamTypeController::class);
 
     Route::get('student_info_from', [StudentInfoController::class, 'from']);
     Route::post('loadDistrict', [StudentInfoController::class, 'loadDistrict']);

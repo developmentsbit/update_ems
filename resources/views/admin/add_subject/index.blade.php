@@ -70,17 +70,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<td>
                                 {{-- {{ $d->className->class_name }} --}}
                                 @if($lang == 'en')
-                                {{ $d->className->class_name ?: $d->className->class_name_bn}}
+                                {{ $d->class_name ?: $d->class_name_bn}}
                                 @else
-                                {{$d->className->class_name_bn ?: $d->className->class_name}}
+                                {{$d->class_name_bn ?: $d->class_name}}
                                 @endif
                             </td>
 
 							<td>
                                 @if($lang == 'en')
-                                {{ $d->groupName->group_name ?: $d->groupName->group_name_bn}}
+                                {{ $d->group_name ?: $d->group_name_bn}}
                                 @else
-                                {{$d->groupName->group_name_bn ?: $d->groupName->group_name}}
+                                {{$d->group_name_bn ?: $d->group_name}}
                                 @endif
                             </td>
 							<td>

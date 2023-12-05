@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('exam_code',200)->nullable();
             $table->string('exam_name',200);
             $table->string('exam_name_bn',200)->nullable();
-            $table->string('compulsory',200);
-            $table->string('compulsory_bn',200)->nullable();
+            $table->string('total_subject',200);
             $table->integer('status')->default(1)->comment('1 = Active & 0 = Inactive');
             $table->string('order_by',200)->nullable();
+            $table->date('deleted_at')->nullable();
             $table->timestamps();
         });
     }

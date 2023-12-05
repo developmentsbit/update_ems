@@ -55,28 +55,63 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							<th>#</th>
 							<th>@lang('add_subject_part.classname')</th>
 							<th>@lang('add_subject_part.groupname')</th>
+							<th>@lang('add_subject_part.exam_type')</th>
 							<th>@lang('add_subject_part.name')</th>
+							<th>@lang('add_subject_part.subject_part_name')</th>
+							<th>@lang('add_subject_part.subject_code')</th>
 							<th>@lang('add_subject_part.status')</th>
 							<th>@lang('common.action')</th>
 						</tr>
 					</thead>
 					<tbody class="tbody" id="showtdata">
-						{{--
-                            @php $i=1;  @endphp
+
+                        @php $i=1;  @endphp
 						@if(isset($data))
 						@foreach($data as $d)
 						<tr id="tr{{ $d->id }}">
 							<td>{{ $i++ }}</td>
-							<td>@if($lang == 'en'){{ $d->class_name ?: $d->class_name_bn}}@else {{$d->class_name_bn ?: $d->class_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->group_name ?: $d->group_name_bn}}@else {{$d->group_name_bn ?: $d->group_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->section_name ?: $d->section_name_bn}}@else {{$d->section_name_bn ?: $d->section_name}}@endif</td>
 							<td>
-								@if($d->status == 1)
-								<span class="btn btn-success btn-sm">@lang('common.active')</span>
-								@else
-								<span class="btn btn-danger btn-sm">@lang('common.inactive')</span>
-								@endif
+                                @if($lang == 'en')
+                                {{ $d->class_name ?: $d->class_name_bn}}
+                                @else
+                                {{$d->class_name_bn ?: $d->class_name}}
+                                @endif
+                            </td>
+							<td>
+                                @if($lang == 'en')
+                                {{ $d->group_name ?: $d->group_name_bn}}
+                                @else
+                                {{$d->group_name_bn ?: $d->group_name}}
+                                @endif
+                            </td>
+							<td>
+                                @if($lang == 'en')
+                                {{ $d->exam_name ?: $d->exam_name_bn}}
+                                @else
+                                {{$d->exam_name_bn ?: $d->exam_name}}
+                                @endif
+                            </td>
+							<td>
+                                @if($lang == 'en')
+                                {{ $d->subject_name ?: $d->subject_name_bn}}
+                                @else
+                                {{$d->subject_name_bn ?: $d->subject_name}}
+                                @endif
+                            </td>
+							<td>
+								@if($lang == 'en')
+                                {{ $d->part_name ?: $d->part_name_bn}}
+                                @else
+                                {{$d->part_name_bn ?: $d->part_name}}
+                                @endif
 							</td>
+                            <td>
+                                {{$d->part_code}}
+                            </td>
+                            <td>
+                                <input  type="checkbox" id="status" data-switch="none"/ @if($d->status == 1) checked @endif>
+                                <label onclick="partStatusChange({{$d->id}})" for="status" data-on-label="" data-off-label=""></label>
+                            </td>
 							<td>
 								<div class="btn-group">
 									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("add_subject_part.edit",$d->id) }}">@lang('common.edit')</a>
@@ -89,7 +124,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 							</td>
 						</tr>
 						@endforeach
-						@endif --}}
+						@endif
 					</tbody>
 				</table>
 			</div> <!-- end card body-->
@@ -124,6 +159,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <!-- demo app -->
 <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
 <!-- end demo js-->
+
+<script>
+    function partStatusChange(id)
+    {
+        $.ajax({
+            headers : {
+                'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+            },
+
+            url : "{{url('partStatusChange')}}/"+id,
+
+            type : 'get',
+
+            success : function(data)
+            {
+                toastr.success("Status Changed Successfully");
+            }
+        })
+    }
+</script>
 
 
 @endpush

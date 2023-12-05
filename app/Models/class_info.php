@@ -18,4 +18,9 @@ class class_info extends Model
     {
         return $this->hasMany('App\Models\group_info','class_id');
     }
+
+    public function examType()
+    {
+        return $this->hasMany('App\Models\add_exam_type','class_id');
+    }
 }

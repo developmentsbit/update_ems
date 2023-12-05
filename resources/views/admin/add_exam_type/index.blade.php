@@ -59,96 +59,57 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>@lang('common.date')</th>
-                                            <th>@lang('mpo_nationalization.subject')</th>
-                                            <th>@lang('mpo_nationalization.layer')</th>
-                                            <th>@lang('mpo_nationalization.memorial')</th>
-                                          
-                                            <th>@lang('common.image')</th>
+                                            <th>@lang('add_exam_type.examcode')</th>
+                                            <th>@lang('syllabus.classname')</th>
+                                            <th>@lang('add_exam_type.examname')</th>
+                                            <th>@lang('add_exam_type.total_subject')</th>
+                                            <th>@lang('common.status')</th>
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @if ($data)
+                                        @if ($data)
                                         @foreach ($data as $v)
                                         <tr>
                                             <td>{{$i++}}</td>
-                                            <td>{{$v->date}}</td>
+                                            <td>{{$v->exam_code}}</td>
                                             <td>
-                                                @if($lang == 'en'){{ $v->subject ?: $v->subject_bn}}@else {{$v->subject_bn ?: $v->subject}}@endif
-                                            </td> 
+                                                @if($lang == 'en')
+                                                {{ $v->class->class_name ?: $v->class->class_name_bn}}
+                                                @else
+                                                {{$v->class->class_name_bn ?: $v->class->class_name}}
+                                                @endif
+                                            </td>
                                             <td>
-                                                @if($lang == 'en'){{ $v->layer ?: $v->layer_bn}}@else {{$v->layer_bn ?: $v->layer}}@endif
-                                            </td>  
+                                                @if($lang == 'en')
+                                                {{ $v->exam_name ?: $v->exam_name_bn}}
+                                                @else
+                                                {{$v->exam_name_bn ?: $v->exam_name}}
+                                                @endif
+                                            </td>
                                             <td>
-                                                {{$v->memorial_no}}
-                                            </td> 
-                                            <td><a href="{{asset('admin/mpo_nationalization')}}/{{$v->image}}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td> --}}
-                                            {{-- <td>
-                                                
-                                                <img src="" alt="" style="height: 50px;width:50px;">
-                                            </td> --}}
-                                            {{-- <td>
-                                                <a class="btn btn-sm btn-info" href="{{route('mpo_nationalization.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
-                                                <form method="post" action="{{route('mpo_nationalization.destroy',$v->id)}}">
+                                                {{$v->total_subject}}
+                                            </td>
+                                            <td>
+                                                <input  type="checkbox" id="status" data-switch="none"/ @if($v->status == 1) checked @endif>
+                                                <label onclick="changeExamTypeStatus({{$v->id}})" for="status" data-on-label="" data-off-label=""></label>
+                                            </td>
+                                            <td>
+                                                <a style="float: left;" class="btn btn-sm btn-info" href="{{route('add_exam_type.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
+                                                <form method="post" action="{{route('add_exam_type.destroy',$v->id)}}">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                                                    <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Are You Sure ?')"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
-                                        </tr> --}}
-                                        {{-- @endforeach
-                                        @endif --}}
-                                        
+                                        </tr>
+                                       @endforeach
+                                        @endif
+
                                     </tbody>
                                 </table>
                             </div> <!-- end all-->
-                            {{-- @php
-                            use App\Models\mpoNationalizatio;
-                            $deleted = mpoNationalizatio::onlyTrashed()->get();
-                            $i = 1;
-                            @endphp
-                            <div class="tab-pane" id="users-tab-deleted">
-                                <table id="datatable-users-deleted" class="table table-striped dt-responsive nowrap w-100">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>@lang('common.date')</th>
-                                            <th>@lang('mpo_nationalization.subject')</th>
-                                            <th>@lang('mpo_nationalization.layer')</th>
-                                            <th>@lang('mpo_nationalization.memorial')</th>
-                                          
-                                           
-                                            <th>@lang('common.action')</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if($deleted)
-                                        @foreach ($deleted as $v)
-                                        <tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$v->date}}</td>
-                                            <td>
-                                                @if($lang == 'en'){{ $v->subject }}@else {{$v->subject_bn}}@endif
-                                            </td> 
-                                            <td>
-                                                @if($lang == 'en'){{ $v->layer }}@else {{$v->layer_bn}}@endif
-                                            </td>  
-                                            <td>
-                                                {{$v->memorial_no}}
-                                            </td> 
-                                            
-                                            <td>
-                                                <a href="{{ url('retrive_mpo') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
-                                                <a href="{{ url('delete_mpo') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
-                                            </td>
-                                        </tr>
-                                        
-                                        @endforeach
-                                        @endif --}}
-                                    </tbody>
-                                </table>
-                            </div> <!-- end deleted-->
+
                         </div> <!-- end tab-content-->
 
                     </div> <!-- end card body-->
@@ -177,6 +138,27 @@
     <!-- demo app -->
     <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
     <!-- end demo js-->
+
+    <script>
+        function changeExamTypeStatus(id)
+        {
+            // alert(id);
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                },
+
+                url : '{{ url('changeExamTypeStatus') }}/'+id,
+
+                type : 'GET',
+
+                success : function(res)
+                {
+                    toastr.success("Status Changed Successfully");
+                }
+            });
+        }
+    </script>
 
     <script>
         $(function() {

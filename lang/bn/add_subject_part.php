@@ -18,6 +18,7 @@ return [
 	'optional_subject' => 'ঐচ্ছিক বিষয়',
 	'exam_type' => 'পরীক্ষার ধরণ',
 	'subject_part_name' => 'বিষয়ের পার্ট নাম',
+	'subject_part_name_bn' => 'বিষয়ের পার্ট নাম (বাংলায়)',
 	'status' => 'স্টেটাস',
 
 

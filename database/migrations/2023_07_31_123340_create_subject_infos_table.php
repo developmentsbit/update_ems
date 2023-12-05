@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('class_id')->unsigned();
             $table->foreign('class_id')->references('id')->on('addclass');
-            $table->bigInteger('group_id')->unsigned();
+            $table->bigInteger('group_id')->unsigned()->nullable();
             $table->foreign('group_id')->references('id')->on('addgroup');
             $table->string('subject_name')->nullable();
             $table->string('subject_name_bn')->nullable();

@@ -20,7 +20,10 @@ class AddSubjectController extends Controller
      */
     public function index()
     {
-        $data = subject_info::with('className','groupName')->get();
+        $data = subject_info::leftjoin('addclass','addclass.id','subject_infos.class_id')
+        ->leftjoin('addgroup','addgroup.id','subject_infos.group_id')
+        ->select('subject_infos.*','addclass.class_name','addclass.class_name_bn','addgroup.group_name','addgroup.group_name_bn')
+        ->get();
         // dd($data);
         return view($this->path.'.index',compact('data'));
     }
@@ -111,6 +114,10 @@ class AddSubjectController extends Controller
     public function getClassGroup(Request $request)
     {
         $data = group_info::where('class_id',$request->class_id)->get();
+        if(count($data) == 0)
+        {
+            return 'no_group';
+        }
         $output = '<label>'.__("add_subject.groupname").':</label>
         <div class="input-group mt-2">
             <select class="form-control form-control-sm" name="group_id" id="group_id" onchange="" required>

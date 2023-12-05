@@ -82,7 +82,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 									<form action="{{ route('addsection.destroy',$d->id) }}" method="post">
 										@csrf
 										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
+										<button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure?')">@lang('common.delete')</button>
 									</form>
 								</div>
 							</td>

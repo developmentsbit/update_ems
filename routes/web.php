@@ -303,6 +303,11 @@ Route::group(['middleware' => 'auth'], function () {
         'upload_download_file' => UploadDownloadFileController::class,
     ]);
 
+    Route::post('getExams',[SubjectPartController::class,'getExams']);
+    Route::post('getSubjects',[SubjectPartController::class,'getSubjects']);
+    Route::post('getSubjectInfo',[SubjectPartController::class,'getSubjectInfo']);
+    Route::get('partStatusChange/{id}',[SubjectPartController::class,'partStatusChange']);
+
     Route::get('retrive_message/{id}', [MessageController::class, 'retrive_message']);
     Route::get('permenantMessageDelete/{id}', [MessageController::class, 'permenantMessageDelete']);
 
@@ -414,7 +419,7 @@ Route::group(['middleware' => 'auth'], function () {
     // student info
 
     Route::resource('student_info', StudentInfoController::class);
-   
+
     Route::resource('add_marks', AddMarksController::class);
     Route::resource('view_marks', ViewMarksController::class);
     Route::resource('view_total_subject_marks', ViewTotalSubjectMarksEntryController::class);
@@ -429,6 +434,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('loadParmanenetUpazilla', [StudentInfoController::class, 'loadParmanenetUpazilla']);
 
     Route::resource('add_exam_type', AddExamTypeController::class);
+
+    Route::get('changeExamTypeStatus/{id}',[AddExamTypeController::class,'changeExamTypeStatus']);
 
 
     // subejct group routes

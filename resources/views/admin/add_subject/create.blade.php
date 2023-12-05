@@ -39,9 +39,9 @@
 					@csrf
 					<div class="row myinput">
                         <div class="form-group mb-3 col-md-4">
-							<label>@lang('add_subject.subject_serial_no'): </label>
+							<label>@lang('add_subject.subject_serial_no'): </label><span class="text-danger">*</span>
 							<div class="input-group mt-2">
-								<input class="form-control form-control-sm" type="number" name="serial" id="serial">
+								<input class="form-control form-control-sm" type="number" name="serial" id="serial" required>
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-4">
@@ -60,7 +60,7 @@
 						<div class="form-group mb-3 col-md-4" id="groupBox">
 							<label>@lang('add_subject.groupname'):</label>
 							<div class="input-group mt-2">
-								<select class="form-control form-control-sm" name="group_id" id="group_id" onchange="" required>
+								<select class="form-control form-control-sm" name="group_id" id="group_id" onchange="">
                                     <option value="">@lang('common.select_one')</option>
 								</select>
 							</div>
@@ -137,6 +137,14 @@
             success : function(res)
             {
                 // console.log(res);
+                if(res == 'no_group')
+                {
+                    $('#groupBox').hide();
+                }
+                else
+                {
+                    $('#groupBox').show();
+                }
                 $('#groupBox').html(res);
             }
         });

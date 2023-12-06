@@ -23,7 +23,8 @@ class MarkDistributionController extends Controller
      */
     public function index()
     {
-        return view($this->path.'.index');
+        $class = class_info::where('status',1)->get();
+        return view($this->path.'.index',compact('class'));
     }
 
     /**
@@ -226,5 +227,30 @@ class MarkDistributionController extends Controller
     {
         $data = subject_part::where('id',$request->subject_part_id)->first();
         return $data->part_code;
+    }
+
+    public function showMarksDstribution(Request $request)
+    {
+        if($request->group_id != '')
+        {
+            $data = marks_distribution::leftjoin('subject_infos','subject_infos.id','marks_distributions.subject_id')
+            ->leftjoin('subject_parts','subject_parts.id','marks_distributions.subject_part_id')
+            ->where('marks_distributions.class_id',$request->class_id)
+            ->where('marks_distributions.group_id',$request->group_id)
+            ->where('marks_distributions.exam_id',$request->exam_type)
+            ->select('marks_distributions.*','subject_infos.subject_name','subject_infos.subject_name_bn','subject_infos.subject_code','subject_parts.part_name','subject_parts.part_name_bn','subject_parts.part_code')
+            ->get();
+        }
+        else
+        {
+            $data = marks_distribution::leftjoin('subject_infos','subject_infos.id','marks_distributions.subject_id')
+            ->leftjoin('subject_parts','subject_parts.id','marks_distributions.subject_part_id')
+            ->where('marks_distributions.class_id',$request->class_id)
+            ->where('marks_distributions.exam_id',$request->exam_type)
+            ->select('marks_distributions.*','subject_infos.subject_name','subject_infos.subject_name_bn','subject_infos.subject_code','subject_parts.part_name','subject_parts.part_name_bn','subject_parts.part_code')
+            ->get();
+        }
+
+        return view($this->path.'.show_marks',compact('data'));
     }
 }

@@ -309,6 +309,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('getSubjectPart',[MarkDistributionController::class,'getSubjectPart']);
     Route::post('getSubjectCode',[MarkDistributionController::class,'getSubjectCode']);
     Route::post('getSubjectPartCode',[MarkDistributionController::class,'getSubjectPartCode']);
+    Route::post('showMarksDstribution',[MarkDistributionController::class,'showMarksDstribution']);
 
     Route::post('getExams',[SubjectPartController::class,'getExams']);
     Route::post('getSubjects',[SubjectPartController::class,'getSubjects']);

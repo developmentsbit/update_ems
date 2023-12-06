@@ -53,6 +53,7 @@
 							<label>@lang('principle.type'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
 								<select class="form-control" name="type">
+									@if(env('APP_URL') == 'https://ahrsc.edu.bd')
 									@if($data->type == 1)
 									<option value="1">@lang('principle.principal')</option>
 									<option value="2">@lang('principle.president')</option>
@@ -76,6 +77,17 @@
 									<option value="1">@lang('principle.principal')</option>
 									<option value="2">@lang('principle.president')</option>
 									<option value="3">@lang('principle.minister_of_state')</option>
+									@endif
+
+									@else
+									@if($data->type == 1)
+									<option value="1">@lang('principle.principal')</option>
+									<option value="2">@lang('principle.president')</option>
+									@endif
+									@if($data->type == 2)
+									<option value="2">@lang('principle.president')</option>
+									<option value="1">@lang('principle.principal')</option>
+									@endif
 									@endif
 								</select>
 							</div>

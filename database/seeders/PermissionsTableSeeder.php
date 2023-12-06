@@ -2802,6 +2802,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-02 05:28:10',
                 'deleted_at' => NULL,
             ),
+            253 => 
+            array (
+                'id' => 373,
+                'name' => 'NOC List',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            254 => 
+            array (
+                'id' => 374,
+                'name' => 'NOC Create',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            255 => 
+            array (
+                'id' => 375,
+                'name' => 'NOC Edit',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            256 => 
+            array (
+                'id' => 376,
+                'name' => 'NOC Delete',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            257 => 
+            array (
+                'id' => 377,
+                'name' => 'NOC View',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            258 => 
+            array (
+                'id' => 378,
+                'name' => 'NOC Print',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            259 => 
+            array (
+                'id' => 379,
+                'name' => 'NOC Edit_history',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            260 => 
+            array (
+                'id' => 380,
+                'name' => 'NOC Deleted_list',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            261 => 
+            array (
+                'id' => 381,
+                'name' => 'NOC Restore',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
+            262 => 
+            array (
+                'id' => 382,
+                'name' => 'NOC Permanent_delete',
+                'parent' => 'NOC',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-06 11:42:30',
+                'updated_at' => '2023-12-06 11:42:30',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

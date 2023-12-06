@@ -61,6 +61,7 @@ use App\Http\Controllers\GenerateGradePointController;
 use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
 use App\Http\Controllers\AddExamTypeController;
+use App\Http\Controllers\NOCController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -142,6 +143,9 @@ Route::get('/online_lecture',[FrontendController::class,'OnlineLectureUpload']);
 Route::get('/classWiseStudent/{id}',[FrontendController::class,'classWiseStudent']);
 
 
+
+Route::get('/noc_info', [FrontendController::class, 'noc_info']);
+Route::get('/nocdetails/{id}', [FrontendController::class, 'noc_details']);
 
 Route::get('/allnotices', [FrontendController::class, 'allnotices']);
 Route::get('/photogallery', [FrontendController::class, 'photogallery']);
@@ -301,6 +305,7 @@ Route::group(['middleware' => 'auth'], function () {
         'mark_distribution' => MarkDistributionController::class,
         'online_lecture_upload' => OnlineLectureUploadController::class,
         'upload_download_file' => UploadDownloadFileController::class,
+        'add_noc' => NOCController::class,
     ]);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);
@@ -449,6 +454,7 @@ Route::group(['middleware' => 'auth'], function () {
     // subejct group routes
     Route::post('getClassGroup',[AddSubjectController::class,'getClassGroup']);
     Route::get('subjectStatusChanged/{id}',[AddSubjectController::class,'subjectStatusChanged']);
+    // Route::get('nocStatusChanged/{id}',[NOCController::class,'nocStatusChanged']);
 
 });
 

@@ -11,6 +11,7 @@ use App\Models\section_wise;
 use App\Models\online_lecture_upload;
 use App\Models\class_info;
 use App\Models\group_info;
+use App\Models\add_noc;
 use PDF;
 use App;
 
@@ -625,6 +626,20 @@ class FrontendController extends Controller
         ->get();
         $sl=1;
         return view('frontend.online_lecture',compact('sl','data','class','group'));
+    }
+
+	public function noc_info()
+    {
+        $data= add_noc::all();
+
+        return view('frontend.noc_info',compact('data'));
+    }
+	
+	public function noc_details($id)
+    {
+        $data = add_noc::where('id',$id)->first();
+
+        return view('frontend.noc_details',compact('data'));
     }
 
 

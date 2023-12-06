@@ -395,6 +395,10 @@ right:0;
                 <div class="row">
 
                   <div class="col-md-6 col-12 dmenu mt-3">
+                    @if(env('APP_URL') == 'https://chhgc.edu.bd/')
+                    <li><a href="{{ url('noc_info') }}">@lang('add_noc.noc')</a></li>
+                    @endif
+
                     <li><a href="{{ url('page/1') }}">@lang('frontend.about_us')</a></li>
                     <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>

@@ -47,6 +47,7 @@ return [
     'save' => 'Save',
     'close' => 'Close',
     'submit' => 'Submit',
+    'show' => 'Show',
     'update' => 'Update',
     'cancel' => 'Cancel',
     'success' => 'Success',

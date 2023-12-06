@@ -50,6 +50,7 @@ return [
     'download' => 'ডাউনলোড করুন',
     'downloads' => 'ডাউনলোড/ফাইল ছবি',
     'submit' => 'সাবমিট করুন',
+    'show' => 'দেখুন',
     'update' => 'আপডেট করুন',
     'cancel' => 'Cancel',
     'success' => 'Success',

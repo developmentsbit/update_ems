@@ -55,8 +55,11 @@
 								<select class="form-control" name="type">
 									<option value="1">@lang('principle.principal')</option>
 									<option value="2">@lang('principle.president')</option>
+									
+									@if(env('APP_URL') == 'https://ahrsc.edu.bd')
 									<option value="3">@lang('principle.minister_of_state')</option>
 									<option value="4">@lang('principle.chairman')</option>
+									@endif
 								</select>
 							</div>
 						</div>

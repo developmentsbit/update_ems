@@ -16,11 +16,11 @@ return array(
 	'subject_part_name' => 'বিষয়ের পার্ট নাম',
     'subject_code' => 'বিষয় কোড',
     'marks' => 'নাম্বার',
-    'mcq' => 'বৃত্ত ভরাট',
+    'mcq' => 'বহুনির্বাচনী',
     'creative' => 'লিখিত',
     'practical' => 'ব্যবহারিক',
     'count_asses' => 'ব্যবহারিক',
     'total' => 'সর্বমোট',
-    
+
 
 );

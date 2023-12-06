@@ -303,6 +303,13 @@ Route::group(['middleware' => 'auth'], function () {
         'upload_download_file' => UploadDownloadFileController::class,
     ]);
 
+    Route::post('getExamType',[MarkDistributionController::class,'getExamType']);
+    Route::post('getMarksClassGropup',[MarkDistributionController::class,'getMarksClassGropup']);
+    Route::post('getMarksSubjects',[MarkDistributionController::class,'getMarksSubjects']);
+    Route::post('getSubjectPart',[MarkDistributionController::class,'getSubjectPart']);
+    Route::post('getSubjectCode',[MarkDistributionController::class,'getSubjectCode']);
+    Route::post('getSubjectPartCode',[MarkDistributionController::class,'getSubjectPartCode']);
+
     Route::post('getExams',[SubjectPartController::class,'getExams']);
     Route::post('getSubjects',[SubjectPartController::class,'getSubjects']);
     Route::post('getSubjectInfo',[SubjectPartController::class,'getSubjectInfo']);

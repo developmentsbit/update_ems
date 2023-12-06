@@ -46,7 +46,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 		<div class="card">
 			<div class="card-body">
             <div class="container">
-				<form>
 					<div class="row">
 						<div class="ms-md-5">
 							<div class="col-md-12 mt-2">
@@ -56,22 +55,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 											<div class="col-sm-12">
 												<label for="inputPassword3" class="col-sm-6 col-form-label text-md-end text-dark">
 												@lang('mark_distribution.select_class')  :</label>
-												<select class="form-select" id="session" name="session">
+												<select class="form-select" id="class_id" name="class_id" onchange="getMarksClassGropup();getExamTypes()" required>
 													<option value="">Select One</option>
-													
+                                                    @if(isset($class))
+                                                    @foreach ($class as $c)
+                                                    <option value="{{ $c->id }}">
+                                                        @if($lang == 'en')
+                                                        {{ $c->class_name ?: $c->class_name_bn }}
+                                                        @else
+                                                        {{ $c->class_name_bn ?: $c->class_name }}
+                                                        @endif
+                                                    </option>
+                                                    @endforeach
+                                                    @endif
 												</select>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-3" id="groupFullBox">
 										<div class="row">
 											<div class="col-sm-12">
 												<label for="inputPassword3" class="col-sm-6 col-form-label text-md-end text-dark">
 												@lang('mark_distribution.select_group')  :</label>
-												<select class="form-select" id="session" name="session">
-													<option value="">Select One</option>
-													
-												</select>
+                                                <div id="groupData">
+                                                    <select class="form-select" id="group_id" name="group_id">
+                                                        <option value="">Select One</option>
+
+                                                    </select>
+                                                </div>
 											</div>
 										</div>
 									</div>
@@ -80,10 +91,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 											<div class="col-sm-12">
 												<label for="inputPassword3" class="col-sm-6 col-form-label text-md-end text-dark">
 												@lang('mark_distribution.exam_type')  :</label>
-												<select class="form-select" id="session" name="session">
-													<option value="">Select One</option>
-													
-												</select>
+                                                <div id="examTypeBox">
+                                                    <select class="form-select" id="exam_type_id" name="exam_type_id">
+                                                        <option value="">Select One</option>
+
+                                                    </select>
+                                                </div>
 											</div>
 										</div>
 									</div>
@@ -91,15 +104,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 										<div class="row">
 											<div class="col-sm-12 mt-4">
 												<label for="inputPassword3" class="col-sm-3 col-form-label"></label>
-												<button type="submit" class="btn btn-success button border-0">@lang('common.show')</button>
+												<button onclick="showMarksDstribution()" type="submit" class="btn btn-success button border-0"><i class="fa fa-eye"></i> @lang('common.show')</button>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+                        <div class="mt-4" id="showData">
+
+                        </div>
 					</div>
-				</form>
 				</div> <!-- end card body-->
         	</div>
 		</div> <!-- end card -->
@@ -133,7 +148,100 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <!-- demo app -->
 <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
 <!-- end demo js-->
+<script>
+    function getMarksClassGropup()
+    {
+        const class_id = $('#class_id').val();
+        // alert(class_id);
+        if(class_id != '')
+        {
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                },
 
+                url : '{{ url('getMarksClassGropup') }}',
+
+                type : "POST",
+
+                data : {class_id},
+
+                beforeSend : function(){
+                    $('#groupData').html('Loading...');
+                },
+                success : function(res){
+                    if(res == 'no_group')
+                    {
+                        $('#groupFullBox').hide();
+                    }
+                    else
+                    {
+                        $('#groupFullBox').show();
+                        $('#groupData').html(res);
+                    }
+                }
+            });
+        }
+    }
+
+    function getExamTypes()
+    {
+        const class_id = $('#class_id').val();
+        if(class_id != '')
+        {
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                },
+
+                url : '{{ url('getExamType') }}',
+
+                type : "POST",
+
+                data : {class_id},
+
+                beforeSend : function(){
+                    $('#examTypeBox').html('Loading...');
+                },
+                success : function(res){
+                    $('#examTypeBox').html(res);
+                }
+            });
+        }
+    }
+
+
+    function showMarksDstribution()
+    {
+        const class_id = $('#class_id').val();
+        const group_id = $('#group_id').val();
+        const exam_type = $('#exam_type_id').val();
+
+        if(class_id != '' || exam_type != '')
+        {
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                },
+
+                url : '{{ url('showMarksDstribution') }}',
+
+                type : "POST",
+
+                data : {class_id,group_id,exam_type},
+
+                beforeSend : function()
+                {
+                    $('#showData').html('Loading...');
+                },
+                success : function(res)
+                {
+                    $('#showData').html(res);
+                }
+            });
+        }
+    }
+</script>
 
 @endpush
 

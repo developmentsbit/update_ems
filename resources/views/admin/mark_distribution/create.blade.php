@@ -140,8 +140,8 @@ input.form-control form-control-sm ,.form-select{
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width: 15%;">@lang('mark_distribution.mcq')</th>
                                     <th style="width: 15%;">@lang('mark_distribution.creative')</th>
+                                    <th style="width: 15%;">@lang('mark_distribution.mcq')</th>
                                     <th style="width: 15%;">@lang('mark_distribution.practical')</th>
                                     <th style="width: 15%;">Cont. Asses.</th>
                                     <th style="width: 15%;">@lang('mark_distribution.total')</th>
@@ -150,19 +150,19 @@ input.form-control form-control-sm ,.form-select{
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="mcq" id="mcq" placeholder="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="written" id="written" value="0" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="written" id="written" placeholder="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="mcq" id="mcq" value="0" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="practical" id="practical" placeholder="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="practical" id="practical" value="0" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="count_asses" id="count_asses" placeholder="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="count_asses" id="count_asses" value="0" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="total" id="total" placeholder="0" readonly>
+                                        <input class="form-control form-control-sm border-dark" type="number" name="total" id="total" value="0" readonly>
                                     </td>
                                 </tr>
                             </tbody>
@@ -380,7 +380,6 @@ input.form-control form-control-sm ,.form-select{
         const written = $('#written').val();
         const practical = $('#practical').val();
         const count_asses = $('#count_asses').val();
-
         let total;
         total = parseInt(mcq) + parseInt(written) + parseInt(practical) + parseInt(count_asses);
 

@@ -3,15 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\subject_info;
+use App\Models\add_exam_type;
+use App\Models\group_info;
+use App\Models\subject_part;
+use App\Models\class_info;
+use App\Models\marks_distribution;
+use Brian2694\Toastr\Facades\Toastr;
 
 class MarkDistributionController extends Controller
 {
+    protected $path;
+    public function __construct()
+    {
+        $this->path = 'admin.mark_distribution';
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.mark_distribution.index');
+        return view($this->path.'.index');
     }
 
     /**
@@ -19,7 +31,9 @@ class MarkDistributionController extends Controller
      */
     public function create()
     {
-        return view('admin.mark_distribution.create');
+        $data = [];
+        $data['class'] = class_info::where('status',1)->get();
+        return view($this->path.'.create',compact('data'));
     }
 
     /**
@@ -27,7 +41,29 @@ class MarkDistributionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        if($request->total == "")
+        {
+            Toastr::error(__('Invalid Data !'));
+            return redirect()->route('mark_distribution.create');
+        }
+        $data = array(
+            'class_id' => $request->class_id,
+            'exam_id' => $request->exam_type_id,
+            'group_id' => $request->group_id,
+            'subject_type' => $request->subject_type,
+            'subject_id' => $request->subject_id,
+            'subject_part_id' => $request->subject_part_id,
+            'subject_code' => $request->subject_code,
+            'mcq' => $request->mcq,
+            'written' => $request->written,
+            'practical' => $request->practical,
+            'count_asses' => $request->count_asses,
+            'total' => $request->total,
+        );
+        marks_distribution::create($data);
+        Toastr::success(__('Marks Distribution Successfully'));
+        return redirect()->route('mark_distribution.create');
     }
 
     /**
@@ -60,5 +96,135 @@ class MarkDistributionController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function getExamType(Request $request)
+    {
+        $data = add_exam_type::where('status',1)->where('class_id',$request->class_id)->get();
+        if(count($data) == 0)
+        {
+            return '<b class="text-danger">No Exam Type Found !</b>';
+        }
+
+        $output = '<select class="form-control form-control-sm" id="exam_type_id" name="exam_type_id" required>
+        <option value="">Select One</option>';
+        foreach($data as $v)
+        {
+            if(config('app.locale') == 'en')
+            {
+                $exam_type_name = $v->exam_name ?: $v->exam_name_bn;
+            }
+            else
+            {
+                $exam_type_name = $v->exam_name_bn ?: $v->exam_name;
+            }
+
+            $output .= '<option value="'.$v->id.'">'.$v->exam_code.' - '.$exam_type_name.'</option>';
+        }
+        $output.='</select>';
+
+        return $output;
+    }
+
+    public function getMarksClassGropup(Request $request)
+    {
+        $data = group_info::where('status',1)->where('class_id',$request->class_id)->get();
+        if(count($data) == 0)
+        {
+            return 'no_group';
+        }
+
+        $output='<select class="form-control form-control-sm" id="group_id" name="group_id" required>
+        <option value="">Select One</option>';
+        foreach($data as $v)
+        {
+            if(config('app.locale') == 'en')
+            {
+                $group_name = $v->group_name ?: $v->group_name_bn;
+            }
+            else
+            {
+                $group_name = $v->group_name_bn ?: $v->group_name;
+            }
+
+            $output .='<option value="'.$v->id.'">'.$group_name.'</option>';
+        }
+        $output .='</select>';
+
+        return $output;
+    }
+
+    public function getMarksSubjects(Request $request)
+    {
+        if($request->group_id != '')
+        {
+            $data = subject_info::where('status',1)->where('class_id',$request->class_id)->where('subject_type',$request->subject_type)->where('group_id',$request->group_id)->get();
+        }
+        else
+        {
+            $data = subject_info::where('status',1)->where('class_id',$request->class_id)->where('subject_type',$request->subject_type)->get();
+        }
+
+        if(count($data) == 0)
+        {
+            return '<b class="text-danger">No Subjects Found !</b>';
+        }
+
+        $output = '<select class="form-control form-control-sm" id="subject_id" name="subject_id" onchange="getSubjectPart();getSubjectCode();" required>
+        <option value="">Select One</option>';
+        foreach($data as $v)
+        {
+            if(config('app.locale') == 'en')
+            {
+                $subject_name = $v->subject_name ?: $v->subject_name_bn;
+            }
+            else
+            {
+                $subject_name = $v->subject_name_bn ?: $v->subject_name;
+            }
+            $output .= '<option value="'.$v->id.'">'.$subject_name.'</option>';
+        }
+        $output .='</select>';
+
+        return $output;
+    }
+
+    public function getSubjectPart(Request $request)
+    {
+        $data = subject_part::where('status',1)->where('subject_id',$request->subject_id)->get();
+        if(count($data) == 0)
+        {
+            return 'no_part';
+
+        }
+
+        $output = '<select class="form-control form-control-sm" id="subject_part_id" name="subject_part_id" onchange="getSubjectpartCode()" required>
+        <option value="">Select One</option>';
+        foreach($data as $v)
+        {
+            if(config('app.locale') == 'en')
+            {
+                $part_name = $v->part_name ?: $v->part_name_bn;
+            }
+            else
+            {
+                $part_name = $v->part_name_bn ?: $v->part_name;
+            }
+            $output .= '<option value="'.$v->id.'">'.$part_name.'</option>';
+        }
+        $output .='</select>';
+
+        return $output;
+    }
+
+    public function getSubjectCode(Request $request)
+    {
+        $data = subject_info::where('id',$request->subject_id)->first();
+        return $data->subject_code;
+    }
+    public function getSubjectPartCode(Request $request)
+    {
+        $data = subject_part::where('id',$request->subject_part_id)->first();
+        return $data->part_code;
     }
 }

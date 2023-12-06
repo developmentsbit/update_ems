@@ -42,55 +42,66 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
                 btn-primary
             @endslot
         @endcomponent
-	<div class="col-12">
-
+		<div class="col-12">
 		<div class="card">
 			<div class="card-body">
-
-				<h3>@lang('mark_distribution.managetitle')</h3><br>
-
-				<table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
-					<thead class="mythead">
-						<tr>
-							<th>#</th>
-							<th>@lang('mark_distribution.classname')</th>
-							<th>@lang('mark_distribution.groupname')</th>
-							<th>@lang('common.status')</th>
-							<th>@lang('common.action')</th>
-						</tr>
-					</thead>
-					<tbody class="tbody" id="showtdata">
-						{{--
-                            @php $i=1;  @endphp
-						@if(isset($data))
-						@foreach($data as $d)
-						<tr id="tr{{ $d->id }}">
-							<td>{{ $i++ }}</td>
-							<td>@if($lang == 'en'){{ $d->class_name ?: $d->class_name_bn}}@else {{$d->class_name_bn ?: $d->class_name}}@endif</td>
-							<td>@if($lang == 'en'){{ $d->group_name ?: $d->group_name_bn}}@else {{$d->group_name_bn ?: $d->group_name}}@endif</td>
-							<td>
-								@if($d->status == 1)
-								<span class="btn btn-success btn-sm">@lang('common.active')</span>
-								@else
-								<span class="btn btn-danger btn-sm">@lang('common.inactive')</span>
-								@endif
-							</td>
-							<td>
-								<div class="btn-group">
-									<a  class="btn btn-info border-0 edit text-light" data-toggle="modal" data-target="#exampleModalCenters" href="{{ route("mark_distribution.edit",$d->id) }}">@lang('common.edit')</a>
-									<form action="{{ route('mark_distribution.destroy',$d->id) }}" method="post">
-										@csrf
-										@method('DELETE')
-										<button type="submit" class="btn btn-danger" onClick="return confirm('Are You Sure?')">@lang('common.delete')</button>
-									</form>
+            <div class="container">
+				<form>
+					<div class="row">
+						<div class="ms-md-5">
+							<div class="col-md-12 mt-2">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col-sm-12">
+												<label for="inputPassword3" class="col-sm-6 col-form-label text-md-end text-dark">
+												@lang('mark_distribution.select_class')  :</label>
+												<select class="form-select" id="session" name="session">
+													<option value="">Select One</option>
+													
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col-sm-12">
+												<label for="inputPassword3" class="col-sm-6 col-form-label text-md-end text-dark">
+												@lang('mark_distribution.select_group')  :</label>
+												<select class="form-select" id="session" name="session">
+													<option value="">Select One</option>
+													
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col-sm-12">
+												<label for="inputPassword3" class="col-sm-6 col-form-label text-md-end text-dark">
+												@lang('mark_distribution.exam_type')  :</label>
+												<select class="form-select" id="session" name="session">
+													<option value="">Select One</option>
+													
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="row">
+											<div class="col-sm-12 mt-4">
+												<label for="inputPassword3" class="col-sm-3 col-form-label"></label>
+												<button type="submit" class="btn btn-success button border-0">@lang('common.show')</button>
+											</div>
+										</div>
+									</div>
 								</div>
-							</td>
-						</tr>
-						@endforeach
-						@endif --}}
-					</tbody>
-				</table>
-			</div> <!-- end card body-->
+							</div>
+						</div>
+					</div>
+				</form>
+				</div> <!-- end card body-->
+        	</div>
 		</div> <!-- end card -->
 	</div><!-- end col-->
 </div>

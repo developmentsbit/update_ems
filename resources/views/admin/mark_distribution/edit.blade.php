@@ -51,7 +51,9 @@ input.form-control form-control-sm ,.form-select{
 		<div class="card">
 			<div class="card-body">
             <div class="container">
-				<form id="formSubmit" method="POST">
+				<form id="" method="POST" action="{{ route('mark_distribution.update',$data['data']->id) }}">
+                    @csrf
+                    @method("PUT")
 					<div class="row">
 						<div class="col-md-6 mt-2">
 							<div class="row ">
@@ -62,7 +64,7 @@ input.form-control form-control-sm ,.form-select{
 										<option value="">Select One</option>
                                         @if(isset($data['class']))
                                         @foreach ($data['class'] as $v)
-                                        <option value="{{$v->id}}">@if($lang == 'en'){{$v->class_name ?: $v->class_name_bn}} @else {{ $v->class_name_bn ?: $v->class_name }} @endif</option>
+                                        <option @if($data['data']->class_id == $v->id) selected @endif value="{{$v->id}}">@if($lang == 'en'){{$v->class_name ?: $v->class_name_bn}} @else {{ $v->class_name_bn ?: $v->class_name }} @endif</option>
                                         @endforeach
                                         @endif
 									</select>
@@ -75,6 +77,17 @@ input.form-control form-control-sm ,.form-select{
 								<div class="col-sm-7" id="examTypeBox">
 									<select class="form-control form-control-sm" id="exam_type_id" name="exam_type_id" required>
 										<option value="">Select One</option>
+                                        @if($data['exam_type'])
+                                        @foreach ($data['exam_type'] as $v)
+                                        <option @if($data['data']->exam_id == $v->id) selected @endif value="{{ $v->id }}">
+                                        @if($lang == 'en')
+                                        {{$v->exam_name ?: $v->exam_name_bn}}
+                                        @else
+                                        {{$v->exam_name_bn ?: $v->exam_name}}
+                                        @endif
+                                        </option>
+                                        @endforeach
+                                        @endif
 									</select>
 								</div>
 							</div>
@@ -86,6 +99,11 @@ input.form-control form-control-sm ,.form-select{
 								<div class="col-sm-7" id="groupData">
 									<select class="form-control form-control-sm" id="group_id" name="group_id">
 										<option value="">Select One</option>
+                                        @if(isset($data['group']))
+                                        @foreach ($data['group'] as $g)
+                                        <option @if($data['data']->group_id == $g->id) selected @endif value="{{$g->id}}">@if($lang == 'en'){{ $g->group_name ?: $g->group_name_bn }}@else {{ $g->group_name_bn ?: $g->group_name }}@endif</option>
+                                        @endforeach
+                                        @endif
 									</select>
 								</div>
 							</div>
@@ -96,9 +114,9 @@ input.form-control form-control-sm ,.form-select{
 									@lang('mark_distribution.subject_type')  :</label>
 								<div class="col-sm-7">
 									<select class="form-control form-control-sm" id="subject_type" name="subject_type" onchange="getMarksSubjects()">
-                                        <option value="1">Compulsory Subject</option>
-                                        <option value="2">Group Subject</option>
-                                        <option value="3">Optional Subject</option>
+                                        <option @if($data['data']->subject_type == 1) selected @endif value="1">Compulsory Subject</option>
+                                        <option @if($data['data']->subject_type == 2) selected @endif value="2">Group Subject</option>
+                                        <option @if($data['data']->subject_type == 3) selected @endif value="3">Optional Subject</option>
 									</select>
 								</div>
 							</div>
@@ -110,6 +128,17 @@ input.form-control form-control-sm ,.form-select{
 								<div class="col-sm-7" id="subjectBox">
 									<select class="form-control form-control-sm" id="subject_id" name="subject_id" onchange="getSubjectPart();getSubjectCode();" required>
 										<option value="">Select One</option>
+                                        @if($data['subject'])
+                                        @foreach ($data['subject'] as $s)
+                                        <option @if($data['data']->subject_id == $s->id) selected @endif value="{{$s->id}}">
+                                        @if($lang == 'en')
+                                        {{ $s->subject_name ?: $s->subject_name_bn }}
+                                        @else
+                                        {{ $s->subject_name_bn ?: $s->subject_name }}
+                                        @endif
+                                        </option>
+                                        @endforeach
+                                        @endif
 									</select>
 								</div>
 							</div>
@@ -121,7 +150,18 @@ input.form-control form-control-sm ,.form-select{
 								<div class="col-sm-7" id="subjectPartData">
 									<select class="form-control form-control-sm" id="subject_part_id" name="subject_part_id" onchange="getSubjectpartCode()">
 										<option value="">Select One</option>
-									</select>
+                                        @if(isset($data['part']))
+                                        @foreach ($data['part'] as $v)
+                                        <option @if($data['data']->subject_part_id == $v->id) selected @endif value="{{ $v->id }}">
+                                        @if($lang == 'en')
+                                        {{$v->part_name ?: $v->part_name_bn}}
+                                        @else
+                                        {{ $v->part_name_bn ?: $v->part_name }}
+                                        @endif
+                                        </option>
+                                        @endforeach
+                                        @endif
+                                    </select>
 								</div>
 							</div>
 						</div>
@@ -130,7 +170,7 @@ input.form-control form-control-sm ,.form-select{
 								<label for="inputPassword3" class="col-sm-4 col-form-label  text-md-end text-dark">
 									@lang('mark_distribution.subject_code') :</label>
 								<div class="col-sm-7">
-									<input class="form-control form-control-sm border-dark" type="text" readonly name="subject_code" id="subject_code">
+									<input class="form-control form-control-sm border-dark" type="text" readonly name="subject_code" id="subject_code" value="{{$data['data']->subject_code}}">
 								</div>
 							</div>
 						</div>
@@ -149,26 +189,25 @@ input.form-control form-control-sm ,.form-select{
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="written" id="written" value="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="written" id="written" value="{{$data['data']->written}}" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="mcq" id="mcq" value="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="mcq" id="mcq" value="{{$data['data']->mcq}}" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="practical" id="practical" value="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="practical" id="practical" value="{{$data['data']->practical}}" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="count_asses" id="count_asses" value="0" onkeyup="getTotal()">
+                                        <input class="form-control form-control-sm border-dark" type="number" name="count_asses" id="count_asses" value="{{$data['data']->count_asses}}" onkeyup="getTotal()">
                                     </td>
                                     <td>
-                                        <input class="form-control form-control-sm border-dark" type="number" name="total" id="total" value="0" readonly>
+                                        <input class="form-control form-control-sm border-dark @if($data['data']->total > 0) bg-success @endif" type="number" name="total" id="total" value="{{$data['data']->total}}" readonly>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
 
 						<div class="text-center mt-4 ">
-							<button disabled type="submit" class="btn btn-success button border-0" id="loading">Loading..</button>
 							<button id="submit" type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
 						</div>
 					</div>
@@ -401,71 +440,5 @@ input.form-control form-control-sm ,.form-select{
         $('#total').val(total);
     }
 </script>
-
-@push('footer_scripts')
-<script>
-    $('#loading').hide();
-    $('#formSubmit').submit(function(e){
-        e.preventDefault();
-        const formData = $(this).serialize();
-        console.log(formData);
-        $.ajax({
-            headers : {
-                'X-CSRF-TOKEN' : '{{ csrf_token() }}'
-            },
-
-            url : '{{ route('mark_distribution.store') }}',
-
-            type : 'POST',
-
-            data : formData,
-
-            beforeSend : function()
-            {
-                $('#loading').show();
-                $('#submit').hide();
-            },
-
-            success : function(res)
-            {
-                if(res == 0)
-                {
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                    toastr.error("Invalid Data Format");
-                }
-                else if(res == 'error')
-                {
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                    toastr.error("This Data Is Already Taken");
-                }
-                else
-                {
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                    toastr.success("Data Added Successfully");
-                }
-                $('#mcq').val('0');
-                $('#written').val('0');
-                $('#practical').val('0');
-                $('#count_asses').val('0');
-                $('#total').val('0');
-                $('#loading').hide();
-                $('#submit').show();
-            }
-        })
-    });
-</script>
-@endpush
 
 @endsection

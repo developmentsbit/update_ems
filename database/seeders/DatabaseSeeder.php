@@ -56,5 +56,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MembersTableSeeder::class);
         $this->call(GenderWisesTableSeeder::class);
         $this->call(SectionWisesTableSeeder::class);
+        $this->call(CountryInformationsTableSeeder::class);
+        $this->call(DivisionInformationsTableSeeder::class);
+        $this->call(DistrictInformationsTableSeeder::class);
     }
 }

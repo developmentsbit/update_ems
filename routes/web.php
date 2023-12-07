@@ -63,6 +63,8 @@ use App\Http\Controllers\UploadDownloadFileController;
 use App\Http\Controllers\AddExamTypeController;
 use App\Http\Controllers\NOCController;
 
+use App\Http\Controllers\othersIncomeController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -455,6 +457,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('getClassGroup',[AddSubjectController::class,'getClassGroup']);
     Route::get('subjectStatusChanged/{id}',[AddSubjectController::class,'subjectStatusChanged']);
     // Route::get('nocStatusChanged/{id}',[NOCController::class,'nocStatusChanged']);
+
+    Route::resource('others_income', othersIncomeController::class);
+
+    route::get('retrive_income/{id}',[othersIncomeController::class,'retrive_income']);
+    route::get('delete_income/{id}',[othersIncomeController::class,'delete_income']);
 
 });
 

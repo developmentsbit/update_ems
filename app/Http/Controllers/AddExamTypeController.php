@@ -95,6 +95,7 @@ class AddExamTypeController extends Controller
             'status'=>$request->status,
             'order_by'=>$request->order_by,
         );
+        
         $insert = add_exam_type::find($id)->update($data);
 
         if($insert)

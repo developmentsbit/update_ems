@@ -233,6 +233,26 @@ right:0;
 </style>
 @endif
 
+@if(env('APP_URL') == 'https://chhgc.edu.bd/')
+  <style>
+    li.nav-item a {
+      font-size: 12.46px;
+      padding: 14px 7.5px !important;
+  }
+
+</style>
+
+@if(config('app.locale') == 'en')
+<style>
+    li.nav-item a {
+      font-size: 12.46px;
+      padding: 14px 6px !important;
+  }
+</style>
+@endif
+
+@endif
+
 
 @if($setting->type == 'school')
 
@@ -395,10 +415,6 @@ right:0;
                 <div class="row">
 
                   <div class="col-md-6 col-12 dmenu mt-3">
-                    @if(env('APP_URL') == 'https://chhgc.edu.bd/')
-                    <li><a href="{{ url('noc_info') }}">@lang('add_noc.noc')</a></li>
-                    @endif
-
                     <li><a href="{{ url('page/1') }}">@lang('frontend.about_us')</a></li>
                     <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
                     <li><a href="{{ url('page/3') }}">@lang('frontend.history')</a></li>
@@ -411,7 +427,11 @@ right:0;
 
                   <div class="col-md-6 col-12 dmenu mt-3">
                     <li><a href="{{ url('page/6') }}">@lang('frontend.infrastructure')</a></li>
-                    <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plan') </a></li>
+                    @if(env('APP_URL') == 'https://chhgc.edu.bd/')
+                      <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plans')</a></li>
+                    @else
+                    <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plan')</a></li>
+                    @endif
                     <li><a href="{{ url('page/8') }}">@lang('frontend.contact')</a></li>
                   </div>
 
@@ -718,10 +738,15 @@ right:0;
   </ul>
 </li>
 
+  @if(env('APP_URL') == 'https://chhgc.edu.bd/')
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url('noc_info') }}">@lang('add_noc.noc')</a>
+  </li>
+  @endif
 
-<!--<li class="nav-item">-->
-<!--    <a class="nav-link" href="{{ url('complainbox') }}">@lang('frontend.complainbox')</a>-->
-<!--</li>-->
+<!-- <li class="nav-item"> -->
+   <!-- <a class="nav-link" href="{{ url('complainbox') }}">@lang('frontend.complainbox')</a> -->
+<!-- </li> -->
 
 </ul>
 
@@ -756,7 +781,11 @@ right:0;
       <a href="#"><span uk-icon="icon: chevron-right; ratio: 0.9"></span>&nbsp;&nbsp;@lang('frontend.institute_introduction')</a>
       <ul class="uk-nav-sub">
         <li><a href="{{ url('page/6') }}">@lang('frontend.infrastructure')</a></li>
+        @if(env('APP_URL') == 'https://chhgc.edu.bd/')
+          <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plans')</a></li>
+        @else
         <li><a href="{{ url('page/7') }}">@lang('frontend.yearly_working_plan')</a></li>
+        @endif
         <li><a href="{{ url('page/8') }}">@lang('frontend.contact')</a></li>
         <li><a href="{{ url('page/1') }}">@lang('frontend.about_us')</a></li>
         <li><a href="{{ url('page/2') }}">@lang('frontend.mission_vision')</a></li>
@@ -930,9 +959,11 @@ right:0;
   </ul>
 </li>
 
-<!--<li class="nav-item">-->
-<!--    <a class="nav-link" href="{{ url('complainbox') }}">@lang('frontend.complainbox')</a>-->
-<!--</li>-->
+  @if(env('APP_URL') == 'https://chhgc.edu.bd/')
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url('noc_info') }}">@lang('add_noc.noc')</a>
+  </li>
+  @endif
 
 
 

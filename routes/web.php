@@ -433,6 +433,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('student_info', StudentInfoController::class);
 
+    Route::get('student_info/edit/tab2/{id}',[StudentInfoController::class,'tab2']);
+
     Route::resource('add_marks', AddMarksController::class);
     Route::resource('view_marks', ViewMarksController::class);
     Route::resource('view_total_subject_marks', ViewTotalSubjectMarksEntryController::class);

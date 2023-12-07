@@ -54,22 +54,44 @@ input.form-control ,.select2, .form-check-input{
 			<div class="card-body">
             <div class="container">
                 <div class="from">
+                    <div class="navigation mb-2">
+                        <div class="navigation-box">
+                            <div class="tab-link active">
+                                <a href="#">
+                                    <b>১. শিক্ষার্থীর তথ্য</b>
+                                </a>
+                            </div>
+                            <div class="tab-link disabled">
+                                <a href="#">
+                                    <b>২. ঠিকানা</b>
+                                </a>
+                            </div>
+                            <div class="tab-link disabled">
+                                <a href="#">
+                                    <b>৩. অভিভাবকের তথ্য</b>
+                                </a>
+                            </div>
+                            <div class="tab-link disabled">
+                                <a href="#">
+                                    <b>৪. একাডেমিক তথ্য</b>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                    <form class="row g-3 mt-0">
-                      <div class="main_from mt-0">
-                          <h6 class="bg-light text-dark border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.addtitle') :</h6>
-                      </div>
+                    <form class="row g-3 mt-0" action="{{route('student_info.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                       <div class="col-md-4 mt-2">
                         <label  class="form-label">@lang('student_info.Addmission_date') :</label>
-                        <input type="text" class="form-control form-control-sm datepicker" name="admission_date" id="admission_date" value="{{date('d/m/Y')}}">
+                        <input type="text" class="form-control form-control-sm datepicker" name="admission_date" id="admission_date" value="{{date('d/m/Y')}}" required>
                       </div>
                         <div class="col-md-4 mt-2 ">
-                          <label for="name" class="form-label">@lang('student_info.name')  : <span class="text-danger" style="font-size: 15px;">*</span> </label>
-                          <input type="text" class="form-control form-control-sm" name="name" id="name" required>
+                          <label for="name" class="form-label">@lang('student_info.name_en')  : <span class="text-danger" style="font-size: 15px;">*</span> </label>
+                          <input type="text" class="form-control form-control-sm" name="student_name" id="student_name" required>
                         </div>
                         <div class="col-md-4 mt-2 ">
-                          <label for="name_en" class="form-label">@lang('student_info.name_en')<span class="text-danger" style="font-size: 15px;">*</span></label>
-                          <input type="text" class="form-control  form-control-sm" name="name_en" id="name_en" required>
+                          <label for="name_en" class="form-label">@lang('student_info.name')<span class="text-danger" style="font-size: 15px;">*</span></label>
+                          <input type="text" class="form-control  form-control-sm" name="student_name_bn" id="student_name_bn" required>
                         </div>
                         <div class="col-md-4 mt-2">
                           <label for="father_name" class="form-label">@lang('student_info.father_name') :<span class="text-danger" style="font-size: 15px;">*</span> </label>
@@ -79,22 +101,18 @@ input.form-control ,.select2, .form-check-input{
                           <label for="mother_name" class="form-label">@lang('student_info.mother_name') :<span class="text-danger" style="font-size: 15px;">*</span> </label>
                           <input type="text" class="form-control  form-control-sm" name="mother_name" id="mother_name" required>
                         </div>
-
-                        <div class="col-md-4 mt-2">
-                          <label  class="form-label">@lang('student_info.date') : <span class="text-danger" style="font-size: 15px;">*</span>  </label>
-                          <input type="text" class="form-control form-control-sm datepicker" name="date" id="date" value="{{date('d/m/Y')}}">
+                        <div class="col-4">
 
                         </div>
-
                         <div class="col-md-3 col-6 mt-3">
                             <div class="row">
                                 <label for="gender" class="col-sm-4 col-form-label" >@lang('student_info.gender') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-8">
                                   <select class="form-select select2" data-toggle="select2" name="gender" id="gender">
-                                    <option selected>Choose...</option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
-                                    <option value="3">Others</option>
+                                    <option value="">Choose...</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Others">Others</option>
                                   </select>
                                 </div>
                             </div>
@@ -104,8 +122,8 @@ input.form-control ,.select2, .form-check-input{
                                 <label for="nationality" class="col-sm-5 col-form-label">@lang('student_info.nationality') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-7">
                                   <select class="form-select select2" data-toggle="select2" id="nationality" name="nationality">
-                                    <option value="1">Bangladeshi</option>
-                                    <option value="2">Others</option>
+                                    <option value="Bangladeshi">Bangladeshi</option>
+                                    <option value="Others">Others</option>
 
                                   </select>
                                 </div>
@@ -116,10 +134,10 @@ input.form-control ,.select2, .form-check-input{
                                 <label for="religion" class="col-sm-4  col-form-label">@lang('student_info.religion') : <span class="text-danger" style="font-size: 15px;">*</span></label>
                                 <div class="col-sm-8">
                                   <select class="form-select select2" data-toggle="select2" id="religion" name="religion">
-                                    <option selected>Choose...</option>
-                                    <option value="1">Islam</option>
-                                    <option value="2">Hindu</option>
-                                    <option value="3">Others</option>
+                                    <option value="">Choose...</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Others">Others</option>
 
                                   </select>
                                 </div>
@@ -129,231 +147,30 @@ input.form-control ,.select2, .form-check-input{
 
                         <div class="col-md-3 col-6 mt-3">
                             <div class="row ">
-                                <label for="blood_grp" class="col-sm-5 col-form-label">@lang('student_info.blood_group') :</label>
+                                <label for="blood_group" class="col-sm-5 col-form-label">@lang('student_info.blood_group') :</label>
                                 <div class="col-sm-7">
-                                  <select class="form-select select2" data-toggle="select2" id="blood_grp" name="blood_grp">
+                                  <select class="form-select select2" data-toggle="select2" id="blood_group" name="blood_group">
                                     <option selected>Choose...</option>
-                                    <option value="1">A+</option>
-                                    <option value="2">A-</option>
-                                    <option value="3">B+</option>
-                                    <option value="4">B-</option>
-                                    <option value="5">O+</option>
-                                    <option value="6">O-</option>
-                                    <option value="7">AB+</option>
-                                    <option value="8">AB-</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
 
                                   </select>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-md-12 mt-3">
                           <label for="" class="form-label">@lang('student_info.student_image') :</label>
                           <input type="file" class="form-control form-control-sm" id="imageFile" name="image">
                         </div>
                         <div class="col-md-6 mb-0">
-                          <img id="blah" src="" alt="" style="height: 80px;" />
-                        </div>
-
-
-                  {{-- STUDENT'S ADDRESS   --}}
-                        {{-- <div class="main_from mt-1">
-                          <h5 class="bg-info p-2 text-dark border-bottom border-3 border-drak rounded-bottom">STUDENT'S ADDRESS:</h5>
-                        </div> --}}
-
-                {{-- Present Address:  --}}
-
-                        <div class="main_from mt-0">
-                          <h6 class="bg-light text-dark border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.address') :</h6>
-                        </div>
-                        <div class="main_from mt-1 mb-1 fs-5 mb-3">
-                          <b class="text-dark">@lang('student_info.present_address') :</b>
-                        </div>
-
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="division" class="form-label">@lang('student_info.division') :</label>
-
-                          <select class="form-select select2" data-toggle="select2" id="division" name="division" onchange="return loadDistrict()">
-                            <option selected>Choose...</option>
-                            @if ($division)
-                            @foreach ($division as $d)
-                            <option value="{{ $d->id }}">{{ $d->division_name }}</option>
-                            @endforeach
-
-                            @endif
-
-                          </select>
-
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_district" class="form-label">@lang('student_info.district'):</label>
-                          <select class="form-select select2" data-toggle="select2" id="present_district" name="present_district" onchange=" return loadUpazilla()">
-                            <option selected>Choose...</option>
-
-                          </select>
-
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_upazilla" class="form-label">@lang('student_info.upazilla'):</label>
-                          <select class="form-select select2" data-toggle="select2" id="present_upazilla" name="present_upazilla">
-                            <option selected>Choose...</option>
-
-                          </select>
-
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_post_office" class="form-label">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
-                          <input type="text" class="form-control" id="present_post_office" name="present_post_office">
-                        </div>
-                        {{-- <div class="col-md-1 col-6 mt-0">
-                          <label for="present_post_code" class="form-label">:</label>
-                          <input type="text" class="form-control" id="present_post_code" name="present_post_code">
-                        </div> --}}
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_village" class="form-label">@lang('student_info.village'):</label>
-                          <input type="text" class="form-control" id="present_village" name="present_village">
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="present_houses" class="form-label">@lang('student_info.house_name'):</label>
-                          <input type="text" class="form-control" id="present_houses" name="present_houses">
-                        </div>
-
-
-
-
-
-
-
-                      {{-- Parmanenet Address --}}
-
-
-                        <div class="main_from mt-3 mb-3">
-                          <b class="text-dark fs-5">@lang('student_info.permanent_address') :</b>
-                            &nbsp &nbsp
-                          <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label text-warning fs-5" for="flexCheckDefault">
-                            @lang('student_info.address_message')
-                          </label>
-                        </div>
-
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="parmanenet_division" class="form-label">@lang('student_info.division') :</label>
-
-                          <select class="form-select select2" data-toggle="select2" id="parmanenet_division" name="parmanenet_division" onchange="return loadParmanenetDistrict()">
-                            <option selected>Choose...</option>
-                            @if ($division)
-                            @foreach ($division as $d)
-                            <option value="{{ $d->id }}">{{ $d->division_name }}</option>
-                            @endforeach
-
-                            @endif
-
-                          </select>
-                        </div>
-
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="parmanenet_district" class="form-label">@lang('student_info.district'):</label>
-                          <select class="form-select select2" data-toggle="select2" id="parmanenet_district" name="parmanenet_district" onchange=" return loadParmanenetUpazilla()">
-                            <option selected>Choose...</option>
-
-
-                          </select>
-
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="parmanenet_upazilla" class="form-label">@lang('student_info.upazilla'):</label>
-                          <select class="form-select select2" data-toggle="select2" id="parmanenet_upazilla" name="parmanenet_upazilla">
-                            <option selected>Choose...</option>
-
-
-                          </select>
-
-                        </div>
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="parmanenet_post_office" class="form-label">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
-                          <input type="text" class="form-control" id="parmanenet_post_office" name="parmanenet_post_office">
-                        </div>
-
-                        <div class="col-md-2 col-6 mt-0">
-                          <label for="parmanenet_village" class="form-label">@lang('student_info.village'):</label>
-                          <input type="text" class="form-control" id="parmanenet_village" name="parmanenet_village">
-                        </div>
-
-                        <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_house" class="form-label">@lang('student_info.house_name'):</label>
-                            <input type="text" class="form-control" id="parmanenet_house" name="parmanenet_house">
-                          </div>
-
-
-                          {{-- <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_post_code" class="form-label">@lang('student_info.post_code'):</label>
-                            <input type="text" class="form-control" id="parmanenet_post_code" name="parmanenet_post_code">
-                          </div> --}}
-
-
-
-                   {{-- GUARDIAN'S INFORMATION --}}
-
-                          <div class="main_from mt-3">
-                            <h5 class="bg-light text-dark border-bottom border-3 border-dark  rounded-bottom fs-5 p-2">@lang('student_info.guardian_info') :</h5>
-                          </div>
-                          <div class="col-md-3 col-6 mt-1">
-                            <label for="guardian_name" class="form-label">@lang('student_info.guardian_name') :</label>
-                            <input type="text" class="form-control" id="guardian_name" name="guardian_name">
-                          </div>
-                          <div class="col-md-3 col-6 mt-1">
-                            <label for="guardian_contact" class="form-label">@lang('student_info.guardian_contact') :</label>
-                            <input type="text" class="form-control" id="guardian_contact" name="guardian_contact">
-                          </div>
-                          <div class="col-md-3 col-6 mt-1">
-                            <label for="guardian_email" class="form-label">@lang('student_info.guardian_email') :</label>
-                            <input type="text" class="form-control" id="guardian_email" name="guardian_email">
-                          </div>
-                          <div class="col-md-3 col-6 mt-1">
-                            <label for="rel_with_student" class="form-label">@lang('student_info.relation')</label>
-                            <input type="text" class="form-control" id="rel_with_student" name="rel_with_student">
-                          </div>
-
-
-                          <div class="main_from mt-3">
-                            <h5 class="bg-light text-dark border-bottom border-3 border-dark rounded-bottom fs-5 p-2">@lang('student_info.academic_info') :</h5>
-                          </div>
-                          <div class="col-md-4 col-4 mt-1">
-                            <div class="row ">
-                                <label for="" class="col-sm-6 col-form-label">@lang('student_info.admission_class')  :</label>
-                                <div class="col-sm-6">
-                                  <select class="form-select select2" data-toggle="select2" id="class" name="class">
-                                    <option selected>Choose...</option>
-
-                                  </select>
-                                </div>
-                          </div>
-                        </div>
-                        <div class="col-md-4 col-4 mt-1">
-                            <div class="row ">
-
-                                <label for="" class="col-sm-6 col-form-label">@lang('student_info.admission_group') :</label>
-                                <div class="col-sm-6">
-                                  <select class="form-select select2" data-toggle="select2" id="group" name="group">
-                                    <option selected>Choose...</option>
-                                    <option value="1">Bangladeshi</option>
-
-
-                                  </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-4 mt-md-1 mt-3">
-                            <div class="row ">
-
-                                <label for="" class="col-sm-4 col-form-label">@lang('student_info.session') :</label>
-                                <div class="col-sm-8">
-                                  <select class="form-select select2" data-toggle="select2" id="session" name="session">
-                                    <option selected>Choose...</option>
-                                    <option value="1">Bangladeshi</option>
-
-                                  </select>
-                                </div>
-                            </div>
+                          <img id="blah" src="" alt="" name="image" style="height: 80px;" />
                         </div>
                         <div class="text-center mt-4 ">
                             <button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>

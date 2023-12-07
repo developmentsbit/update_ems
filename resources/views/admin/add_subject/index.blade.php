@@ -90,8 +90,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
                                 {{$d->subject_name_bn ?: $d->subject_name}}
                                 @endif</td>
 							<td>
-								<input  type="checkbox" id="status" data-switch="none"/ @if($d->status == 1) checked @endif>
-                                <label onclick="subjectStatusChange({{$d->id}})" for="status" data-on-label="" data-off-label=""></label>
+								<input  type="checkbox" id="status-{{$d->id}}" data-switch="none"/ @if($d->status == 1) checked @endif>
+                                <label onclick="subjectStatusChange({{$d->id}})" for="status-{{$d->id}}" data-on-label="" data-off-label=""></label>
 							</td>
 							<td>
 								<div class="btn-group">

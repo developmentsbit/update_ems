@@ -42,29 +42,35 @@ class MarkDistributionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        if($request->total == "")
+        $check = marks_distribution::where('class_id',$request->class_id)->where('exam_id',$request->exam_type_id)->where('subject_id',$request->subject_id)->where('subject_part_id',$request->subject_part_id)->count();
+        if($check == 0)
         {
-            Toastr::error(__('Invalid Data !'));
-            return redirect()->route('mark_distribution.create');
+
+            if($request->total == 0)
+            {
+                return 0;
+            }
+            $data = array(
+                'class_id' => $request->class_id,
+                'exam_id' => $request->exam_type_id,
+                'group_id' => $request->group_id,
+                'subject_type' => $request->subject_type,
+                'subject_id' => $request->subject_id,
+                'subject_part_id' => $request->subject_part_id,
+                'subject_code' => $request->subject_code,
+                'mcq' => $request->mcq,
+                'written' => $request->written,
+                'practical' => $request->practical,
+                'count_asses' => $request->count_asses,
+                'total' => $request->total,
+            );
+            marks_distribution::create($data);
+            return 1;
         }
-        $data = array(
-            'class_id' => $request->class_id,
-            'exam_id' => $request->exam_type_id,
-            'group_id' => $request->group_id,
-            'subject_type' => $request->subject_type,
-            'subject_id' => $request->subject_id,
-            'subject_part_id' => $request->subject_part_id,
-            'subject_code' => $request->subject_code,
-            'mcq' => $request->mcq,
-            'written' => $request->written,
-            'practical' => $request->practical,
-            'count_asses' => $request->count_asses,
-            'total' => $request->total,
-        );
-        marks_distribution::create($data);
-        Toastr::success(__('Marks Distribution Successfully'));
-        return redirect()->route('mark_distribution.create');
+        else
+        {
+            return  'error';
+        }
     }
 
     /**
@@ -80,7 +86,14 @@ class MarkDistributionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [];
+        $data['class'] = class_info::where('status',1)->get();
+        $data['data'] = marks_distribution::find($id);
+        $data['group'] = group_info::where('class_id',$data['data']->class_id)->get();
+        $data['exam_type'] = add_exam_type::where('status',1)->where('class_id',$data['data']->class_id)->get();
+        $data['subject'] = subject_info::where('class_id',$data['data']->class_id)->where('subject_type',$data['data']->subject_type)->where('group_id',$data['data']->group_id)->get();
+        $data['part'] = subject_part::where('subject_id',$data['data']->subject_id)->where('status',1)->get();
+        return view($this->path.'.edit',compact('data'));
     }
 
     /**
@@ -88,7 +101,29 @@ class MarkDistributionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if($request->total == 0)
+        {
+            Toastr::error(__('Invalid Data Format'));
+            return redirect()->back();
+        }
+        $data = array(
+            'class_id' => $request->class_id,
+            'exam_id' => $request->exam_type_id,
+            'group_id' => $request->group_id,
+            'subject_type' => $request->subject_type,
+            'subject_id' => $request->subject_id,
+            'subject_part_id' => $request->subject_part_id,
+            'subject_code' => $request->subject_code,
+            'mcq' => $request->mcq,
+            'written' => $request->written,
+            'practical' => $request->practical,
+            'count_asses' => $request->count_asses,
+            'total' => $request->total,
+        );
+        marks_distribution::find($id)->update($data);
+        Toastr::success(__('Data Update Successfully'));
+        return redirect()->back();
+
     }
 
     /**
@@ -96,7 +131,9 @@ class MarkDistributionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        marks_distribution::find($id)->delete();
+        Toastr::success(__('Data Delete Successfully'));
+        return redirect()->back();
     }
 
     public function getExamType(Request $request)

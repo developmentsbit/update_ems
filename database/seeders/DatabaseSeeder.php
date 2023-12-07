@@ -59,5 +59,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CountryInformationsTableSeeder::class);
         $this->call(DivisionInformationsTableSeeder::class);
         $this->call(DistrictInformationsTableSeeder::class);
+        $this->call(UpazilaInformationsTableSeeder::class);
     }
 }

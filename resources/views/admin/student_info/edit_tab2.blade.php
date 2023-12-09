@@ -14,7 +14,7 @@
     /* font-size: 20px; */
 }
 input.form-control ,.select2, .form-check-input{
-    border: 1px solid black !important;
+    /* border: 1px solid black !important; */
     border-radius: 0px !important;
 }
 .select2-container--default .select2-selection--single {
@@ -57,7 +57,7 @@ input.form-control ,.select2, .form-check-input{
                     <div class="navigation mb-2">
                         <div class="navigation-box">
                             <div class="tab-link">
-                                <a href="{{url('student_info/edit/tab2/'.$data->student_id)}}">
+                                <a href="{{url('student_info/edit/tab1/'.$data->student_id)}}">
                                     <b>১. শিক্ষার্থীর তথ্য</b>
                                 </a>
                             </div>
@@ -66,20 +66,20 @@ input.form-control ,.select2, .form-check-input{
                                     <b>২. ঠিকানা</b>
                                 </a>
                             </div>
-                            <div class="tab-link disabled">
-                                <a href="#">
+                            <div class="tab-link">
+                                <a href="{{url('student_info/edit/tab3/'.$data->student_id)}}">
                                     <b>৩. অভিভাবকের তথ্য</b>
                                 </a>
                             </div>
-                            <div class="tab-link disabled">
-                                <a href="#">
+                            <div class="tab-link">
+                                <a href="{{url('student_info/edit/tab4/'.$data->student_id)}}">
                                     <b>৪. একাডেমিক তথ্য</b>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <form class="row g-3 mt-0" action="{{route('student_info.store')}}" method="POST" enctype="multipart/form-data">
+                    <form class="row g-3 mt-0" action="{{ url('studentInfoTab2Update/'.$data->student_id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="main_from mt-1 mb-1 fs-5 mb-3">
                             <b class="text-dark">@lang('student_info.present_address') :</b>
@@ -92,9 +92,8 @@ input.form-control ,.select2, .form-check-input{
                               <option selected>Choose...</option>
                               @if ($division)
                               @foreach ($division as $d)
-                              <option value="{{ $d->id }}">{{ $d->division_name }}</option>
+                              <option @if($data->present_division == $d->id) selected @endif value="{{ $d->id }}">{{ $d->division_name }}</option>
                               @endforeach
-
                               @endif
 
                             </select>
@@ -104,33 +103,41 @@ input.form-control ,.select2, .form-check-input{
                             <label for="present_district" class="form-label">@lang('student_info.district'):</label>
                             <select class="form-select select2" data-toggle="select2" id="present_district" name="present_district" onchange=" return loadUpazilla()">
                               <option selected>Choose...</option>
-
+                              @if(isset($district))
+                              @foreach ($district as $v)
+                                <option @if($data->present_district == $v->id) selected @endif value="{{$v->id}}">{{ $v->district_name }}</option>
+                              @endforeach
+                              @endif
                             </select>
 
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="present_upazilla" class="form-label">@lang('student_info.upazilla'):</label>
-                            <select class="form-select select2" data-toggle="select2" id="present_upazilla" name="present_upazilla">
+                            <label for="present_upazila" class="form-label">@lang('student_info.upazilla'):</label>
+                            <select class="form-select select2" data-toggle="select2" id="present_upazila" name="present_upazila">
                               <option selected>Choose...</option>
-
+                              @if(isset($upazila))
+                              @foreach ($upazila as $v)
+                                <option @if($data->present_upazila == $v->id) selected @endif value="{{$v->id}}">{{ $v->upazila_name }}</option>
+                              @endforeach
+                              @endif
                             </select>
 
                           </div>
                           <div class="col-md-2 col-6 mt-0">
                             <label for="present_po" class="form-label">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
-                            <input type="text" class="form-control" id="present_po" name="present_po">
+                            <input type="text" class="form-control form-control-sm" id="present_po" name="present_po" value="{{$data->present_po}}">
                           </div>
                           {{-- <div class="col-md-1 col-6 mt-0">
                             <label for="present_post_code" class="form-label">:</label>
-                            <input type="text" class="form-control" id="present_post_code" name="present_post_code">
+                            <input type="text" class="form-control form-control-sm" id="present_post_code" name="present_post_code">
                           </div> --}}
                           <div class="col-md-2 col-6 mt-0">
                             <label for="present_village" class="form-label">@lang('student_info.village'):</label>
-                            <input type="text" class="form-control" id="present_village" name="present_village">
+                            <input type="text" class="form-control form-control-sm" id="present_village" name="present_village" value="{{ $data->present_village }}">
                           </div>
                           <div class="col-md-2 col-6 mt-0">
                             <label for="present_home" class="form-label">@lang('student_info.house_name'):</label>
-                            <input type="text" class="form-control" id="present_home" name="present_home">
+                            <input type="text" class="form-control form-control-sm" id="present_home" name="present_home" value="{{ $data->present_home }}">
                           </div>
 
 
@@ -145,20 +152,20 @@ input.form-control ,.select2, .form-check-input{
                           <div class="main_from mt-3 mb-3">
                             <b class="text-dark fs-5">@lang('student_info.permanent_address') :</b>
                               &nbsp &nbsp
-                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+                            {{-- <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label text-warning fs-5" for="flexCheckDefault">
                               @lang('student_info.address_message')
-                            </label>
+                            </label> --}}
                           </div>
 
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_division" class="form-label">@lang('student_info.division') :</label>
+                            <label for="per_division" class="form-label">@lang('student_info.division') :</label>
 
-                            <select class="form-select select2" data-toggle="select2" id="parmanenet_division" name="parmanenet_division" onchange="return loadParmanenetDistrict()">
+                            <select class="form-select select2" data-toggle="select2" id="per_division" name="per_division" onchange="return loadParmanenetDistrict()">
                               <option selected>Choose...</option>
                               @if ($division)
                               @foreach ($division as $d)
-                              <option value="{{ $d->id }}">{{ $d->division_name }}</option>
+                              <option @if($data->per_division == $d->id) selected @endif value="{{ $d->id }}">{{ $d->division_name }}</option>
                               @endforeach
 
                               @endif
@@ -167,39 +174,47 @@ input.form-control ,.select2, .form-check-input{
                           </div>
 
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_district" class="form-label">@lang('student_info.district'):</label>
-                            <select class="form-select select2" data-toggle="select2" id="parmanenet_district" name="parmanenet_district" onchange=" return loadParmanenetUpazilla()">
+                            <label for="per_district" class="form-label">@lang('student_info.district'):</label>
+                            <select class="form-select select2" data-toggle="select2" id="per_district" name="per_district" onchange=" return loadParmanenetUpazilla()">
                               <option selected>Choose...</option>
-
-
+                                @if(isset($per_district))
+                                @foreach ($per_district as $v)
+                                <option @if($data->per_district == $v->id) selected @endif value="{{$v->id}}">{{ $v->district_name }}</option>
+                                @endforeach
+                                @endif
                             </select>
 
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_upazilla" class="form-label">@lang('student_info.upazilla'):</label>
-                            <select class="form-select select2" data-toggle="select2" id="parmanenet_upazilla" name="parmanenet_upazilla">
+                            <label for="per_upazila" class="form-label">@lang('student_info.upazilla'):</label>
+                            <select class="form-select select2" data-toggle="select2" id="per_upazila" name="per_upazila">
                               <option selected>Choose...</option>
-
-
+                              @if(isset($per_upazila))
+                              @foreach ($per_upazila as $v)
+                                <option @if($data->per_upazila == $v->id) selected @endif value="{{ $v->id }}">{{ $v->upazila_name }}</option>
+                              @endforeach
+                              @endif
                             </select>
 
                           </div>
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_post_office" class="form-label">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
-                            <input type="text" class="form-control" id="parmanenet_post_office" name="parmanenet_post_office">
+                            <label for="per_po" class="form-label">@lang('student_info.post_office')/@lang('student_info.post_code'):</label>
+                            <input type="text" class="form-control form-control-sm" id="per_po" name="per_po" value="{{ $data->per_po }}">
                           </div>
 
                           <div class="col-md-2 col-6 mt-0">
-                            <label for="parmanenet_village" class="form-label">@lang('student_info.village'):</label>
-                            <input type="text" class="form-control" id="parmanenet_village" name="parmanenet_village">
+                            <label for="per_village" class="form-label">@lang('student_info.village'):</label>
+                            <input type="text" class="form-control form-control-sm" id="per_village" name="per_village" value="{{ $data->per_village }}">
                           </div>
 
                           <div class="col-md-2 col-6 mt-0">
-                              <label for="parmanenet_house" class="form-label">@lang('student_info.house_name'):</label>
-                              <input type="text" class="form-control" id="parmanenet_house" name="parmanenet_house">
+                              <label for="per_home" class="form-label">@lang('student_info.house_name'):</label>
+                              <input type="text" class="form-control form-control-sm" id="per_home" name="per_home" value="{{ $data->per_home }}">
                         </div>
                         <div class="text-center mt-4 ">
+                            <a href="{{url('student_info/edit/tab1')}}/{{$data->student_id}}" type="" class="btn btn-secondary button border-0"><i class="fa fa-arrow-left"></i> @lang('common.previous')</a>
                             <button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
+                            <a href="{{url('student_info/edit/tab3')}}/{{$data->student_id}}" type="" class="btn btn-primary button border-0">@lang('common.skip') <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </form>
 
@@ -226,7 +241,7 @@ input.form-control ,.select2, .form-check-input{
 
   function loadDistrict()
   {
-    var division_id = $('#division').val();
+    var division_id = $('#present_division').val();
     // alert(division_id);
     $.ajax({
       headers : {
@@ -263,7 +278,7 @@ input.form-control ,.select2, .form-check-input{
 
       success : function(data)
       {
-        $('#present_upazilla').html(data);
+        $('#present_upazila').html(data);
       }
 
     });
@@ -274,7 +289,7 @@ input.form-control ,.select2, .form-check-input{
 
   function loadParmanenetDistrict()
   {
-    var division_id = $('#parmanenet_division').val();
+    var division_id = $('#per_division').val();
     // alert(division_id);
     $.ajax({
       headers : {
@@ -289,14 +304,14 @@ input.form-control ,.select2, .form-check-input{
 
       success : function(data)
       {
-        $('#parmanenet_district').html(data);
+        $('#per_district').html(data);
       }
 
     });
   }
   function loadParmanenetUpazilla()
   {
-    var district_id = $('#parmanenet_district').val();
+    var district_id = $('#per_district').val();
     // alert(district_id);
     $.ajax({
       headers : {
@@ -311,7 +326,7 @@ input.form-control ,.select2, .form-check-input{
 
       success : function(data)
       {
-        $('#parmanenet_upazilla').html(data);
+        $('#per_upazila').html(data);
       }
 
     });

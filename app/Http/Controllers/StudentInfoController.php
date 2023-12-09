@@ -11,6 +11,9 @@ use App\Traits\Idgenerator;
 use App\Models\student_information;
 use Brian2694\Toastr\Facades\Toastr;
 use Auth;
+use App\Models\class_info;
+use App\Models\group_info;
+use App\Models\session;
 
 class StudentInfoController extends Controller
 {
@@ -25,7 +28,9 @@ class StudentInfoController extends Controller
      */
     public function index()
     {
-        return view($this->path.'.index');
+        $session = session::where('status',1)->get();
+        $class = class_info::where('status',1)->get();
+        return view($this->path.'.index',compact('class','session'));
     }
 
     /**
@@ -47,6 +52,7 @@ class StudentInfoController extends Controller
         $data = array(
             'adminssion_date' =>$admission_date,
             'student_id' => $autoId,
+            'entry_date' => date('Y-m-d'),
             'student_name' => $request->student_name,
             'student_name_bn' => $request->student_name_bn,
             'father_name' => $request->father_name,
@@ -152,10 +158,170 @@ class StudentInfoController extends Controller
         return $output;
     }
 
+    public function tab1($student_id)
+    {
+        $data = student_information::where('student_id',$student_id)->first();
+        $admission_date = DateFormat::DbtoDate('-',$data->adminssion_date);
+        // return $admission_date;
+        return view($this->path.'.edit_tab1',compact('data','admission_date'));
+    }
     public function tab2($student_id)
     {
         $division = division_information::all();
         $data = student_information::where('student_id',$student_id)->first();
-        return view($this->path.'.edit_tab2',compact('data','division'));
+        $district = district_information::where('division_id',$data->present_division)->get();
+        $upazila = upazila_information::where('district_id',$data->present_district)->get();
+        $per_district = district_information::where('division_id',$data->per_division)->get();
+        $per_upazila = upazila_information::where('district_id',$data->per_district)->get();
+        return view($this->path.'.edit_tab2',compact('data','division','district','upazila','per_district','per_upazila'));
     }
+
+    public function tab3($student_id)
+    {
+        $data = student_information::where('student_id',$student_id)->first();
+        return view($this->path.'.edit_tab3',compact('data'));
+    }
+    public function tab4($student_id)
+    {
+        $data = student_information::where('student_id',$student_id)->first();
+        $class = class_info::where('status',1)->get();
+        $groups = group_info::where('status',1)->where('class_id',$data->class_id)->get();
+        $session = session::where('status',1)->get();
+        return view($this->path.'.edit_tab4',compact('data','class','groups','session'));
+    }
+
+    public function studentInfoTab1Update(Request $request, $student_id)
+    {
+        $admission_date = DateFormat::DateToDb('/',$request->admission_date);
+        $data = array(
+            'adminssion_date' =>$admission_date,
+            'entry_date' => date('Y-m-d'),
+            'student_name' => $request->student_name,
+            'student_name_bn' => $request->student_name_bn,
+            'father_name' => $request->father_name,
+            'mother_name' => $request->mother_name,
+            'gender' => $request->gender,
+            'nationality' => $request->nationality,
+            'religion' => $request->religion,
+            'blood_group' => $request->blood_group,
+            'create_by' => Auth::user()->id,
+        );
+        $file = $request->file('image');
+        if($file)
+        {
+            $pathImage = student_information::where('student_id',$student_id)->first();
+            $path = public_path().'/student_image/'.$pathImage->image;
+            if(file_exists($path))
+            {
+                unlink($path);
+            }
+
+        }
+
+        if($file)
+        {
+            $imageName = rand().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path().'/student_image/',$imageName);
+            $data['image'] = $imageName;
+        }
+
+        $data = student_information::where('student_id',$student_id)->update($data);
+        Toastr::success("First Step Is Done. Go On");
+        return redirect()->to('student_info/edit/tab2/'.$student_id);
+    }
+
+    public function studentInfoTab2Update(Request $request,$student_id)
+    {
+        // return $student_id;
+        $data = array(
+            'present_division' => $request->present_division,
+            'present_district' => $request->present_district,
+            'present_upazila' => $request->present_upazila,
+            'present_po' => $request->present_po,
+            'present_village' => $request->present_village,
+            'present_home' => $request->present_home,
+            'per_division' => $request->per_division,
+            'per_district' => $request->per_district,
+            'per_upazila' => $request->per_upazila,
+            'per_po' => $request->per_po,
+            'per_village' => $request->per_village,
+            'per_home' => $request->per_home,
+        );
+
+        $data = student_information::where('student_id',$student_id)->update($data);
+        Toastr::success("Second Step Is Done. Go On");
+        return redirect()->to('student_info/edit/tab3/'.$student_id);
+    }
+    public function studentInfoTab3Update(Request $request,$student_id)
+    {
+        $data = array(
+            "guardian_name" => $request->guardian_name,
+            "guardian_phone" => $request->guardian_phone,
+            "guardian_email" => $request->guardian_email,
+            "guardian_relation" => $request->guardian_relation,
+        );
+        $data = student_information::where('student_id',$student_id)->update($data);
+        Toastr::success("Second Step Is Done. Go On");
+        return redirect()->to('student_info/edit/tab4/'.$student_id);
+    }
+
+    public function studentInfoTab4Update(Request $request, $student_id)
+    {
+        // dd($request->all());
+        $data = array(
+            'class_id' => $request->class_id,
+            'group_id' => $request->group_id,
+            'session' => $request->session
+        );
+        $data = student_information::where('student_id',$student_id)->update($data);
+
+        Toastr::success("You Are All Set.");
+        if($request->submit == 'save')
+        {
+            return redirect()->to('student_info');
+        }
+        else
+        {
+            return redirect()->to('student_registration/'.$student_id);
+        }
+    }
+
+    public function loadGroups(Request $request)
+    {
+        $group = group_info::where('class_id',$request->class_id)->get();
+        if(count($group) == 0)
+        {
+            return 'no_group';
+        }
+        $output = '<label for="" class="">'.__('student_info.admission_group') .':</label>
+        <select class="form-control form-control-sm" id="group_id" name="group_id">
+        <option selected>Choose...</option>';
+        foreach($group as $g)
+        {
+            if(config('app.locale'))
+            {
+                $group_name = $g->group_name ?: $g->group_name_bn;
+            }
+            else
+            {
+                $group_name = $g->group_name_bn ?: $g->group_name;
+            }
+            $output .= '<option value="'.$g->id.'">'.$g->group_name.'</option>';
+        }
+        $output.='</select>';
+
+        return $output;
+    }
+
+    public function showStudent(Request $request)
+    {
+        $data = [];
+        $data['sl'] = 1;
+        $data['data'] = student_information::where('class_id',$request->class_id)->where('group_id',$request->group_id)->where('session',$request->session)->get();
+        $data['class'] = class_info::where('id',$request->class_id)->first();
+        $data['group'] = group_info::where('id',$request->group_id)->first();
+        $data['session'] = $request->session;
+        return view($this->path.'.show_student',compact('data'));
+    }
+
 }

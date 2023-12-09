@@ -14,7 +14,6 @@
     /* font-size: 20px; */
 }
 input.form-control ,.select2, .form-check-input{
-    border: 1px solid black !important;
     border-radius: 0px !important;
 }
 .select2-container--default .select2-selection--single {

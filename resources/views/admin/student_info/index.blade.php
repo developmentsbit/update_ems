@@ -40,117 +40,46 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="header-title"> @lang('student_info.addtitle')</h4>
-                        <ul class="nav nav-tabs nav-bordered mb-3">
-                            <li class="nav-item">
-                                <a href="#users-tab-all" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                                    @lang('common.all')
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#users-tab-deleted" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                                    @lang('common.deleted_list')
-                                </a>
-                            </li>
-                        </ul> <!-- end nav-->
-                        <div class="tab-content">
-                            <div class="tab-pane show active" id="users-tab-all">
-                                <table id="datatable-users-all" class="table table-striped dt-responsive nowrap w-100">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>@lang('common.date')</th>
-                                            <th>@lang('mpo_nationalization.subject')</th>
-                                            <th>@lang('mpo_nationalization.layer')</th>
-                                            <th>@lang('mpo_nationalization.memorial')</th>
-                                          
-                                            <th>@lang('common.image')</th>
-                                            <th>@lang('common.action')</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{-- @if ($data)
-                                        @foreach ($data as $v)
-                                        <tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$v->date}}</td>
-                                            <td>
-                                                @if($lang == 'en'){{ $v->subject ?: $v->subject_bn}}@else {{$v->subject_bn ?: $v->subject}}@endif
-                                            </td> 
-                                            <td>
-                                                @if($lang == 'en'){{ $v->layer ?: $v->layer_bn}}@else {{$v->layer_bn ?: $v->layer}}@endif
-                                            </td>  
-                                            <td>
-                                                {{$v->memorial_no}}
-                                            </td> 
-                                            <td><a href="{{asset('admin/mpo_nationalization')}}/{{$v->image}}" download="" class="btn btn-success btn-sm">@lang('common.download')</a></td> --}}
-                                            {{-- <td>
-                                                
-                                                <img src="" alt="" style="height: 50px;width:50px;">
-                                            </td> --}}
-                                            {{-- <td>
-                                                <a class="btn btn-sm btn-info" href="{{route('mpo_nationalization.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
-                                                <form method="post" action="{{route('mpo_nationalization.destroy',$v->id)}}">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr> --}}
-                                        {{-- @endforeach
-                                        @endif --}}
-                                        
-                                    </tbody>
-                                </table>
-                            </div> <!-- end all-->
-                            {{-- @php
-                            use App\Models\mpoNationalizatio;
-                            $deleted = mpoNationalizatio::onlyTrashed()->get();
-                            $i = 1;
-                            @endphp
-                            <div class="tab-pane" id="users-tab-deleted">
-                                <table id="datatable-users-deleted" class="table table-striped dt-responsive nowrap w-100">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>@lang('common.date')</th>
-                                            <th>@lang('mpo_nationalization.subject')</th>
-                                            <th>@lang('mpo_nationalization.layer')</th>
-                                            <th>@lang('mpo_nationalization.memorial')</th>
-                                          
-                                           
-                                            <th>@lang('common.action')</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if($deleted)
-                                        @foreach ($deleted as $v)
-                                        <tr>
-                                            <td>{{$i++}}</td>
-                                            <td>{{$v->date}}</td>
-                                            <td>
-                                                @if($lang == 'en'){{ $v->subject }}@else {{$v->subject_bn}}@endif
-                                            </td> 
-                                            <td>
-                                                @if($lang == 'en'){{ $v->layer }}@else {{$v->layer_bn}}@endif
-                                            </td>  
-                                            <td>
-                                                {{$v->memorial_no}}
-                                            </td> 
-                                            
-                                            <td>
-                                                <a href="{{ url('retrive_mpo') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
-                                                <a href="{{ url('delete_mpo') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
-                                            </td>
-                                        </tr>
-                                        
-                                        @endforeach
-                                        @endif --}}
-                                    </tbody>
-                                </table>
-                            </div> <!-- end deleted-->
-                        </div> <!-- end tab-content-->
+                        <form method="GET"  action="showStudent" target="_blank">
 
+                        <div class="form-group row">
+                            <div class="col-md-4 col-4 mt-md-1 mt-3">
+                                <label>@lang('student_info.class')</label>
+                                <select class="form-control form-control-sm " name="class_id" id="class_id" onchange="loadGroups()" required>
+                                    <option value="">@lang('common.select_one')</option>
+                                    @if(isset($class))
+                                    @foreach ($class as $c)
+                                        <option value="{{ $c->id }}">
+                                            @if($lang == 'en')
+                                            {{ $c->class_name ?: $c->class_name_bn }}
+                                            @else
+                                            {{ $c->class_name_bn ?: $c->class_name }}
+                                            @endif
+                                        </option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-4 mt-md-1 mt-3" id="groupBox">
+                                <label>@lang('student_info.group')</label>
+                                <select class="form-control form-control-sm " id="group_id" id="group_id">
+                                    <option value="">@lang('common.select_one')</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-4 mt-md-1 mt-3">
+                                <label for="" class="">@lang('student_info.session') :</label>
+                                <select class="form-control form-control-sm" data-toggle="" id="session" name="session" required>
+                                <option value="">Choose...</option>
+                                @foreach ($session as $s)
+                                <option value="{{ $s->session }}">{{$s->session}}</option>
+                                @endforeach
+                                </select>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <button type="submit" class="btn btn-sm btn-success"> <i class="fa fa-eye"></i> @lang('common.show')</button>
+                            </div>
+                        </div>
+                    </form>
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div><!-- end col-->
@@ -188,4 +117,49 @@
     </script>
 
     @include('components.delete_script')
+
+    <script>
+        function loadGroups()
+        {
+            let class_id = $('#class_id').val();
+            if(class_id != '')
+            {
+                $.ajax({
+                    headers : {
+                        'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                    },
+
+                    url : '{{ url('loadGroups') }}',
+
+                    type : 'POST',
+
+                    data : {class_id},
+
+                    beforeSend : function()
+                    {
+                        $('#groupBox').html('Loading....');
+                    },
+                    success : function(res)
+                    {
+                        if(res == 'no_group')
+                        {
+                            $('#groupBox').hide();
+                        }
+                        else
+                        {
+                            $('#groupBox').show();
+                            $('#groupBox').html(res);
+
+                        }
+                    }
+                });
+            }
+            else
+            {
+                $('#groupBox').show();
+                $('#groupBox').html('<b class="text-danger">Select Class First !</b>');
+            }
+        }
+    </script>
+
 @endpush

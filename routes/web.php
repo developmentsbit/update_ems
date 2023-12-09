@@ -435,7 +435,19 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('student_info', StudentInfoController::class);
 
+    Route::get('student_info/edit/tab1/{id}',[StudentInfoController::class,'tab1']);
     Route::get('student_info/edit/tab2/{id}',[StudentInfoController::class,'tab2']);
+    Route::get('student_info/edit/tab3/{id}',[StudentInfoController::class,'tab3']);
+    Route::get('student_info/edit/tab4/{id}',[StudentInfoController::class,'tab4']);
+
+    Route::post('studentInfoTab1Update/{student_id}',[StudentInfoController::class,'studentInfoTab1Update']);
+    Route::post('studentInfoTab2Update/{student_id}',[StudentInfoController::class,'studentInfoTab2Update']);
+    Route::post('studentInfoTab3Update/{student_id}',[StudentInfoController::class,'studentInfoTab3Update']);
+    Route::post('studentInfoTab4Update/{student_id}',[StudentInfoController::class,'studentInfoTab4Update']);
+
+    Route::post('loadGroups',[StudentInfoController::class,'loadGroups']);
+
+    Route::get('showStudent',[StudentInfoController::class,'showStudent']);
 
     Route::resource('add_marks', AddMarksController::class);
     Route::resource('view_marks', ViewMarksController::class);

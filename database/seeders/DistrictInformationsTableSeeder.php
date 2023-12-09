@@ -14,12 +14,12 @@ class DistrictInformationsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('district_informations')->delete();
-        
+
         \DB::table('district_informations')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 2,
                 'country_id' => 1,
@@ -30,7 +30,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 5,
                 'country_id' => 1,
@@ -41,7 +41,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 6,
                 'country_id' => 1,
@@ -52,7 +52,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 7,
                 'country_id' => 1,
@@ -63,7 +63,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 8,
                 'country_id' => 1,
@@ -74,7 +74,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 9,
                 'country_id' => 1,
@@ -85,7 +85,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 10,
                 'country_id' => 1,
@@ -96,7 +96,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 11,
                 'country_id' => 1,
@@ -107,7 +107,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 12,
                 'country_id' => 1,
@@ -118,7 +118,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 13,
                 'country_id' => 1,
@@ -129,7 +129,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 14,
                 'country_id' => 1,
@@ -140,7 +140,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 15,
                 'country_id' => 1,
@@ -151,7 +151,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 16,
                 'country_id' => 1,
@@ -162,7 +162,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 17,
                 'country_id' => 1,
@@ -173,7 +173,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 18,
                 'country_id' => 1,
@@ -184,7 +184,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 19,
                 'country_id' => 1,
@@ -195,7 +195,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 20,
                 'country_id' => 1,
@@ -206,7 +206,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 21,
                 'country_id' => 1,
@@ -217,7 +217,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 22,
                 'country_id' => 1,
@@ -228,7 +228,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 23,
                 'country_id' => 1,
@@ -239,7 +239,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 24,
                 'country_id' => 1,
@@ -250,7 +250,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 25,
                 'country_id' => 1,
@@ -261,7 +261,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 26,
                 'country_id' => 1,
@@ -272,7 +272,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 27,
                 'country_id' => 1,
@@ -283,7 +283,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 28,
                 'country_id' => 1,
@@ -294,7 +294,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 29,
                 'country_id' => 1,
@@ -305,7 +305,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 30,
                 'country_id' => 1,
@@ -316,7 +316,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 31,
                 'country_id' => 1,
@@ -327,7 +327,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 32,
                 'country_id' => 1,
@@ -338,7 +338,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 33,
                 'country_id' => 1,
@@ -349,7 +349,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 34,
                 'country_id' => 1,
@@ -360,7 +360,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 35,
                 'country_id' => 1,
@@ -371,7 +371,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 36,
                 'country_id' => 1,
@@ -382,7 +382,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 37,
                 'country_id' => 1,
@@ -393,7 +393,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 38,
                 'country_id' => 1,
@@ -404,7 +404,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 39,
                 'country_id' => 1,
@@ -415,7 +415,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 40,
                 'country_id' => 1,
@@ -426,7 +426,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 41,
                 'country_id' => 1,
@@ -437,7 +437,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 42,
                 'country_id' => 1,
@@ -448,7 +448,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 43,
                 'country_id' => 1,
@@ -459,7 +459,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 44,
                 'country_id' => 1,
@@ -470,7 +470,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 45,
                 'country_id' => 1,
@@ -481,7 +481,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 46,
                 'country_id' => 1,
@@ -492,7 +492,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 47,
                 'country_id' => 1,
@@ -503,7 +503,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 48,
                 'country_id' => 1,
@@ -514,7 +514,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            45 => 
+            45 =>
             array (
                 'id' => 49,
                 'country_id' => 1,
@@ -525,7 +525,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            46 => 
+            46 =>
             array (
                 'id' => 50,
                 'country_id' => 1,
@@ -536,7 +536,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            47 => 
+            47 =>
             array (
                 'id' => 51,
                 'country_id' => 1,
@@ -547,7 +547,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            48 => 
+            48 =>
             array (
                 'id' => 52,
                 'country_id' => 1,
@@ -558,7 +558,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            49 => 
+            49 =>
             array (
                 'id' => 53,
                 'country_id' => 1,
@@ -569,7 +569,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            50 => 
+            50 =>
             array (
                 'id' => 54,
                 'country_id' => 1,
@@ -580,7 +580,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            51 => 
+            51 =>
             array (
                 'id' => 55,
                 'country_id' => 1,
@@ -591,7 +591,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            52 => 
+            52 =>
             array (
                 'id' => 56,
                 'country_id' => 1,
@@ -602,7 +602,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            53 => 
+            53 =>
             array (
                 'id' => 57,
                 'country_id' => 1,
@@ -613,7 +613,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            54 => 
+            54 =>
             array (
                 'id' => 58,
                 'country_id' => 1,
@@ -624,7 +624,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            55 => 
+            55 =>
             array (
                 'id' => 59,
                 'country_id' => 1,
@@ -635,7 +635,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            56 => 
+            56 =>
             array (
                 'id' => 60,
                 'country_id' => 1,
@@ -646,7 +646,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            57 => 
+            57 =>
             array (
                 'id' => 61,
                 'country_id' => 1,
@@ -657,7 +657,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            58 => 
+            58 =>
             array (
                 'id' => 62,
                 'country_id' => 1,
@@ -668,7 +668,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            59 => 
+            59 =>
             array (
                 'id' => 63,
                 'country_id' => 1,
@@ -679,7 +679,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            60 => 
+            60 =>
             array (
                 'id' => 64,
                 'country_id' => 1,
@@ -690,7 +690,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            61 => 
+            61 =>
             array (
                 'id' => 65,
                 'country_id' => 1,
@@ -701,7 +701,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            62 => 
+            62 =>
             array (
                 'id' => 66,
                 'country_id' => 1,
@@ -712,7 +712,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            63 => 
+            63 =>
             array (
                 'id' => 67,
                 'country_id' => 1,
@@ -723,7 +723,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            64 => 
+            64 =>
             array (
                 'id' => 68,
                 'country_id' => 1,
@@ -734,7 +734,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            65 => 
+            65 =>
             array (
                 'id' => 69,
                 'country_id' => 1,
@@ -745,7 +745,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            66 => 
+            66 =>
             array (
                 'id' => 70,
                 'country_id' => 1,
@@ -756,7 +756,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            67 => 
+            67 =>
             array (
                 'id' => 71,
                 'country_id' => 1,
@@ -767,7 +767,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            68 => 
+            68 =>
             array (
                 'id' => 72,
                 'country_id' => 1,
@@ -778,7 +778,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            69 => 
+            69 =>
             array (
                 'id' => 73,
                 'country_id' => 1,
@@ -789,7 +789,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            70 => 
+            70 =>
             array (
                 'id' => 74,
                 'country_id' => 1,
@@ -800,7 +800,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'created_at' => NULL,
                 'updated_at' => NULL,
             ),
-            71 => 
+            71 =>
             array (
                 'id' => 75,
                 'country_id' => 1,
@@ -812,7 +812,7 @@ class DistrictInformationsTableSeeder extends Seeder
                 'updated_at' => NULL,
             ),
         ));
-        
-        
+
+
     }
 }

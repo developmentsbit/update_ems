@@ -47,6 +47,11 @@ return new class extends Migration
             $table->string('guardian_email')->nullable();
             $table->string('guardian_relation')->nullable();
             $table->string('image')->default('0');
+            $table->bigInteger('class_id')->unsigned()->nullable();
+            $table->foreign('class_id')->references('id')->on('addclass');
+            $table->bigInteger('group_id')->unsigned()->nullable();
+            $table->foreign('group_id')->references('id')->on('addgroup');
+            $table->string('session')->nullable();
             $table->date('deleted_at')->nullable();
             $table->bigInteger('create_by')->unsigned();
             $table->foreign('create_by')->references('id')->on('users');

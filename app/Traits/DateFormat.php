@@ -9,4 +9,11 @@ trait DateFormat
         $date = $explode[2].'-'.$explode[1].'-'.$explode[0];
         return $date;
     }
+
+    public static function DbtoDate($sign, $data)
+    {
+        $explode = explode($sign,$data);
+        $date = $explode[2].'/'.$explode[1].'/'.$explode[0];
+        return $date;
+    }
 }

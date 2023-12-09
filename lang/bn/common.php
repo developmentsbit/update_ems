@@ -58,6 +58,7 @@ return [
     'restore' => 'পুনরুদ্ধার',
     'retrive' => 'পুনরুদ্ধার',
     'permenantly_delete' => 'স্থায়ীভাবে মুছে ফেলুন',
+    'save_with_reg' => 'সেইভ ওইথ রেজিষ্ট্রেশন',
 
     'total_admin' => 'সর্বমোট এডমিন',
     'total_teacher' => 'সর্বমোট শিক্ষক',

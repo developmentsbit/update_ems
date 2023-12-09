@@ -57,6 +57,7 @@ return [
     'restore' => 'Restore',
     'retrive' => 'Retrive',
     'permenantly_delete' => 'Permenantly Delete',
+    'save_with_reg' => 'Save With Reg',
 
     'total_admin' => 'Total Admin',
     'total_teacher' => 'Total Teachers',

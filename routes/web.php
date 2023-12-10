@@ -452,6 +452,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('student_registration/{student_id}',[StudentInfoController::class,'student_registration']);
     Route::get('edit_registration/{student_id}',[StudentInfoController::class,'edit_registration']);
 
+
+    Route::get('registered_student',[StudentInfoController::class,'reg_student'])->name('registered_student.index');
+
+    Route::get('showRegStudent',[StudentInfoController::class,'showRegStudent']);
+
     Route::post('studentRegistration',[StudentInfoController::class,'studentRegistration']);
     Route::post('editStudentRegistration',[StudentInfoController::class,'editStudentRegistration']);
 

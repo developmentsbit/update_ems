@@ -23,7 +23,7 @@ input.form-control ,.form-select{
 <div class="container mt-2">
 		@component('components.breadcrumb')
             @slot('title')
-                @lang('online_lecture_upload.addtitle')
+                @lang('online_lecture_upload.edittitle')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')

@@ -60,5 +60,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DivisionInformationsTableSeeder::class);
         $this->call(DistrictInformationsTableSeeder::class);
         $this->call(UpazilaInformationsTableSeeder::class);
+        $this->call(SessionsTableSeeder::class);
     }
 }

@@ -163,9 +163,18 @@ class UploadDownloadFileController extends Controller
      */
     public function destroy(string $id)
     {
-        upload_download_file::find($id)->delete();
+        $pathImage= upload_download_file::where('id',$id)->select('image')->first();
 
-        Toastr::error('Data Delete Success', 'success');
+        $path=public_path().'/assets/images/upload_download_file/'.$pathImage->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
+
+        upload_download_file::where('id',$id)->delete();
+
+        Toastr::success('Data Insert Success', 'success');
         return redirect(route('upload_download_file.index'));
     }
 }

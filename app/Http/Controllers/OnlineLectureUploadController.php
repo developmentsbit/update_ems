@@ -186,9 +186,18 @@ class OnlineLectureUploadController extends Controller
      */
     public function destroy($id)
     {
-        online_lecture_upload::find($id)->delete();
+        $pathImage= online_lecture_upload::where('id',$id)->select('image')->first();
 
-        Toastr::error('Data Delete Success', 'success');
+        $path=public_path().'/assets/images/online_lecture_upload/'.$pathImage->image;
+
+        if(file_exists($path))
+        {
+            unlink($path);
+        }
+
+        online_lecture_upload::where('id',$id)->delete();
+
+        Toastr::success('Data Insert Success', 'success');
         return redirect(route('online_lecture_upload.index'));
     }
 }

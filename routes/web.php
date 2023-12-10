@@ -62,6 +62,7 @@ use App\Http\Controllers\OnlineLectureUploadController;
 use App\Http\Controllers\UploadDownloadFileController;
 use App\Http\Controllers\AddExamTypeController;
 use App\Http\Controllers\NOCController;
+use App\Http\Controllers\SessionController;
 
 use App\Http\Controllers\othersIncomeController;
 
@@ -308,6 +309,7 @@ Route::group(['middleware' => 'auth'], function () {
         'online_lecture_upload' => OnlineLectureUploadController::class,
         'upload_download_file' => UploadDownloadFileController::class,
         'add_noc' => NOCController::class,
+        'session' => SessionController::class,
     ]);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);

@@ -56,7 +56,7 @@ class AddSubjectController extends Controller
 
         $insert = subject_info::create($data);
         Toastr::success(__('Subject Create Successfully'));
-        return redirect()->route('add_subject.index');
+        return redirect()->route('add_subject.create');
 
     }
 
@@ -120,7 +120,7 @@ class AddSubjectController extends Controller
         }
         $output = '<label>'.__("add_subject.groupname").':</label>
         <div class="input-group mt-2">
-            <select class="form-control form-control-sm" name="group_id" id="group_id" onchange="" required>
+            <select class="form-control form-control-sm" name="group_id" id="group_id" onchange="">
         <option value="">== নির্বাচন করুন ==</option>';
         if($data)
         {

@@ -13,7 +13,11 @@ use Brian2694\Toastr\Facades\Toastr;
 use Auth;
 use App\Models\class_info;
 use App\Models\group_info;
+use App\Models\section_info;
+use App\Models\subject_info;
 use App\Models\session;
+use App\Models\student_reg_info;
+use App\Models\subject_reg_info;
 
 class StudentInfoController extends Controller
 {
@@ -322,6 +326,214 @@ class StudentInfoController extends Controller
         $data['group'] = group_info::where('id',$request->group_id)->first();
         $data['session'] = $request->session;
         return view($this->path.'.show_student',compact('data'));
+    }
+
+    public function student_registration($student_id)
+    {
+        $data = student_information::where('student_id',$student_id)->first();
+        $class = class_info::where('status',1)->get();
+        $group = group_info::where('status',1)->where('class_id',$data->class_id)->get();
+        $section = section_info::where('status',1)->where('class_id',$data->class_id)->get();
+
+        $compulsory_subjects = subject_info::where('status',1)->where('class_id',$data->class_id)->where('subject_type',1)->get();
+
+        $group_subject = subject_info::where('status',1)->where('class_id',$data->class_id)->where('group_id',$data->group_id)->where('subject_type',2)->get();
+
+        $optional_subject = subject_info::where('status',1)->where('class_id',$data->class_id)->where('group_id',$data->group_id)->where('subject_type',3)->get();
+
+        return view($this->path.'.registration',compact('data','class','group','section','compulsory_subjects','group_subject','optional_subject'));
+    }
+
+    public function loadRegistrationGroups(Request $request)
+    {
+        $data = group_info::where('class_id',$request->class_id)->get();
+        if(count($data) == 0)
+        {
+            return '<b class="text-danger">No Groups Found !</b>';
+        }
+        else
+        {
+            $output = '<select class="form-control form-control-sm" name="group_id" id="group_id" onchange="loadGroupSubjects()">
+            <option value="">'.__('common.select_one').'</option>';
+            if(isset($data))
+            {
+                foreach($data as $v)
+                {
+                    if(config('app.locale') == 'en')
+                    {
+                        $group_name = $v->group_name ?: $v->group_name_bn;
+                    }
+                    else
+                    {
+                        $group_name = $v->group_name_bn ?: $v->group_name;
+                    }
+                    $output .= '<option value="'.$v->id.'">'.$group_name.'</option>';
+                }
+            }
+        $output.='</select>';
+
+        return  $output;
+        }
+    }
+
+    public function loadClassSubject(Request $request)
+    {
+        $compulsory_subjects = subject_info::where('status',1)->where('class_id',$request->class_id)->where('subject_type',1)->get();
+        if(count($compulsory_subjects) == 0)
+        {
+            return '<b class="text-danger">No Subject Founds !</b>';
+        }
+        else
+        {
+            $output ='';
+            foreach($compulsory_subjects as $cs)
+            {
+                $output .= '<div class="form-check">
+                    <label>
+                        <input type="checkbox" name="subject_id[]" value="'.$cs->id.'" class="form-check-input" checked>
+                        '.$cs->subject_name.' <span class="text-danger">( '.$cs->subject_code.' ) </span>
+                    </label>
+                </div>';
+            }
+
+            return $output;
+        }
+    }
+
+    public function loadGroupSubjects(Request $request)
+    {
+        $data = [];
+        $data['group'] ='';
+        $data['optional'] = '';
+        $group_subject = subject_info::where('status',1)->where('class_id',$request->class_id)->where('group_id',$request->group_id)->where('subject_type',2)->get();
+        if(count($group_subject) == 0)
+        {
+            $data['group'] = '<b class="text-danger">No Group Subjects Found !</b>';
+        }
+        else
+        {
+            foreach($group_subject as $gs)
+            {
+                $data['group'] .= '<div class="form-check">
+                    <label>
+                        <input type="checkbox" name="subject_id[]" value="'.$gs->id.'" class="form-check-input">
+                        '.$gs->subject_name.' <span class="text-danger">( '.$gs->subject_code.' ) </span>
+                    </label>
+                </div>';
+            }
+        }
+
+
+        $optional_subject = subject_info::where('status',1)->where('class_id',$request->class_id)->where('group_id',$request->group_id)->where('subject_type',3)->get();
+
+        if(count($optional_subject) == 0)
+        {
+            $data['optional'] = '<b class="text-danger">No Optional Subjects Found !</b>';
+        }
+        else
+        {
+            foreach($optional_subject as $os)
+            {
+                $data['optional'] .= '<div class="form-check">
+                    <label>
+                        <input type="radio" name="subject_id[]" value="'.$os->id.'" class="form-check-input">
+                        '.$os->subject_name.' <span class="text-danger">( '.$os->subject_code.' ) </span>
+                    </label>
+                </div>';
+            }
+        }
+
+        return $data;
+    }
+
+
+    public function studentRegistration(Request $request)
+    {
+        // dd($request->all());
+
+        $student_reg_info = array(
+            'student_id' => $request->student_id,
+            'class_roll' => $request->class_roll,
+            'class_id' => $request->class_id,
+            'group_id' => $request->group_id,
+            'section_id' => $request->section_id,
+            'session' => $request->session,
+            'year' => date('Y'),
+        );
+
+        student_reg_info::create($student_reg_info);
+
+        for ($i=0; $i < count($request->subject_id) ; $i++)
+        {
+            subject_reg_info::create([
+                'student_id' => $request->student_id,
+                'class_id' => $request->class_id,
+                'group_id' => $request->group_id,
+                'subject_id' => $request->subject_id[$i],
+            ]);
+        }
+
+        student_information::where('student_id',$request->student_id)->update([
+            'class_id' => $request->class_id,
+            'group_id' => $request->group_id,
+        ]);
+        Toastr::success("Student Registration Successfull");
+        return redirect()->to(route('student_info.create'));
+    }
+
+    public function edit_registration($student_id)
+    {
+        $data = student_information::where('student_id',$student_id)->first();
+        $class = class_info::where('status',1)->get();
+        $group = group_info::where('status',1)->where('class_id',$data->class_id)->get();
+        $section = section_info::where('status',1)->where('class_id',$data->class_id)->get();
+
+        $compulsory_subjects = subject_info::where('status',1)->where('class_id',$data->class_id)->where('subject_type',1)->get();
+
+        $group_subject = subject_info::where('status',1)->where('class_id',$data->class_id)->where('group_id',$data->group_id)->where('subject_type',2)->get();
+
+        $optional_subject = subject_info::where('status',1)->where('class_id',$data->class_id)->where('group_id',$data->group_id)->where('subject_type',3)->get();
+
+        $student_reg_info = student_reg_info::where('student_id',$student_id)->first();
+
+        return view($this->path.'.edit_registration',compact('data','class','group','section','compulsory_subjects','group_subject','optional_subject','student_reg_info'));
+    }
+
+    public function editStudentRegistration(Request $request)
+    {
+        // dd($request->all());
+
+        student_reg_info::where('student_id',$request->student_id)->where('class_id',$request->class_id)->delete();
+        subject_reg_info::where('student_id',$request->student_id)->where('class_id',$request->class_id)->delete();
+
+        $student_reg_info = array(
+            'student_id' => $request->student_id,
+            'class_roll' => $request->class_roll,
+            'class_id' => $request->class_id,
+            'group_id' => $request->group_id,
+            'section_id' => $request->section_id,
+            'session' => $request->session,
+            'year' => date('Y'),
+        );
+
+        student_reg_info::create($student_reg_info);
+
+        for ($i=0; $i < count($request->subject_id) ; $i++)
+        {
+            subject_reg_info::create([
+                'student_id' => $request->student_id,
+                'class_id' => $request->class_id,
+                'group_id' => $request->group_id,
+                'subject_id' => $request->subject_id[$i],
+            ]);
+        }
+
+        student_information::where('student_id',$request->student_id)->update([
+            'class_id' => $request->class_id,
+            'group_id' => $request->group_id,
+        ]);
+        Toastr::success("Student Registration Update Successfull");
+        return redirect()->back();
     }
 
 }

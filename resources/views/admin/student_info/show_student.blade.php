@@ -30,6 +30,9 @@
 </style>
 @endif
 <body>
+    @php
+    use App\Models\student_reg_info;
+    @endphp
 
     <table class="table table-bordered">
         <thead>
@@ -80,6 +83,14 @@
                     <img src="{{ asset('student_image') }}/{{$v->image}}" alt="" style="height: 60px;width:60px;">
                 </td>
                 <td>
+                    @php
+                    $check = student_reg_info::where('student_id',$v->student_id)->where('class_id',$v->class_id)->count();
+                    @endphp
+                    @if($check == 1)
+                    <a style="float: left;margin-bottom:4px;" href="{{ url('edit_registration/'.$v->student_id) }}" class="btn btn-sm btn-warning">Edit Registraiton</a>
+                    @else
+                    <a style="float: left;margin-bottom:4px;" href="{{ url('student_registration/'.$v->student_id) }}" class="btn btn-sm btn-success">Registration</a>
+                    @endif
                     <a style="float: left;margin-bottom:4px;" href="{{ url('student_info/edit/tab1/'.$v->student_id) }}" class="btn btn-sm btn-info">@lang('common.edit')</a>
                     <form method="POST" action="{{ route('student_info.destroy',$v->id) }}">
                         @csrf

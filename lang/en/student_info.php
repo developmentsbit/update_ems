@@ -2,7 +2,7 @@
 
 return [
 
-     
+
      'addtitle' => 'Student Information',
      'Addmission_date' => 'Addmission Date',
      'name' => 'Student Name',
@@ -35,9 +35,10 @@ return [
      'admission_group' => 'Admission Desire(Group)',
      'session' => 'Session',
      'division' => 'Division',
+     'registration' => 'Registration',
 
 
-     
+
 
 
 

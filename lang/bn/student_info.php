@@ -2,7 +2,7 @@
 
 return [
 
-     
+
      'title' => 'শিক্ষার্থীর তথ্য ফর্ম',
      'addtitle' => 'শিক্ষার্থীর তথ্য',
      'Addmission_date' => 'ভর্তির তারিখ',
@@ -36,8 +36,9 @@ return [
      'admission_group' => 'কোন  গ্রুপে হতে ইচ্ছুক',
      'session' => 'সেশন',
      'division' => 'বিভাগ',
+     'registration' => 'রেজিষ্ট্রেশন',
 
-     
+
 
 
 

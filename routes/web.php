@@ -447,6 +447,16 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('loadGroups',[StudentInfoController::class,'loadGroups']);
 
+    Route::get('student_registration/{student_id}',[StudentInfoController::class,'student_registration']);
+    Route::get('edit_registration/{student_id}',[StudentInfoController::class,'edit_registration']);
+
+    Route::post('studentRegistration',[StudentInfoController::class,'studentRegistration']);
+    Route::post('editStudentRegistration',[StudentInfoController::class,'editStudentRegistration']);
+
+    Route::post('loadRegistrationGroups',[StudentInfoController::class,'loadRegistrationGroups']);
+    Route::post('loadClassSubject',[StudentInfoController::class,'loadClassSubject']);
+    Route::post('loadGroupSubjects',[StudentInfoController::class,'loadGroupSubjects']);
+
     Route::get('showStudent',[StudentInfoController::class,'showStudent']);
 
     Route::resource('add_marks', AddMarksController::class);

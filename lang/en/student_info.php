@@ -36,6 +36,14 @@ return [
      'session' => 'Session',
      'division' => 'Division',
      'registration' => 'Registration',
+     'class' => 'Class',
+     'group' => 'Group',
+     'student_id' => 'ID',
+     'roll' => 'Roll No',
+     'section' => 'Section',
+     'compulsory' => 'Compulsory Subject',
+     'group_subject' => 'Group Subject',
+     'optional' => 'Optional Subject',
 
 
 

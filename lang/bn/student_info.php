@@ -37,6 +37,14 @@ return [
      'session' => 'সেশন',
      'division' => 'বিভাগ',
      'registration' => 'রেজিষ্ট্রেশন',
+     'class' => 'শ্রেণী',
+     'group' => 'গ্রুপ নির্বাচন করুন',
+     'student_id' => 'আইডি',
+     'roll' => 'রোল নং',
+     'section' => 'সেকশান',
+     'compulsory' => 'আবশ্যিক',
+     'group_subject' => 'গ্রুপ ভিত্তিক বিষয়',
+     'optional' => 'ঐচ্ছিক বিষয়',
 
 
 

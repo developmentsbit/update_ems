@@ -536,4 +536,28 @@ class StudentInfoController extends Controller
         return redirect()->back();
     }
 
+    public function reg_student()
+    {
+        $session = session::where('status',1)->get();
+        $class = class_info::where('status',1)->get();
+        return view($this->path.'.reg_student',compact('class','session'));
+    }
+
+    public function showRegStudent(Request $request)
+    {
+        $data = [];
+        $data['sl'] = 1;
+        $data['class'] = class_info::where('id',$request->class_id)->first();
+        $data['group'] = group_info::where('id',$request->group_id)->first();
+        $data['session'] = $request->session;
+        $data['data'] = student_reg_info::join('student_informations','student_informations.student_id','=','student_reg_infos.student_id')
+        ->where('student_reg_infos.class_id',$request->class_id)
+        ->where('student_reg_infos.group_id',$request->group_id)
+        ->where('student_reg_infos.session',$request->session)
+        ->select('student_informations.*')
+        ->get();
+
+        return view($this->path.'.show_reg_student',compact('data'));
+    }
+
 }

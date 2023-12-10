@@ -86,15 +86,9 @@
                     @php
                     $check = student_reg_info::where('student_id',$v->student_id)->where('class_id',$v->class_id)->count();
                     @endphp
-                    @if($check == 0)
-                    <a style="float: left;margin-bottom:4px;" href="{{ url('student_registration/'.$v->student_id) }}" class="btn btn-sm btn-success">Registration</a>
+                    @if($check == 1)
+                    <a style="float: left;margin-bottom:4px;" href="{{ url('edit_registration/'.$v->student_id) }}" class="btn btn-sm btn-warning">Edit Registraiton</a>
                     @endif
-                    <a style="float: left;margin-bottom:4px;" href="{{ url('student_info/edit/tab1/'.$v->student_id) }}" class="btn btn-sm btn-info">@lang('common.edit')</a>
-                    <form method="POST" action="{{ route('student_info.destroy',$v->id) }}">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-sm btn-danger">@lang('common.delete')</button>
-                    </form>
                 </td>
             </tr>
             @endforeach

@@ -14,7 +14,7 @@
 
         @component('components.breadcrumb')
             @slot('title')
-            @lang('others_income.title')
+            @lang('others_income.student_fee_column')
             @endslot
             @slot('breadcrumb1')
                 @lang('common.dashboard')
@@ -27,7 +27,7 @@
                     @lang('common.add_new')
                 @endslot
                 @slot('action_button1_link')
-                    {{ route('others_income.create') }}
+                    {{ route('student_fee_column.create') }}
                 @endslot
             @endif
             @slot('action_button1_class')
@@ -40,7 +40,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="header-title">  @lang('others_income.title')</h4>
+                        <h4 class="header-title">  @lang('others_income.student_fee_column')</h4>
                         <ul class="nav nav-tabs nav-bordered mb-3">
                             <li class="nav-item">
                                 <a href="#users-tab-all" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
@@ -84,8 +84,8 @@
                                             </td>
 
                                             <td>
-                                                <a style="float: left;" class="btn btn-sm btn-info" href="{{route('others_income.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
-                                                <form method="post" action="{{route('others_income.destroy',$v->id)}}">
+                                                <a style="float: left;" class="btn btn-sm btn-info" href="{{route('student_fee_column.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
+                                                <form method="post" action="{{route('student_fee_column.destroy',$v->id)}}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('Are You Sure ?')"><i class="fa fa-trash"></i></button>
@@ -99,8 +99,8 @@
                                 </table>
                             </div> <!-- end all-->
                             @php
-                            use App\Models\others_income;
-                            $deleted = others_income::onlyTrashed()->get();
+                            use App\Models\student_fee_column;
+                            $deleted = student_fee_column::onlyTrashed()->get();
                             $i = 1;
                             @endphp
                             <div class="tab-pane" id="users-tab-deleted">
@@ -133,9 +133,9 @@
                                             </td>
 
                                             <td>
-                                                <a href="{{ url('retrive_income') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
+                                                <a href="{{ url('retrive_student_fee') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
 
-                                                <a href="{{ url('delete_income') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
+                                                <a href="{{ url('delete_student_fee') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
                                             </td>
                                         </tr>
                                         

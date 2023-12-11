@@ -108,9 +108,10 @@ class StudentInfoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(studentInfo $studentInfo)
+    public function destroy($student_id)
     {
-        //
+        student_information::where('student_id',$student_id)->delete();
+        return redirect()->back();
     }
     public function from()
     {
@@ -558,6 +559,38 @@ class StudentInfoController extends Controller
         ->get();
 
         return view($this->path.'.show_reg_student',compact('data'));
+    }
+
+    public function view_std_info($student_id)
+    {
+        $data = student_information::where('student_id',$student_id)->first();
+        $student_reg_info = student_reg_info::where('student_id',$student_id)
+        ->leftjoin('addclass','addclass.id','student_reg_infos.class_id')
+        ->leftjoin('addgroup','addgroup.id','student_reg_infos.group_id')
+        ->select('addclass.class_name','addgroup.group_name','student_reg_infos.*')
+        ->first();
+        $studentid_explode = str_split($student_id,1);
+
+        $comp_sub_info = subject_reg_info::leftjoin('subject_infos','subject_infos.id','subject_reg_infos.subject_id')
+        ->where('subject_reg_infos.student_id',$student_id)
+        ->where('subject_reg_infos.class_id',$data->class_id)
+        ->where('subject_infos.subject_type',1)
+        ->select('subject_infos.*')
+        ->get();
+        $group_sub_info = subject_reg_info::leftjoin('subject_infos','subject_infos.id','subject_reg_infos.subject_id')
+        ->where('subject_reg_infos.student_id',$student_id)
+        ->where('subject_reg_infos.class_id',$data->class_id)
+        ->where('subject_infos.subject_type',2)
+        ->select('subject_infos.*')
+        ->get();
+        $opt_sub_info = subject_reg_info::leftjoin('subject_infos','subject_infos.id','subject_reg_infos.subject_id')
+        ->where('subject_reg_infos.student_id',$student_id)
+        ->where('subject_reg_infos.class_id',$data->class_id)
+        ->where('subject_infos.subject_type',3)
+        ->select('subject_infos.*')
+        ->get();
+
+        return view($this->path.'.view_std_info',compact('data','studentid_explode','student_reg_info','comp_sub_info','group_sub_info','opt_sub_info'));
     }
 
 }

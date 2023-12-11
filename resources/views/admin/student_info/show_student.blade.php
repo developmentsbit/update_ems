@@ -88,13 +88,14 @@
                     @endphp
                     @if($check == 0)
                     <a style="float: left;margin-bottom:4px;" href="{{ url('student_registration/'.$v->student_id) }}" class="btn btn-sm btn-success">Registration</a>
-                    @endif
-                    <a style="float: left;margin-bottom:4px;" href="{{ url('student_info/edit/tab1/'.$v->student_id) }}" class="btn btn-sm btn-info">@lang('common.edit')</a>
-                    <form method="POST" action="{{ route('student_info.destroy',$v->id) }}">
+                    <form method="POST" action="{{ route('student_info.destroy',$v->student_id) }}">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-sm btn-danger">@lang('common.delete')</button>
                     </form>
+                    @endif
+
+                    <a style="float: left;margin-bottom:4px;" href="{{ url('student_info/edit/tab1/'.$v->student_id) }}" class="btn btn-sm btn-info">@lang('common.edit')</a>
                 </td>
             </tr>
             @endforeach

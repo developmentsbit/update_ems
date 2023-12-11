@@ -88,6 +88,7 @@
                     @endphp
                     @if($check == 1)
                     <a style="float: left;margin-bottom:4px;" href="{{ url('edit_registration/'.$v->student_id) }}" class="btn btn-sm btn-warning">Edit Registraiton</a>
+                    <a style="float: left;margin-bottom:4px;" href="{{ url('view_std_info/'.$v->student_id) }}" class="btn btn-sm btn-info">View Information</a>
                     @endif
                 </td>
             </tr>

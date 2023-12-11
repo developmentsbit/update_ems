@@ -65,6 +65,8 @@ use App\Http\Controllers\NOCController;
 use App\Http\Controllers\SessionController;
 
 use App\Http\Controllers\othersIncomeController;
+use App\Http\Controllers\ExpenseColumnController;
+use App\Http\Controllers\StudentFeeColumnController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -490,9 +492,21 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('nocStatusChanged/{id}',[NOCController::class,'nocStatusChanged']);
 
     Route::resource('others_income', othersIncomeController::class);
+   
 
     route::get('retrive_income/{id}',[othersIncomeController::class,'retrive_income']);
     route::get('delete_income/{id}',[othersIncomeController::class,'delete_income']);
+
+     Route::resource('expense_column', ExpenseColumnController::class);
+
+    route::get('retrive_expense/{id}',[ExpenseColumnController::class,'retrive_expense']);
+    route::get('delete_expense/{id}',[ExpenseColumnController::class,'delete_expense']);
+
+     Route::resource('student_fee_column', StudentFeeColumnController::class);
+
+    route::get('retrive_student_fee/{id}',[StudentFeeColumnController::class,'retrive_student_fee']);
+    route::get('delete_student_fee/{id}',[StudentFeeColumnController::class,'delete_student_fee']);
+
 
 });
 

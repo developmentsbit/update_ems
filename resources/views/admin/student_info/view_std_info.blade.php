@@ -118,6 +118,7 @@ img#watermark {
     left: 216px;
     z-index: -999;
     opacity: 0.10;
+    max-width: 44%;
 }
 .page_box {
     width: 207mm;
@@ -260,6 +261,12 @@ img#watermark {
                                     @if($s->subject_type == 3)
                                     <tr>
                                         <th>{{ $s->subject_name }} ({{ $s->subject_code}})</th>
+                                    </tr>
+                                    <tr>
+                                        <th>-</th>
+                                    </tr>
+                                    <tr>
+                                        <th>-</th>
                                     </tr>
                                     @endif
                                     @endforeach

@@ -89,7 +89,7 @@ input.form-control ,.select2, .form-check-input{
                             <label for="division" class="form-label">@lang('student_info.division') :</label>
 
                             <select class="form-select select2" data-toggle="select2" id="present_division" name="present_division" onchange="return loadDistrict()">
-                              <option selected>Choose...</option>
+                              <option value="">Choose...</option>
                               @if ($division)
                               @foreach ($division as $d)
                               <option @if($data->present_division == $d->id) selected @endif value="{{ $d->id }}">{{ $d->division_name }}</option>
@@ -102,7 +102,7 @@ input.form-control ,.select2, .form-check-input{
                           <div class="col-md-2 col-6 mt-0">
                             <label for="present_district" class="form-label">@lang('student_info.district'):</label>
                             <select class="form-select select2" data-toggle="select2" id="present_district" name="present_district" onchange=" return loadUpazilla()">
-                              <option selected>Choose...</option>
+                              <option value="">Choose...</option>
                               @if(isset($district))
                               @foreach ($district as $v)
                                 <option @if($data->present_district == $v->id) selected @endif value="{{$v->id}}">{{ $v->district_name }}</option>
@@ -114,7 +114,7 @@ input.form-control ,.select2, .form-check-input{
                           <div class="col-md-2 col-6 mt-0">
                             <label for="present_upazila" class="form-label">@lang('student_info.upazilla'):</label>
                             <select class="form-select select2" data-toggle="select2" id="present_upazila" name="present_upazila">
-                              <option selected>Choose...</option>
+                              <option value="">Choose...</option>
                               @if(isset($upazila))
                               @foreach ($upazila as $v)
                                 <option @if($data->present_upazila == $v->id) selected @endif value="{{$v->id}}">{{ $v->upazila_name }}</option>
@@ -162,7 +162,7 @@ input.form-control ,.select2, .form-check-input{
                             <label for="per_division" class="form-label">@lang('student_info.division') :</label>
 
                             <select class="form-select select2" data-toggle="select2" id="per_division" name="per_division" onchange="return loadParmanenetDistrict()">
-                              <option selected>Choose...</option>
+                              <option value="">Choose...</option>
                               @if ($division)
                               @foreach ($division as $d)
                               <option @if($data->per_division == $d->id) selected @endif value="{{ $d->id }}">{{ $d->division_name }}</option>
@@ -176,7 +176,7 @@ input.form-control ,.select2, .form-check-input{
                           <div class="col-md-2 col-6 mt-0">
                             <label for="per_district" class="form-label">@lang('student_info.district'):</label>
                             <select class="form-select select2" data-toggle="select2" id="per_district" name="per_district" onchange=" return loadParmanenetUpazilla()">
-                              <option selected>Choose...</option>
+                              <option value="">Choose...</option>
                                 @if(isset($per_district))
                                 @foreach ($per_district as $v)
                                 <option @if($data->per_district == $v->id) selected @endif value="{{$v->id}}">{{ $v->district_name }}</option>
@@ -188,7 +188,7 @@ input.form-control ,.select2, .form-check-input{
                           <div class="col-md-2 col-6 mt-0">
                             <label for="per_upazila" class="form-label">@lang('student_info.upazilla'):</label>
                             <select class="form-select select2" data-toggle="select2" id="per_upazila" name="per_upazila">
-                              <option selected>Choose...</option>
+                              <option value="">Choose...</option>
                               @if(isset($per_upazila))
                               @foreach ($per_upazila as $v)
                                 <option @if($data->per_upazila == $v->id) selected @endif value="{{ $v->id }}">{{ $v->upazila_name }}</option>

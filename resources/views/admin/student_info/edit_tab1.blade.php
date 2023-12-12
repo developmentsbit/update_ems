@@ -150,7 +150,7 @@ input.form-control ,.select2, .form-check-input{
                                     <label for="blood_group" class="col-sm-5 col-form-label">@lang('student_info.blood_group') :</label>
                                     <div class="col-sm-7">
                                       <select class="form-select select2" data-toggle="select2" id="blood_group" name="blood_group">
-                                        <option selected>Choose...</option>
+                                        <option value="">Choose...</option>
                                         <option @if($data->blood_group == 'A+') selected @endif value="A+">A+</option>
                                         <option @if($data->blood_group == 'A-') selected @endif value="A-">A-</option>
                                         <option @if($data->blood_group == 'B+') selected @endif value="B+">B+</option>

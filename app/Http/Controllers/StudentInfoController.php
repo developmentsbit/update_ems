@@ -266,7 +266,7 @@ class StudentInfoController extends Controller
             "guardian_relation" => $request->guardian_relation,
         );
         $data = student_information::where('student_id',$student_id)->update($data);
-        Toastr::success("Second Step Is Done. Go On");
+        Toastr::success("Third Step Is Done. Go On");
         return redirect()->to('student_info/edit/tab4/'.$student_id);
     }
 

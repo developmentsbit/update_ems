@@ -67,6 +67,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\othersIncomeController;
 use App\Http\Controllers\ExpenseColumnController;
 use App\Http\Controllers\StudentFeeColumnController;
+use App\Http\Controllers\IncomeExpenseController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -507,6 +508,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     route::get('retrive_student_fee/{id}',[StudentFeeColumnController::class,'retrive_student_fee']);
     route::get('delete_student_fee/{id}',[StudentFeeColumnController::class,'delete_student_fee']);
+
+     Route::resource('income_expense', IncomeExpenseController::class);
+
+    route::get('retrive_income_expense/{id}',[IncomeExpenseController::class,'retrive_income_expense']);
+    route::get('delete_income_expense/{id}',[IncomeExpenseController::class,'delete_income_expense']);
 
 
 });

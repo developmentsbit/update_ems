@@ -32,7 +32,7 @@ class StudentFeeColumnController extends Controller
     public function store(Request $request)
     {
         $data = array(
-
+            
             'order_by'=>$request->order_by,
             'column_name'=>$request->column_name,
             'column_name_bn'=>$request->column_name_bn,
@@ -77,7 +77,6 @@ class StudentFeeColumnController extends Controller
     public function update(Request $request, string $id)
     {
         $data = array(
-
             'order_by'=>$request->order_by,
             'column_name'=>$request->column_name,
             'column_name_bn'=>$request->column_name_bn,

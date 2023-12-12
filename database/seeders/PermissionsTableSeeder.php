@@ -3462,6 +3462,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-11 05:43:55',
                 'deleted_at' => NULL,
             ),
+            313 => 
+            array (
+                'id' => 433,
+                'name' => 'Add Income Expense Title List',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            314 => 
+            array (
+                'id' => 434,
+                'name' => 'Add Income Expense Title Create',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            315 => 
+            array (
+                'id' => 435,
+                'name' => 'Add Income Expense Title Edit',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            316 => 
+            array (
+                'id' => 436,
+                'name' => 'Add Income Expense Title Delete',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            317 => 
+            array (
+                'id' => 437,
+                'name' => 'Add Income Expense Title View',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            318 => 
+            array (
+                'id' => 438,
+                'name' => 'Add Income Expense Title Print',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            319 => 
+            array (
+                'id' => 439,
+                'name' => 'Add Income Expense Title Edit_history',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            320 => 
+            array (
+                'id' => 440,
+                'name' => 'Add Income Expense Title Deleted_list',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            321 => 
+            array (
+                'id' => 441,
+                'name' => 'Add Income Expense Title Restore',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
+            322 => 
+            array (
+                'id' => 442,
+                'name' => 'Add Income Expense Title Permanent_delete',
+                'parent' => 'Add Income Expense Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

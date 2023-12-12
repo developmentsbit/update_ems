@@ -1273,6 +1273,25 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-11 06:08:05',
                 'deleted_at' => NULL,
             ),
+            66 => 
+            array (
+                'id' => 106,
+                'parent_id' => 102,
+                'name' => 'Add Income Expense Title',
+                'bn_name' => 'আয় ব্যয়ের শিরোনাম যোগ করুন',
+                'system_name' => 'Add Income Expense Title',
+                'route_name' => 'income_expense.index',
+                'icon' => NULL,
+                'order_by' => 4,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-12 04:32:19',
+                'updated_at' => '2023-12-12 04:32:19',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

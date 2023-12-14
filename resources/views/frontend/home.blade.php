@@ -28,6 +28,9 @@ $setting = DB::table("setting")->first();
                 </div>
                 @endif
 
+				@if(env('APP_URL') == 'https://chhgc.edu.bd/')
+				<a href="https://chhgc.edu.bd/ems/std_info.php" class="btn btn-primary d-block" target="_blank"><h4> Student's Information Form  </h4></a>
+				@endif
 
 				<div class="col-sm-12 col-12 mt-3 p-0 pb-2 cnotice">
 					<div class="row">
@@ -182,7 +185,7 @@ $setting = DB::table("setting")->first();
 						@if(env('APP_URL') == 'https://chhgc.edu.bd/')
 						<div class="col-sm-6 col-12 ">
 							<div class="col-sm-12 col-12 pt-3 pb-2" id="cart" data-aos="fade-in" data-aos-duration="1000" >
-								<p class="session">&nbsp;&nbsp;@lang('add_noc.noc')</p>
+								<p class="session">&nbsp;&nbsp;@lang('add_noc.other')</p>
 								<div class="row">
 									<div class="col-sm-3 col-3">
 										<img src="{{ asset('/') }}frontend/img/4.jpg" class="img-fluid" id="iconss">
@@ -194,6 +197,7 @@ $setting = DB::table("setting")->first();
 												<li><i class="fa fa-caret-right"></i><a href="{{ url('/page/7') }}">@lang('frontend.yearly_working_plans')</a></li>
 												<li><i class="fa fa-caret-right"></i><a href="{{ url('page/4') }}">@lang('frontend.citizen_charter')</a></li>
 												<li><i class="fa fa-caret-right"></i><a href="{{ url('noc_info') }}">@lang('add_noc.noc')</a></li>
+												<li><i class="fa fa-caret-right"></i><a href="{{ url('institute_position_info') }}">@lang('institute_position_details.institute_position_details')</a></li>
 											
 										</ul>
 									</div>

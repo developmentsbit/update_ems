@@ -12,6 +12,7 @@ use App\Models\online_lecture_upload;
 use App\Models\class_info;
 use App\Models\group_info;
 use App\Models\add_noc;
+use App\Models\institute_position_details;
 use PDF;
 use App;
 
@@ -640,6 +641,20 @@ class FrontendController extends Controller
         $data = add_noc::where('id',$id)->first();
 
         return view('frontend.noc_details',compact('data'));
+    }
+	
+	public function institute_position_info()
+    {
+        $data= institute_position_details::all();
+
+        return view('frontend.institute_position_info',compact('data'));
+    }
+	
+	public function institute_position_detail($id)
+    {
+        $data = institute_position_details::where('id',$id)->first();
+
+        return view('frontend.institute_position_detail',compact('data'));
     }
 
 

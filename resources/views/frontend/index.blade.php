@@ -739,8 +739,17 @@ right:0;
 </li>
 
   @if(env('APP_URL') == 'https://chhgc.edu.bd/')
-  <li class="nav-item">
-    <a class="nav-link" href="{{ url('noc_info') }}">@lang('add_noc.noc')</a>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    @lang('add_noc.other')
+    </a>
+    <ul class="dropdown-menu pb-3 bg-white" aria-labelledby="navbarDropdownMenuLink" style="min-width: 190px;  max-width:100%;">
+
+      <div class="col-md-12 col-12 dmenu mt-3">
+        <li><a href="{{ url('noc_info') }}">@lang('add_noc.noc')</a></li>
+        <li><a href="{{ url('institute_position_info') }}">@lang('institute_position_details.institute_position_details')</a></li>
+      </div>
+    </ul>
   </li>
   @endif
 

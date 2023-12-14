@@ -7,5 +7,6 @@ return [
     'year' => 'Year',
     'expense_column' => 'Expense Column',
     'student_fee_column' => 'Student Fee Collection Column',
+    'income_expense' => 'Income Expense Title',
     
 ];

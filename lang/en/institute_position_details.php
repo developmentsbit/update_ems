@@ -2,10 +2,10 @@
 
 return [
 
-     'managetitle' => 'All NOC Files',
-     'addtitle' => 'Add NOC File',
-     'edittitle' => 'Edit NOC File',
-     'viewtitle' => 'View NOC Files',
+     'managetitle' => 'All Position Details of the Institute',
+     'addtitle' => 'Add Position Details of the Institute File',
+     'edittitle' => 'Edit Position Details of the Institute File',
+     'viewtitle' => 'View Position Details of the Institute',
      'serial_no' => 'Serial No',
      'dates' => 'Release Date',
      'titles' => 'Title',
@@ -16,6 +16,5 @@ return [
      'details_en' => 'Details (English)',
      'details_bn' => 'Details (Bangla)',
      'image' => 'Image/File',
-     'noc'=>'NOC',
-     'other'=>'Other Services',
+     'institute_position_details'=>'Position Details of the Institute',
 ];

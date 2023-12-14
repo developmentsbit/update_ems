@@ -68,6 +68,9 @@ use App\Http\Controllers\othersIncomeController;
 use App\Http\Controllers\ExpenseColumnController;
 use App\Http\Controllers\StudentFeeColumnController;
 use App\Http\Controllers\IncomeExpenseController;
+use App\Http\Controllers\ExpenseEntryController;
+use App\Http\Controllers\OthersIncomeEntryController;
+use App\Http\Controllers\InstitutePositionDetailsController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -152,6 +155,9 @@ Route::get('/classWiseStudent/{id}',[FrontendController::class,'classWiseStudent
 
 Route::get('/noc_info', [FrontendController::class, 'noc_info']);
 Route::get('/nocdetails/{id}', [FrontendController::class, 'noc_details']);
+
+Route::get('/institute_position_info', [FrontendController::class, 'institute_position_info']);
+Route::get('/InstitutePositionDetails/{id}', [FrontendController::class, 'institute_position_detail']);
 
 Route::get('/allnotices', [FrontendController::class, 'allnotices']);
 Route::get('/photogallery', [FrontendController::class, 'photogallery']);
@@ -313,6 +319,7 @@ Route::group(['middleware' => 'auth'], function () {
         'upload_download_file' => UploadDownloadFileController::class,
         'add_noc' => NOCController::class,
         'session' => SessionController::class,
+        'institute_position_details' => InstitutePositionDetailsController::class,
     ]);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);
@@ -513,6 +520,16 @@ Route::group(['middleware' => 'auth'], function () {
 
     route::get('retrive_income_expense/{id}',[IncomeExpenseController::class,'retrive_income_expense']);
     route::get('delete_income_expense/{id}',[IncomeExpenseController::class,'delete_income_expense']);
+
+     Route::resource('expense_entry', ExpenseEntryController::class);
+
+    route::get('retrive_expense_entry/{id}',[ExpenseEntryController::class,'retrive_expense_entry']);
+    route::get('delete_expense_entry/{id}',[ExpenseEntryController::class,'delete_expense_entry']);
+
+     Route::resource('others_income_entry', OthersIncomeEntryController::class);
+
+    route::get('retrive_others_income_entry/{id}',[OthersIncomeEntryController::class,'retrive_others_income_entry']);
+    route::get('delete_others_income_entry/{id}',[OthersIncomeEntryController::class,'delete_others_income_entry']);
 
 
 });

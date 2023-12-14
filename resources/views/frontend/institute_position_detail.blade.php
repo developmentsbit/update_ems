@@ -15,16 +15,16 @@
           <span class="student"><span uk-icon="icon: info; ratio: 1.2"></span>&nbsp;&nbsp;@if($lang == 'en'){{ Str::limit($data->title_en, 50) ?: Str::limit($data->title_bn, 50)}}@else {{Str::limit($data->title_bn, 40) ?: Str::limit($data->title_en, 50)}}@endif</span>
         </li>
         <br>
-        <h5>@if($lang == 'en'){{ Str::limit($data->title_en, 50) ?: Str::limit($data->title_bn, 50)}}@else {{Str::limit($data->title_bn, 40) ?: Str::limit($data->title_en, 50)}}@endif<a href="{{ asset('/assets/images/add_noc/')}}/{{$data->image}}" class="btn btn-sm btn-dark float-end" download="{{ asset('/assets/images/add_noc/')}}/{{$data->image}}"> Download</a></h5>
+        <h5>@if($lang == 'en'){{ Str::limit($data->title_en, 50) ?: Str::limit($data->title_bn, 50)}}@else {{Str::limit($data->title_bn, 40) ?: Str::limit($data->title_en, 50)}}@endif<a href="{{ asset('/assets/images/institute_position_details/')}}/{{$data->image}}" class="btn btn-sm btn-dark float-end" download="{{ asset('/assets/images/institute_position_details/')}}/{{$data->image}}"> Download</a></h5>
 
         <p>
-        @if($lang == 'en'){!! $data->details !!}@elseif($lang == 'bn'){!! $data->details_bn !!}@endif
+          @if($lang == 'en'){!! $data->details !!}@elseif($lang == 'bn'){!! $data->details_bn !!}@endif
         </p>
 
         <div class='embed-responsive' style='padding-bottom:150%'>
 
 
-          <object data="{{ asset('/assets/images/add_noc/')}}/{{$data->image}}" type='application/pdf' width='100%' height='100%'></object>
+          <object data="{{ asset('/assets/images/institute_position_details/')}}/{{$data->image}}" type='application/pdf' width='100%' height='100%'></object>
 
 
         </div>  

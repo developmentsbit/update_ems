@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\institute_position_details;
 use Brian2694\Toastr\Facades\Toastr;
-use App\Models\add_noc;
 
-class NOCController extends Controller
+class InstitutePositionDetailsController extends Controller
 {
     public function getDate($sign,$value)
     {
@@ -31,8 +30,9 @@ class NOCController extends Controller
      */
     public function index()
     {
-        $data = add_noc::get();
-        return view('admin.add_noc.index',compact('data'));
+        $data = institute_position_details::get();
+
+        return view('admin.institute_position_details.index',compact('data'));
     }
 
     /**
@@ -40,7 +40,7 @@ class NOCController extends Controller
      */
     public function create()
     {
-        return view('admin.add_noc.create');
+        return view('admin.institute_position_details.create');
     }
 
     /**
@@ -66,23 +66,23 @@ class NOCController extends Controller
         {
             $imageName = rand().'.'.$file->getClientOriginalExtension();
 
-            $file->move(public_path().'/assets/images/add_noc/',$imageName);
+            $file->move(public_path().'/assets/images/institute_position_details/',$imageName);
 
             $data['image'] = $imageName;
 
         }
 
-        $insert = add_noc::create($data);
+        $insert = institute_position_details::create($data);
 
         if($insert)
         {
             Toastr::success('Data Insert Success', 'success');
-            return redirect(route('add_noc.index'));
+            return redirect(route('institute_position_details.index'));
         }
         else
         {
             Alert::error('Congrats', 'Data Insert Unsuccess');
-            return redirect(route('add_noc.index'));
+            return redirect(route('institute_position_details.index'));
         }
     }
 
@@ -99,13 +99,13 @@ class NOCController extends Controller
      */
     public function edit(string $id)
     {
-        $data = add_noc::find($id);
+        $data = institute_position_details::find($id);
 
         $explode = explode('-',$data->date);
 
         $date = $explode['1'].'/'.$explode['2'].'/'.$explode[0];
 
-        return view('admin.add_noc.edit',compact('data','date'));
+        return view('admin.institute_position_details.edit',compact('data','date'));
     }
 
     /**
@@ -113,14 +113,13 @@ class NOCController extends Controller
      */
     public function update(Request $request, string $id)
     {
-
         $file = $request->file('image');
 
         if($file)
         {
-            $pathImage = add_noc::find($id);
+            $pathImage = institute_position_details::find($id);
 
-            $path = public_path().'/assets/images/add_noc/'.$pathImage->image;
+            $path = public_path().'/assets/images/institute_position_details/'.$pathImage->image;
 
             if(file_exists($path))
             {
@@ -133,15 +132,15 @@ class NOCController extends Controller
         {
             $imageName = rand().'.'.$file->getClientOriginalExtension();
 
-            $file->move(public_path().'/assets/images/add_noc/',$imageName);
+            $file->move(public_path().'/assets/images/institute_position_details/',$imageName);
 
-            add_noc::where('id',$id)->update(['image'=>$imageName]);
+            institute_position_details::where('id',$id)->update(['image'=>$imageName]);
 
         }
 
         $date = $this->getDate('/',$request->date);
 
-        $update = add_noc::find($id)->update([
+        $update = institute_position_details::find($id)->update([
             'date'=>$date,
             'serial_no'=>$request->serial_no,
             'title'=>$request->title,
@@ -154,51 +153,32 @@ class NOCController extends Controller
         if($update)
         {
             Toastr::success('Data Update Success', 'success');
-            return redirect(route('add_noc.index'));
+            return redirect(route('institute_position_details.index'));
         }
         else
         {
             Toastr::error('Data Update Error', 'success');
-            return redirect(route('add_noc.index'));
+            return redirect(route('institute_position_details.index'));
         }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        $pathImage= add_noc::where('id',$id)->select('image')->first();
+        $pathImage= institute_position_details::where('id',$id)->select('image')->first();
 
-        $path=public_path().'/assets/images/add_noc/'.$pathImage->image;
-        // return $path;
+        $path=public_path().'/assets/images/institute_position_details/'.$pathImage->image;
+
         if(file_exists($path))
         {
             unlink($path);
         }
 
-        add_noc::where('id',$id)->delete();
+        institute_position_details::where('id',$id)->delete();
 
         Toastr::error('Data Delete Success', 'success');
-        return redirect(route('add_noc.index'));
+        return redirect(route('institute_position_details.index'));
     }
-
-    // public function nocStatusChanged($id)
-    // {
-    //     $data = add_noc::find($id);
-    //     if($data->status == 1)
-    //     {
-    //         add_noc::find($id)->update([
-    //             'status' => 0,
-    //         ]);
-    //     }
-    //     else
-    //     {
-    //         add_noc::find($id)->update([
-    //             'status' => 1,
-    //         ]);
-    //     }
-
-    //     return 1;
-    // }
 }

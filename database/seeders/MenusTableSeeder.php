@@ -1349,6 +1349,25 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-14 06:14:08',
                 'deleted_at' => NULL,
             ),
+            70 => 
+            array (
+                'id' => 110,
+                'parent_id' => 102,
+                'name' => 'Add Fee Title',
+                'bn_name' => 'ফি শিরোনাম যোগ করুন',
+                'system_name' => 'Add Fee Title',
+                'route_name' => 'add_fee_title.index',
+                'icon' => NULL,
+                'order_by' => 8,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

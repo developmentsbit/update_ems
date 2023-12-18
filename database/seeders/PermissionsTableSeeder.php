@@ -3902,6 +3902,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-14 06:14:08',
                 'deleted_at' => NULL,
             ),
+            353 => 
+            array (
+                'id' => 473,
+                'name' => 'Add Fee Title List',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            354 => 
+            array (
+                'id' => 474,
+                'name' => 'Add Fee Title Create',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            355 => 
+            array (
+                'id' => 475,
+                'name' => 'Add Fee Title Edit',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            356 => 
+            array (
+                'id' => 476,
+                'name' => 'Add Fee Title Delete',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            357 => 
+            array (
+                'id' => 477,
+                'name' => 'Add Fee Title View',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            358 => 
+            array (
+                'id' => 478,
+                'name' => 'Add Fee Title Print',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            359 => 
+            array (
+                'id' => 479,
+                'name' => 'Add Fee Title Edit_history',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            360 => 
+            array (
+                'id' => 480,
+                'name' => 'Add Fee Title Deleted_list',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            361 => 
+            array (
+                'id' => 481,
+                'name' => 'Add Fee Title Restore',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+            362 => 
+            array (
+                'id' => 482,
+                'name' => 'Add Fee Title Permanent_delete',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

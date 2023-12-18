@@ -71,6 +71,7 @@ use App\Http\Controllers\IncomeExpenseController;
 use App\Http\Controllers\ExpenseEntryController;
 use App\Http\Controllers\OthersIncomeEntryController;
 use App\Http\Controllers\InstitutePositionDetailsController;
+use App\Http\Controllers\AddFeeTitleController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -532,7 +533,9 @@ Route::group(['middleware' => 'auth'], function () {
     route::get('retrive_others_income_entry/{id}',[OthersIncomeEntryController::class,'retrive_others_income_entry']);
     route::get('delete_others_income_entry/{id}',[OthersIncomeEntryController::class,'delete_others_income_entry']);
 
-
+    
+    Route::resource('add_fee_title', AddFeeTitleController::class);
+    Route::get('showFreeTitle',[AddFeeTitleController::class,'showFreeTitle']);
 });
 
 Route::get('/backups', function() {

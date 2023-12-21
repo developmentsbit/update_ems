@@ -1142,25 +1142,6 @@ class MenusTableSeeder extends Seeder
             ),
             59 => 
             array (
-                'id' => 99,
-                'parent_id' => 110,
-                'name' => 'NOC',
-                'bn_name' => 'অনাপত্তি সনদ',
-                'system_name' => 'NOC',
-                'route_name' => 'add_noc.index',
-                'icon' => NULL,
-                'order_by' => 1,
-                'is_hidden' => 'No',
-                'status' => 1,
-                'created_by' => 1,
-                'updated_by' => 1,
-                'deleted_by' => NULL,
-                'created_at' => '2023-12-06 11:42:30',
-                'updated_at' => '2023-12-17 05:38:50',
-                'deleted_at' => NULL,
-            ),
-            60 => 
-            array (
                 'id' => 100,
                 'parent_id' => 78,
                 'name' => 'Session',
@@ -1178,7 +1159,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-10 04:51:21',
                 'deleted_at' => NULL,
             ),
-            61 => 
+            60 => 
             array (
                 'id' => 101,
                 'parent_id' => 82,
@@ -1197,7 +1178,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-10 10:38:21',
                 'deleted_at' => NULL,
             ),
-            62 => 
+            61 => 
             array (
                 'id' => 102,
                 'parent_id' => NULL,
@@ -1216,7 +1197,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:50:52',
                 'deleted_at' => NULL,
             ),
-            63 => 
+            62 => 
             array (
                 'id' => 103,
                 'parent_id' => 102,
@@ -1235,7 +1216,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-13 17:19:53',
                 'deleted_at' => NULL,
             ),
-            64 => 
+            63 => 
             array (
                 'id' => 104,
                 'parent_id' => 102,
@@ -1254,7 +1235,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-11 04:56:01',
                 'deleted_at' => NULL,
             ),
-            65 => 
+            64 => 
             array (
                 'id' => 105,
                 'parent_id' => 102,
@@ -1273,7 +1254,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-11 06:08:05',
                 'deleted_at' => NULL,
             ),
-            66 => 
+            65 => 
             array (
                 'id' => 106,
                 'parent_id' => 102,
@@ -1292,7 +1273,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-12 04:32:19',
                 'deleted_at' => NULL,
             ),
-            67 => 
+            66 => 
             array (
                 'id' => 107,
                 'parent_id' => 102,
@@ -1311,7 +1292,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-13 17:22:18',
                 'deleted_at' => NULL,
             ),
-            68 => 
+            67 => 
             array (
                 'id' => 108,
                 'parent_id' => 102,
@@ -1330,45 +1311,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-13 17:22:18',
                 'deleted_at' => NULL,
             ),
-            69 => 
-            array (
-                'id' => 109,
-                'parent_id' => 110,
-                'name' => 'Position Details of the Institute',
-                'bn_name' => 'প্রতিষ্ঠানের পদের বিবরণী',
-                'system_name' => 'Position Details of the Institute',
-                'route_name' => 'institute_position_details.index',
-                'icon' => NULL,
-                'order_by' => 2,
-                'is_hidden' => 'No',
-                'status' => 1,
-                'created_by' => 1,
-                'updated_by' => 1,
-                'deleted_by' => NULL,
-                'created_at' => '2023-12-14 06:14:08',
-                'updated_at' => '2023-12-17 05:38:24',
-                'deleted_at' => NULL,
-            ),
-            70 => 
-            array (
-                'id' => 110,
-                'parent_id' => 102,
-                'name' => 'Add Fee Title',
-                'bn_name' => 'ফি শিরোনাম যোগ করুন',
-                'system_name' => 'Add Fee Title',
-                'route_name' => 'add_fee_title.index',
-                'icon' => NULL,
-                'order_by' => 8,
-                'is_hidden' => 'No',
-                'status' => 1,
-                'created_by' => 1,
-                'updated_by' => 1,
-                'deleted_by' => NULL,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            71 => 
+            68 => 
             array (
                 'id' => 111,
                 'parent_id' => NULL,
@@ -1387,7 +1330,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:50:52',
                 'deleted_at' => NULL,
             ),
-            72 => 
+            69 => 
             array (
                 'id' => 112,
                 'parent_id' => 111,
@@ -1406,7 +1349,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            73 => 
+            70 => 
             array (
                 'id' => 113,
                 'parent_id' => 111,
@@ -1425,7 +1368,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            74 => 
+            71 => 
             array (
                 'id' => 114,
                 'parent_id' => 111,
@@ -1444,7 +1387,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            75 => 
+            72 => 
             array (
                 'id' => 115,
                 'parent_id' => 111,
@@ -1463,7 +1406,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            76 => 
+            73 => 
             array (
                 'id' => 116,
                 'parent_id' => NULL,
@@ -1482,7 +1425,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:47:00',
                 'deleted_at' => NULL,
             ),
-            77 => 
+            74 => 
             array (
                 'id' => 117,
                 'parent_id' => 116,
@@ -1501,7 +1444,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            78 => 
+            75 => 
             array (
                 'id' => 118,
                 'parent_id' => 116,
@@ -1520,7 +1463,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            79 => 
+            76 => 
             array (
                 'id' => 119,
                 'parent_id' => 116,
@@ -1539,7 +1482,7 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            80 => 
+            77 => 
             array (
                 'id' => 120,
                 'parent_id' => 116,
@@ -1556,6 +1499,25 @@ class MenusTableSeeder extends Seeder
                 'deleted_by' => NULL,
                 'created_at' => '2023-12-21 10:54:44',
                 'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            78 => 
+            array (
+                'id' => 122,
+                'parent_id' => 102,
+                'name' => 'Fee Title',
+                'bn_name' => 'ফি টাইটেল শিরোনাম',
+                'system_name' => 'Fee Title',
+                'route_name' => 'add_fee_title.index',
+                'icon' => NULL,
+                'order_by' => 8,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
                 'deleted_at' => NULL,
             ),
         ));

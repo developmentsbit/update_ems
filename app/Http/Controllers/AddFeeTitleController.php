@@ -22,7 +22,7 @@ class AddFeeTitleController extends Controller
      */
     public function create()
     {
-        
+
         $class = class_info::all();
         return view('admin.add_fee_title.create',compact('class'));
     }
@@ -33,7 +33,7 @@ class AddFeeTitleController extends Controller
     public function store(Request $request)
     {
         $data = array(
-            
+
             'title'=>$request->title,
             'title_bn'=>$request->title_bn,
             'year'=>$request->year,
@@ -44,7 +44,7 @@ class AddFeeTitleController extends Controller
             'details_bn'=>$request->details_bn,
             'fee'=>$request->fee,
             'feeType'=>$request->feeType,
-           
+
         );
         $insert = add_fee_title::create($data);
 
@@ -84,7 +84,7 @@ class AddFeeTitleController extends Controller
     public function update(Request $request, string $id)
     {
         $data = array(
-            
+
             'title'=>$request->title,
             'title_bn'=>$request->title_bn,
             'year'=>$request->year,
@@ -95,7 +95,7 @@ class AddFeeTitleController extends Controller
             'details_bn'=>$request->details_bn,
             'fee'=>$request->fee,
             'feeType'=>$request->feeType,
-           
+
         );
         $insert = add_fee_title::find($id)->update($data);
 
@@ -127,7 +127,7 @@ class AddFeeTitleController extends Controller
         $data['sl'] = 1;
         $data['data'] = add_fee_title::where('class_id',$request->class_id)->where('year',$request->year)->with('class')->get();
         $data['class'] = class_info::where('id',$request->class_id)->first();
-        
+
         return view('admin.add_fee_title.show_fee',compact('data'));
         // return view($this->path.'.show_student',compact('data'));
     }

@@ -162,4 +162,14 @@ class OthersIncomeEntryController extends Controller
         others_income_entry::where('id',$id)->withTrashed()->forceDelete();
         return redirect()->route('others_income_entry.index') ->with('message','Others Income Entry List Permanently Deleted Successfully');
     }
+
+    public function OtherReport($voucher_no)
+    {
+        $data = others_income_entry::leftjoin("income_expenses",'income_expenses.id','others_income_entries.income_id')
+        ->select("others_income_entries.*",'income_expenses.title','income_expenses.title_bn')
+        ->where('voucher_no',$voucher_no)->first();
+        $voucherno_explode = str_split($voucher_no,1);
+
+        return view('admin.others_income_entry.other_report',compact('data','voucherno_explode'));
+    }
 }

@@ -163,4 +163,14 @@ class ExpenseEntryController extends Controller
         expense_entry::where('id',$id)->withTrashed()->forceDelete();
         return redirect()->route('expense_entry.index') ->with('message','Expense Entry List Permanently Deleted Successfully');
     }
+
+    public function report($voucher_no)
+    {
+        $data = expense_entry::leftjoin("income_expenses",'income_expenses.id','expense_entries.expense_id')
+        ->select("expense_entries.*",'income_expenses.title','income_expenses.title_bn')
+        ->where('voucher_no',$voucher_no)->first();
+        $voucherno_explode = str_split($voucher_no,1);
+
+        return view('admin.expense_entry.report',compact('data','voucherno_explode'));
+    }
 }

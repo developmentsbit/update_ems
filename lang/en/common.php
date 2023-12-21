@@ -117,5 +117,6 @@ return [
 
     "image_text" => "300*80 Pixel (width*height) and size should be maximum 60 kb.",
     'skip' => 'Skip',
-    'previous' => 'Previous'
+    'previous' => 'Previous',
+    'report' => 'Report',
 ];

@@ -71,6 +71,10 @@ use App\Http\Controllers\IncomeExpenseController;
 use App\Http\Controllers\ExpenseEntryController;
 use App\Http\Controllers\OthersIncomeEntryController;
 use App\Http\Controllers\InstitutePositionDetailsController;
+use App\Http\Controllers\BankInformationController;
+use App\Http\Controllers\BankTransactionEntryController;
+use App\Http\Controllers\BankTransactionReportController;
+use App\Http\Controllers\BankTransactionStatementController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -523,15 +527,33 @@ Route::group(['middleware' => 'auth'], function () {
     route::get('delete_income_expense/{id}',[IncomeExpenseController::class,'delete_income_expense']);
 
      Route::resource('expense_entry', ExpenseEntryController::class);
+     Route::get('report/{voucher_no}',[ExpenseEntryController::class,'report']);
 
     route::get('retrive_expense_entry/{id}',[ExpenseEntryController::class,'retrive_expense_entry']);
     route::get('delete_expense_entry/{id}',[ExpenseEntryController::class,'delete_expense_entry']);
 
      Route::resource('others_income_entry', OthersIncomeEntryController::class);
+     Route::get('other_report/{voucher_no}',[OthersIncomeEntryController::class,'OtherReport']);
 
     route::get('retrive_others_income_entry/{id}',[OthersIncomeEntryController::class,'retrive_others_income_entry']);
     route::get('delete_others_income_entry/{id}',[OthersIncomeEntryController::class,'delete_others_income_entry']);
 
+     Route::resource('bank_info', BankInformationController::class);
+
+     route::get('retrive_bank_info/{id}',[BankInformationController::class,'retrive_bank_info']);
+     route::get('delete_bank_info/{id}',[BankInformationController::class,'delete_bank_info']);
+
+     Route::resource('bank_transaction_entry', BankTransactionEntryController::class);
+     Route::get('transactionReport/{check_no}',[BankTransactionEntryController::class,'TransactionReport']);
+     Route::get('getBankBalance/{bank_id}',[BankTransactionEntryController::class,'getBankBalance']);
+
+     route::get('retrive_bank_transaction_entry/{id}',[BankTransactionEntryController::class,'retrive_bank_transaction_entry']);
+     route::get('delete_bank_transaction_entry/{id}',[BankTransactionEntryController::class,'delete_bank_transaction_entry']);
+
+     Route::resource('bank_transaction_report', BankTransactionReportController::class);
+     
+     Route::resource('bank_transaction_statement', BankTransactionStatementController::class);
+     Route::get('/bankstatementreports', [BankTransactionStatementController::class,'bankstatementreports']);
 
 });
 

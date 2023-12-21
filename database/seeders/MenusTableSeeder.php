@@ -776,7 +776,13 @@ class MenusTableSeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_by' => NULL,
                 'created_at' => '2023-09-23 09:50:25',
+
                 'updated_at' => '2023-12-18 06:23:36',
+
+                'updated_at' => '2023-12-20 04:50:52',
+
+                'updated_at' => '2023-12-17 05:37:53',
+
                 'deleted_at' => NULL,
             ),
             40 => 
@@ -1213,7 +1219,10 @@ class MenusTableSeeder extends Seeder
                 'updated_by' => 1,
                 'deleted_by' => NULL,
                 'created_at' => '2023-12-11 04:47:29',
-                'updated_at' => '2023-12-17 05:37:53',
+
+                'updated_at' => '2023-12-20 04:50:52',
+
+
                 'deleted_at' => NULL,
             ),
             63 => 
@@ -1368,33 +1377,74 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-17 05:37:53',
                 'deleted_at' => NULL,
             ),
+
+            70 => 
+            array (
+                'id' => 110,
+                'parent_id' => 102,
+                'name' => 'Add Fee Title',
+                'bn_name' => 'ফি শিরোনাম যোগ করুন',
+                'system_name' => 'Add Fee Title',
+                'route_name' => 'add_fee_title.index',
+                'icon' => NULL,
+                'order_by' => 8,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-17 05:19:42',
+                'updated_at' => '2023-12-17 05:19:42',
+                'deleted_at' => NULL,
+            ),
+
             71 => 
             array (
                 'id' => 111,
                 'parent_id' => NULL,
+
                 'name' => 'Banking',
                 'bn_name' => 'ব্যাংকিং',
                 'system_name' => 'Banking',
                 'route_name' => NULL,
                 'icon' => NULL,
                 'order_by' => 31,
+
+                'name' => 'Supplier & Cash Receiver',
+                'bn_name' => 'সরবরাহকারী এবং নগদ রিসিভার',
+                'system_name' => 'Supplier & Cash Receiver',
+                'route_name' => NULL,
+                'icon' => NULL,
+                'order_by' => 29,
+
                 'is_hidden' => 'No',
                 'status' => 1,
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
+
                 'created_at' => '2023-12-18 06:23:36',
                 'updated_at' => '2023-12-18 06:23:36',
+
+                'created_at' => '2023-12-20 04:50:52',
+                'updated_at' => '2023-12-20 04:50:52',
+
                 'deleted_at' => NULL,
             ),
             72 => 
             array (
                 'id' => 112,
                 'parent_id' => 111,
+
                 'name' => 'Bank Information',
                 'bn_name' => 'ব্যাংক তথ্য',
                 'system_name' => 'Bank Information',
                 'route_name' => 'bank_info.index',
+                'name' => 'Add Supplier Info',
+                'bn_name' => 'সরবরাহকারীর তথ্য যোগ করুন',
+                'system_name' => 'Add Supplier Info',
+                'route_name' => 'supplier_info.index',
+
                 'icon' => NULL,
                 'order_by' => 1,
                 'is_hidden' => 'No',
@@ -1402,18 +1452,30 @@ class MenusTableSeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
+
                 'created_at' => '2023-12-18 06:28:28',
                 'updated_at' => '2023-12-18 06:28:28',
+
+                'created_at' => '2023-12-20 04:52:19',
+                'updated_at' => '2023-12-20 04:52:19',
+
                 'deleted_at' => NULL,
             ),
             73 => 
             array (
                 'id' => 113,
                 'parent_id' => 111,
+
                 'name' => 'Bank Transaction Entry',
                 'bn_name' => 'ব্যাংক লেনদেন এন্ট্রি',
                 'system_name' => 'Bank Transaction Entry',
                 'route_name' => 'bank_transaction_entry.index',
+
+                'name' => 'Purchase Entry',
+                'bn_name' => 'ক্রয় এন্ট্রি',
+                'system_name' => 'Purchase Entry',
+                'route_name' => 'purchase_entry.index',
+
                 'icon' => NULL,
                 'order_by' => 2,
                 'is_hidden' => 'No',
@@ -1421,18 +1483,30 @@ class MenusTableSeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
+
                 'created_at' => '2023-12-18 11:44:59',
                 'updated_at' => '2023-12-18 11:44:59',
+
+                'created_at' => '2023-12-20 06:24:31',
+                'updated_at' => '2023-12-20 06:24:31',
+
                 'deleted_at' => NULL,
             ),
             74 => 
             array (
                 'id' => 114,
                 'parent_id' => 111,
+
                 'name' => 'Bank Transaction Report',
                 'bn_name' => 'ব্যাংক লেনদেন রিপোর্ট',
                 'system_name' => 'Bank Transaction Report',
                 'route_name' => 'bank_transaction_report.index',
+
+                'name' => 'Supplier Payment',
+                'bn_name' => 'সরবরাহকারী পেমেন্ট',
+                'system_name' => 'Supplier Payment',
+                'route_name' => 'supplier_payment.index',
+
                 'icon' => NULL,
                 'order_by' => 3,
                 'is_hidden' => 'No',
@@ -1440,18 +1514,30 @@ class MenusTableSeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
+
                 'created_at' => '2023-12-18 11:46:21',
                 'updated_at' => '2023-12-18 11:46:21',
+
+                'created_at' => '2023-12-21 04:57:03',
+                'updated_at' => '2023-12-21 04:57:03',
+
                 'deleted_at' => NULL,
             ),
             75 => 
             array (
                 'id' => 115,
                 'parent_id' => 111,
+
                 'name' => 'Bank Transaction Statement',
                 'bn_name' => 'ব্যাংক লেনদেন স্টেটমেন্ট',
                 'system_name' => 'Bank Transaction Statement',
                 'route_name' => 'bank_transaction_statement.index',
+
+                'name' => 'Supplier Statement',
+                'bn_name' => 'সরবরাহকারীর বিবৃতি',
+                'system_name' => 'Supplier Statement',
+                'route_name' => 'supplier_statement.index',
+
                 'icon' => NULL,
                 'order_by' => 4,
                 'is_hidden' => 'No',
@@ -1459,8 +1545,13 @@ class MenusTableSeeder extends Seeder
                 'created_by' => 1,
                 'updated_by' => 1,
                 'deleted_by' => NULL,
+
                 'created_at' => '2023-12-18 11:48:22',
                 'updated_at' => '2023-12-18 11:48:22',
+
+                'created_at' => '2023-12-21 06:13:04',
+                'updated_at' => '2023-12-21 06:13:04',
+
                 'deleted_at' => NULL,
             ),
         ));

@@ -3905,714 +3905,391 @@ class PermissionsTableSeeder extends Seeder
             353 => 
             array (
                 'id' => 473,
-
-                'name' => 'Bank Information List',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title List',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             354 => 
             array (
                 'id' => 474,
-
-                'name' => 'Bank Information Create',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Create',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             355 => 
             array (
                 'id' => 475,
-
-                'name' => 'Bank Information Edit',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Edit',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             356 => 
             array (
                 'id' => 476,
-
-                'name' => 'Bank Information Delete',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Delete',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             357 => 
             array (
                 'id' => 477,
-
-                'name' => 'Bank Information View',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title View',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             358 => 
             array (
                 'id' => 478,
-
-                'name' => 'Bank Information Print',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Print',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             359 => 
             array (
                 'id' => 479,
-
-                'name' => 'Bank Information Edit_history',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Edit_history',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             360 => 
             array (
                 'id' => 480,
-
-                'name' => 'Bank Information Deleted_list',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Deleted_list',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             361 => 
             array (
                 'id' => 481,
-
-                'name' => 'Bank Information Restore',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Restore',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             362 => 
             array (
                 'id' => 482,
-
-                'name' => 'Bank Information Permanent_delete',
-                'parent' => 'Bank Information',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 06:28:28',
-                'updated_at' => '2023-12-18 06:28:28',
-
                 'name' => 'Add Fee Title Permanent_delete',
                 'parent' => 'Add Fee Title',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-17 05:19:42',
                 'updated_at' => '2023-12-17 05:19:42',
-
                 'deleted_at' => NULL,
             ),
             363 => 
             array (
                 'id' => 483,
-
-                'name' => 'Bank Transaction Entry List',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info List',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             364 => 
             array (
                 'id' => 484,
-
-                'name' => 'Bank Transaction Entry Create',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Create',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             365 => 
             array (
                 'id' => 485,
-
-                'name' => 'Bank Transaction Entry Edit',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Edit',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             366 => 
             array (
                 'id' => 486,
-
-                'name' => 'Bank Transaction Entry Delete',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Delete',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             367 => 
             array (
                 'id' => 487,
-
-                'name' => 'Bank Transaction Entry View',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info View',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             368 => 
             array (
                 'id' => 488,
-
-                'name' => 'Bank Transaction Entry Print',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Print',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             369 => 
             array (
                 'id' => 489,
-
-                'name' => 'Bank Transaction Entry Edit_history',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Edit_history',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             370 => 
             array (
                 'id' => 490,
-
-                'name' => 'Bank Transaction Entry Deleted_list',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Deleted_list',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             371 => 
             array (
                 'id' => 491,
-
-                'name' => 'Bank Transaction Entry Restore',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Restore',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             372 => 
             array (
                 'id' => 492,
-
-                'name' => 'Bank Transaction Entry Permanent_delete',
-                'parent' => 'Bank Transaction Entry',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:44:59',
-                'updated_at' => '2023-12-18 11:44:59',
-
                 'name' => 'Add Supplier Info Permanent_delete',
                 'parent' => 'Add Supplier Info',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 04:52:19',
                 'updated_at' => '2023-12-20 04:52:19',
-
                 'deleted_at' => NULL,
             ),
             373 => 
             array (
                 'id' => 493,
-
-                'name' => 'Bank Transaction Report List',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry List',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             374 => 
             array (
                 'id' => 494,
-
-                'name' => 'Bank Transaction Report Create',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Create',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             375 => 
             array (
                 'id' => 495,
-
-                'name' => 'Bank Transaction Report Edit',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Edit',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             376 => 
             array (
                 'id' => 496,
-
-                'name' => 'Bank Transaction Report Delete',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Delete',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             377 => 
             array (
                 'id' => 497,
-
-                'name' => 'Bank Transaction Report View',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry View',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             378 => 
             array (
                 'id' => 498,
-
-                'name' => 'Bank Transaction Report Print',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Print',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             379 => 
             array (
                 'id' => 499,
-
-                'name' => 'Bank Transaction Report Edit_history',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Edit_history',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             380 => 
             array (
                 'id' => 500,
-
-                'name' => 'Bank Transaction Report Deleted_list',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Deleted_list',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             381 => 
             array (
                 'id' => 501,
-
-                'name' => 'Bank Transaction Report Restore',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Restore',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             382 => 
             array (
                 'id' => 502,
-
-                'name' => 'Bank Transaction Report Permanent_delete',
-                'parent' => 'Bank Transaction Report',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:46:21',
-                'updated_at' => '2023-12-18 11:46:21',
-
                 'name' => 'Purchase Entry Permanent_delete',
                 'parent' => 'Purchase Entry',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-20 06:24:31',
                 'updated_at' => '2023-12-20 06:24:31',
-
                 'deleted_at' => NULL,
             ),
             383 => 
             array (
                 'id' => 503,
-
-                'name' => 'Bank Transaction Statement List',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment List',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             384 => 
             array (
                 'id' => 504,
-
-                'name' => 'Bank Transaction Statement Create',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Create',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             385 => 
             array (
                 'id' => 505,
-
-                'name' => 'Bank Transaction Statement Edit',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Edit',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             386 => 
             array (
                 'id' => 506,
-
-                'name' => 'Bank Transaction Statement Delete',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Delete',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             387 => 
             array (
                 'id' => 507,
-
-                'name' => 'Bank Transaction Statement View',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment View',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             388 => 
             array (
                 'id' => 508,
-
-                'name' => 'Bank Transaction Statement Print',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Print',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
@@ -4624,74 +4301,39 @@ class PermissionsTableSeeder extends Seeder
             389 => 
             array (
                 'id' => 509,
-
-                'name' => 'Bank Transaction Statement Edit_history',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Edit_history',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             390 => 
             array (
                 'id' => 510,
-
-                'name' => 'Bank Transaction Statement Deleted_list',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Deleted_list',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             391 => 
             array (
                 'id' => 511,
-
-                'name' => 'Bank Transaction Statement Restore',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Restore',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
                 'status' => 1,
                 'created_at' => '2023-12-21 04:57:03',
                 'updated_at' => '2023-12-21 04:57:03',
-
                 'deleted_at' => NULL,
             ),
             392 => 
             array (
                 'id' => 512,
-
-                'name' => 'Bank Transaction Statement Permanent_delete',
-                'parent' => 'Bank Transaction Statement',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-18 11:48:22',
-                'updated_at' => '2023-12-18 11:48:22',
-
                 'name' => 'Supplier Payment Permanent_delete',
                 'parent' => 'Supplier Payment',
                 'guard_name' => 'web',
@@ -4808,7 +4450,446 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2023-12-21 06:13:04',
                 'updated_at' => '2023-12-21 06:13:04',
-
+                'deleted_at' => NULL,
+            ),
+            403 => 
+            array (
+                'id' => 523,
+                'name' => 'রে List',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            404 => 
+            array (
+                'id' => 524,
+                'name' => 'রে Create',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            405 => 
+            array (
+                'id' => 525,
+                'name' => 'রে Edit',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            406 => 
+            array (
+                'id' => 526,
+                'name' => 'রে Delete',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            407 => 
+            array (
+                'id' => 527,
+                'name' => 'রে View',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            408 => 
+            array (
+                'id' => 528,
+                'name' => 'রে Print',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            409 => 
+            array (
+                'id' => 529,
+                'name' => 'রে Edit_history',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            410 => 
+            array (
+                'id' => 530,
+                'name' => 'রে Deleted_list',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            411 => 
+            array (
+                'id' => 531,
+                'name' => 'রে Restore',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            412 => 
+            array (
+                'id' => 532,
+                'name' => 'রে Permanent_delete',
+                'parent' => 'রে',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:48:10',
+                'updated_at' => '2023-12-21 10:48:10',
+                'deleted_at' => NULL,
+            ),
+            413 => 
+            array (
+                'id' => 533,
+                'name' => 'Bank Transaction Entry List',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:32',
+                'updated_at' => '2023-12-21 10:50:32',
+                'deleted_at' => NULL,
+            ),
+            414 => 
+            array (
+                'id' => 534,
+                'name' => 'Bank Transaction Entry Create',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:32',
+                'updated_at' => '2023-12-21 10:50:32',
+                'deleted_at' => NULL,
+            ),
+            415 => 
+            array (
+                'id' => 535,
+                'name' => 'Bank Transaction Entry Edit',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            416 => 
+            array (
+                'id' => 536,
+                'name' => 'Bank Transaction Entry Delete',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            417 => 
+            array (
+                'id' => 537,
+                'name' => 'Bank Transaction Entry View',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            418 => 
+            array (
+                'id' => 538,
+                'name' => 'Bank Transaction Entry Print',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            419 => 
+            array (
+                'id' => 539,
+                'name' => 'Bank Transaction Entry Edit_history',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            420 => 
+            array (
+                'id' => 540,
+                'name' => 'Bank Transaction Entry Deleted_list',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            421 => 
+            array (
+                'id' => 541,
+                'name' => 'Bank Transaction Entry Restore',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            422 => 
+            array (
+                'id' => 542,
+                'name' => 'Bank Transaction Entry Permanent_delete',
+                'parent' => 'Bank Transaction Entry',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:50:33',
+                'updated_at' => '2023-12-21 10:50:33',
+                'deleted_at' => NULL,
+            ),
+            423 => 
+            array (
+                'id' => 543,
+                'name' => 'Bank Transaction Report List',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            424 => 
+            array (
+                'id' => 544,
+                'name' => 'Bank Transaction Report Create',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            425 => 
+            array (
+                'id' => 545,
+                'name' => 'Bank Transaction Report Edit',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            426 => 
+            array (
+                'id' => 546,
+                'name' => 'Bank Transaction Report Delete',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            427 => 
+            array (
+                'id' => 547,
+                'name' => 'Bank Transaction Report View',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            428 => 
+            array (
+                'id' => 548,
+                'name' => 'Bank Transaction Report Print',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            429 => 
+            array (
+                'id' => 549,
+                'name' => 'Bank Transaction Report Edit_history',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            430 => 
+            array (
+                'id' => 550,
+                'name' => 'Bank Transaction Report Deleted_list',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            431 => 
+            array (
+                'id' => 551,
+                'name' => 'Bank Transaction Report Restore',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            432 => 
+            array (
+                'id' => 552,
+                'name' => 'Bank Transaction Report Permanent_delete',
+                'parent' => 'Bank Transaction Report',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:51:49',
+                'updated_at' => '2023-12-21 10:51:49',
+                'deleted_at' => NULL,
+            ),
+            433 => 
+            array (
+                'id' => 553,
+                'name' => 'Bank Transaction Statement List',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            434 => 
+            array (
+                'id' => 554,
+                'name' => 'Bank Transaction Statement Create',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            435 => 
+            array (
+                'id' => 555,
+                'name' => 'Bank Transaction Statement Edit',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            436 => 
+            array (
+                'id' => 556,
+                'name' => 'Bank Transaction Statement Delete',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            437 => 
+            array (
+                'id' => 557,
+                'name' => 'Bank Transaction Statement View',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            438 => 
+            array (
+                'id' => 558,
+                'name' => 'Bank Transaction Statement Print',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            439 => 
+            array (
+                'id' => 559,
+                'name' => 'Bank Transaction Statement Edit_history',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            440 => 
+            array (
+                'id' => 560,
+                'name' => 'Bank Transaction Statement Deleted_list',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            441 => 
+            array (
+                'id' => 561,
+                'name' => 'Bank Transaction Statement Restore',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            442 => 
+            array (
+                'id' => 562,
+                'name' => 'Bank Transaction Statement Permanent_delete',
+                'parent' => 'Bank Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 10:54:44',
+                'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
         ));

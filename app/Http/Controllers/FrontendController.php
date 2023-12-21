@@ -9,6 +9,7 @@ use App\Models\mpoNationalizatio;
 use App\Models\gender_wise;
 use App\Models\section_wise;
 use App\Models\online_lecture_upload;
+use App\Models\upload_download_file;
 use App\Models\class_info;
 use App\Models\group_info;
 use App\Models\add_noc;
@@ -629,6 +630,13 @@ class FrontendController extends Controller
         return view('frontend.online_lecture',compact('sl','data','class','group'));
     }
 
+	public function UploadDownloadFile()
+    {
+        $data= upload_download_file::all();
+
+        return view('frontend.download_file',compact('data'));
+    }
+	
 	public function noc_info()
     {
         $data= add_noc::all();

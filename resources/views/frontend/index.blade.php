@@ -282,31 +282,32 @@ right:0;
 
      <div class="col-sm-12 col-12  topheader">
       <div class="row">
-        <div class="col-sm-4 col-12 bangabondhu" id="email">
+        <div class="col-sm-3 col-12 bangabondhu" id="email">
 
           <label><a href="{{url('/time_line')}}"  class="btn btn-success btn-sm" target="_blank"><span uk-icon="icon: grid; ratio: 0.8"></span>&nbsp;@lang('frontend.golden_jubilee_and_bangabandhu_corner')  </a></label>
 
         </div>
 
 
-        <div class="col-sm-8 col-12 text-center text-sm-center text-lg-right" id="email">
+        <div class="col-sm-9 col-12 text-center text-sm-center text-lg-right" id="email">
           <div class="btn-group" role="group" aria-label="Basic example">
 
+            <label><a id="top_button" target="_blank" href="{{url('/download_file')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.upload_download_file')</a></label>
             <label><a id="top_button" target="_blank" href="{{url('/online_lecture')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.online_lecture_upload')</a></label>
-            <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.internal_results')</a></label>
+            <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.internal_results')</a></label>
             <label><a id="top_button" target="_blank" href="/ems/admission/" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
             <label><a id="top_button" target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
             <label>
               <div class="site-lang" style="margin-top: -4px;">
                   @if(config('app.locale')=='bn')
-                  <a id="top_button" class="nav-link btn btn-outline-success" href="{{ route('lang', 'en') }}" role="button">
-                      <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
-                      <span>{{'English'}}</span>
+                  <a  style="margin-left: -2px;" id="top_button" class="nav-link btn btn-outline-success" href="{{ route('lang', 'en') }}" role="button">
+                      <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="25px" style="margin-left: -4px;">
+                      <span style="font-size: 12px;margin-left: -6px;">{{'English'}}</span>
                   </a>
                   @else
-                  <a id="top_button" class="nav-link btn btn-outline-success" href="{{ route('lang', 'bn') }}" role="button">
-                      <img src="{{ asset('assets/images/flags/bd.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="30px">
-                      <span>{{'বাংলা'}}</span>
+                  <a style="margin-left: -2px;" id="top_button" class="nav-link btn btn-outline-success" href="{{ route('lang', 'bn') }}" role="button">
+                      <img src="{{ asset('assets/images/flags/bd.jpg') }}" alt="user-image" class="me-0 me-sm-1" height="12" width="25px" style="margin-left: -4px;">
+                      <span style="font-size: 12px;margin-left: -6px;">{{'বাংলা'}}</span>
                   </a>
                   @endif
               </div>

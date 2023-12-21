@@ -123,6 +123,7 @@ $array = array(
     'examsuggession'=>'Exam Suggession',
     'result'=>'Result',
     'online_lecture_upload'=>'Online Lecture Upload',
+    'upload_download_file'=>'Upload Download File',
     'internal_results'=>'Internal Results',
     'public_exam_result'=>'Public Exam Result',
     'scholarship'=>'Scholarship Exam Result',

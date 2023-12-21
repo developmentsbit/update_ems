@@ -153,6 +153,7 @@ Route::get('/gender_wise_students',[FrontendController::class,'gender_wise_stude
 Route::get('/section_wise_students',[FrontendController::class,'section_wise_students']);
 Route::get('/student_attendance',[FrontendController::class,'student_attendance']);
 Route::get('/online_lecture',[FrontendController::class,'OnlineLectureUpload']);
+Route::get('/download_file',[FrontendController::class,'UploadDownloadFile']);
 
 Route::get('/classWiseStudent/{id}',[FrontendController::class,'classWiseStudent']);
 

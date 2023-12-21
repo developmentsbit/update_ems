@@ -63,7 +63,7 @@
                                             <th>@lang('others_income_entry.title')</th>
                                             <th>@lang('others_income_entry.amount')</th>
                                             <th>@lang('others_income_entry.receiver')</th>
-                                            <th>@lang('common.status')</th>
+                                            <th>@lang('common.report')</th>
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -77,11 +77,7 @@
                                             <td>{{$v->amount}}</td>
                                             <td>{{$v->receiver}}</td>
                                             <td>
-												@if($v->status == 1)
-												<span class="btn btn-success btn-sm">@lang('common.active')</span>
-												@else
-												<span class="btn btn-danger btn-sm">@lang('common.inactive')</span>
-												@endif
+                                                <a style="float: left;margin-bottom:4px;" href="{{ url('other_report/'.$v->voucher_no) }}" class="btn btn-sm btn-success" target="blank">View Report</a>
 											</td>
                                             <td>
                                                 <a style="float: left;" class="btn btn-sm btn-info" href="{{route('others_income_entry.edit',$v->id)}}"><i class="fa fa-edit"></i></a>
@@ -108,10 +104,10 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>@lang('expense_entry.date')</th>
-                                            <th>@lang('expense_entry.title')</th>
-                                            <th>@lang('expense_entry.amount')</th>
-                                            <th>@lang('expense_entry.receiver')</th>
+                                            <th>@lang('others_income_entry.date')</th>
+                                            <th>@lang('others_income_entry.title')</th>
+                                            <th>@lang('others_income_entry.amount')</th>
+                                            <th>@lang('others_income_entry.receiver')</th>
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -125,15 +121,16 @@
                                             <td>{{$v->amount}}</td>
                                             <td>{{$v->receiver}}</td>
                                             <td>
-                                                <a href="{{ url('retrive_expense_entry') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
+                                                <a href="{{ url('retrive_others_income_entry') }}/{{ $v->id }}" class="btn btn-sm btn-warning">@lang('common.restore')</a>
 
-                                                <a href="{{ url('delete_expense_entry') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.permenantly_delete')</a>
+                                                <a href="{{ url('delete_others_income_entry') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.permenantly_delete')</a>
                                             </td>
                                         </tr>
                                         
                                         @endforeach
                                         @endif
                                     </tbody>
+                                </table>
                             </div> <!-- end tab-content-->
                         
 

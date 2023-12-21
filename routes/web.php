@@ -333,6 +333,7 @@ Route::group(['middleware' => 'auth'], function () {
         'add_noc' => NOCController::class,
         'session' => SessionController::class,
         'institute_position_details' => InstitutePositionDetailsController::class,
+        'add_fee_title' => AddFeeTitleController::class
     ]);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);
@@ -514,7 +515,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::get('nocStatusChanged/{id}',[NOCController::class,'nocStatusChanged']);
 
     Route::resource('others_income', othersIncomeController::class);
-   
+
 
     route::get('retrive_income/{id}',[othersIncomeController::class,'retrive_income']);
     route::get('delete_income/{id}',[othersIncomeController::class,'delete_income']);
@@ -560,35 +561,35 @@ Route::group(['middleware' => 'auth'], function () {
      route::get('delete_bank_transaction_entry/{id}',[BankTransactionEntryController::class,'delete_bank_transaction_entry']);
 
      Route::resource('bank_transaction_report', BankTransactionReportController::class);
-     
+
      Route::resource('bank_transaction_statement', BankTransactionStatementController::class);
      Route::get('/bankstatementreports', [BankTransactionStatementController::class,'bankstatementreports']);
 
 
-    
-    Route::resource('add_fee_title', AddFeeTitleController::class);
+
+    // Route::resource();
     Route::get('showFreeTitle',[AddFeeTitleController::class,'showFreeTitle']);
 
     Route::resource('supplier_info', SupplierInfoController::class);
-    
+
     route::get('retrive_supplier_info/{id}',[SupplierInfoController::class,'retrive_supplier_info']);
-    
+
     route::get('delete_supplier_info/{id}',[SupplierInfoController::class,'delete_supplier_info']);
 
     Route::resource('purchase_entry', PurchaseEntryController::class);
-    
+
     route::get('retrive_purchase_entry/{id}',[PurchaseEntryController::class,'retrive_purchase_entry']);
-    
+
     route::get('delete_purchase_entry/{id}',[PurchaseEntryController::class,'delete_purchase_entry']);
-    
+
     Route::resource('supplier_payment', SupplierPaymentController::class);
 
     route::get('retrive_supplier_payment/{id}',[SupplierPaymentController::class,'retrive_supplier_payment']);
-    
+
     route::get('delete_supplier_payment/{id}',[SupplierPaymentController::class,'delete_supplier_payment']);
 
     Route::resource('supplier_statement', SupplierStatementController::class);
-    
+
 
 });
 

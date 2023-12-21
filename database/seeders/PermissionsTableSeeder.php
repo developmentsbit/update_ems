@@ -3904,72 +3904,6 @@ class PermissionsTableSeeder extends Seeder
             ),
             353 => 
             array (
-                'id' => 473,
-                'name' => 'Add Fee Title List',
-                'parent' => 'Add Fee Title',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            354 => 
-            array (
-                'id' => 474,
-                'name' => 'Add Fee Title Create',
-                'parent' => 'Add Fee Title',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            355 => 
-            array (
-                'id' => 475,
-                'name' => 'Add Fee Title Edit',
-                'parent' => 'Add Fee Title',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            356 => 
-            array (
-                'id' => 476,
-                'name' => 'Add Fee Title Delete',
-                'parent' => 'Add Fee Title',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            357 => 
-            array (
-                'id' => 477,
-                'name' => 'Add Fee Title View',
-                'parent' => 'Add Fee Title',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            358 => 
-            array (
-                'id' => 478,
-                'name' => 'Add Fee Title Print',
-                'parent' => 'Add Fee Title',
-                'guard_name' => 'web',
-                'status' => 1,
-                'created_at' => '2023-12-17 05:19:42',
-                'updated_at' => '2023-12-17 05:19:42',
-                'deleted_at' => NULL,
-            ),
-            359 => 
-            array (
                 'id' => 479,
                 'name' => 'Add Fee Title Edit_history',
                 'parent' => 'Add Fee Title',
@@ -3979,7 +3913,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-17 05:19:42',
                 'deleted_at' => NULL,
             ),
-            360 => 
+            354 => 
             array (
                 'id' => 480,
                 'name' => 'Add Fee Title Deleted_list',
@@ -3990,7 +3924,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-17 05:19:42',
                 'deleted_at' => NULL,
             ),
-            361 => 
+            355 => 
             array (
                 'id' => 481,
                 'name' => 'Add Fee Title Restore',
@@ -4001,7 +3935,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-17 05:19:42',
                 'deleted_at' => NULL,
             ),
-            362 => 
+            356 => 
             array (
                 'id' => 482,
                 'name' => 'Add Fee Title Permanent_delete',
@@ -4012,7 +3946,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-17 05:19:42',
                 'deleted_at' => NULL,
             ),
-            363 => 
+            357 => 
             array (
                 'id' => 483,
                 'name' => 'Add Supplier Info List',
@@ -4023,7 +3957,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            364 => 
+            358 => 
             array (
                 'id' => 484,
                 'name' => 'Add Supplier Info Create',
@@ -4034,7 +3968,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            365 => 
+            359 => 
             array (
                 'id' => 485,
                 'name' => 'Add Supplier Info Edit',
@@ -4045,7 +3979,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            366 => 
+            360 => 
             array (
                 'id' => 486,
                 'name' => 'Add Supplier Info Delete',
@@ -4056,7 +3990,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            367 => 
+            361 => 
             array (
                 'id' => 487,
                 'name' => 'Add Supplier Info View',
@@ -4067,7 +4001,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            368 => 
+            362 => 
             array (
                 'id' => 488,
                 'name' => 'Add Supplier Info Print',
@@ -4078,7 +4012,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            369 => 
+            363 => 
             array (
                 'id' => 489,
                 'name' => 'Add Supplier Info Edit_history',
@@ -4089,7 +4023,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            370 => 
+            364 => 
             array (
                 'id' => 490,
                 'name' => 'Add Supplier Info Deleted_list',
@@ -4100,7 +4034,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            371 => 
+            365 => 
             array (
                 'id' => 491,
                 'name' => 'Add Supplier Info Restore',
@@ -4111,7 +4045,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            372 => 
+            366 => 
             array (
                 'id' => 492,
                 'name' => 'Add Supplier Info Permanent_delete',
@@ -4122,7 +4056,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 04:52:19',
                 'deleted_at' => NULL,
             ),
-            373 => 
+            367 => 
             array (
                 'id' => 493,
                 'name' => 'Purchase Entry List',
@@ -4133,7 +4067,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            374 => 
+            368 => 
             array (
                 'id' => 494,
                 'name' => 'Purchase Entry Create',
@@ -4144,7 +4078,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            375 => 
+            369 => 
             array (
                 'id' => 495,
                 'name' => 'Purchase Entry Edit',
@@ -4155,7 +4089,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            376 => 
+            370 => 
             array (
                 'id' => 496,
                 'name' => 'Purchase Entry Delete',
@@ -4166,7 +4100,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            377 => 
+            371 => 
             array (
                 'id' => 497,
                 'name' => 'Purchase Entry View',
@@ -4177,7 +4111,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            378 => 
+            372 => 
             array (
                 'id' => 498,
                 'name' => 'Purchase Entry Print',
@@ -4188,7 +4122,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            379 => 
+            373 => 
             array (
                 'id' => 499,
                 'name' => 'Purchase Entry Edit_history',
@@ -4199,7 +4133,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            380 => 
+            374 => 
             array (
                 'id' => 500,
                 'name' => 'Purchase Entry Deleted_list',
@@ -4210,7 +4144,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            381 => 
+            375 => 
             array (
                 'id' => 501,
                 'name' => 'Purchase Entry Restore',
@@ -4221,7 +4155,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            382 => 
+            376 => 
             array (
                 'id' => 502,
                 'name' => 'Purchase Entry Permanent_delete',
@@ -4232,7 +4166,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-20 06:24:31',
                 'deleted_at' => NULL,
             ),
-            383 => 
+            377 => 
             array (
                 'id' => 503,
                 'name' => 'Supplier Payment List',
@@ -4243,7 +4177,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            384 => 
+            378 => 
             array (
                 'id' => 504,
                 'name' => 'Supplier Payment Create',
@@ -4254,7 +4188,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            385 => 
+            379 => 
             array (
                 'id' => 505,
                 'name' => 'Supplier Payment Edit',
@@ -4265,7 +4199,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            386 => 
+            380 => 
             array (
                 'id' => 506,
                 'name' => 'Supplier Payment Delete',
@@ -4276,7 +4210,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            387 => 
+            381 => 
             array (
                 'id' => 507,
                 'name' => 'Supplier Payment View',
@@ -4287,7 +4221,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            388 => 
+            382 => 
             array (
                 'id' => 508,
                 'name' => 'Supplier Payment Print',
@@ -4298,7 +4232,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            389 => 
+            383 => 
             array (
                 'id' => 509,
                 'name' => 'Supplier Payment Edit_history',
@@ -4309,7 +4243,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            390 => 
+            384 => 
             array (
                 'id' => 510,
                 'name' => 'Supplier Payment Deleted_list',
@@ -4320,7 +4254,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            391 => 
+            385 => 
             array (
                 'id' => 511,
                 'name' => 'Supplier Payment Restore',
@@ -4331,7 +4265,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            392 => 
+            386 => 
             array (
                 'id' => 512,
                 'name' => 'Supplier Payment Permanent_delete',
@@ -4342,7 +4276,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 04:57:03',
                 'deleted_at' => NULL,
             ),
-            393 => 
+            387 => 
             array (
                 'id' => 513,
                 'name' => 'Supplier Statement List',
@@ -4353,7 +4287,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            394 => 
+            388 => 
             array (
                 'id' => 514,
                 'name' => 'Supplier Statement Create',
@@ -4364,7 +4298,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            395 => 
+            389 => 
             array (
                 'id' => 515,
                 'name' => 'Supplier Statement Edit',
@@ -4375,7 +4309,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            396 => 
+            390 => 
             array (
                 'id' => 516,
                 'name' => 'Supplier Statement Delete',
@@ -4386,7 +4320,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            397 => 
+            391 => 
             array (
                 'id' => 517,
                 'name' => 'Supplier Statement View',
@@ -4397,7 +4331,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            398 => 
+            392 => 
             array (
                 'id' => 518,
                 'name' => 'Supplier Statement Print',
@@ -4408,7 +4342,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            399 => 
+            393 => 
             array (
                 'id' => 519,
                 'name' => 'Supplier Statement Edit_history',
@@ -4419,7 +4353,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            400 => 
+            394 => 
             array (
                 'id' => 520,
                 'name' => 'Supplier Statement Deleted_list',
@@ -4430,7 +4364,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            401 => 
+            395 => 
             array (
                 'id' => 521,
                 'name' => 'Supplier Statement Restore',
@@ -4441,7 +4375,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            402 => 
+            396 => 
             array (
                 'id' => 522,
                 'name' => 'Supplier Statement Permanent_delete',
@@ -4452,7 +4386,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 06:13:04',
                 'deleted_at' => NULL,
             ),
-            403 => 
+            397 => 
             array (
                 'id' => 523,
                 'name' => 'রে List',
@@ -4463,7 +4397,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            404 => 
+            398 => 
             array (
                 'id' => 524,
                 'name' => 'রে Create',
@@ -4474,7 +4408,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            405 => 
+            399 => 
             array (
                 'id' => 525,
                 'name' => 'রে Edit',
@@ -4485,7 +4419,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            406 => 
+            400 => 
             array (
                 'id' => 526,
                 'name' => 'রে Delete',
@@ -4496,7 +4430,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            407 => 
+            401 => 
             array (
                 'id' => 527,
                 'name' => 'রে View',
@@ -4507,7 +4441,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            408 => 
+            402 => 
             array (
                 'id' => 528,
                 'name' => 'রে Print',
@@ -4518,7 +4452,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            409 => 
+            403 => 
             array (
                 'id' => 529,
                 'name' => 'রে Edit_history',
@@ -4529,7 +4463,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            410 => 
+            404 => 
             array (
                 'id' => 530,
                 'name' => 'রে Deleted_list',
@@ -4540,7 +4474,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            411 => 
+            405 => 
             array (
                 'id' => 531,
                 'name' => 'রে Restore',
@@ -4551,7 +4485,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            412 => 
+            406 => 
             array (
                 'id' => 532,
                 'name' => 'রে Permanent_delete',
@@ -4562,7 +4496,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:48:10',
                 'deleted_at' => NULL,
             ),
-            413 => 
+            407 => 
             array (
                 'id' => 533,
                 'name' => 'Bank Transaction Entry List',
@@ -4573,7 +4507,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:32',
                 'deleted_at' => NULL,
             ),
-            414 => 
+            408 => 
             array (
                 'id' => 534,
                 'name' => 'Bank Transaction Entry Create',
@@ -4584,7 +4518,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:32',
                 'deleted_at' => NULL,
             ),
-            415 => 
+            409 => 
             array (
                 'id' => 535,
                 'name' => 'Bank Transaction Entry Edit',
@@ -4595,7 +4529,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            416 => 
+            410 => 
             array (
                 'id' => 536,
                 'name' => 'Bank Transaction Entry Delete',
@@ -4606,7 +4540,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            417 => 
+            411 => 
             array (
                 'id' => 537,
                 'name' => 'Bank Transaction Entry View',
@@ -4617,7 +4551,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            418 => 
+            412 => 
             array (
                 'id' => 538,
                 'name' => 'Bank Transaction Entry Print',
@@ -4628,7 +4562,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            419 => 
+            413 => 
             array (
                 'id' => 539,
                 'name' => 'Bank Transaction Entry Edit_history',
@@ -4639,7 +4573,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            420 => 
+            414 => 
             array (
                 'id' => 540,
                 'name' => 'Bank Transaction Entry Deleted_list',
@@ -4650,7 +4584,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            421 => 
+            415 => 
             array (
                 'id' => 541,
                 'name' => 'Bank Transaction Entry Restore',
@@ -4661,7 +4595,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            422 => 
+            416 => 
             array (
                 'id' => 542,
                 'name' => 'Bank Transaction Entry Permanent_delete',
@@ -4672,7 +4606,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:50:33',
                 'deleted_at' => NULL,
             ),
-            423 => 
+            417 => 
             array (
                 'id' => 543,
                 'name' => 'Bank Transaction Report List',
@@ -4683,7 +4617,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            424 => 
+            418 => 
             array (
                 'id' => 544,
                 'name' => 'Bank Transaction Report Create',
@@ -4694,7 +4628,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            425 => 
+            419 => 
             array (
                 'id' => 545,
                 'name' => 'Bank Transaction Report Edit',
@@ -4705,7 +4639,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            426 => 
+            420 => 
             array (
                 'id' => 546,
                 'name' => 'Bank Transaction Report Delete',
@@ -4716,7 +4650,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            427 => 
+            421 => 
             array (
                 'id' => 547,
                 'name' => 'Bank Transaction Report View',
@@ -4727,7 +4661,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            428 => 
+            422 => 
             array (
                 'id' => 548,
                 'name' => 'Bank Transaction Report Print',
@@ -4738,7 +4672,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            429 => 
+            423 => 
             array (
                 'id' => 549,
                 'name' => 'Bank Transaction Report Edit_history',
@@ -4749,7 +4683,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            430 => 
+            424 => 
             array (
                 'id' => 550,
                 'name' => 'Bank Transaction Report Deleted_list',
@@ -4760,7 +4694,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            431 => 
+            425 => 
             array (
                 'id' => 551,
                 'name' => 'Bank Transaction Report Restore',
@@ -4771,7 +4705,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            432 => 
+            426 => 
             array (
                 'id' => 552,
                 'name' => 'Bank Transaction Report Permanent_delete',
@@ -4782,7 +4716,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:51:49',
                 'deleted_at' => NULL,
             ),
-            433 => 
+            427 => 
             array (
                 'id' => 553,
                 'name' => 'Bank Transaction Statement List',
@@ -4793,7 +4727,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            434 => 
+            428 => 
             array (
                 'id' => 554,
                 'name' => 'Bank Transaction Statement Create',
@@ -4804,7 +4738,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            435 => 
+            429 => 
             array (
                 'id' => 555,
                 'name' => 'Bank Transaction Statement Edit',
@@ -4815,7 +4749,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            436 => 
+            430 => 
             array (
                 'id' => 556,
                 'name' => 'Bank Transaction Statement Delete',
@@ -4826,7 +4760,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            437 => 
+            431 => 
             array (
                 'id' => 557,
                 'name' => 'Bank Transaction Statement View',
@@ -4837,7 +4771,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            438 => 
+            432 => 
             array (
                 'id' => 558,
                 'name' => 'Bank Transaction Statement Print',
@@ -4848,7 +4782,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            439 => 
+            433 => 
             array (
                 'id' => 559,
                 'name' => 'Bank Transaction Statement Edit_history',
@@ -4859,7 +4793,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            440 => 
+            434 => 
             array (
                 'id' => 560,
                 'name' => 'Bank Transaction Statement Deleted_list',
@@ -4870,7 +4804,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            441 => 
+            435 => 
             array (
                 'id' => 561,
                 'name' => 'Bank Transaction Statement Restore',
@@ -4881,7 +4815,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-21 10:54:44',
                 'deleted_at' => NULL,
             ),
-            442 => 
+            436 => 
             array (
                 'id' => 562,
                 'name' => 'Bank Transaction Statement Permanent_delete',
@@ -4890,6 +4824,182 @@ class PermissionsTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2023-12-21 10:54:44',
                 'updated_at' => '2023-12-21 10:54:44',
+                'deleted_at' => NULL,
+            ),
+            437 => 
+            array (
+                'id' => 563,
+                'name' => 'Add Fee Title List',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:09:08',
+                'updated_at' => '2023-12-21 11:09:08',
+                'deleted_at' => NULL,
+            ),
+            438 => 
+            array (
+                'id' => 564,
+                'name' => 'Add Fee Title Create',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:09:08',
+                'updated_at' => '2023-12-21 11:09:08',
+                'deleted_at' => NULL,
+            ),
+            439 => 
+            array (
+                'id' => 565,
+                'name' => 'Add Fee Title Edit',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:09:08',
+                'updated_at' => '2023-12-21 11:09:08',
+                'deleted_at' => NULL,
+            ),
+            440 => 
+            array (
+                'id' => 566,
+                'name' => 'Add Fee Title Delete',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:09:08',
+                'updated_at' => '2023-12-21 11:09:08',
+                'deleted_at' => NULL,
+            ),
+            441 => 
+            array (
+                'id' => 567,
+                'name' => 'Add Fee Title View',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:09:08',
+                'updated_at' => '2023-12-21 11:09:08',
+                'deleted_at' => NULL,
+            ),
+            442 => 
+            array (
+                'id' => 568,
+                'name' => 'Add Fee Title Print',
+                'parent' => 'Add Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:09:08',
+                'updated_at' => '2023-12-21 11:09:08',
+                'deleted_at' => NULL,
+            ),
+            443 => 
+            array (
+                'id' => 570,
+                'name' => 'Fee Title List',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            444 => 
+            array (
+                'id' => 571,
+                'name' => 'Fee Title Create',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            445 => 
+            array (
+                'id' => 572,
+                'name' => 'Fee Title Edit',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            446 => 
+            array (
+                'id' => 573,
+                'name' => 'Fee Title Delete',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            447 => 
+            array (
+                'id' => 574,
+                'name' => 'Fee Title View',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            448 => 
+            array (
+                'id' => 575,
+                'name' => 'Fee Title Print',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            449 => 
+            array (
+                'id' => 576,
+                'name' => 'Fee Title Edit_history',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            450 => 
+            array (
+                'id' => 577,
+                'name' => 'Fee Title Deleted_list',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            451 => 
+            array (
+                'id' => 578,
+                'name' => 'Fee Title Restore',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
+                'deleted_at' => NULL,
+            ),
+            452 => 
+            array (
+                'id' => 579,
+                'name' => 'Fee Title Permanent_delete',
+                'parent' => 'Fee Title',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-21 11:12:21',
+                'updated_at' => '2023-12-21 11:12:21',
                 'deleted_at' => NULL,
             ),
         ));

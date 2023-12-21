@@ -72,6 +72,10 @@ use App\Http\Controllers\ExpenseEntryController;
 use App\Http\Controllers\OthersIncomeEntryController;
 use App\Http\Controllers\InstitutePositionDetailsController;
 use App\Http\Controllers\AddFeeTitleController;
+use App\Http\Controllers\SupplierInfoController;
+use App\Http\Controllers\PurchaseEntryController;
+use App\Http\Controllers\SupplierPaymentController;
+use App\Http\Controllers\SupplierStatementController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -535,6 +539,27 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::resource('add_fee_title', AddFeeTitleController::class);
     Route::get('showFreeTitle',[AddFeeTitleController::class,'showFreeTitle']);
+
+    Route::resource('supplier_info', SupplierInfoController::class);
+    
+    route::get('retrive_supplier_info/{id}',[SupplierInfoController::class,'retrive_supplier_info']);
+    
+    route::get('delete_supplier_info/{id}',[SupplierInfoController::class,'delete_supplier_info']);
+
+    Route::resource('purchase_entry', PurchaseEntryController::class);
+    
+    route::get('retrive_purchase_entry/{id}',[PurchaseEntryController::class,'retrive_purchase_entry']);
+    
+    route::get('delete_purchase_entry/{id}',[PurchaseEntryController::class,'delete_purchase_entry']);
+    
+    Route::resource('supplier_payment', SupplierPaymentController::class);
+
+    route::get('retrive_supplier_payment/{id}',[SupplierPaymentController::class,'retrive_supplier_payment']);
+    
+    route::get('delete_supplier_payment/{id}',[SupplierPaymentController::class,'delete_supplier_payment']);
+
+    Route::resource('supplier_statement', SupplierStatementController::class);
+    
 });
 
 Route::get('/backups', function() {

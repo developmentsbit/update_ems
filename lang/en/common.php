@@ -44,7 +44,7 @@ return [
     "address_bn" => "Address Bangla",
     "address_bn" => "Address Bangla",
     "details" => "Details",
-    "details" => "Details Bangla",
+   
 
     'active' => 'Active',
     'inactive' => 'Inactive',

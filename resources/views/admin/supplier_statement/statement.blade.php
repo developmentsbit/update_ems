@@ -247,7 +247,7 @@ td{
                             {{ $d->details}}
                             </td>
                             <td>
-                                -
+                                
                             </td>
                             <td>
                             {{ $d->amount}}

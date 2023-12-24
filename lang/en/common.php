@@ -44,7 +44,7 @@ return [
     "address_bn" => "Address Bangla",
     "address_bn" => "Address Bangla",
     "details" => "Details",
-   
+
 
     'active' => 'Active',
     'inactive' => 'Inactive',
@@ -125,4 +125,9 @@ return [
     'skip' => 'Skip',
     'previous' => 'Previous',
     'report' => 'Report',
+
+    'from_date' => 'From Date',
+    'to_date' => 'To Date',
+    'month' => 'Month',
+    'year' => 'Year',
 ];

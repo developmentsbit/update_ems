@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\supplier_info;
 use App\Models\supplier_payment;
+use App\Traits\DateFormat;
 
 use Brian2694\Toastr\Facades\Toastr;
 
@@ -29,10 +30,38 @@ class SupplierStatementController extends Controller
     public function create(Request $request)
     {
         $data = [];
-        // $data['year'] = $request->year;
         $data['sl'] = 1;
-        $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->get();
         $data['supplier'] = supplier_info::where('id',$request->supplier_id)->first();
+        $data['report_type'] = $request->report_type;
+        if($request->report_type == 'All')
+        {
+            $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->get();
+        }
+        elseif($request->report_type == 'Daily')
+        {
+            $data['date'] = $request->date;
+            $date = DateFormat::DateToDb('/',$request->date);
+            $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->where('date',$date)->get();
+        }
+        elseif($request->report_type == 'DateToDate')
+        {
+            $data['from_date'] = $request->from_date;
+            $data['to_date'] = $request->to_date;
+            $from_date = DateFormat::DateToDb('/',$request->from_date);
+            $to_date = DateFormat::DateToDb('/',$request->to_date);
+            $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->whereBetween('date',[$from_date,$to_date])->get();
+        }
+        elseif($request->report_type == 'Monthly')
+        {
+            $data['month'] = $request->month;
+            $data['year'] = $request->year;
+            $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->whereMonth('date',$request->month)->whereYear('date',$request->year)->get();
+        }
+        elseif($request->report_type == 'Yearly')
+        {
+            $data['year'] = $request->year;
+            $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->whereYear('date',$request->year)->get();
+        }
         return view('admin.supplier_statement.statement',compact('data'));
     }
 

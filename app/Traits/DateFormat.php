@@ -17,6 +17,60 @@ trait DateFormat
         return $date;
     }
 
+    public static function getMonth($data)
+    {
+        if($data == 1)
+        {
+            $month = 'January';
+        }
+        elseif($data == 2)
+        {
+            $month = 'February';
+        }
+        elseif($data == 3)
+        {
+            $month = 'March';
+        }
+        elseif($data == 4)
+        {
+            $month = 'April';
+        }
+        elseif($data == 5)
+        {
+            $month = 'May';
+        }
+        elseif($data == 6)
+        {
+            $month = 'June';
+        }
+        elseif($data == 7)
+        {
+            $month = 'July';
+        }
+        elseif($data == 8)
+        {
+            $month = 'August';
+        }
+        elseif($data == 9)
+        {
+            $month = 'September';
+        }
+        elseif($data == 10)
+        {
+            $month = 'October';
+        }
+        elseif($data == 11)
+        {
+            $month = 'November';
+        }
+        elseif($data == 12)
+        {
+            $month = 'December';
+        }
+
+        return $month;
+    }
+
     public static function DbToMonthDate($sign, $data)
     {
         $explode = explode($sign,$data);

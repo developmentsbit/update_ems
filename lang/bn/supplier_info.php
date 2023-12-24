@@ -9,7 +9,8 @@ return [
     'supplier_statement' => 'সরবরাহকারীর বিবৃতি',
     'cash_receiver_info' => 'ক্যাশ রিসিভারের তথ্য যোগ করুন',
     'cash_deposit' => 'নগদ আমানত',
-     
+    'report_type' => 'রিপোর্ট টাইপ',
+
 
 
 

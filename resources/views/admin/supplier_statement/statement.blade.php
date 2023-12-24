@@ -22,7 +22,8 @@
         /* border-radius: 10px; */
     }
     .page_header {
-    display: flex;
+    /* display: flex; */
+    text-align: center;
 }
 
 .college_info {
@@ -31,7 +32,7 @@
     justify-content: center;
 }
 .college_info {
-    width: 328px;
+
 }
 .logo {
     max-width: 60px;
@@ -47,12 +48,8 @@
 
 .expense_info {
     text-align: center;
-    align-items: center;
-    justify-content: center;
 }
 .expense_info {
-    width: 344px;
-    margin-left: 276px;
     font-size: 22px;
 }
 
@@ -185,9 +182,7 @@ td{
     <div class="page">
         <div class="page_box">
             <div class="page_header">
-                    <div class="college_image">
-                    </div>
-                    <div class="college_info">
+                <div class="college_info">
                     <img src="{{ asset($settings->image)}}" alt="" class="logo">
                     <h2>{{$settings->name}}</h2>
                     {{$settings->address}}<br>
@@ -198,6 +193,19 @@ td{
                 <div class="expense_info">
                     Supplier Statement<br>
                 </div>
+            </div>
+            <div class="report_type" style="text-align: center">
+                @if($data['report_type'] == 'All')
+                {{ $data['report_type'] }}
+                @elseif($data['report_type'] == 'Daily')
+                Daily ({{$data['date']}})
+                @elseif($data['report_type'] == "DateToDate")
+                From  {{$data['from_date']}} - {{ $data['to_date'] }}
+                @elseif($data['report_type'] == 'Monthly')
+                {{ DateFormat::getMonth($data['month']) }} - {{ $data['year'] }}
+                @elseif ($data['report_type'] == 'Yearly')
+                For The Year - {{ $data['year'] }}
+                @endif
             </div>
 
             <div class="page_body" style="margin-top: 0px;">

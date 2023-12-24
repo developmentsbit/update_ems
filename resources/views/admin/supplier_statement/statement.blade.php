@@ -194,7 +194,7 @@ td{
                     Supplier Statement<br>
                 </div>
             </div>
-           
+
             <div class="page_body" style="margin-top: 0px;">
                     {{--<div class="academic_session">
                         Date : <b><span class="reg_number">
@@ -218,7 +218,7 @@ td{
                             <th>Phone :</th>
                             <th>+880{!!  $data['supplier']->phone !!}</th>
                             <th>Print Date :</th>
-                            <th>{{ $data['supplier']->created_at}}</th>
+                            <th>{{ date('d-m-Y || h:i:s a') }}</th>
                         </tr>
                     </table>
                     <table style="margin-top: 20px">
@@ -229,7 +229,7 @@ td{
                             <td>Details</td>
                             <td>Payable Amount</td>
                             <td>Paid Amount</td>
-                           
+
                             <td>Balance</td>
                         </tr>
                         @if($data['data'])
@@ -242,20 +242,20 @@ td{
                                 {{ $d->receiver}}
                             </td>
                             <td>
-                           
+
                             <td>
                             {{ $d->details}}
                             </td>
                             <td>
-                                
+
                             </td>
                             <td>
                             {{ $d->amount}}
                             </td>
-                       
-                                
-                           
-                         
+
+
+
+
                         </tr>
                         @endforeach
                         @endif

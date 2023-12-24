@@ -15,8 +15,8 @@ class SupplierStatementController extends Controller
      */
     public function index()
     {
-    
-      
+
+
         $supplier = supplier_info::get();
         $i=1;
         return view('admin.supplier_statement.index',compact('supplier','i'));
@@ -33,8 +33,8 @@ class SupplierStatementController extends Controller
         $data['sl'] = 1;
         $data['data'] = supplier_payment::where('supplier_id',$request->supplier_id)->get();
         $data['supplier'] = supplier_info::where('id',$request->supplier_id)->first();
-       
-        
+
+
         return view('admin.supplier_statement.statement',compact('data'));
     }
 

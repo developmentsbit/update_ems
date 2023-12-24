@@ -45,7 +45,7 @@
 									@if(isset($supplier))
 									@foreach($supplier as $i)
 									<option value="{{ $i->id }}"
-                                        <?php 
+                                        <?php
                                         if ($i->id == $data->supplier_id) {
                                             echo "selected";
                                         }?>
@@ -58,7 +58,7 @@
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('expense_entry.amount'): </label><span class="text-danger">*</span>
 							<div class="input-group mt-2">
-								<input class="form-control form-control" type="text" name="amount" id="amount"  required="" value="{{ $data->amount }}">
+								<input class="form-control form-control" type="text" name="amount" id="amount"  required="" value="{{ $data->payment }}">
 							</div>
 						</div>
                         <div class="form-group mb-3 col-md-6">
@@ -79,8 +79,8 @@
 								<textarea id="summernote1" class="form-control w-100" rows="10" type="text" name="details_bn" >{{ $data->details_bn }}</textarea>
 							</div>
 						</div>
-					
-										
+
+
 						<div class="modal-footer border-0">
 							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
 							<button type="submit" class="btn btn-success button border-0">@lang('common.update')</button>
@@ -101,4 +101,3 @@
 
 @endsection
 
-    

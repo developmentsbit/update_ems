@@ -11,4 +11,9 @@ class supplier_info extends Model
     use HasFactory,SoftDeletes;
 
     protected $guarded = [];
+
+    public function supplier()
+    {
+        return $this->belongsTo('App\Models\supplier_info','supplier_id');
+    }
 }

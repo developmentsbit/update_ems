@@ -59,14 +59,14 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                           
+
                                             <th>@lang('common.date')</th>
                                             <th>@lang('common.name')</th>
                                             <th>@lang('expense_entry.amount')</th>
                                             <th>@lang('expense_entry.receiver')</th>
                                             <th>@lang('common.details')</th>
-                                            
-                                           
+
+
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -84,10 +84,10 @@
                                                 @else
                                                 {{$v->supplier->name_bn ?: $v->supplier->name}}
                                                 @endif
-                                             
+
                                             </td>
                                             <td>
-                                                {{$v->amount}}
+                                                {{$v->payment}}
                                             </td>
                                             <td>
                                                 {{$v->receiver}}
@@ -124,14 +124,14 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                           
+
                                             <th>@lang('common.date')</th>
                                             <th>@lang('common.name')</th>
                                             <th>@lang('expense_entry.amount')</th>
                                             <th>@lang('expense_entry.receiver')</th>
                                             <th>@lang('common.details')</th>
-                                            
-                                           
+
+
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -151,7 +151,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                {{$v->amount}}
+                                                {{$v->payment}}
                                             </td>
                                             <td>
                                                 {{$v->receiver}}
@@ -170,12 +170,12 @@
                                                 <a href="{{ url('delete_supplier_payment') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
                                             </td>
                                         </tr>
-                                 
+
                                         @endforeach
                                         @endif
                                     </tbody>
                             </div> <!-- end tab-content-->
-                        
+
 
                     </div> <!-- end card body-->
                 </div> <!-- end card -->

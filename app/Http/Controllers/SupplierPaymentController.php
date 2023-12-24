@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\supplier_info;
 use App\Models\supplier_payment;
-use App\Models\purchase_entry;
 use Brian2694\Toastr\Facades\Toastr;
 
 class SupplierPaymentController extends Controller
@@ -24,7 +23,7 @@ class SupplierPaymentController extends Controller
     public function index()
     {
         $i = 1;
-        $data = supplier_payment::get();
+        $data = supplier_payment::where('payment','!=',NULL)->get();
         return view('admin.supplier_payment.index',compact('data','i'));
     }
 
@@ -48,7 +47,7 @@ class SupplierPaymentController extends Controller
 
             'date'=>$date,
             'supplier_id'=>$request->supplier_id,
-            'amount'=>$request->amount,
+            'payment'=>$request->amount,
             'receiver'=>$request->receiver,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
@@ -104,7 +103,7 @@ class SupplierPaymentController extends Controller
 
             'date'=>$date,
             'supplier_id'=>$request->supplier_id,
-            'amount'=>$request->amount,
+            'payment'=>$request->amount,
             'receiver'=>$request->receiver,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
@@ -150,7 +149,7 @@ class SupplierPaymentController extends Controller
 
     public function getSupplierDue($id)
     {
-        $purchase_amount = purchase_entry::purchaseAmount($id);
+        $purchase_amount = supplier_payment::payable($id);
         $payment = supplier_payment::totalPayment($id);
         $due = $purchase_amount - $payment;
         return $due;

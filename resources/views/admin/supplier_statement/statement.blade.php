@@ -115,7 +115,7 @@ table, tr, th, td{
 }
 th, td{
     text-align: left !important;
-    padding : 7px;
+    padding : 5px;
 }
 .college_image {
     width: 280px;
@@ -161,9 +161,12 @@ th{
     /* border: 0 !important; */
 }
 td{
-    padding : 7px;
+    padding : 5px;
 }
 @media print {
+    .print{
+        display: none;
+    }
   html, body {
     width: 210mm;
     height: 297mm;
@@ -175,6 +178,8 @@ td{
     @php
     use App\Traits\DateFormat;
     $bankBalance = 0;
+    $payable =0;
+    $payment = 0;
     @endphp
 
     <div class="page">
@@ -225,12 +230,10 @@ td{
                         <tr>
                             <td>SL</td>
                             <td>Date</td>
-                            <td>Resiver</td>
-                            <td>Details</td>
+                            <td>Reciver</td>
                             <td>Payable Amount</td>
                             <td>Paid Amount</td>
-
-                            <td>Balance</td>
+                            <td>Details</td>
                         </tr>
                         @if($data['data'])
                         @foreach($data['data'] as $d)
@@ -238,30 +241,48 @@ td{
                             <td>
                                 {{$data['sl']++}}
                             </td>
+
+                            <td>
+                                {{DateFormat::DbToMonthDate('-',$d->date)}}
+                            </td>
+
                             <td>
                                 {{ $d->receiver}}
                             </td>
-                            <td>
 
                             <td>
-                            {{ $d->details}}
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-                            {{ $d->amount}}
+                                {{ $d->payable }}
+                                @php
+                                $payable = $payable + $d->payable;
+                                @endphp
                             </td>
 
+                            <td>
+                            {{ $d->payment}}
+                            @php
+                            $payment = $payment + $d->payment;
+                            @endphp
+                            </td>
 
-
-
+                            <td>
+                            {!! $d->details !!}
+                            </td>
                         </tr>
                         @endforeach
                         @endif
                         <tr>
-                            <th colspan="8">Total Bank Balance</th>
-                            <th>{{$bankBalance}}</th>
+                            <td colspan="3">
+                                Total
+                            </td>
+                            <th>
+                                {{$payable}}
+                            </th>
+                            <th>
+                                {{ $payment }}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="6">Total Supplier Balance : <u>{{ $payable - $payment }}</u></th>
                         </tr>
                     </table>
                 </div>
@@ -271,11 +292,11 @@ td{
                     <span>Head Of Institute</span>
                     <span>Office Assistant</span>
                 </div>
+                <center>
+                    <button class="print" onclick="window.print();">Print</button>
+                </center>
             </div>
         </div>
-        <center style="font-size: 14px;margin-top: -17px;margin-bottom: 14px;margin-left: 285px;">
-            Developed By: SBIT (www.sbit.com.bd)
-        </center>
     </div>
 
 </body>

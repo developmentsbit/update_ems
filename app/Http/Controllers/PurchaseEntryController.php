@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\supplier_info;
-use App\Models\purchase_entry;
+use App\Models\supplier_payment;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
@@ -17,16 +17,17 @@ class PurchaseEntryController extends Controller
         return $date;
     }
 
- 
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = purchase_entry::leftjoin("supplier_infos",'supplier_infos.id','purchase_entries.supplier_id')
-        ->select("purchase_entries.*",'supplier_infos.name','supplier_infos.name_bn')
+        $data = supplier_payment::leftjoin("supplier_infos",'supplier_infos.id','supplier_payments.supplier_id')
+        ->where('supplier_payments.payable','!=',NULL)
+        ->select("supplier_payments.*",'supplier_infos.name','supplier_infos.name_bn')
         ->get();
-       
+
         $i = 1;
         return view('admin.purchase_entry.index',compact('data','i'));
     }
@@ -35,7 +36,7 @@ class PurchaseEntryController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    { 
+    {
         $supplier = supplier_info::all();
         return view('admin.purchase_entry.create',compact('supplier'));
     }
@@ -51,14 +52,14 @@ class PurchaseEntryController extends Controller
 
             'date'=>$date,
             'supplier_id'=>$request->supplier_id,
-            'amount'=>$request->amount,
+            'payable'=>$request->amount,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
-           
-            
+
+
         );
 
-        $insert = purchase_entry::create($data);
+        $insert = supplier_payment::create($data);
 
         if($insert)
         {
@@ -85,10 +86,10 @@ class PurchaseEntryController extends Controller
      */
     public function edit(string $id)
     {
-        $data = purchase_entry::where('id',$id)->first();
+        $data = supplier_payment::where('id',$id)->first();
 
         $supplier = supplier_info::all();
-        
+
         $explode = explode('-',$data->date);
 
         $date = $explode['1'].'/'.$explode['2'].'/'.$explode[0];
@@ -105,14 +106,14 @@ class PurchaseEntryController extends Controller
 
             'date'=>$date,
             'supplier_id'=>$request->supplier_id,
-            'amount'=>$request->amount,
+            'payable'=>$request->amount,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
-           
-            
+
+
         );
 
-        $update = purchase_entry::find($id)->update($data);
+        $update = supplier_payment::find($id)->update($data);
 
         if($update)
         {
@@ -131,20 +132,20 @@ class PurchaseEntryController extends Controller
      */
     public function destroy(string $id)
     {
-        purchase_entry::where('id',$id)->delete();
+        supplier_payment::where('id',$id)->delete();
         Toastr::success('Data Delete Successfully', 'success');
             return redirect(route('purchase_entry.index'));
     }
 
     public function retrive_purchase_entry($id)
     {
-        purchase_entry::where('id',$id)->withTrashed()->restore();
+        supplier_payment::where('id',$id)->withTrashed()->restore();
         return redirect()->route('purchase_entry.index') ->with('message','Others Income List Retrive Successfully');
-    } 
+    }
 
     public function delete_purchase_entry($id){
 
-        purchase_entry::where('id',$id)->withTrashed()->forceDelete();
+        supplier_payment::where('id',$id)->withTrashed()->forceDelete();
         return redirect()->route('purchase_entry.index') ->with('message','Others Income List Permanently Deleted Successfully');
     }
 }

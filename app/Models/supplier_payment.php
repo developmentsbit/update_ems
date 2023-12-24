@@ -17,9 +17,16 @@ class supplier_payment extends Model
         return $this->belongsTo('App\Models\supplier_info','supplier_id');
     }
 
+    public static function payable($id)
+    {
+        $payment = supplier_payment::where('supplier_id',$id)->sum('payable');
+
+        return $payment;
+    }
+
     public static function totalPayment($id)
     {
-        $payment = supplier_payment::where('supplier_id',$id)->sum('amount');
+        $payment = supplier_payment::where('supplier_id',$id)->sum('payment');
 
         return $payment;
     }

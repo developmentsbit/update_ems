@@ -59,13 +59,13 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                           
+
                                             <th>@lang('common.date')</th>
                                             <th>@lang('common.name')</th>
                                             <th>@lang('expense_entry.amount')</th>
                                             <th>@lang('common.details')</th>
-                                            
-                                           
+
+
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -78,7 +78,7 @@
                                                 {{$v->date}}
                                             </td>
                                             <td>
-                                                
+
                                                 @if($lang == 'en')
                                                 {{ $v->name ?: $v->name_bn}}
                                                 @else
@@ -86,7 +86,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                {{$v->amount}}
+                                                {{$v->payable}}
                                             </td>
                                             <td>
                                                 @if($lang == 'en')
@@ -111,9 +111,9 @@
                                 </table>
                             </div> <!-- end all-->
                             @php
-                            use App\Models\purchase_entry;
+                            use App\Models\supplier_payment;
                             use App\Models\supplier_info;
-                            $deleted = purchase_entry::onlyTrashed()->with('supplier')->get();
+                            $deleted = supplier_payment::onlyTrashed()->with('supplier')->get();
                             $i = 1;
                             @endphp
                             <div class="tab-pane" id="users-tab-deleted">
@@ -121,13 +121,13 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                           
+
                                             <th>@lang('common.date')</th>
                                             <th>@lang('common.name')</th>
                                             <th>@lang('expense_entry.amount')</th>
                                             <th>@lang('common.details')</th>
-                                            
-                                           
+
+
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -163,12 +163,12 @@
                                                 <a href="{{ url('delete_purchase_entry') }}/{{ $v->id }}" class="btn btn-danger btn-sm">@lang('common.deleted_permanently')</a>
                                             </td>
                                         </tr>
-                                 
+
                                         @endforeach
                                         @endif
                                     </tbody>
                             </div> <!-- end tab-content-->
-                        
+
 
                     </div> <!-- end card body-->
                 </div> <!-- end card -->

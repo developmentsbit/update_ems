@@ -84,6 +84,7 @@ use App\Http\Controllers\SupplierPaymentController;
 use App\Http\Controllers\SupplierStatementController;
 use App\Http\Controllers\CashReceiverInfo;
 use App\Http\Controllers\CashDepositController;
+use App\Http\Controllers\CashWithdrawController;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -605,6 +606,12 @@ Route::group(['middleware' => 'auth'], function () {
     route::get('retrive_cash_deposit/{id}',[CashDepositController::class,'retrive_cash_deposit']);
 
     route::get('delete_cash_deposit/{id}',[CashDepositController::class,'delete_cash_deposit']);
+
+    Route::resource('cash_withdraw', CashWithdrawController::class);
+
+    route::get('retrive_cash_deposit/{id}',[CashWithdrawController::class,'retrive_cash_deposit']);
+
+    route::get('delete_cash_deposit/{id}',[CashWithdrawController::class,'delete_cash_deposit']);
 
 });
 

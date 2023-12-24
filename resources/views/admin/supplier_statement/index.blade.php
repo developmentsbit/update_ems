@@ -45,20 +45,15 @@
                         <div class="form-group row">
                             <div class="col-md-12 col-6 mt-md-1 mt-3">
                                 <label>@lang('supplier_info.supplier')</label>
-                               
-                                    <select class="form-control " name="supplier_id">
-                                        @if(isset($supplier))
-                                        @foreach($supplier as $i)
-                                        <option value="{{ $i->id }}">@if($lang == 'en'){{ $i->name }}@else {{$i->name_bn}}@endif</option>
-                                        @endforeach
-                                        @endif
-                                    </select>
-                                    
-                             
+                                <select class="form-control form-control-sm" name="supplier_id" required>
+                                    <option value="">@lang('common.select_one')</option>
+                                    @if(isset($supplier))
+                                    @foreach($supplier as $i)
+                                    <option value="{{ $i->id }}">@if($lang == 'en'){{ $i->name }}@else {{$i->name_bn}}@endif</option>
+                                    @endforeach
+                                    @endif
+                                </select>
                             </div>
-                         
-                          
-                           
                             <div class="col-12 mt-2">
                                 <button type="submit" class="btn btn-sm btn-success"> <i class="fa fa-eye"></i> @lang('common.show')</button>
                             </div>

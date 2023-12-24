@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\supplier_info;
 use App\Models\supplier_payment;
+use App\Models\purchase_entry;
 use Brian2694\Toastr\Facades\Toastr;
 
 class SupplierPaymentController extends Controller
@@ -51,8 +52,8 @@ class SupplierPaymentController extends Controller
             'receiver'=>$request->receiver,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
-           
-            
+
+
         );
 
         $insert = supplier_payment::create($data);
@@ -85,7 +86,7 @@ class SupplierPaymentController extends Controller
         $data = supplier_payment::where('id',$id)->first();
 
         $supplier = supplier_info::all();
-        
+
         $explode = explode('-',$data->date);
 
         $date = $explode['1'].'/'.$explode['2'].'/'.$explode[0];
@@ -107,8 +108,8 @@ class SupplierPaymentController extends Controller
             'receiver'=>$request->receiver,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
-           
-            
+
+
         );
 
         $update = supplier_payment::find($id)->update($data);
@@ -139,12 +140,20 @@ class SupplierPaymentController extends Controller
     {
         supplier_payment::where('id',$id)->withTrashed()->restore();
         return redirect()->route('supplier_payment.index') ->with('message','Others Income List Retrive Successfully');
-    } 
+    }
 
     public function delete_supplier_payment($id){
 
         supplier_payment::where('id',$id)->withTrashed()->forceDelete();
         return redirect()->route('supplier_payment.index') ->with('message','Others Income List Permanently Deleted Successfully');
     }
-    
+
+    public function getSupplierDue($id)
+    {
+        $purchase_amount = purchase_entry::purchaseAmount($id);
+        $payment = supplier_payment::totalPayment($id);
+        $due = $purchase_amount - $payment;
+        return $due;
+    }
+
 }

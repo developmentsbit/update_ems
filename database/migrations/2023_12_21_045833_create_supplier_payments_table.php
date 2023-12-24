@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('date');
             $table->bigInteger('supplier_id')->unsigned();
             $table->foreign('supplier_id')->references('id')->on('supplier_infos');
-            $table->integer('amount')->nullable();
+            $table->double('payable')->nullable();
+            $table->double('payment')->nullable();
             $table->string('receiver')->nullable();
             $table->longText('details')->nullable();
             $table->longText('details_bn')->nullable();

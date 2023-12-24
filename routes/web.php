@@ -572,6 +572,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::resource();
     Route::get('showFreeTitle',[AddFeeTitleController::class,'showFreeTitle']);
 
+
     Route::resource('supplier_info', SupplierInfoController::class);
 
     route::get('retrive_supplier_info/{id}',[SupplierInfoController::class,'retrive_supplier_info']);
@@ -585,6 +586,7 @@ Route::group(['middleware' => 'auth'], function () {
     route::get('delete_purchase_entry/{id}',[PurchaseEntryController::class,'delete_purchase_entry']);
 
     Route::resource('supplier_payment', SupplierPaymentController::class);
+    Route::get('getSupplierDue/{id}',[SupplierPaymentController::class,'getSupplierDue']);
 
     route::get('retrive_supplier_payment/{id}',[SupplierPaymentController::class,'retrive_supplier_payment']);
 

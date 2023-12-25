@@ -1558,6 +1558,25 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-23 06:54:02',
                 'deleted_at' => NULL,
             ),
+            81 => 
+            array (
+                'id' => 125,
+                'parent_id' => 111,
+                'name' => 'Cash Withdraw',
+                'bn_name' => 'নগদ উত্তোলন',
+                'system_name' => 'Cash Withdraw',
+                'route_name' => 'cash_withdraw.index',
+                'icon' => NULL,
+                'order_by' => 7,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

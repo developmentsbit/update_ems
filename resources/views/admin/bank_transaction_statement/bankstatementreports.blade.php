@@ -21,17 +21,13 @@
         padding: 5px;
         /* border-radius: 10px; */
     }
-    .page_header {
-    display: flex;
-}
+
 
 .college_info {
+    width: 100%;
     text-align: center;
     align-items: center;
     justify-content: center;
-}
-.college_info {
-    width: 328px;
 }
 .logo {
     max-width: 60px;
@@ -50,12 +46,6 @@
     align-items: center;
     justify-content: center;
 }
-.expense_info {
-    width: 344px;
-    margin-left: 276px;
-    font-size: 22px;
-}
-
 .expense_info h2 {
     margin: 0px;
 }
@@ -87,9 +77,7 @@ span.reg_number {
     padding: 2px 10px;
     margin-right: -4px;
 }
-.body_header {
-    display: flex;
-}
+
 
 .student_id {
     text-align: left;
@@ -180,9 +168,7 @@ td{
     <div class="page">
         <div class="page_box">
             <div class="page_header">
-                    <div class="college_image">
-                    </div>
-                    <div class="college_info">
+                <div class="college_info">
                     <img src="{{ asset($settings->image)}}" alt="" class="logo">
                     <h2>{{$settings->name}}</h2>
                     {{$settings->address}}<br>
@@ -193,16 +179,22 @@ td{
                 <div class="expense_info">
                 Bank Transaction Statement<br>
                 </div>
+                <div style="text-align: center;">
+                    @if($data['report_type'] == 'All')
+                    {{ $data['report_type'] }}
+                    @elseif($data['report_type'] == 'Daily')
+                    Daily ({{$data['date']}})
+                    @elseif($data['report_type'] == "DateToDate")
+                    From  {{$data['from_date']}} - {{ $data['to_date'] }}
+                    @elseif($data['report_type'] == 'Monthly')
+                    {{ DateFormat::getMonth($data['month']) }} - {{ $data['year'] }}
+                    @elseif ($data['report_type'] == 'Yearly')
+                    For The Year - {{ $data['year'] }}
+                    @endif
+                </div>
             </div>
             <hr>
             <div class="page_body" style="margin-top: 0px;">
-                    {{--<div class="academic_session">
-                        Date : <b><span class="reg_number">
-                           {{ DateFormat::DbtoDate('-',$data->date) }}
-                        </span></b>
-                    </div>
-                </div>
-                <br>--}}
                 <div class="body">
                     <img src="{{asset($settings->image)}}" alt="" id="watermark">
                 </div>
@@ -210,133 +202,77 @@ td{
                     <table>
                         <tr>
                             <th>Bank Name :</th>
-                            <td>TEST</td>
-                            <th>Bank Name :</th>
-                            <td>TEST</td>
+                            <td>{{$data['bank']->bank_name}}</td>
+                            <th>Adress :</th>
+                            <td>{!! $data['bank']->address !!}</td>
                         </tr>
                         <tr>
-                            <th>Bank Name :</th>
-                            <td>TEST</td>
-                            <th>Bank Name :</th>
-                            <td>TEST</td>
+                            <th>AC/No :</th>
+                            <td>{{$data['bank']->account_number}}</td>
+                            <th>Print Date & Time :</th>
+                            <td>{{date('d-m-Y || h:i:s a')}}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="body">
                     <table>
                         <tr>
-                            <td>SL</td>
-                            <td>Bank Name</td>
-                            <td>Acount Type</td>
-                            <td>Account Number</td>
-                            <td>Deposit</td>
-                            <td>Withdraw</td>
-                            <td>Cost</td>
-                            <td>Interest</td>
-                            <td>Balance</td>
+                            <td>Transaction Type</td>
+                            <td>Date</td>
+                            <td>Cheque No.</td>
+                            <td>Ammount</td>
                         </tr>
-                        @if($data)
-                        @foreach($data as $d)
+                        @if($data['data'])
+                        @foreach ($data['data'] as $v)
+
+                        @php
+                        if($v->transaction_type == 1 || $v->transaction_type == 4)
+                        {
+                            $amount = $v->amount;
+                        }
+                        else {
+
+                            $amount = $v->amount * -1;
+                        }
+                        $bankBalance = $bankBalance + $amount;
+                        @endphp
+
                         <tr>
                             <td>
-                                {{$data['i']++}}
+                                @if($v->transaction_type == 1)
+                                (+) Deposit
+                                @elseif($v->transaction_type == 2)
+                                (-) Withdraw
+                                @elseif($v->transaction_type == 3)
+                                (-) Cost
+                                @else
+                                (+) Interest
+                                @endif
                             </td>
                             <td>
-                                {{ $d->bank_name}}
+                                {{ DateFormat::DbToMonthDate('-',$v->date)}}
                             </td>
                             <td>
-                            @if($d->type == 1)
-                                Bank
-                            @endif
-                            @if($d->type == 2)
-                                Bkash
-                            @endif
+                                {{ $v->cheque_no ?: '-'}}
                             </td>
                             <td>
-                            {{ $d->account_number}}
+                                @if($v->transaction_type == 2 || $v->transaction_type == 3)
+                                ({{$v->amount}})
+                                @else
+                                {{$v->amount}}
+                                @endif
                             </td>
-                            <td>
-                            @php
-                            $total_deposit = 0;
-                            foreach($d->transaction as $v)
-                            {
-                                if($v->transaction_type == 1)
-                                {
-                                    $total_deposit = $total_deposit + $v->amount;
-                                }
-                            }
-                            @endphp
 
-                            @if($total_deposit > 0)
-                            {{ $total_deposit }}
-                            @else 
-                            -
-                            @endif
-                            </td>
-                                
-                            <td>
-                            @php
-                            $total_withdraw = 0;
-                            foreach($d->transaction as $v)
-                            {
-                                if($v->transaction_type == 2)
-                                {
-                                    $total_withdraw = $total_withdraw + $v->amount;
-                                }
-                            }
-                            @endphp
-                            @if($total_withdraw)
-                            {{ $total_withdraw }}
-                            @else 
-                            -
-                            @endif
-                            <td>
-                            @php
-                            $total_cost = 0;
-                            foreach($d->transaction as $v)
-                            {
-                                if($v->transaction_type == 3)
-                                {
-                                    $total_cost = $total_cost + $v->amount;
-                                }
-                            }
-                            @endphp
-                            @if ($total_cost)
-                            {{ $total_cost }}
-                            @else
-                            -
-                            @endif
-                            </td>
-                            <td>
-                            @php
-                            $total_interest = 0;
-                            foreach($d->transaction as $v)
-                            {
-                                if($v->transaction_type == 4)
-                                {
-                                    $total_interest = $total_interest + $v->amount;
-                                }
-                            }
-                            @endphp
-                            @if ($total_interest)
-                            {{ $total_interest }}
-                            @else
-                            -
-                            @endif
-                            </td>
-                            <td>
-                            @php 
-                            $total = ($total_deposit + $total_interest) - ($total_withdraw + $total_cost);
-                            $bankBalance = $bankBalance + $total;
-                            @endphp
-                                {{ $total  }}
-                            </td>
                         </tr>
                         @endforeach
                         @endif
                         <tr>
-                            <th colspan="8">Total Bank Balance</th>
-                            <th>{{$bankBalance}}</th>
+                            <th colspan="3" style="text-align:right;">
+                                Total
+                            </th>
+                            <th>
+                                {{$bankBalance}}
+                            </th>
                         </tr>
                     </table>
                 </div>
@@ -348,9 +284,9 @@ td{
                 </div>
             </div>
         </div>
-        <center style="font-size: 14px;margin-top: -17px;margin-bottom: 14px;margin-left: 285px;">
+        {{-- <center style="font-size: 14px;margin-top: -17px;margin-bottom: 14px;margin-left: 285px;">
             Developed By: SBIT (www.sbit.com.bd)
-        </center>
+        </center> --}}
     </div>
 
 </body>

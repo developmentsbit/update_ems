@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bank Transaction Entries</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -173,6 +174,7 @@ td{
 <body>
     @php
     use App\Traits\DateFormat;
+    use App\Traits\NumberToWord;
     $bankBalance = 0;
     @endphp
 
@@ -233,14 +235,8 @@ td{
                 </div>
             </div>
         </div>
+        @include('admin.footer_script.footer')
     </div>
-    
-        <center style="font-size: 14px;margin-top: -17px;margin-bottom: 14px;">
-            Developed By: SBIT (www.sbit.com.bd)
-        </center>
-        <center>
-            <input type="button" name="print" value="Print" class="print" style="height: 30px; width: 100px; background: GREEN; color: #fff; border: 0px;" onclick="window.print()">
-        </center>
 
 
 </body>

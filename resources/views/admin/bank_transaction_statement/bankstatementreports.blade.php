@@ -162,6 +162,7 @@ td{
 <body>
     @php
     use App\Traits\DateFormat;
+    use App\Traits\NumberToWord;
     $bankBalance = 0;
     @endphp
 
@@ -275,6 +276,7 @@ td{
                             </th>
                         </tr>
                     </table>
+                    <span style="font-size:15px;">Taka In Word : {{ NumberToWord::convertWord($bankBalance) }} Taka Only</span>
                 </div>
             </div>
             <div class="page-footer">
@@ -284,9 +286,7 @@ td{
                 </div>
             </div>
         </div>
-        {{-- <center style="font-size: 14px;margin-top: -17px;margin-bottom: 14px;margin-left: 285px;">
-            Developed By: SBIT (www.sbit.com.bd)
-        </center> --}}
+        @include('admin.footer_script.footer')
     </div>
 
 </body>

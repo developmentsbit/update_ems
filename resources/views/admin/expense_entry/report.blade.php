@@ -46,6 +46,7 @@
 
 .college_info h2 {
     margin: 0px;
+    font-weight: 500;
 }
 
 .expense_info {
@@ -56,16 +57,16 @@
 .expense_info {
     width: 328px;
     margin-left: 220px;
-    font-size: 24px;
+    font-size: 21px;
 }
 
-.expense_info h2 {
-    margin: 0px;
-}
 
 .copy {
     text-align: right;
     width: 208px;
+}
+.copy h2{
+    font-weight: 500;
 }
     @page {
   size: A4;
@@ -167,6 +168,7 @@ p{
 <body>
     @php
     use App\Traits\DateFormat;
+    use App\Traits\NumberToWord;
     @endphp
 
     @for ($x = 0; $x < 2; $x = $x+1)
@@ -179,10 +181,9 @@ p{
                 </div>
                 <div class="college_info">
                     <h2>{{$settings->name}}</h2>
-                    <b>{{$settings->address}}</b><br>
+                    {{$settings->address}}<br>
                 </div>
                 <div class="copy">
-                    {{--<img src="{{ asset('student_image')}}/{{$data->image}}" alt="" class="student_image">--}}
                     <b><h2>
                         @if($x == 0)
                         Office Copy
@@ -195,7 +196,7 @@ p{
             <hr>
             <div class="page_header">
                 <div class="expense_info">
-                    <b>Expense Voucher</b><br>
+                    <b style="font-weight:500;">Expense Voucher</b><br>
                 </div>
             </div>
             <hr>
@@ -218,64 +219,43 @@ p{
                 <br>
                 <div class="body">
                     <img src="{{asset($settings->image)}}" alt="" id="watermark">
-                    <table>
-                        <tr>
-                            <td>To</td>
-                            <th style="text-transform: uppercase;" colspan="3">{{$data->receiver}}</th>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <th style="text-transform: uppercase;" colspan="3">{{ $data->address }}</th>
-                        </tr>
-                    </table>
                 </div>
                 <div class="body">
                     <table>
                         <tr>
-                            <td colspan="2">SL</td>
-                            <td colspan="3">Title</td>
-                            <td colspan="2">Details</td>
-                            <td colspan="2">Amount</td>
+                            <th>To</th>
+                            <td>{{$data->receiver}}</td>
                         </tr>
                         <tr>
-                            <th colspan="2" style="padding : 0px;">
-                                <table>
-                                    <tr>
-                                        <th>{{$i++}}</th>
-                                    </tr>
-                                </table>
-                            </th>
-                            <th colspan="3" style="padding : 0px;">
-                                <table>
-                                    <tr>
-                                        <th>@if($lang == 'en'){{ $data->title ?: $data->title_bn}}@else{{$data->title_bn ?: $data->title}}@endif</th>
-                                    </tr>
-                                </table>
-                            </th>
-                            <th colspan="2" style="padding : 0px;">
-                                <table>
-                                    <tr>
-                                    <th>@if($lang == 'en'){!! $data->details ?: $data->details_bn !!}@elseif($lang == 'bn'){!! $data->details_bn ?: $data->details !!}@endif</th>
-                                    </tr>
-                                </table>
-                            </th>
-                            <th colspan="2" style="padding : 0px;">
-                                <table>
-                                    <tr>
-                                        <th>{{ $data->amount}}</th>
-                                    </tr>
-                                </table>
-                            </th>
+                            <th>Address</th>
+                            <td>{{ $data->address }}</td>
                         </tr>
                     </table>
                 </div>
                 <div class="body">
+
                     <table>
                         <tr>
-                            <td align="right"> <label style="float: right;">Total :</label>
-                            <label>(In word): Tk.  One Hundred  Only</label>
+                            <td>SL</td>
+                            <td>Title</td>
+                            <td>details</td>
+                            <td>Amount</td>
+                        </tr>
+                        <tr>
+                            <td>{{$i++}}</td>
+                            <td>@if($lang == 'en'){{ $data->title ?: $data->title_bn}}@else{{$data->title_bn ?: $data->title}}@endif</td>
+                            <td>@if($lang == 'en'){!! $data->details ?: $data->details_bn !!}@elseif($lang == 'bn'){!! $data->details_bn ?: $data->details !!}@endif</td>
+                            <td>{{ $data->amount}}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3" style="text-align:right;">
+                                <label for="">(In Word) : {{ NumberToWord::convertWord($data->amount) }} Taka Only</label>
+                                <label for="" style="float: right;">Total</label>
                             </td>
-                            <td width="100" align="center" style="padding: 0px 78px 0px 5px;font-weight: bold;">{{ $data->amount}}</td>
+                            <th>
+                                {{ $data->amount}}
+                            </th>
                         </tr>
                     </table>
                 </div>
@@ -292,9 +272,7 @@ p{
 
     @endfor
 
-        <center style="font-size: 14px;margin-top: -32px;margin-bottom: 15px;margin-left:19px;">
-            Developed By: SBIT (www.sbit.com.bd)
-        </center>
+    
         <center> 
             <input type="button" name="print" value="Print" class="print" style="height: 30px; width: 100px; background: GREEN; color: #fff; border: 0px;" onclick="window.print()">
         </center>

@@ -32,7 +32,6 @@
                 <div class="card">
                     <div class="card-body">
                         <form method="get" action="{{ url("bankstatementreports") }}" class="reloadform myinput" target="_blank">
-                            @csrf
                             <div class="col-md-12 p-0 row">
                                 <div class="col-md-4 col-4 mt-md-1 mt-3">
                                     <label>@lang('bank_transaction_statement.bank_name')</label>
@@ -49,35 +48,51 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3 col-3 mt-md-1 mt-3">
-                                    <label>@lang('bank_transaction_statement.report_type')</label>
-                                    <select  name ="Type"  id="Type" class="form-control textfill select2_demo_1" onchange="showReport()" required="">
-                                        <option value="">@lang('common.select_one')</option>
-                                        <option value="1">@lang('bank_transaction_statement.all')</option>
-                                        <option value="2">@lang('bank_transaction_statement.daily')</option>
-                                        <option value="3">@lang('bank_transaction_statement.date_date')</option>
-                                        <option value="4">@lang('bank_transaction_statement.monthly')</option>
-                                        <option value="5">@lang('bank_transaction_statement.yearly')</option>
+                                <div class="col-md-6 col-6 mt-md-1 mt-3">
+                                    <label>@lang('supplier_info.report_type')</label>
+                                    <select class="form-control form-control-sm" name="report_type" id="report_type" required onchange="reportStat()">
+                                        <option value="All">@lang('report.all')</option>
+                                        <option value="Daily">@lang('report.daily')</option>
+                                        <option value="DateToDate">@lang('report.date_to_date')</option>
+                                        <option value="Monthly">@lang('report.monthly')</option>
+                                        <option value="Yearly">@lang('report.yearly')</option>
                                     </select>
                                 </div>
-
-                                <div class="col-md-2 col-2 mt-md-1 mt-3" id="firstdate" style="display:none">
-                                    <label class="control-label">@lang('bank_transaction_statement.first_date')</label> <input type="date" class="form-control" placeholder="Start Date"  name="start_date" id="start_date" value="{{  date('d-m-Y') }}">
+                                <div class="col-md-6 col-6 mt-md-1 mt-3" id="DateBox">
+                                    <label>@lang('common.date') :</label>
+                                    <input type="text" name="date" id="date" class="form-control form-control-sm datepicker" value="{{ date('d/m/Y') }}" required>
                                 </div>
-
-                                <div class="col-md-2 col-2 mt-md-1 mt-3"  id="seconddate" style="display:none">
-                                    <label class="control-label">@lang('bank_transaction_statement.last_date')</label> <div class="controls"> <input type="date" class="form-control" placeholder="End Date"  name="end_date" id="end_date" value="{{  date('d-m-Y') }}"></div>
+                                <div class="col-md-6 col-6 mt-md-1 mt-3" id="DateToDate1">
+                                    <label>@lang('common.from_date') :</label>
+                                    <input type="text" name="from_date" id="from_date" class="form-control form-control-sm datepicker" value="{{ date('d/m/Y') }}" required>
                                 </div>
-
-                                <div class="col-md-2 col-2 mt-md-1 mt-3" id="first">
-
+                                <div class="col-md-6 col-6 mt-md-1 mt-3" id="DateToDate2">
+                                    <label>@lang('common.to_date') :</label>
+                                    <input type="text" name="to_date" id="to_date" class="form-control form-control-sm datepicker" value="{{ date('d/m/Y') }}" required>
                                 </div>
-
-                                <div class="col-md-2 col-2 mt-md-1 mt-3"  id="second">
-
+                                <div class="col-md-6 col-6 mt-md-1 mt-3" id="MonthBox">
+                                    <label>@lang('common.month')</label>
+                                    <select class="form-control form-control-sm" name="month" required>
+                                        <option value="1">January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-6 mt-md-1 mt-3" id="YearBox">
+                                    <label>@lang('common.year') :</label>
+                                    <input type="text" name="year" id="year" class="form-control form-control-sm" value="{{ date('Y') }}" required>
                                 </div>
                             </div>
-                            
+
                             <div class="col-12 mt-2">
                                 <button type="submit" class="btn btn-sm btn-success"> <i class="fa fa-eye"></i> @lang('common.show')</button>
                             </div>
@@ -120,75 +135,56 @@
 
     @include('components.delete_script')
 
-    <script type="text/javascript">
+    <script>
+        $('#DateBox').hide();
+        $('#DateToDate1').hide();
+        $('#DateToDate2').hide();
+        $('#MonthBox').hide();
+        $('#YearBox').hide();
 
-        function showReport(){
-
-            $('#second').html('');
-            $('#first').html('');
-            var type = $('#Type').val();
-            if(type==''){
-                $('#second').html('');
-                $('#first').html('');
-            }
-            else{
-                if(type==='1'){
-
-                    $('#second').html('');
-                    $('#first').html('');
-                    $('#firstdate').css('display','none');
-                    $('#seconddate').css('display','none');
-
-                }
-                if(type==='2'){
-
-                    $('#second').html('');
-                    $('#first').html('');
-                    $('#firstdate').css('display','block');
-                    $('#seconddate').css('display','none');
-
-                }
-                else if(type==='4'){
-                    $('#firstdate').css('display','none');
-                    $('#seconddate').css('display','none');
-                    $('#second').html('');
-                    $('#first').html('');
-
-                    $('#first').append('<label class="control-label ">@lang('bank_transaction_statement.select_month')</label> <div class="controls"> <select  name="month"  id="month" class="form-control select2_demo_1"><option value="01">January</option><option value="02">February</option><option value="03">March</option> <option value="04">April</option> <option value="05">May</option> <option value="06">June</option> <option value="07">July</option><option value="08">August </option> <option value="09">September </option> <option value="10">October </option> <option value="11">November </option>  <option value="12">December </option></select></div>');
-
-                    $('#second').append('<label class="control-label">@lang('bank_transaction_statement.year')</label><div class="controls"><input type="text" name="year" id="year"   class=" form-control" value="{{date('Y')}}"> </div>');
-                }
-                else if(type==='5')
-                {
-                    $('#firstdate').css('display','none');
-                    $('#seconddate').css('display','none');
-
-                    $('#second').html('');
-                    $('#first').html('');
-                    $('#first').append('<label class="control-label">@lang('bank_transaction_statement.year')</label><div class="controls"><input type="text" name="year"  id="year"  placeholder="2021" class=" form-control" value="{{date('Y')}}"> </div>');
-
-                }
-                else if(type==='3')
-                {
-                    $('#first').html('');
-                    $('#second').html('');
-
-                    $('#firstdate').css('display','block');
-                    $('#seconddate').css('display','block');
-
-                }
-                else{
-
-                    $('#second').html('');
-                    $('#first').html('');
-                }
-            }
-        }
-
-        function resetledger()
+        function reportStat()
         {
-            location.reload();
-
+            let report_type = $('#report_type').val();
+            if(report_type == 'All')
+            {
+                $('#DateBox').hide();
+                $('#DateToDate1').hide();
+                $('#DateToDate2').hide();
+                $('#MonthBox').hide();
+                $('#YearBox').hide();
+            }
+            else if(report_type == 'Daily')
+            {
+                $('#DateBox').show();
+                $('#DateToDate1').hide();
+                $('#DateToDate2').hide();
+                $('#MonthBox').hide();
+                $('#YearBox').hide();
+            }
+            else if(report_type == 'DateToDate')
+            {
+                $('#DateBox').hide();
+                $('#DateToDate1').show();
+                $('#DateToDate2').show();
+                $('#MonthBox').hide();
+                $('#YearBox').hide();
+            }
+            else if(report_type == 'Monthly')
+            {
+                $('#DateBox').hide();
+                $('#DateToDate1').hide();
+                $('#DateToDate2').hide();
+                $('#MonthBox').show();
+                $('#YearBox').show();
+            }
+            else if(report_type == 'Yearly')
+            {
+                $('#DateBox').hide();
+                $('#DateToDate1').hide();
+                $('#DateToDate2').hide();
+                $('#MonthBox').hide();
+                $('#YearBox').show();
+            }
         }
 
     </script>

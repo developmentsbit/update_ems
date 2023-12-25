@@ -85,6 +85,7 @@ use App\Http\Controllers\SupplierStatementController;
 use App\Http\Controllers\CashReceiverInfo;
 use App\Http\Controllers\CashDepositController;
 use App\Http\Controllers\CashWithdrawController;
+use App\Http\Controllers\CashTransactionController;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -336,8 +337,11 @@ Route::group(['middleware' => 'auth'], function () {
         'add_noc' => NOCController::class,
         'session' => SessionController::class,
         'institute_position_details' => InstitutePositionDetailsController::class,
-        'add_fee_title' => AddFeeTitleController::class
+        'add_fee_title' => AddFeeTitleController::class,
+        'cash_transaction_report' => CashTransactionController::class,
     ]);
+
+    Route::get('/cash_satement',[CashTransactionController::class,'cash_statement']);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);
     Route::post('getMarksClassGropup',[MarkDistributionController::class,'getMarksClassGropup']);

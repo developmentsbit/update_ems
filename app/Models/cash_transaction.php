@@ -12,4 +12,23 @@ class cash_transaction extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    public function recivers()
+    {
+        return $this->belongsTo('App\Models\cash_receiver_info','receiver_id');
+    }
+
+    public static function deposit($id)
+    {
+        $payment = cash_transaction::where('receiver_id',$id)->sum('deposit');
+
+        return $payment;
+    }
+
+    public static function withdraw($id)
+    {
+        $payment = cash_transaction::where('receiver_id',$id)->sum('withdraw');
+
+        return $payment;
+    }
 }

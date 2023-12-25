@@ -42,6 +42,7 @@
                             <label>@lang('supplier_info.supplier'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
                                 <select class="form-control " name="receiver_id">
+									<option>@lang('common.select_one')</option>
 									@if(isset($receiver))
 									@foreach($receiver as $i)
 									<option value="{{ $i->id }}"
@@ -58,7 +59,7 @@
 						<div class="form-group mb-3 col-md-4">
 							<label>@lang('expense_entry.amount'): </label><span class="text-danger">*</span>
 							<div class="input-group mt-2">
-								<input class="form-control form-control" type="text" name="amount" id="amount"  required="" value="{{ $data->amount }}">
+								<input class="form-control form-control" type="text" name="deposit" id="deposit"  required="" value="{{ $data->deposit }}">
 							</div>
 						</div>
                         <div class="form-group mb-3 col-md-6">

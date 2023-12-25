@@ -80,13 +80,13 @@
                                             <td>
                                                 
                                                 @if($lang == 'en')
-                                                {{ $v->receiver->name ?: $v->receiver->name_bn}}
+                                                {{ $v->recivers->name ?: $v->recivers->name_bn}}
                                                 @else
-                                                {{$v->receiver->name_bn ?: $v->receiver->name}}
+                                                {{$v->recivers->name_bn ?: $v->recivers->name}}
                                                 @endif
                                             </td>
                                             <td>
-                                                {{$v->amount}}
+                                                {{$v->deposit}}
                                             </td>
                                             <td>
                                                 @if($lang == 'en')
@@ -112,8 +112,8 @@
                             </div> <!-- end all-->
                             @php
                             
-                            use App\Models\cash_deposit;
-                            $deleted = cash_deposit::onlyTrashed()->with('receiver')->get();
+                            use App\Models\cash_transaction;
+                            $deleted = cash_transaction::onlyTrashed()->with('receiver')->get();
                             $i = 1;
                             @endphp
                             <div class="tab-pane" id="users-tab-deleted">
@@ -141,13 +141,13 @@
                                             </td>
                                             <td>
                                                 @if($lang == 'en')
-                                                {{ $v->receiver->name ?: $v->receiver->name_bn}}
+                                                {{ $v->recivers->name ?: $v->recivers->name_bn}}
                                                 @else
-                                                {{$v->receiver->name_bn ?: $v->receiver->name}}
+                                                {{$v->recivers->name_bn ?: $v->recivers->name}}
                                                 @endif
                                             </td>
                                             <td>
-                                                {{$v->amount}}
+                                                {{$v->deposit}}
                                             </td>
                                             <td>
                                                 @if($lang == 'en')

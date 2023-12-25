@@ -11,4 +11,9 @@ class cash_receiver_info extends Model
     use HasFactory,SoftDeletes;
 
     protected $guarded = [];
+
+    public function cash_trans()
+    {
+        return $this->hasMany('App\Models\cash_transaction','receiver_id');
+    }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\cash_receiver_info;
-use App\Models\cash_deposit;
+use App\Models\cash_transaction;
 use Brian2694\Toastr\Facades\Toastr;
 
 class CashDepositController extends Controller
@@ -24,7 +24,8 @@ class CashDepositController extends Controller
     public function index()
     {
         $i = 1;
-        $data = cash_deposit::get(); 
+        $data = cash_transaction::where('deposit','!=',NULL)->get();
+        
         return view('admin.cash_deposit.index',compact('data','i'));
     }
 
@@ -47,14 +48,15 @@ class CashDepositController extends Controller
 
             'date'=>$date,
             'receiver_id'=>$request->receiver_id,
-            'amount'=>$request->amount,
+            'deposit'=>$request->deposit,
+            'receiver'=>$request->receiver,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
            
             
         );
 
-        $insert = cash_deposit::create($data);
+        $insert = cash_transaction::create($data);
 
         if($insert)
         {
@@ -81,7 +83,7 @@ class CashDepositController extends Controller
      */
     public function edit(string $id)
     {
-        $data = cash_deposit::where('id',$id)->first();
+        $data = cash_transaction::where('id',$id)->first();
         
         $receiver = cash_receiver_info::all();
         // dd($receiver);
@@ -101,14 +103,15 @@ class CashDepositController extends Controller
 
             'date'=>$date,
             'receiver_id'=>$request->receiver_id,
-            'amount'=>$request->amount,
+            'deposit'=>$request->deposit,
+            'receiver'=>$request->receiver,
             'details'=>$request->details,
             'details_bn'=>$request->details_bn,
            
             
         );
 
-        $update = cash_deposit::find($id)->update($data);
+        $update = cash_transaction::find($id)->update($data);
 
         if($update)
         {
@@ -128,20 +131,20 @@ class CashDepositController extends Controller
     public function destroy(string $id)
     {
         
-        cash_deposit::where('id',$id)->delete();
+        cash_transaction::where('id',$id)->delete();
         Toastr::success('Data Delete Successfully', 'success');
             return redirect(route('cash_deposit.index'));
     }
 
     public function retrive_cash_deposit($id)
     {
-        cash_deposit::where('id',$id)->withTrashed()->restore();
+        cash_transaction::where('id',$id)->withTrashed()->restore();
         return redirect()->route('cash_deposit.index') ->with('message','Others Income List Retrive Successfully');
     } 
 
     public function delete_cash_deposit($id){
 
-        cash_deposit::where('id',$id)->withTrashed()->forceDelete();
+        cash_transaction::where('id',$id)->withTrashed()->forceDelete();
         return redirect()->route('cash_deposit.index') ->with('message','Others Income List Permanently Deleted Successfully');
     }
 }

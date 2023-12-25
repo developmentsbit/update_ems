@@ -609,9 +609,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('cash_withdraw', CashWithdrawController::class);
 
-    route::get('retrive_cash_deposit/{id}',[CashWithdrawController::class,'retrive_cash_deposit']);
+    route::get('retrive_cash_withdraw/{id}',[CashWithdrawController::class,'retrive_cash_withdraw']);
 
-    route::get('delete_cash_deposit/{id}',[CashWithdrawController::class,'delete_cash_deposit']);
+    route::get('delete_cash_withdraw/{id}',[CashWithdrawController::class,'delete_cash_withdraw']);
+
+    Route::get('getReceiverDue/{id}',[CashWithdrawController::class,'getReceiverDue']);
 
 });
 

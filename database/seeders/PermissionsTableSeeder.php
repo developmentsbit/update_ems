@@ -5222,6 +5222,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-23 06:54:02',
                 'deleted_at' => NULL,
             ),
+            473 => 
+            array (
+                'id' => 600,
+                'name' => 'Cash Withdraw List',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            474 => 
+            array (
+                'id' => 601,
+                'name' => 'Cash Withdraw Create',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            475 => 
+            array (
+                'id' => 602,
+                'name' => 'Cash Withdraw Edit',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            476 => 
+            array (
+                'id' => 603,
+                'name' => 'Cash Withdraw Delete',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            477 => 
+            array (
+                'id' => 604,
+                'name' => 'Cash Withdraw View',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            478 => 
+            array (
+                'id' => 605,
+                'name' => 'Cash Withdraw Print',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            479 => 
+            array (
+                'id' => 606,
+                'name' => 'Cash Withdraw Edit_history',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            480 => 
+            array (
+                'id' => 607,
+                'name' => 'Cash Withdraw Deleted_list',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            481 => 
+            array (
+                'id' => 608,
+                'name' => 'Cash Withdraw Restore',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
+            482 => 
+            array (
+                'id' => 609,
+                'name' => 'Cash Withdraw Permanent_delete',
+                'parent' => 'Cash Withdraw',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-24 05:00:01',
+                'updated_at' => '2023-12-24 05:00:01',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

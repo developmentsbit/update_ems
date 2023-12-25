@@ -5332,6 +5332,116 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2023-12-24 05:00:01',
                 'deleted_at' => NULL,
             ),
+            483 => 
+            array (
+                'id' => 610,
+                'name' => 'Cash Transaction Statement List',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            484 => 
+            array (
+                'id' => 611,
+                'name' => 'Cash Transaction Statement Create',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            485 => 
+            array (
+                'id' => 612,
+                'name' => 'Cash Transaction Statement Edit',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            486 => 
+            array (
+                'id' => 613,
+                'name' => 'Cash Transaction Statement Delete',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            487 => 
+            array (
+                'id' => 614,
+                'name' => 'Cash Transaction Statement View',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            488 => 
+            array (
+                'id' => 615,
+                'name' => 'Cash Transaction Statement Print',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            489 => 
+            array (
+                'id' => 616,
+                'name' => 'Cash Transaction Statement Edit_history',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            490 => 
+            array (
+                'id' => 617,
+                'name' => 'Cash Transaction Statement Deleted_list',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            491 => 
+            array (
+                'id' => 618,
+                'name' => 'Cash Transaction Statement Restore',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
+            492 => 
+            array (
+                'id' => 619,
+                'name' => 'Cash Transaction Statement Permanent_delete',
+                'parent' => 'Cash Transaction Statement',
+                'guard_name' => 'web',
+                'status' => 1,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

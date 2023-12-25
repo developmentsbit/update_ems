@@ -1577,6 +1577,25 @@ class MenusTableSeeder extends Seeder
                 'updated_at' => '2023-12-24 05:00:01',
                 'deleted_at' => NULL,
             ),
+            82 => 
+            array (
+                'id' => 126,
+                'parent_id' => 111,
+                'name' => 'Cash Transaction Statement',
+                'bn_name' => 'নগদ লেনদেন বিবরণী',
+                'system_name' => 'Cash Transaction Statement',
+                'route_name' => 'cash_transaction_report.index',
+                'icon' => NULL,
+                'order_by' => 8,
+                'is_hidden' => 'No',
+                'status' => 1,
+                'created_by' => 1,
+                'updated_by' => 1,
+                'deleted_by' => NULL,
+                'created_at' => '2023-12-25 13:03:58',
+                'updated_at' => '2023-12-25 13:03:58',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

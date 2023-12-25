@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('receiver_id')->references('id')->on('cash_receiver_infos');
             $table->double('deposit')->nullable();
             $table->double('withdraw')->nullable();
+            $table->string('receiver')->nullable();
             $table->longText('details')->nullable();
             $table->longText('details_bn')->nullable();
             $table->date('deleted_at')->nullable();

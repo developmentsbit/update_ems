@@ -33,14 +33,15 @@
 				<form method="post" class="btn-submit" action="{{ route('cash_deposit.store') }}" enctype="multipart/form-data">
 					@csrf
 					<div class="row myinput">
-                        <div class="form-group mb-3 col-md-4">
+                        <div class="form-group mb-3 col-md-6">
                             <label class="col-sm-4 col-form-label">@lang('common.date') :</label>
                             <input type="text" name="date" class="form-control form-control-sm date" id="birthdatepicker" data-toggle="date-picker" data-single-date-picker="true" value="{{ old('date') }}" required>
 						</div>
-                        <div class="form-group mb-3 col-md-4">
+                        <div class="form-group mb-3 col-md-6">
                             <label>@lang('supplier_info.supplier'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
                                 <select class="form-control " name="receiver_id">
+									<option>@lang('common.select_one')</option>
 									@if(isset($receiver))
 									@foreach($receiver as $i)
 									<option value="{{ $i->id }}">@if($lang == 'en'){{ $i->name }}@else {{$i->name_bn}}@endif</option>
@@ -49,10 +50,16 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group mb-3 col-md-4">
+						<div class="form-group mb-3 col-md-6">
 							<label>@lang('expense_entry.amount'): </label><span class="text-danger">*</span>
 							<div class="input-group mt-2">
-								<input class="form-control form-control" type="text" name="amount" id="amount"  required="">
+								<input class="form-control form-control" type="text" name="deposit" id="deposit"  required="">
+							</div>
+						</div>
+						<div class="form-group mb-3 col-md-6">
+							<label>@lang('expense_entry.receiver'): </label><span class="text-danger">*</span>
+							<div class="input-group mt-2">
+								<input class="form-control form-control-sm" type="text" name="receiver" id="receiver"  required="">
 							</div>
 						</div>
                         <div class="form-group mb-3 col-md-6">

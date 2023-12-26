@@ -256,7 +256,7 @@
                 success : function(res)
                 {
                     $('#rightForm').removeClass('d-none');
-                    $('#slectedSubject').val('Your Selected Suject is : '+res);
+                    $('#slectedSubject').val('Your Selected Subject is : '+res);
                 }
             })
         }

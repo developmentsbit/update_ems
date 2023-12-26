@@ -47,8 +47,6 @@ $setting = DB::table("setting")->first();
 								@if(isset($notice))
 								@foreach($notice as $n)
 
-								{{-- <li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >@if($lang == 'en'){{$n->title}}@elseif($lang == 'bn'){{$n->title_bn}}@endif</a></li> --}}
-
 								<li><i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;&nbsp;<a href="{{ url('noticesdetails',$n->id)  }}" >@if($lang == 'en'){{$n->title ?: $n->title_bn}}@else {{$n->title_bn ?: $n->title}}@endif</a></li>
 
 								@endforeach

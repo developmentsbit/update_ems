@@ -16,10 +16,10 @@
           <table id="example" class="display table-bordered" style="width:100%">
             <thead>
               <tr style="font-size: 15px;">
-                <th>ক্রমিক</th>
-                <th>প্রকাশের তারিখ</th>
-                <th>শিরোনাম</th>
-                <th>ডাউনলোড</th>
+                <th>@lang('frontend.sl')</th>
+                <th>@lang('frontend.release_date')</th>
+                <th>@lang('frontend.title')</th>
+                <th>@lang('frontend.download')</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
               <tr style="font-size: 12px;">
                 <td>{{ $i++ }}</td>
                 <td><a href="{{ url('noticesdetails',$d->id) }}" style="text-decoration: none;color: black">{{ date('d M Y', strtotime($d->date)); }}</a></td>
-                <td><a href="{{ url('noticesdetails',$d->id) }}" style="text-decoration: none;color: black">{{ $d->title }}</a></td>
+                <td><a href="{{ url('noticesdetails',$d->id) }}" style="text-decoration: none;color: black">@if($lang == 'en'){{$d->title ?: $d->title_bn}}@else {{$d->title_bn ?: $d->title}}@endif</a></td>
                 <td><a  href="{{ asset($d->image) }}" class="btn btn-sm btn-danger" download="" ><img src="frontend/img/pdf_icon.png" class="img-fluid"></a></td>
               </tr>
 

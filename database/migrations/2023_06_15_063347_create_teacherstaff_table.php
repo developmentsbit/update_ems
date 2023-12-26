@@ -33,7 +33,7 @@ return new class extends Migration
             $table->text('education')->nullable();
             $table->string('gender')->nullable();
             $table->string('type')->nullable();
-            $table->integer('status')->nullable();
+            $table->integer('status')->default(1);
             $table->string('image')->nullable();
             $table->timestamps();
         });

@@ -499,6 +499,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('showStudent',[StudentInfoController::class,'showStudent']);
 
     Route::resource('add_marks', AddMarksController::class);
+    Route::post('loadGroupsSubject',[AddMarksController::class,'loadGroupsSubject']);
     Route::resource('view_marks', ViewMarksController::class);
     Route::resource('view_total_subject_marks', ViewTotalSubjectMarksEntryController::class);
     Route::resource('view_completed_subject', ViewCompletedSubjectController::class);

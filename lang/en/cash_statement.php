@@ -2,6 +2,6 @@
 
 return [
 
-     'addtitle' => 'Cash Statement',
+     'add_title' => 'Cash Statement',
      'reciver' => 'Reciver',
 ];

@@ -154,11 +154,21 @@ class SubjectPartController extends Controller
         // return $request->group_id;
         if($request->group_id != '')
         {
-            $subject = subject_info::where('class_id',$request->class_id)
-            ->where('group_id',$request->group_id)
-            ->where('subject_type',$request->subject_type)
-            ->where('status',1)
-            ->get();
+            if($request->subject_type == 1)
+            {
+                $subject = subject_info::where('class_id',$request->class_id)
+                ->where('subject_type',$request->subject_type)
+                ->where('status',1)
+                ->get();
+            }
+            else
+            {
+                $subject = subject_info::where('class_id',$request->class_id)
+                ->where('group_id',$request->group_id)
+                ->where('subject_type',$request->subject_type)
+                ->where('status',1)
+                ->get();
+            }
 
             $output = '<label>'.__('add_subject_part.subject_name').':</label>
             <div class="input-group mt-2">

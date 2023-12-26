@@ -40,10 +40,10 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="GET"  action="showStudent" target="_blank">
+                        <form method=""  action="" target="" id="formData">
 
                         <div class="form-group row">
-                            <div class="col-md-4 col-4 mt-md-1 mt-3">
+                            <div class="col-md-3 col-4 mt-md-1 mt-3">
                                 <label>@lang('student_info.class')</label>
                                 <select class="form-control form-control-sm " name="class_id" id="class_id" onchange="loadGroups()" required>
                                     <option value="">@lang('common.select_one')</option>
@@ -60,13 +60,13 @@
                                     @endif
                                 </select>
                             </div>
-                            <div class="col-md-4 col-4 mt-md-1 mt-3" id="groupBox">
+                            <div class="col-md-3 col-4 mt-md-1 mt-3" id="groupBox">
                                 <label>@lang('student_info.group')</label>
                                 <select class="form-control form-control-sm " id="group_id" id="group_id">
                                     <option value="">@lang('common.select_one')</option>
                                 </select>
                             </div>
-                            <div class="col-md-4 col-4 mt-md-1 mt-3">
+                            <div class="col-md-3 col-4 mt-md-1 mt-3">
                                 <label for="" class="">@lang('student_info.session') :</label>
                                 <select class="form-control form-control-sm" data-toggle="" id="session" name="session" required>
                                 <option value="">Choose...</option>
@@ -75,11 +75,21 @@
                                 @endforeach
                                 </select>
                             </div>
+                            <div class="col-md-3 col-4 mt-md-1 mt-3">
+                                <label>Search Type</label>
+                                <select class="form-control-sm form-control" name="search_type" id="search_type">
+                                    <option value="all">All</option>
+                                    <option value="non_reg">Non Registration</option>
+                                </select>
+                            </div>
                             <div class="col-12 mt-2">
                                 <button type="submit" class="btn btn-sm btn-success"> <i class="fa fa-eye"></i> @lang('common.show')</button>
                             </div>
                         </div>
                     </form>
+                    <div class="card_data mt-2">
+
+                    </div>
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div><!-- end col-->
@@ -160,6 +170,29 @@
                 $('#groupBox').html('<b class="text-danger">Select Class First !</b>');
             }
         }
+    </script>
+
+    <script>
+        $('#formData').on('submit',function(e){
+            e.preventDefault();
+            let data = $('#formData').serialize();
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                },
+
+                url : '{{ url('showStudent') }}',
+
+                type : 'GET',
+
+                data : data,
+
+                success : function(res)
+                {
+                    $('.card_data').html(res);
+                }
+            })
+        })
     </script>
 
 @endpush

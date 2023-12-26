@@ -172,8 +172,8 @@ class MarkDistributionController extends Controller
             return 'no_group';
         }
 
-        $output='<select class="form-control form-control-sm" id="group_id" name="group_id" required>
-        <option value="">Select One</option>';
+        $output='<select class="form-control form-control-sm" id="group_id" name="group_id" onchange="loadGroupsSubject()">
+        <option value="">All</option>';
         foreach($data as $v)
         {
             if(config('app.locale') == 'en')

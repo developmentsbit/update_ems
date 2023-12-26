@@ -299,7 +299,7 @@ class StudentInfoController extends Controller
             return 'no_group';
         }
         $output = '<label for="" class="">'.__('student_info.admission_group') .':</label>
-        <select class="form-control form-control-sm" id="group_id" name="group_id">
+        <select class="form-control form-control-sm" id="group_id" name="group_id" >
         <option selected>Choose...</option>';
         foreach($group as $g)
         {
@@ -326,6 +326,7 @@ class StudentInfoController extends Controller
         $data['class'] = class_info::where('id',$request->class_id)->first();
         $data['group'] = group_info::where('id',$request->group_id)->first();
         $data['session'] = $request->session;
+        $data['search_type'] = $request->search_type;
         return view($this->path.'.show_student',compact('data'));
     }
 

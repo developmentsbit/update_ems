@@ -79,7 +79,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 												@lang('mark_distribution.select_group')  :</label>
                                                 <div id="groupData">
                                                     <select class="form-select" id="group_id" name="group_id">
-                                                        <option value="">Select One</option>
+                                                        <option value="">All</option>
 
                                                     </select>
                                                 </div>

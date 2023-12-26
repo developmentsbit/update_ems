@@ -2,6 +2,6 @@
 
 return [
 
-     'addtitle' => 'নগদ বিবরণী',
+     'add_title' => 'নগদ বিবরণী',
      'reciver' => 'রিসিভার',
 ];

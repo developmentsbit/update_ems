@@ -40,7 +40,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="GET"  action="showRegStudent" target="_blank">
+                        <form method=""  action="" target="" id="formData">
 
                         <div class="form-group row">
                             <div class="col-md-4 col-4 mt-md-1 mt-3">
@@ -80,6 +80,9 @@
                             </div>
                         </div>
                     </form>
+                    <div class="card_data mt-2">
+
+                    </div>
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div><!-- end col-->
@@ -161,5 +164,28 @@
             }
         }
     </script>
+
+<script>
+    $('#formData').on('submit',function(e){
+        e.preventDefault();
+        let data = $('#formData').serialize();
+        $.ajax({
+            headers : {
+                'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+            },
+
+            url : '{{ url('showRegStudent') }}',
+
+            type : 'GET',
+
+            data : data,
+
+            success : function(res)
+            {
+                $('.card_data').html(res);
+            }
+        })
+    })
+</script>
 
 @endpush

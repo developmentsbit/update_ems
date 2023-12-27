@@ -52,14 +52,14 @@ input.form-control ,.form-control form-control-sm{
 			<div class="card-body">
             <div class="container">
                 <div class="from ms-md-5 ">
-                    <form class="">
+                    <form method="GET" action="{{ url('searchingStudent') }}">
                             <div class="row">
                                 <div class="col-md-6 mt-2">
                                     <div class="row ">
                                         <label for="inputPassword3" class="col-sm-4 col-form-label  text-md-end text-dark">
                                             @lang('add_marks.select_class') :</label>
                                         <div class="col-sm-7">
-                                            <select class="form-control form-control-sm" id="class_id" name="class_id" onchange="getExamTypes();getMarksClassGropup();getMarksSubjects()">
+                                            <select class="form-control form-control-sm" id="class_id" name="class_id" onchange="getExamTypes();getMarksClassGropup();getMarksSubjects();getSection()">
                                                 <option value="">Select One</option>
                                                 @if($params['class'])
                                                 @foreach ($params['class'] as $v)
@@ -143,8 +143,11 @@ input.form-control ,.form-control form-control-sm{
                                             @lang('add_marks.session') :</label>
                                         <div class="col-sm-7">
                                             <select class="form-control form-control-sm" id="session" name="session">
-                                                <option selected>
-                                                  Select One</option>
+                                                @if($params['session'])
+                                                @foreach ($params['session'] as $v)
+                                                <option value="{{ $v->session }}">{{ $v->session }}</option>
+                                                @endforeach
+                                                @endif
                                               </select>
                                         </div>
                                   </div>
@@ -153,20 +156,20 @@ input.form-control ,.form-control form-control-sm{
                                     <div class="row ">
                                         <label for="inputPassword3" class="col-sm-4 col-form-label  text-md-end text-dark">
                                             @lang('add_marks.section') :</label>
-                                        <div class="col-sm-7">
-                                            <select class="form-control form-control-sm" id="session" name="session">
-                                                <option selected>
+                                        <div class="col-sm-7" id="sectionBox">
+                                            <select class="form-control form-control-sm" id="section_id" name="section_id">
+                                                <option value="">
                                                   Select One</option>
                                               </select>
                                         </div>
                                   </div>
                                 </div>
                                     <div class="text-center mt-4 ">
-                                        <button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
-                                        <button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>
+                                        <button type="submit" class="btn btn-success btn-sm button border-0">
+                                            <i class="fa fa-search"></i> Search
+                                        </button>
                                   </div>
                             </div>
-
                       </form>
 
                 </div>
@@ -333,6 +336,34 @@ input.form-control ,.form-control form-control-sm{
                         $('#subjectPartBox').show();
                         $('#subjectPartData').html(res);
                     }
+                }
+            })
+        }
+    }
+
+    function getSection()
+    {
+        let loading = '<b class="text-danger">Loading...</b>';
+        let class_id = $('#class_id').val();
+        if(class_id != '')
+        {
+            $.ajax({
+                headers : {
+                    'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+                },
+
+                url : '{{ url('getSection') }}',
+
+                type : 'POST',
+
+                data : {class_id},
+
+                breforeSend : () => {
+                    $('#sectionBox').html(loading);
+                },
+
+                success : (res) => {
+                    $('#sectionBox').html(res);
                 }
             })
         }

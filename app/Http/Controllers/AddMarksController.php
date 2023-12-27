@@ -6,6 +6,12 @@ use App\Models\addMarks;
 use Illuminate\Http\Request;
 use App\Models\class_info;
 use App\Models\subject_info;
+use App\Models\session;
+use App\Models\section_info;
+use App\Models\group_info;
+use App\Models\add_exam_type;
+use App\Models\subject_part;
+use App\Models\subject_reg_info;
 
 class AddMarksController extends Controller
 {
@@ -33,6 +39,7 @@ class AddMarksController extends Controller
     {
         $params = [];
         $params['class'] = class_info::all();
+        $params['session'] = session::getActive();
         return $this->view('create',$params);
     }
 
@@ -97,5 +104,79 @@ class AddMarksController extends Controller
       $output .='</select>';
 
       return $output;
+    }
+
+    public function getSection(Request $request)
+    {
+        $data = section_info::where('class_id',$request->class_id)->get();
+        if(count($data) > 0)
+        {
+            $output = '<select class="form-control form-control-sm" id="section_id" name="section_id">
+            <option value="">Select One</option>';
+            foreach($data as $d)
+            {
+                $output.= '<option value="'.$d->id.'">'.$d->section_name.'</option>';
+            }
+          $output.='</select>';
+
+          return $output;
+        }
+        else
+        {
+            return '<b class="text-danger">No Section Found !</b>';
+        }
+    }
+
+    public function searchingStudent(Request $request)
+    {
+        // dd($request->all());
+        $data['class'] = class_info::where('id',$request->class_id)->first();
+        $data['exam'] = add_exam_type::where('id',$request->exam_type_id)->first();
+        $data['subject_type'] = $request->subject_type;
+        if($request->group_id != NULL)
+        {
+            $data['group'] = group_info::where('id',$request->group_id)->first();
+        }
+
+        $data['subject'] = subject_info::find($request->subject_id);
+
+        if($request->subject_part_id != NULL)
+        {
+            $data['subject_part'] = subject_part::find($request->subject_part_id);
+        }
+
+        $data['session'] = $request->session;
+        if($request->section_id != NULL)
+        {
+            $data['section'] = section_info::find($request->section_id);
+        }
+
+        if($request->subject_part_id != NULL)
+        {
+            $data['student'] = subject_reg_info::leftjoin('student_informations','student_informations.student_id','subject_reg_infos.student_id')
+            ->leftjoin('student_reg_infos','student_reg_infos.student_id','subject_reg_infos.student_id')
+            ->leftjoin('marks_distributions','marks_distributions.subject_id','subject_reg_infos.subject_id')
+            ->where('marks_distributions.exam_id',$request->exam_type_id)
+            ->where('marks_distributions.subject_id',$request->subject_id)
+            ->where('marks_distributions.subject_part_id',$request->subject_part_id)
+            ->where('student_reg_infos.session',$request->session)
+            ->select('student_informations.student_name','student_informations.student_id','marks_distributions.*')
+            ->take(30)
+            ->get();
+        }
+        else
+        {
+            $data['student'] = subject_reg_info::leftjoin('student_informations','student_informations.student_id','subject_reg_infos.student_id')
+            ->leftjoin('student_reg_infos','student_reg_infos.student_id','subject_reg_infos.student_id')
+            ->leftjoin('marks_distributions','marks_distributions.subject_id','subject_reg_infos.subject_id')
+            ->where('marks_distributions.exam_id',$request->exam_type_id)
+            ->where('marks_distributions.subject_id',$request->subject_id)
+            ->where('student_reg_infos.session',$request->session)
+            ->select('student_informations.student_name','student_informations.student_id','marks_distributions.*')
+            ->take(30)
+            ->get();
+        }
+        return $this->view('show_search_student',$data);
+
     }
 }

@@ -172,18 +172,22 @@ table, tr, td, th{
                             @php
                             $i= 1;
                             @endphp
+                            <input type="hidden" id="limit_mcq" value="{{ $params['marks_entry']->mcq }}">
+                            <input type="hidden" id="limit_written" value="{{ $params['marks_entry']->written }}">
+                            <input type="hidden" id="limit_practical" value="{{ $params['marks_entry']->practical }}">
+                            <input type="hidden" id="limit_count_asses" value="{{ $params['marks_entry']->count_asses }}">
                             <table class="">
                                 <tr>
                                     <td colspan="3">
-                                        <input type="text" class="form-control form-control-sm bg-danger" value="0" style="color:white;">
+                                        <input type="text" class="form-control form-control-sm bg-danger" value="10" style="color:white;">
                                     </td>
                                     <td colspan="2">
-                                        <input type="text" class="form-control form-control-sm bg-danger" value="30" style="color:white;">
+                                        <input type="text" class="form-control form-control-sm bg-danger" value="20" style="color:white;">
                                     </td>
                                     <td colspan="5">
-                                        {{-- <button class="btn btn-sm btn-success">
+                                        <button class="btn btn-sm btn-success">
                                             <i class="fa fa-filter"></i>
-                                        </button> --}}
+                                        </button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -201,6 +205,7 @@ table, tr, td, th{
                                     <th>Practical</th>
                                     <th>Count Asses</th>
                                 </tr>
+                               <tbody>
                                 @if ($params['student'])
                                 @foreach ($params['student'] as $s)
                                 <tr>
@@ -215,16 +220,16 @@ table, tr, td, th{
                                         {{ $s->total }}
                                     </td>
                                     <td>
-                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }})" id="mcq-{{ $s->student_id }}" name="mcq[]" value="{{ $s->mcq }}" required>
+                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }});CheckingNumber({{ $s->student_id }})" id="mcq-{{ $s->student_id }}" name="mcq[]" value="{{ $s->mcq }}" required>
                                     </td>
                                     <td>
-                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }})" id="written-{{ $s->student_id }}" name="written[]" value="{{ $s->written }}" required>
+                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }});CheckingNumber({{ $s->student_id }})" id="written-{{ $s->student_id }}" name="written[]" value="{{ $s->written }}" required>
                                     </td>
                                     <td>
-                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }})" id="practical-{{ $s->student_id }}" name="practical[]" value="{{ $s->practical }}">
+                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }});CheckingNumber({{ $s->student_id }})" id="practical-{{ $s->student_id }}" name="practical[]" value="{{ $s->practical }}">
                                     </td>
                                     <td>
-                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }})" id="count_asses-{{ $s->student_id }}" name="count_asses[]" value="{{ $s->count_asses }}">
+                                        <input type="number" class="form-control form-control-sm" onkeyup="getTotalMarks({{ $s->student_id }});CheckingNumber({{ $s->student_id }})" id="count_asses-{{ $s->student_id }}" name="count_asses[]" value="{{ $s->count_asses }}">
                                     </td>
                                     <td>
                                         <input type="number" class="form-control form-control-sm @if($s->total > 33) bg-success text-light @endif" id="obtain_marks-{{ $s->student_id }}" name="obtain_marks[]" value="{{ $s->total }}" >
@@ -235,6 +240,7 @@ table, tr, td, th{
                                 </tr>
                                 @endforeach
                                 @endif
+                               </tbody>
                             </table>
                             </div>
                             <div class="text-center mt-2">
@@ -254,12 +260,52 @@ table, tr, td, th{
 <script src="{{ asset('assets/js/pages/demo.quilljs.js') }}"></script>
 
 <script>
+
+    function CheckingNumber(studentId)
+    {
+        let mcq = $('#mcq-'+studentId).val();
+        let written = $('#written-'+studentId).val();
+        let practical = $('#practical-'+studentId).val();
+        let count_asses = $('#count_asses-'+studentId).val();
+
+        let limit_mcq = $('#limit_mcq').val();
+        let limit_written = $('#limit_written').val();
+        let limit_practical = $('#limit_practical').val();
+        let limit_count_asses = $('#limit_count_asses').val();
+        if(parseInt(mcq) > parseInt(limit_mcq))
+        {
+            $('#mcq-'+studentId).val(limit_mcq);
+        }
+
+        if(written > limit_written)
+        {
+            $('#written-'+studentId).val(limit_written);
+        }
+
+        if(practical > limit_practical)
+        {
+            $('#practical-'+studentId).val(limit_practical);
+        }
+
+        if(count_asses > limit_count_asses)
+        {
+            $('#count_asses-'+studentId).val(limit_count_asses);
+        }
+    }
+
     function getTotalMarks(studentId)
     {
         let mcq = $('#mcq-'+studentId).val();
         let written = $('#written-'+studentId).val();
         let practical = $('#practical-'+studentId).val();
         let count_asses = $('#count_asses-'+studentId).val();
+
+        let limit_mcq = $('#limit_mcq').val();
+        let limit_written = $('#limit_written').val();
+        let limit_practical = $('#limit_practical').val();
+        let limit_count_asses = $('#limit_count_asses').val();
+
+
 
         let result;
         result = parseInt(mcq) + parseInt(written) + parseInt(practical) + parseInt(count_asses);

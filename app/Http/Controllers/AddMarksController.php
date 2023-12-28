@@ -12,6 +12,7 @@ use App\Models\group_info;
 use App\Models\add_exam_type;
 use App\Models\subject_part;
 use App\Models\subject_reg_info;
+use App\Models\marks_distribution;
 
 class AddMarksController extends Controller
 {
@@ -139,6 +140,20 @@ class AddMarksController extends Controller
         }
 
         $data['subject'] = subject_info::find($request->subject_id);
+        if($request->subject_part_id != NULL)
+        {
+            $data['marks_entry'] = marks_distribution::where('exam_id',$request->exam_type_id)
+            ->where('subject_id',$request->subject_id)
+            ->where('subject_part_id',$request->subject_part_id)
+            ->first();
+        }
+        else
+        {
+
+            $data['marks_entry'] = marks_distribution::where('exam_id',$request->exam_type_id)
+            ->where('subject_id',$request->subject_id)
+            ->first();
+        }
 
         if($request->subject_part_id != NULL)
         {
@@ -161,7 +176,7 @@ class AddMarksController extends Controller
             ->where('marks_distributions.subject_part_id',$request->subject_part_id)
             ->where('student_reg_infos.session',$request->session)
             ->select('student_informations.student_name','student_informations.student_id','marks_distributions.*')
-            ->take(30)
+            ->take(10)
             ->get();
         }
         else
@@ -173,7 +188,7 @@ class AddMarksController extends Controller
             ->where('marks_distributions.subject_id',$request->subject_id)
             ->where('student_reg_infos.session',$request->session)
             ->select('student_informations.student_name','student_informations.student_id','marks_distributions.*')
-            ->take(30)
+            ->take(10)
             ->get();
         }
         return $this->view('show_search_student',$data);

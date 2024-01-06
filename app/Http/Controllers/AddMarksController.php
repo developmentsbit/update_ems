@@ -13,6 +13,7 @@ use App\Models\add_exam_type;
 use App\Models\subject_part;
 use App\Models\subject_reg_info;
 use App\Models\marks_distribution;
+use App\Models\marksheet;
 
 class AddMarksController extends Controller
 {
@@ -49,7 +50,55 @@ class AddMarksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->student_id)
+        {
+
+            if($request->group_id)
+            {
+                $group_id = $request->group_id;
+            }
+            else{
+                $group_id = NULL;
+            }
+            $count = count($request->student_id);
+            if($count > 0)
+            {
+                for ($i=0; $i < $count ; $i++)
+                {
+                    $check = marksheet::where('class_id',$request->class_id)->where('exam_id',$request->exam_type_id)->where('student_id',$request->student_id[$i])->first();
+                    if(isset($check))
+                    {
+                        marksheet::where('class_id',$request->class_id)->where('exam_id',$request->exam_type_id)->where('student_id',$request->student_id[$i])->delete();
+                    }
+                    marksheet::create([
+                        'student_id' => $request->student_id[$i],
+                        'class_id' => $request->class_id,
+                        'group_id' => $group_id,
+                        'exam_id' => $request->exam_type_id,
+                        'subject_id' => $request->subject_type,
+                        'subject_part_id' => $request->subject_part_id,
+                        'session' => $request->session,
+                        'mcq' => $request->mcq[$i],
+                        'written' => $request->written[$i],
+                        'practical' => $request->practical[$i],
+                        'count_asses' => $request->count_asses[$i],
+                        'obtain_mark' => $request->obtain_marks[$i],
+                        'letter_grade' => $request->letter_grade[$i],
+                        'gpa' => NULL,
+                    ]);
+                }
+
+                return response()->json('Marks Added', 200);
+            }
+            else
+            {
+                return response()->json('No Student Found',200);
+            }
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     /**
@@ -193,5 +242,41 @@ class AddMarksController extends Controller
         }
         return $this->view('show_search_student',$data);
 
+    }
+
+    public function searchSerialStudent(Request $request)
+    {
+        $take = $request->to - $request->from;
+        if($request->subject_part_id != NULL)
+        {
+            $data = subject_reg_info::leftjoin('student_informations','student_informations.student_id','subject_reg_infos.student_id')
+            ->leftjoin('student_reg_infos','student_reg_infos.student_id','subject_reg_infos.student_id')
+            ->leftjoin('marks_distributions','marks_distributions.subject_id','subject_reg_infos.subject_id')
+            ->where('marks_distributions.exam_id',$request->exam_type_id)
+            ->where('marks_distributions.subject_id',$request->subject_id)
+            ->where('marks_distributions.subject_part_id',$request->subject_part_id)
+            ->where('student_reg_infos.session',$request->session)
+            ->select('student_informations.student_name','student_informations.student_id','marks_distributions.*')
+            ->skip($request->from)
+            ->take($take)
+            ->get();
+        }
+        else
+        {
+            $data= subject_reg_info::leftjoin('student_informations','student_informations.student_id','subject_reg_infos.student_id')
+            ->leftjoin('student_reg_infos','student_reg_infos.student_id','subject_reg_infos.student_id')
+            ->leftjoin('marks_distributions','marks_distributions.subject_id','subject_reg_infos.subject_id')
+            ->where('marks_distributions.exam_id',$request->exam_type_id)
+            ->where('marks_distributions.subject_id',$request->subject_id)
+            ->where('student_reg_infos.session',$request->session)
+            ->select('student_informations.student_name','student_informations.student_id','marks_distributions.*')
+            ->skip($request->from)
+            ->take($take)
+            ->get();
+        }
+
+        $i = $request->from;
+
+        return view($this->path.'.show_search_searial_student',compact('data','i'));
     }
 }

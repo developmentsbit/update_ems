@@ -21,7 +21,7 @@ return new class extends Migration
             $table->bigInteger('exam_id')->unsigned()->nullable();
             $table->foreign('exam_id')->references('id')->on('add_exam_types');
             $table->bigInteger('subject_id')->unsigned()->nullable();
-            $table->foreign('subject_id')->referencess('id')->on('subject_infos');
+            $table->foreign('subject_id')->references('id')->on('subject_infos');
             $table->bigInteger('subject_part_id')->unsigned()->nullable();
             $table->foreign('subject_part_id')->references('id')->on('subject_parts');
             $table->string('session')->nullable();

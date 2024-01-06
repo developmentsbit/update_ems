@@ -59,7 +59,7 @@ table, tr, td, th{
 			<div class="card-body">
             <div class="container">
                 <div class="">
-                    <form method="GET" action="{{ url('searchingStudent') }}">
+                    <form method="GET" id="submitMarksEntry">
                             <div class="row">
                                 <div class="col-md-6 mt-2">
                                     <div class="row ">
@@ -179,15 +179,15 @@ table, tr, td, th{
                             <table class="">
                                 <tr>
                                     <td colspan="3">
-                                        <input type="text" class="form-control form-control-sm bg-danger" value="10" style="color:white;">
+                                        <input type="text" class="form-control form-control-sm bg-danger" value="10" style="color:white;" name="from" id="from">
                                     </td>
                                     <td colspan="2">
-                                        <input type="text" class="form-control form-control-sm bg-danger" value="20" style="color:white;">
+                                        <input type="text" class="form-control form-control-sm bg-danger" value="20" style="color:white;" id="to" name="to">
                                     </td>
                                     <td colspan="5">
-                                        <button class="btn btn-sm btn-success">
+                                        <a class="btn btn-sm btn-success" onclick="return searchSearialStudent()" id="filterButton">
                                             <i class="fa fa-filter"></i>
-                                        </button>
+                                        </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -205,13 +205,14 @@ table, tr, td, th{
                                     <th>Practical</th>
                                     <th>Count Asses</th>
                                 </tr>
-                               <tbody>
+                               <tbody id="showData">
                                 @if ($params['student'])
                                 @foreach ($params['student'] as $s)
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>
                                         {{ $s->student_id }}
+                                        <input type="hidden" name="student_id[]" id="student_id-{{ $s->student_id }}" value="{{ $s->student_id }}">
                                     </td>
                                     <td>
                                         {{ $s->student_name }}
@@ -244,7 +245,8 @@ table, tr, td, th{
                             </table>
                             </div>
                             <div class="text-center mt-2">
-                                <button class="btn btn-sm btn-info"><i class="fa fa-save"></i> Save</button>
+                                <button class="btn btn-sm btn-info" id="save"><i class="fa fa-save"></i> Save</button>
+                                <button class="btn btn-sm btn-info" disabled id="Loading"><i class="fa fa-save"></i> Loading...</button>
                             </div>
                       </form>
 
@@ -369,6 +371,100 @@ table, tr, td, th{
         }
     }
 </script>
+@push('footer_scripts')
 
+<script>
+    function searchSearialStudent()
+    {
+        let from = $('#from').val();
+        let to = $('#to').val();
+        let subject_id = $('#subject_id').val();
+        let subject_part_id = $('#subject_part_id').val();
+        let session = $("#session").val();
+        let exam_type_id = $('#exam_type_id').val();
+
+
+        $.ajax({
+            headers : {
+                'X-CSRF-TOKEN' : '{{ csrf_token() }}'
+            },
+
+            url : '{{ url('searchSerialStudent') }}',
+
+            type : 'POST',
+
+            data : {from,to,subject_id,subject_part_id,session,exam_type_id},
+
+            beforeSend : function(e)
+            {
+                $('#showData').html('Loading');
+            },
+
+            success : function(res)
+            {
+                $('#showData').html(res);
+                let new_from;
+                new_from = parseInt(from) + 10;
+                $('#from').val(new_from);
+                let new_to = parseInt(to) + 10;
+                $('#to').val(new_to);
+            }
+
+        });
+    }
+</script>
+
+<script>
+     $('#Loading').hide();
+    $('#submitMarksEntry').submit(function(e){
+        e.preventDefault();
+        var data = $(this).serialize();
+        // console.log(data);
+        $.ajax({
+            headers : {
+                'X-CSRF-TOKEN' : '{{ csrf_token() }}',
+            },
+
+            url : '{{ route('add_marks.store') }}',
+
+            type : 'POST',
+
+            data : data,
+
+            beforeSend : function()
+            {
+                $('#save').hide();
+                $('#Loading').show();
+            },
+
+            success : function(res)
+            {
+                if(res == 0)
+                {
+                    toastr.options =
+                    {
+                        "closeButton" : true,
+                        "progressBar" : true
+                    }
+                    toastr.error("No Student Found");
+                }
+                else
+                {
+                    toastr.options =
+                    {
+                        "closeButton" : true,
+                        "progressBar" : true
+                    }
+                    toastr.success(res);
+                    searchSearialStudent();
+                }
+                $('#save').show();
+                $('#Loading').hide();
+            }
+        });
+    })
+</script>
+
+@endpush
 @endsection
 

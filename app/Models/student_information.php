@@ -11,4 +11,9 @@ class student_information extends Model
     use HasFactory,SoftDeletes;
 
     protected $guarded = [];
+
+    public function marksheet()
+    {
+        return $this->hasMany('App\Models\marksheet','student_id');
+    }
 }

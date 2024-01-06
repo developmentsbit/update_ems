@@ -279,4 +279,6 @@ class AddMarksController extends Controller
 
         return view($this->path.'.show_search_searial_student',compact('data','i'));
     }
+
+    
 }

@@ -504,6 +504,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('searchingStudent',[AddMarksController::class,'searchingStudent']);
     Route::post('searchSerialStudent',[AddMarksController::class,'searchSerialStudent']);
     Route::resource('view_marks', ViewMarksController::class);
+    Route::get('searchMarksEntry',[ViewMarksController::class,'searchMarksEntry']);
+    Route::post('searchStoredSerialStudent',[ViewMarksController::class,'searchStoredSerialStudent']);
     Route::resource('view_total_subject_marks', ViewTotalSubjectMarksEntryController::class);
     Route::resource('view_completed_subject', ViewCompletedSubjectController::class);
     Route::resource('generate_gpa', GenerateGPAController::class);

@@ -211,4 +211,15 @@ else
     $array['principal_message'] = 'অধ্যক্ষের বার্তা';
 }
 
+if($setting->type == 'school')
+{
+
+        $array['principal'] = 'প্রধান শিক্ষক';
+
+}
+else
+{
+    $array['principal'] = 'অধ্যক্ষ';
+}
+
 return $array;

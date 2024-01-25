@@ -205,4 +205,15 @@ else
     $array['principal_message'] = 'Principal Message';
 }
 
+if($setting->type == 'school')
+{
+
+        $array['principal'] = 'Head Teacher';
+
+}
+else
+{
+    $array['principal'] = 'Principal';
+}
+
 return $array;

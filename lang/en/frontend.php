@@ -185,6 +185,7 @@ $array = array(
     'absent'=>'Absent Student',
     'search'=>'Search',
     'announcement' => 'Announcement',
+    'banbase_number' => 'Banbase Number',
 
 
     //tanim

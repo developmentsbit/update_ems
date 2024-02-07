@@ -126,6 +126,14 @@
 	@endif
 
 
+	@if(env('APP_URL') == 'https://pmths.edu.bd/')
+	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
+		<ul class="list-group">
+			<li class="list-group-item" id="featureheads">@lang('frontend.banbase_number') <b>133734</b> </li>
+		</ul>
+	</div>
+	@else
+
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
 		<ul class="list-group">
 			<li class="list-group-item" id="featureheads">@lang('frontend.useful_link')</li>
@@ -138,6 +146,7 @@
 			@endif
 		</div>
 	</div>
+	@endif
 	
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
 		<ul class="list-group">

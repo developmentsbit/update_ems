@@ -191,6 +191,7 @@ $array = array(
     'absent'=>'উপস্থিত শিক্ষার্থীর সংখ্যা',
     'search'=>'সার্চ করুন',
     'announcement' => 'বিশেষ বিজ্ঞপ্তি',
+    'banbase_number' => 'বেনবেইজ নাম্বার',
 
 
     //tanim

@@ -294,7 +294,7 @@ right:0;
 
             <label><a id="top_button" target="_blank" href="{{url('/download_file')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.upload_download_file')</a></label>
             <label><a id="top_button" target="_blank" href="{{url('/online_lecture')}}" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-danger btn-sm">@lang('frontend.online_lecture_upload')</a></label>
-            <label><a id="top_button" target="_blank" href="https://fgc.gov.bd/showResult.php" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.internal_results')</a></label>
+            <label><a id="top_button" target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-success btn-sm">@lang('frontend.internal_results')</a></label>
             <label><a id="top_button" target="_blank" href="/ems/admission/" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-warning btn-sm"> <i class="fa fa-users"></i>&nbsp; @lang('frontend.admission_form')</a></label>
             <label><a id="top_button" target="_blank" href="#" style="text-decoration:none;color:white;margin-right:10px" class="btn btn-outline-info btn-sm">@lang('frontend.student_login')</a></label>
             <label>

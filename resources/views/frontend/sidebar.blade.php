@@ -132,6 +132,19 @@
 			<li class="list-group-item" id="featureheads">@lang('frontend.banbase_number') <b>133734</b> </li>
 		</ul>
 	</div>
+
+	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">
+		<ul class="list-group">
+			<li class="list-group-item" id="featureheads">@lang('frontend.useful_link')</li>
+		</ul>
+		<div class="feature">
+			@if(isset($usefullink))
+			@foreach($usefullink as $link)
+			<a href="{{ $link->linkurl }}" target="blank"><li style='font-size:12px;'><span uk-icon="icon: triangle-right; ratio: 0.7"></span>&nbsp;&nbsp;@if($lang == 'en'){{ $link->title }}@elseif($lang == 'bn'){{ $link->title_bn }}@endif</li></a>
+			@endforeach
+			@endif
+		</div>
+	</div>
 	@else
 
 	<div class="col-sm-12 col-12 p-0 mt-3" data-aos="fade-in" data-aos-duration="1000">

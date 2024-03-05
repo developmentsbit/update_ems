@@ -14,8 +14,8 @@ class DivisionInformationsTableSeeder extends Seeder
      */
     public function run()
     {
+        \DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         
-
         \DB::table('division_informations')->delete();
         
         \DB::table('division_informations')->insert(array (

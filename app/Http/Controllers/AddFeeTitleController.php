@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\class_info;
 use Illuminate\Http\Request;
 use App\Models\add_fee_title;
+use App\Service\feeService;
 use Brian2694\Toastr\Facades\Toastr;
 
 class AddFeeTitleController extends Controller
@@ -32,23 +33,10 @@ class AddFeeTitleController extends Controller
      */
     public function store(Request $request)
     {
-        $data = array(
 
-            'title'=>$request->title,
-            'title_bn'=>$request->title_bn,
-            'year'=>$request->year,
-            'amount'=>$request->amount,
-            'class_id'=>$request->class_id,
-            'month'=>$request->month,
-            'details'=>$request->details,
-            'details_bn'=>$request->details_bn,
-            'fee'=>$request->fee,
-            'feeType'=>$request->feeType,
+        $response = FeeService::storeFeeTitle($request);
 
-        );
-        $insert = add_fee_title::create($data);
-
-        if($insert)
+        if($response == 100)
         {
             Toastr::success('Data Insert Success', 'success');
             return redirect(route('add_fee_title.index'));

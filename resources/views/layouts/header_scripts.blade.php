@@ -47,5 +47,8 @@
     height: 34px !important;
     padding-top: 2px;
 }
+.select2{
+    color: blue;
+}
 </style>
 @endif

@@ -9,7 +9,9 @@ return [
     'month' => 'Month',
     'fee' => 'Fee Index',
     'feeType' => 'Fee Type',
+    'commonfee' => 'Common Fee',
     'exfee' => 'Exceptional Fee',
+    'fee_category' => 'Fee Category',
 
 
 

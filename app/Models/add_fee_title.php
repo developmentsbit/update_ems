@@ -21,4 +21,14 @@ class add_fee_title extends Model
     {
         return self::insert($prepared_data);
     }
+
+    public function update($prepared_data,$id)
+    {
+        return self::where('id',$id)->update($prepared_data);
+    }
+
+    public function findById($id)
+    {
+       return self::where('id',$id)->first();
+    }
 }

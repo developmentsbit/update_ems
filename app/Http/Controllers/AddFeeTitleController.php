@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\class_info;
 use Illuminate\Http\Request;
 use App\Models\add_fee_title;
+use App\Service\ApiService;
+use App\Service\feeService;
 use Brian2694\Toastr\Facades\Toastr;
 
 class AddFeeTitleController extends Controller
@@ -32,30 +34,17 @@ class AddFeeTitleController extends Controller
      */
     public function store(Request $request)
     {
-        $data = array(
 
-            'title'=>$request->title,
-            'title_bn'=>$request->title_bn,
-            'year'=>$request->year,
-            'amount'=>$request->amount,
-            'class_id'=>$request->class_id,
-            'month'=>$request->month,
-            'details'=>$request->details,
-            'details_bn'=>$request->details_bn,
-            'fee'=>$request->fee,
-            'feeType'=>$request->feeType,
+        $response = FeeService::storeFeeTitle($request);
 
-        );
-        $insert = add_fee_title::create($data);
-
-        if($insert)
+        if($response['status_code'] == ApiService::API_SERVICE_SUCCESS_CODE)
         {
-            Toastr::success('Data Insert Success', 'success');
+            Toastr::success($response['status_message'], 'success');
             return redirect(route('add_fee_title.index'));
         }
         else
         {
-            Alert::error('Congrats', 'Data Insert Error');
+            Alert::error('Congrats', $response['status_message']);
             return redirect(route('add_fee_title.index'));
         }
     }
@@ -73,9 +62,8 @@ class AddFeeTitleController extends Controller
      */
     public function edit(string $id)
     {
-        $class = class_info::all();
-        $data = add_fee_title::where('id',$id)->first();
-        return view('admin.add_fee_title.edit',compact('data','class'));
+        $data = feeService::edit($id);
+        return view('admin.add_fee_title.edit',$data);
     }
 
     /**
@@ -83,30 +71,17 @@ class AddFeeTitleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = array(
 
-            'title'=>$request->title,
-            'title_bn'=>$request->title_bn,
-            'year'=>$request->year,
-            'amount'=>$request->amount,
-            'class_id'=>$request->class_id,
-            'month'=>$request->month,
-            'details'=>$request->details,
-            'details_bn'=>$request->details_bn,
-            'fee'=>$request->fee,
-            'feeType'=>$request->feeType,
+        $response = FeeService::storeFeeTitle($request,$id);
 
-        );
-        $insert = add_fee_title::find($id)->update($data);
-
-        if($insert)
+        if($response['status_code'] == ApiService::API_SERVICE_SUCCESS_CODE)
         {
-            Toastr::success('Data Update Success', 'success');
+            Toastr::success($response['status_message'], 'success');
             return redirect(route('add_fee_title.index'));
         }
         else
         {
-            Alert::error('Congrats', 'Data Update Unsuccessfully');
+            Alert::error('Congrats', $response['status_message']);
             return redirect(route('add_fee_title.index'));
         }
     }

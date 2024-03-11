@@ -32,7 +32,7 @@
 				<h3>@lang('add_fee_title.title')</h3><br>
 				<form method="post" class="btn-submit" action="{{ route('add_fee_title.store') }}" enctype="multipart/form-data">
 					@csrf
-                 
+
 					<div class="row myinput">
                         <div class="form-group mb-3 col-md-4">
                             <label>@lang('common.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
@@ -48,7 +48,12 @@
                         </div>
                         <div class="form-group mb-3 col-md-4">
                             <label class="col-sm-4 col-form-label">@lang('add_fee_title.year') :</label>
-                            <input type="text" name="year" class="form-control "value="2024" required>
+                            <select  name="year" class="form-control" required>
+                            @for ($i=2022;$i<=2030;$i++)
+                                <option value="{{$i}}" {{$i == '2024' ? 'selected':''}}>{{$i}}</option>
+                            @endfor
+                            </select>
+                            {{-- <input type="text" name="year" class="form-control "value="2024" required> --}}
 						</div>
                         <div class="form-group mb-3 col-md-4">
 							<label>@lang('expense_entry.amount'): </label><span class="text-danger">*</span>
@@ -59,7 +64,7 @@
                         <div class="form-group mb-3 col-md-4">
                             <label>@lang('add_fee_title.class_name'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
-                                <select class="form-control" name="class_id">
+                                <select class="form-control select2" name="class_id[]" multiple="multiple">
 									@if(isset($class))
 									@foreach($class as $i)
 									<option value="{{ $i->id }}">{{ $i->class_name }}</option>
@@ -78,7 +83,7 @@
 									<option value="4">@lang('month.april')</option>
 									<option value="5">@lang('month.may')</option>
 									<option value="6">@lang('month.june')</option>
-									<option value="7">@lang('month.june')</option>
+									<option value="7">@lang('month.july')</option>
 									<option value="8">@lang('month.august')</option>
 									<option value="9">@lang('month.september')</option>
 									<option value="10">@lang('month.october')</option>
@@ -87,7 +92,7 @@
 								</select>
 							</div>
 						</div>
-                        
+
                         <div class="form-group mb-3 col-md-6">
 							<label>@lang('expense_entry.details'): </label>
 							<div class="input-group mt-2">
@@ -95,30 +100,34 @@
 							</div>
 						</div>
 						<div class="form-group mb-3 col-md-6">
-							<label>@lang('expense_entry.details_bn'): </label>
-							<div class="input-group mt-2">
-								<textarea id="summernote1" class="form-control w-100" rows="10" type="text" name="details_bn" ></textarea>
-							</div>
-						</div>
-						
-						<div class="form-group mb-3 col-md-6">
 							<label>@lang('add_fee_title.fee'): </label><span class="text-danger">*</span>
 							<div class="input-group mt-2">
 								<input class="form-control form-control" type="text" name="fee" id="fee"  >
 							</div>
 						</div>
+                        <div class="form-group mb-3 col-md-4">
+                            <label>@lang('add_fee_title.fee_category'):</label>
+							<div class="input-group mt-2">
+                                <select class="form-control" name="fee_category">
+									<option value="1">@lang('fee_category.school')</option>
+									<option value="2">@lang('fee_category.hostel')</option>
+									<option value="3">@lang('fee_category.transport')</option>
+
+								</select>
+							</div>
+						</div>
 						<div class="form-group mb-3 col-md-6">
 							<label>@lang('add_fee_title.feeType'): </label><span class="text-danger">*</span>
-                            
+
 							<div class="input-group mt-2">
-                                
+
 								<div class="form-check">
-                                    <input class="form-check-input" type="radio" name="feeType" id="feeType1" value="0" checked> 
+                                    <input class="form-check-input" type="radio" name="feeType" id="feeType1" value="0" checked>
                                     <label class="form-check-label" for="feeType1">
                                         @lang('add_fee_title.commonfee')
                                     </label>
                                 </div>
-                               
+
                                   <div class="form-check ms-3" >
                                     <input class="form-check-input" type="radio" name="feeType" id="feeType2" value="1" >
                                     <label class="form-check-label" for="feeType2">
@@ -127,8 +136,8 @@
                                   </div>
 							</div>
 						</div>
-						
-                      				
+
+
 						<div class="modal-footer border-0">
 							<button type="button" class="btn btn-secondary border-0" onClick="window.location.reload();">@lang('common.close')</button>
 							<button type="submit" class="btn btn-success button border-0">@lang('common.save')</button>

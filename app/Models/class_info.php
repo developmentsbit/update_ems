@@ -23,4 +23,8 @@ class class_info extends Model
     {
         return $this->hasMany('App\Models\add_exam_type','class_id');
     }
+
+    public function getData(){
+        return self::all();
+    }
 }

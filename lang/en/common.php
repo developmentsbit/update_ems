@@ -130,4 +130,10 @@ return [
     'to_date' => 'To Date',
     'month' => 'Month',
     'year' => 'Year',
+    'class' => 'Class',
+    'fee column' => 'Fee Column',
+    'column' => 'Column',
+    'student id' => 'Student Id',
+    'add' => 'Add',
+    'view' => 'View',
 ];

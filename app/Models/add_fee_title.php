@@ -11,6 +11,8 @@ class add_fee_title extends Model
 
     use HasFactory,SoftDeletes;
     protected $guarded = [];
+    const CommonFee = 1;
+    const ExceptionalFee = 2;
 
     public function class()
     {
@@ -36,12 +38,13 @@ class add_fee_title extends Model
        return self::where('id',$id)->delete();
     }
 
-    public function findByData($class_id = null,$year =null,$is_relation=false)
+    public function findByData($class_id = null,$year =null,$is_relation=false,$feeType = null)
     {
         $query = self::query();
         $query->when(!empty($class_id),fn($q) => $q->where('class_id',$class_id))
                 ->when(!empty($year),fn($q)=>$q->where('year',$year))
-                ->when(!empty($is_relation),fn($q)=>$q->with('class'));
+                ->when(!empty($is_relation),fn($q)=>$q->with('class'))
+                ->when(!empty($feeType),fn($q)=>$q->where('feeType',$feeType));
 
          return $query->get();
     }

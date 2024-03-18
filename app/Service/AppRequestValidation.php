@@ -13,7 +13,7 @@ class AppRequestValidation
     use ResourceContainerTrait;
 
 
-    public static function FeeTitleAddValidation(){
+    public static function feeTitleAddValidation(){
         return [
             'title'=>'required|string',
             'class_id'=>'required|array',
@@ -49,5 +49,15 @@ class AppRequestValidation
 
         return $data;
     }
+
+    public static function columnWiseFeeAddValidation(){
+        return [
+            'class_id'=>'required|integer',
+            'column_id'=>'required|integer',
+            'year'=>'required|string',
+            'student_id'=>'nullable|string',
+        ];
+    }
+
 
 }

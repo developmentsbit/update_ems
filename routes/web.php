@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 
+use App\Http\Controllers\ColumnWiseFeeSetup;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuActionController;
@@ -339,6 +340,7 @@ Route::group(['middleware' => 'auth'], function () {
         'institute_position_details' => InstitutePositionDetailsController::class,
         'add_fee_title' => AddFeeTitleController::class,
         'cash_transaction_report' => CashTransactionController::class,
+        'columnwisefee' => ColumnWiseFeeSetup::class,
     ]);
 
     Route::get('/cash_satement',[CashTransactionController::class,'cash_statement']);

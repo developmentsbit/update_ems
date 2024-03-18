@@ -8,7 +8,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 
-class ColumnWiseFeeSetup extends Controller
+class ColumnWiseFeeSetupController extends Controller
 {
     /**
      * Display a listing of the resource.

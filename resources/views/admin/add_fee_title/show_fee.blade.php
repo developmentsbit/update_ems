@@ -33,7 +33,7 @@
 @endif
 <body class="p-2">
     @php
-    
+
     use App\Models\class_info;
     @endphp
 
@@ -41,8 +41,8 @@
         <thead>
             <tr class="table-active">
                 <th colspan="10" style="text-align: center;">
-                    Class : <span class="text-danger">{{ $data['class']->class_name }}</span> |  Year : <span class="text-danger">{{  $data['year'] }}</span> 
-                   
+                    Class : <span class="text-danger">{{ $data['class']->class_name }}</span> |  Year : <span class="text-danger">{{  $data['year'] }}</span>
+
                 </th>
             </tr>
             <tr>
@@ -74,7 +74,7 @@
                 <td>
                     {{ $v->amount }}
                 </td>
-                
+
                 <td>
                     {{ $v->class->class_name }}
                 </td>
@@ -94,7 +94,7 @@
                     Exceptional Fee
                     @endif
                 </td>
-               
+
                 <td>
                     <a style="float: left;margin-bottom:4px;" href="{{ route('add_fee_title.edit',$v->id) }}" class="btn btn-sm btn-info me-2">@lang('common.edit')</a>
                     <form method="POST" action="{{ route('add_fee_title.destroy',$v->id) }}">
@@ -102,9 +102,9 @@
                         @method('DELETE')
                         <button class="btn btn-sm btn-danger">@lang('common.delete')</button>
                     </form>
-                   
 
-                 
+
+
                 </td>
             </tr>
             @endforeach

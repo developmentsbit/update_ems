@@ -10,4 +10,8 @@ class student_fee_column extends Model
 {
     use HasFactory,SoftDeletes;
     protected $guarded = [];
+
+    public function getData(){
+        return self::all();
+    }
 }

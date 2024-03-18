@@ -32,7 +32,10 @@
 				<h3>@lang('add_fee_title.title')</h3><br>
 				<form method="post" class="btn-submit" action="{{ route('add_fee_title.store') }}" enctype="multipart/form-data">
 					@csrf
-
+                    @php
+                    $months = App\Service\ApiService::MONTHS;
+                    $years = App\Service\ConstantService::CurrentYearToPreviousYear();
+                    @endphp
 					<div class="row myinput">
                         <div class="form-group mb-3 col-md-4">
                             <label>@lang('common.title'): <span class="text-danger" style="font-size: 15px;">*</span></label>
@@ -49,11 +52,10 @@
                         <div class="form-group mb-3 col-md-4">
                             <label class="col-sm-4 col-form-label">@lang('add_fee_title.year') :</label>
                             <select  name="year" class="form-control" required>
-                            @for ($i=2022;$i<=2030;$i++)
-                                <option value="{{$i}}" {{$i == '2024' ? 'selected':''}}>{{$i}}</option>
-                            @endfor
+                            @foreach ($years as $year)
+                                <option value="{{$year}}" {{$year == date("Y") ? 'selected':''}}>{{$year}}</option>
+                            @endforeach
                             </select>
-                            {{-- <input type="text" name="year" class="form-control "value="2024" required> --}}
 						</div>
                         <div class="form-group mb-3 col-md-4">
 							<label>@lang('expense_entry.amount'): </label><span class="text-danger">*</span>
@@ -77,18 +79,9 @@
                             <label>@lang('add_fee_title.month'): <span class="text-danger" style="font-size: 15px;">*</span></label>
 							<div class="input-group mt-2">
                                 <select class="form-control" name="month">
-									<option value="1">@lang('month.january')</option>
-									<option value="2">@lang('month.february')</option>
-									<option value="3">@lang('month.march')</option>
-									<option value="4">@lang('month.april')</option>
-									<option value="5">@lang('month.may')</option>
-									<option value="6">@lang('month.june')</option>
-									<option value="7">@lang('month.july')</option>
-									<option value="8">@lang('month.august')</option>
-									<option value="9">@lang('month.september')</option>
-									<option value="10">@lang('month.october')</option>
-									<option value="11">@lang('month.november')</option>
-									<option value="12">@lang('month.december')</option>
+                                    @foreach($months as $key => $month)
+									<option value="{{$key}}">@lang('month.'.$month)</option>
+                                    @endforeach
 								</select>
 							</div>
 						</div>

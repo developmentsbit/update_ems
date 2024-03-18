@@ -15,7 +15,7 @@ class AddFeeTitleController extends Controller
      */
     public function index()
     {
-        $class = class_info::all();
+        $class = (new class_info())->getData();
         return view('admin.add_fee_title.index',compact('class'));
     }
 
@@ -24,8 +24,7 @@ class AddFeeTitleController extends Controller
      */
     public function create()
     {
-
-        $class = class_info::all();
+        $class =(new class_info())->getData();
         return view('admin.add_fee_title.create',compact('class'));
     }
 
@@ -91,19 +90,25 @@ class AddFeeTitleController extends Controller
      */
     public function destroy(string $id)
     {
-        add_fee_title::where('id',$id)->delete();
+       $response =  (new add_fee_title())->destroyFeeTitle($id);
+       if($response){
         Toastr::success('Data Delete Successfully', 'success');
+
+       }else{
+        Toastr::success('Data Delete not Successfully', 'danger');
+
+       }
             return redirect(route('add_exam_type.index'));
     }
     public function showFreeTitle(Request $request)
     {
         $data = [];
-        $data['year'] = $request->year;
+        $data['year'] = $request->year??'';
         $data['sl'] = 1;
-        $data['data'] = add_fee_title::where('class_id',$request->class_id)->where('year',$request->year)->with('class')->get();
-        $data['class'] = class_info::where('id',$request->class_id)->first();
+        $data['data'] = (new add_fee_title())->findByData($request->class_id??'',$request->year??'',true);
+        $data['class'] = (new class_info())->findByClassId($request->class_id ?? '');
 
-        return view('admin.add_fee_title.show_fee',compact('data'));
+        return view('admin.add_fee_title.show_fee',$data);
         // return view($this->path.'.show_student',compact('data'));
     }
 }

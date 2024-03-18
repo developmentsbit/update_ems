@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('add_fee_titles', function (Blueprint $table) {
             $table->id();
-            
             $table->string('title');
             $table->string('title_bn')->nullable();
             $table->integer('year')->nullable();
-            $table->integer('amount')->nullable();
+            $table->double('amount',11,2)->nullable();
             $table->bigInteger('class_id')->unsigned();
             $table->foreign('class_id')->references('id')->on('addclass');
-            $table->integer('month')->nullable();
+            $table->varchar('month',10)->nullable();
             $table->longText('details')->nullable();
             $table->longText('details_bn')->nullable();
-            $table->string('fee')->nullable();
-            $table->string('feeType')->nullable();
+            $table->integer('index')->default(0)->nullable()->comment("SL no");
+            $table->tinyInteger('feeType')->default(1)->nullable()->comment("1=common fee 2=exceptional fee");
+            $table->tinyInteger('fee_category')->default(1)->nullable()->comment('1=school,2=hostel,3=transport fee');
             $table->date('deleted_at')->nullable();
             $table->timestamps();
         });

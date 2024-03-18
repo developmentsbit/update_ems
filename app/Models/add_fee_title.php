@@ -17,12 +17,12 @@ class add_fee_title extends Model
         return $this->belongsTo('App\Models\class_info','class_id');
     }
 
-    public function store($prepared_data) : bool
+    public function store($prepared_data)
     {
         return self::insert($prepared_data);
     }
 
-    public function update($prepared_data,$id)
+    public function updateData($prepared_data,$id)
     {
         return self::where('id',$id)->update($prepared_data);
     }
@@ -30,5 +30,19 @@ class add_fee_title extends Model
     public function findById($id)
     {
        return self::where('id',$id)->first();
+    }
+    public function destroyFeeTitle($id)
+    {
+       return self::where('id',$id)->delete();
+    }
+
+    public function findByData($class_id = null,$year =null,$is_relation=false)
+    {
+        $query = self::query();
+        $query->when(!empty($class_id),fn($q) => $q->where('class_id',$class_id))
+                ->when(!empty($year),fn($q)=>$q->where('year',$year))
+                ->when(!empty($is_relation),fn($q)=>$q->with('class'));
+
+         return $query->get();
     }
 }

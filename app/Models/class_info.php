@@ -27,4 +27,7 @@ class class_info extends Model
     public function getData(){
         return self::all();
     }
+    public function findByClassId($id){
+        return self::find($id);
+    }
 }

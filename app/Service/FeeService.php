@@ -4,7 +4,7 @@
 namespace App\Service;
 use App\Models\class_info;
 use App\Models\add_fee_title;
-
+use DB;
 class FeeService
 {
     public static function storeFeeTitle($request,$id=null){
@@ -19,7 +19,7 @@ class FeeService
             if(empty($id)){
                 $res = $addFeeTitleObj->store($prepared_data);
             }else{
-                $res = $addFeeTitleObj->update($prepared_data,$id);
+                $res = $addFeeTitleObj->updateData($prepared_data,$id);
             }
 
             if($res){

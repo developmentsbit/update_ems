@@ -19,7 +19,7 @@ return new class extends Migration
             $table->double('amount',11,2)->nullable();
             $table->bigInteger('class_id')->unsigned();
             $table->foreign('class_id')->references('id')->on('addclass');
-            $table->varchar('month',10)->nullable();
+            $table->string('month',10)->nullable();
             $table->longText('details')->nullable();
             $table->longText('details_bn')->nullable();
             $table->integer('index')->default(0)->nullable()->comment("SL no");

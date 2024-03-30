@@ -343,6 +343,8 @@ Route::group(['middleware' => 'auth'], function () {
         'columnwisefee' => ColumnWiseFeeSetupController::class,
     ]);
 
+    Route::post('/column-Fee-Title-Class-Wise',[ColumnWiseFeeSetupController::class,'columnFeeClassWise'])->name('columnFeeClassWise');
+    Route::post('/columnwisefee-delete',[ColumnWiseFeeSetupController::class,'destroy'])->name('columnFeeClassWiseDelete');
     Route::get('/cash_satement',[CashTransactionController::class,'cash_statement']);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);

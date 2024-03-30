@@ -43,7 +43,7 @@
                         <form method="post"  action="{{route('columnwisefee.store')}}" >
                         @csrf
                             <div class="form-group row">
-                                <div class="col-md-6 col-4 mt-md-1 mt-3">
+                                <div class="col-md-4 col-4 mt-md-1 mt-3">
                                     <label>@lang('common.fee column')</label>
                                     <select class="form-control form-control-sm " name="column_id" id="column_id"  required>
                                         <option value="">@lang('common.select_one')</option>
@@ -55,9 +55,9 @@
 
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-4 mt-md-1 mt-3">
+                                <div class="col-md-4 col-4 mt-md-1 mt-3">
                                     <label>@lang('common.year')</label>
-                                    <select class="form-control form-control-sm " name="year" id="year"  required>
+                                    <select class="form-control form-control-sm " name="year" id="year" onchange="return columnWiseFeeTitle()"   required>
                                         <option value="">@lang('common.select_one')</option>
                                         @foreach ($years as $year)
                                             <option value="{{$year}}" {{$year == date("Y") ? 'selected':''}}>{{$year}}</option>
@@ -65,9 +65,9 @@
 
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-4 mt-md-1 mt-3">
+                                <div class="col-md-4 col-4 mt-md-1 mt-3">
                                     <label>@lang('common.class')</label>
-                                    <select class="form-control form-control-sm " name="class_id" id="class_id"  required>
+                                    <select class="form-control form-control-sm " name="class_id" id="class_id" onchange="return columnWiseFeeTitle()"  required>
                                         <option value="">@lang('common.select_one')</option>
                                         @if(isset($classes))
                                             @foreach($classes as $class)
@@ -77,30 +77,34 @@
 
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-4 mt-md-1 mt-3">
-                                    <label>@lang('common.student id')</label>
-                                    <input type="text" class="form-control" name="student_id" id="student_id" value="{{old('student_id')}}">
+{{--                                <div class="col-md-6 col-4 mt-md-1 mt-3">--}}
+{{--                                    <label>@lang('common.student id')</label>--}}
+{{--                                    <input type="text" class="form-control" name="student_id" id="student_id" value="{{old('student_id')}}">--}}
+{{--                                </div>--}}
+
+
+                                <div class="col-12 mt-2">
+                                    <div class="row">
+                                    <div class="feeTitleShow" align="center"></div>
+
+                                    </div>
                                 </div>
-
-
                                 <div class="col-12 mt-2">
                                     <div class="row">
                                         <div class="col-2 mt-2">
                                             <button type="submit" class="btn btn-sm btn-success"><i
                                                     class="fa fa-eye"></i> @lang('common.add')</button>
                                         </div>
+
                                         <div class="col-2 mt-2">
-                                            <button type="submit" class="btn btn-sm btn-success"><i
-                                                    class="fa fa-eye"></i> @lang('common.view')</button>
+                                            <a class="btn btn-sm btn-success" onclick="ShowcolumnWiseFeeTitle()"><i
+                                                    class="fa fa-eye"></i> @lang('common.view')</a>
                                         </div>
-{{--                                        <div class="col-2 mt-2">--}}
-{{--                                            <button type="submit" class="btn btn-sm btn-success"><i--}}
-{{--                                                    class="fa fa-eye"></i> @lang('common.show')</button>--}}
-{{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
                         </form>
+
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div><!-- end col-->
@@ -138,4 +142,5 @@
     </script>
 
     @include('components.delete_script')
+    @include('components.commonJs')
 @endpush

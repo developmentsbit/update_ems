@@ -48,4 +48,13 @@ class add_fee_title extends Model
 
          return $query->get();
     }
+    public function findByWhereNotIn(array $fee_id = [],$class_id = null,$year =null)
+    {
+        $query = self::query();
+        $query->when(!empty($fee_id),fn($q) => $q->whereNotIn('id',$fee_id))
+            ->when(!empty($class_id),fn($q) => $q->where('class_id',$class_id))
+            ->when(!empty($year),fn($q)=>$q->where('year',$year));
+
+         return $query->get();
+    }
 }

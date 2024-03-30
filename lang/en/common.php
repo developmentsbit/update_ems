@@ -95,6 +95,7 @@ return [
     "remarks" => "Remarks",
     'failed' => 'Failed!',
     'error' => 'Sorry! Something Went Wrong!',
+    'no data' => 'Sorry! You have no information!',
 
     // ----- delete script ----- start
     "are_you_sure" => "Are you sure ?",

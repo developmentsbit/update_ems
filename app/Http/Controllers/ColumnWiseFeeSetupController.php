@@ -76,8 +76,15 @@ class ColumnWiseFeeSetupController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+       return $response  =  FeeService::columnFeeClassWiseDestroy($request->id ?? '');
+
+    }
+
+    public function columnFeeClassWise(Request $request){
+        $response  = FeeService::columnFeeClassWise($request);
+        $view = view('admin.Fee.feeTitleShow',$response)->render();
+        return response()->Json(['data'=>$response,'view'=>$view]);
     }
 }

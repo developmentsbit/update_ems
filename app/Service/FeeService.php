@@ -103,13 +103,12 @@ class FeeService
     }
 
     public static function columnWiseSetupIndex(){
+        $response['lang'] = session()->get('lang');
         $response['data'] = (new ColumnWiseFeeSetups())->getData();
         $response['columns'] = (new student_fee_column())->getData();
         $response['classes'] = (new class_info())->getData();
         $response['months'] = ApiService::MONTHS;
         $response['years'] = ConstantService::CurrentYearToPreviousYear();
-        $response['lang'] = session()->get('lang');
-
         return $response;
     }
 
@@ -129,8 +128,7 @@ class FeeService
                 $prepared_data = self::columnWiseFeeprepareRequest($request);
                 $columnWiseFeeSetups = new ColumnWiseFeeSetups();
                 $addFeeTitleObj = new add_fee_title();
-                $CommonFee = $addFeeTitleObj->findByData($prepared_data['class_id'],$prepared_data['year'],false,$addFeeTitleObj::CommonFee);
-//                dd($prepared_data['class_id'],$addFeeTitleObj::CommonFee,$CommonFee);
+                $CommonFee = $request->fee_id ?? [];
                 $res = $columnWiseFeeSetups->storeData($prepared_data,$CommonFee);
                 if($res){
                     $status['status_code'] = ApiService::API_SERVICE_SUCCESS_CODE;
@@ -148,11 +146,45 @@ class FeeService
         return $status;
     }
 
+    public static function columnFeeClassWise($request){
+        $response = [];
+        $addFeeTitleObj = new add_fee_title();
+        $columnWiseFeeSetups= new ColumnWiseFeeSetups();
+        $response['type'] = $request->type ?? 1 ;
+        $response['commonFee'] = $addFeeTitleObj->findByData($request->class_id ?? '',$request->year ?? '');
+        $columnWiseFeeSetupsData = $columnWiseFeeSetups->findByData($request->class_id ?? '',$request->year ?? '',true) ?? '';
+        $response['columnWiseFeeSetupsData'] =$columnWiseFeeSetupsData;
+        if(count($columnWiseFeeSetupsData)>0){
+           $fee_id = [];
+           foreach ($columnWiseFeeSetupsData as $data){
+               $fee_id[] = $data->fee_id;
+           }
+        $response['commonFee'] = $addFeeTitleObj->findByWhereNotIn($fee_id ?? [],$request->class_id ?? '',$request->year ?? '');
+       }
+
+        return $response;
+
+    }
+
+    public static function columnFeeClassWiseDestroy($id){
+        $columnWiseFeeSetups= new ColumnWiseFeeSetups();
+        $response = $columnWiseFeeSetups->destroyData($id);
+        if($response){
+            $status['status_code'] = ApiService::API_SERVICE_SUCCESS_CODE;
+            $status['status_message'] = ApiService::API_SERVICE_STATUS_MESSAGE[ApiService::API_SERVICE_SUCCESS_CODE];
+        }else{
+            $status['status_code'] = ApiService::API_SERVICE_FAILED_CODE;
+            $status['status_message'] = ApiService::API_SERVICE_STATUS_MESSAGE[ApiService::API_SERVICE_FAILED_CODE];
+        }
+        return $status;
+
+    }
+
     public static function columnWiseFeeprepareRequest($request){
-        $input['class_id'] = isset($request->class_id)? $request->class_id : '';
-        $input['column_id'] = isset($request->column_id)? $request->column_id : '';
-        $input['student_id'] = isset($request->student_id)? $request->student_id : '';
-        $input['year'] = isset($request->year)? $request->year : '';
+        $input['class_id']      = isset($request->class_id)? $request->class_id : '';
+        $input['column_id']     = isset($request->column_id)? $request->column_id : '';
+        $input['student_id']    = isset($request->student_id)? $request->student_id : '';
+        $input['year']          = isset($request->year)? $request->year : '';
 
         return $input;
     }

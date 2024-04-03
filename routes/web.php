@@ -6,6 +6,7 @@ use App\Http\Controllers\ColumnWiseFeeSetupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuActionController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserMenuActionController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
@@ -341,6 +342,7 @@ Route::group(['middleware' => 'auth'], function () {
         'add_fee_title' => AddFeeTitleController::class,
         'cash_transaction_report' => CashTransactionController::class,
         'columnwisefee' => ColumnWiseFeeSetupController::class,
+        'addFeeInStudentAc' => StudentController::class,
     ]);
 
     Route::post('/column-Fee-Title-Class-Wise',[ColumnWiseFeeSetupController::class,'columnFeeClassWise'])->name('columnFeeClassWise');

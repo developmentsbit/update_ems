@@ -58,6 +58,13 @@ class AppRequestValidation
             'student_id'=>'nullable|string',
         ];
     }
+    public static function StudentAccountInfoValidation(){
+        return [
+            'class_id'=>'required|integer',
+            'year'=>'required|string',
+            'student_id'=>'nullable|string',
+        ];
+    }
 
 
 }

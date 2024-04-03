@@ -33,34 +33,12 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <form method="post"  action="{{route('columnwisefee.store')}}" >
+                        <form method="post"  action="{{route('addFeeInStudentAc.store')}}" >
                         @csrf
                             <div class="form-group row">
                                 <div class="col-md-4 col-4 mt-md-1 mt-3">
-                                    <label>@lang('common.fee column')</label>
-                                    <select class="form-control form-control-sm " name="column_id" id="column_id"  required>
-                                        <option value="">@lang('common.select_one')</option>
-                                        @if(isset($columns))
-                                            @foreach($columns as $column)
-                                                <option value="{{ $column->id }}">{{ $lang == 'en'?$column->column_name:$column->column_name_bn }}</option>
-                                            @endforeach
-                                        @endif
-
-                                    </select>
-                                </div>
-                                <div class="col-md-4 col-4 mt-md-1 mt-3">
-                                    <label>@lang('common.year')</label>
-                                    <select class="form-control form-control-sm " name="year" id="year" onchange="return columnWiseFeeTitle()"   required>
-                                        <option value="">@lang('common.select_one')</option>
-                                        @foreach ($years as $year)
-                                            <option value="{{$year}}" {{$year == date("Y") ? 'selected':''}}>{{$year}}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-                                <div class="col-md-4 col-4 mt-md-1 mt-3">
                                     <label>@lang('common.class')</label>
-                                    <select class="form-control form-control-sm " name="class_id" id="class_id" onchange="return columnWiseFeeTitle()"  required>
+                                    <select class="form-control form-control-sm " name="class_id" id="class_id"  required>
                                         <option value="">@lang('common.select_one')</option>
                                         @if(isset($classes))
                                             @foreach($classes as $class)
@@ -70,10 +48,21 @@
 
                                     </select>
                                 </div>
-{{--                                <div class="col-md-6 col-4 mt-md-1 mt-3">--}}
-{{--                                    <label>@lang('common.student id')</label>--}}
-{{--                                    <input type="text" class="form-control" name="student_id" id="student_id" value="{{old('student_id')}}">--}}
-{{--                                </div>--}}
+                                <div class="col-md-4 col-4 mt-md-1 mt-3">
+                                    <label>@lang('common.year')</label>
+                                    <select class="form-control form-control-sm " name="year" id="year"  required>
+                                        <option value="">@lang('common.select_one')</option>
+                                        @foreach ($years as $year)
+                                            <option value="{{$year}}" {{$year == date("Y") ? 'selected':''}}>{{$year}}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4 col-4 mt-md-1 mt-3">
+                                    <label>@lang('common.student id')</label>
+                                    <input type="text" class="form-control" name="student_id" id="student_id" value="{{old('student_id')}}">
+                                </div>
 
 
                                 <div class="col-12 mt-2">

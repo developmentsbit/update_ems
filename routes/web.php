@@ -347,6 +347,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/column-Fee-Title-Class-Wise',[ColumnWiseFeeSetupController::class,'columnFeeClassWise'])->name('columnFeeClassWise');
     Route::post('/columnwisefee-delete',[ColumnWiseFeeSetupController::class,'destroy'])->name('columnFeeClassWiseDelete');
+    Route::post('/studentWisefee-delete',[StudentController::class,'destroy'])->name('studentFeeWiseDelete');
+    Route::post('/show-Fee-Title-Student-Wise',[StudentController::class,'showStudentFeeTitle'])->name('showStudentFeeTitle');
     Route::get('/cash_satement',[CashTransactionController::class,'cash_statement']);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);

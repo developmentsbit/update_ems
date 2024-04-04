@@ -61,13 +61,13 @@
 
                                 <div class="col-md-4 col-4 mt-md-1 mt-3">
                                     <label>@lang('common.student id')</label>
-                                    <input type="text" class="form-control" name="student_id" id="student_id" value="{{old('student_id')}}">
+                                    <input type="text" class="form-control" name="student_id" id="student_id" onchange="return ShowStudentWiseFeeTitle()" value="{{old('student_id')}}">
                                 </div>
 
 
                                 <div class="col-12 mt-2">
                                     <div class="row">
-                                    <div class="feeTitleShow" align="center"></div>
+                                    <div class="studentFeeTitleShow" align="center"></div>
 
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                         </div>
 
                                         <div class="col-2 mt-2">
-                                            <a class="btn btn-sm btn-success" onclick="ShowcolumnWiseFeeTitle()"><i
+                                            <a class="btn btn-sm btn-success" onclick="return ShowStudentWiseFeeTitle(2)"><i
                                                     class="fa fa-eye"></i> @lang('common.view')</a>
                                         </div>
                                     </div>

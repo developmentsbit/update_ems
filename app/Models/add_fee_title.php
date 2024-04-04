@@ -38,12 +38,13 @@ class add_fee_title extends Model
        return self::where('id',$id)->delete();
     }
 
-    public function findByData($class_id = null,$year =null,$is_relation=false,$feeType = null)
+    public function findByData($class_id = null,$year =null,$is_relation=false,$feeType = null,$id=[])
     {
         $query = self::query();
         $query->when(!empty($class_id),fn($q) => $q->where('class_id',$class_id))
                 ->when(!empty($year),fn($q)=>$q->where('year',$year))
                 ->when(!empty($is_relation),fn($q)=>$q->with('class'))
+                ->when(!empty($id),fn($q)=>$q->whereIn('id',$id))
                 ->when(!empty($feeType),fn($q)=>$q->where('feeType',$feeType));
 
          return $query->get();

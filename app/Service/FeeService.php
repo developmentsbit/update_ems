@@ -165,7 +165,7 @@ class FeeService
         $addFeeTitleObj = new add_fee_title();
         $columnWiseFeeSetups = new ColumnWiseFeeSetups();
         $response['type'] = $request->type ?? 1;
-        $response['commonFee'] = $addFeeTitleObj->findByData($request->class_id ?? '', $request->year ?? '',true,$addFeeTitleObj::CommonFee);
+        $response['commonFee'] = $addFeeTitleObj->findByData($request->class_id ?? '', $request->year ?? '', true, $addFeeTitleObj::CommonFee);
         $columnWiseFeeSetupsData = $columnWiseFeeSetups->findByData($request->class_id ?? '', $request->year ?? '', true) ?? '';
         $response['columnWiseFeeSetupsData'] = $columnWiseFeeSetupsData;
         if (count($columnWiseFeeSetupsData) > 0) {
@@ -232,15 +232,16 @@ class FeeService
                 $student = (new student_reg_info())->getByData($request, true);
                 $studentAccountFee = new StudentAccountInfo();
                 $addFeeTitleObj = new add_fee_title();
-                $commonFee = $addFeeTitleObj->findByData($request->class_id ?? '', $request->year ?? '',false,$addFeeTitleObj::CommonFee);
+                $commonFee = $addFeeTitleObj->findByData($request->class_id ?? '', $request->year ?? '', false, $addFeeTitleObj::CommonFee, $request->fee_id ?? []);
+//                dd($commonFee);
                 $auth_id = Auth::user()->id;
-                if(count($student)>0 && count($commonFee)>0){
-                $res = $studentAccountFee->createOrUpdateData($prepared_data, $auth_id, $student, $commonFee);
+                if (count($student) > 0 && count($commonFee) > 0) {
+                    $res = $studentAccountFee->createOrUpdateData($prepared_data, $auth_id, $student, $commonFee);
                     if ($res) {
                         $status['status_code'] = ApiService::API_SERVICE_SUCCESS_CODE;
                         $status['status_message'] = ApiService::API_SERVICE_STATUS_MESSAGE[ApiService::API_SERVICE_SUCCESS_CODE];
                     }
-                }else{
+                } else {
                     $status['status_code'] = ApiService::API_SERVICE_FAILED_CODE;
                     $status['status_message'] = 'Student or Fee not found';
                 }
@@ -256,8 +257,48 @@ class FeeService
                 $status['error_full'] = $ex;
             }
         }
-                log::info($status);
+        log::info($status);
 
         return $status;
+    }
+
+    public static function studentWiseFeeTitle($request)
+    {
+        $response = [];
+        $response['commonFee'] =$response['studentAccountInfoData'] = [];
+        $addFeeTitleObj = new add_fee_title();
+        $studentAccountInfo = new StudentAccountInfo();
+        $student = (new student_reg_info())->getByData($request, true);
+        $response['type'] = $request->type ?? 1;
+        if (count($student) > 0) {
+        $response['commonFee'] = $addFeeTitleObj->findByData($request->class_id ?? '', $request->year ?? '', true, $addFeeTitleObj::CommonFee);
+        $studentAccountInfoData = $studentAccountInfo->findByData($request->class_id ?? '', $request->year ?? '', $request->student_id ?? '') ?? '';
+        $response['studentAccountInfoData'] = $studentAccountInfoData;
+            if (count($studentAccountInfoData) > 0 && $response['type'] == 1) {
+                $fee_id = [];
+                foreach ($studentAccountInfoData as $data) {
+                    $fee_id[] = $data->fee_id;
+                }
+                $response['commonFee'] = $addFeeTitleObj->findByWhereNotIn($fee_id ?? [], $request->class_id ?? '', $request->year ?? '');
+            }
+        }
+
+        return $response;
+
+    }
+
+    public static function studentFeeWiseDestroy($id)
+    {
+        $StudentAccountInfo = new StudentAccountInfo();
+        $response = $StudentAccountInfo->deleteData(['id'=>$id]);
+        if ($response) {
+            $status['status_code'] = ApiService::API_SERVICE_SUCCESS_CODE;
+            $status['status_message'] = ApiService::API_SERVICE_STATUS_MESSAGE[ApiService::API_SERVICE_SUCCESS_CODE];
+        } else {
+            $status['status_code'] = ApiService::API_SERVICE_FAILED_CODE;
+            $status['status_message'] = ApiService::API_SERVICE_STATUS_MESSAGE[ApiService::API_SERVICE_FAILED_CODE];
+        }
+        return $status;
+
     }
 }

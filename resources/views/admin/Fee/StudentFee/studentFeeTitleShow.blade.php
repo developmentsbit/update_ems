@@ -6,25 +6,35 @@
        <span class="alert-danger"><strong>Sorry! You have no information!</strong></span>
     @endforelse
        @elseif($type == 2)
-       <h1>{{$columnWiseFeeSetupsData[0]->classInfo->class_name ?? ''}}</h1>
-    <table class="table">
+       <h1>{{$studentAccountInfoData[0]->student->student_name ?? ''}} @if($studentAccountInfoData)({{$studentAccountInfoData[0]->class->class_name?? ''}})@endif</h1>
+    <table class="table table-hover table-bordered table-success table-striped">
         <thead>
 
-        <tr>
-            <td>Column name</td>
+        <tr style="font-weight: 700">
+            <td>SL</td>
             <td>Fee Title</td>
+            <td>Fee Type</td>
+            <td>Year</td>
+            <td>Amount</td>
             <td>Action</td>
         </tr>
         </thead>
 <tbody>
 
-            @forelse($columnWiseFeeSetupsData as $data)
+            @forelse($studentAccountInfoData as $key=>$data)
         <tr>
-            <td>{{$data->column->column_name}}</td>
-            <td>{{$data->fee->title}}</td>
-            <td><i class="fa fa-trash" onclick="deleteColumnFeeTitle({{$data->id}})"></i></td>
+            <td>{{$key+1}}</td>
+            <td>{{$data->fee->title ?? ''}}</td>
+            <td>Common</td>
+            <td>{{$data->year ?? ''}}</td>
+            <td>{{round($data->fee->amount,2) ?? ''}}</td>
+            <td><i class="fa fa-trash" style="cursor: pointer" onclick="deleteStudentFeeTitle({{$data->id}})"></i></td>
         </tr>
             @empty
+                <tr>
+                   <td colspan="6">Sorry! You have no information!</td>
+
+                </tr>
             @endforelse
 </tbody>
     </table>

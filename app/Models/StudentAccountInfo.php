@@ -12,6 +12,18 @@ class StudentAccountInfo extends Model
 
     protected $guarded = [];
 
+    public function student(){
+        return $this->belongsTo(student_information::class,'student_id','student_id');
+    }
+
+    public function fee(){
+        return $this->belongsTo(add_fee_title::class,'fee_id');
+    }
+
+    public function class(){
+        return $this->belongsTo(class_info::class,'class_id');
+    }
+
     public function getData()
     {
         return self::all();
@@ -65,5 +77,16 @@ class StudentAccountInfo extends Model
     public function deleteData($data)
     {
         return $this->where($data)->delete();
+    }
+
+    public function findByData($class_id = null,$year =null,$student_id=null)
+    {
+        $query = self::query();
+        $query->when(!empty($class_id),fn($q) => $q->where('class_id',$class_id))
+            ->when(!empty($year),fn($q)=>$q->where('year',$year))
+            ->when(!empty($student_id),fn($q)=>$q->where('student_id',$student_id))
+            ->with(['student','fee','class']);
+
+        return $query->get();
     }
 }

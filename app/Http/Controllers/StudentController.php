@@ -15,7 +15,7 @@ class StudentController extends Controller
     public function index()
     {
         $response = FeeService::addStudentFeeIndex();
-        return view('admin.Fee.StudentFee.addFeeInStudentAC',$response);
+        return view('admin.Fee.StudentFee.addFeeInStudentAC', $response);
     }
 
     /**
@@ -34,11 +34,11 @@ class StudentController extends Controller
 
         $response = FeeService::storeStudentFee($request);
 
-        if($response['status_code'] == ApiService::API_SERVICE_SUCCESS_CODE){
+        if ($response['status_code'] == ApiService::API_SERVICE_SUCCESS_CODE) {
             Toastr::success($response['status_message'], 'success');
 
-        }else{
-            Toastr::success($response['status_message'], 'danger');
+        } else {
+            Toastr::error($response['status_message']);
 
         }
         return redirect()->back();
@@ -71,8 +71,16 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request  $request)
     {
-        //
+
+        return $response  =  FeeService::studentFeeWiseDestroy($request->id ?? '');
+    }
+
+    public function showStudentFeeTitle(Request $request)
+    {
+        $response = FeeService::studentWiseFeeTitle($request);
+        $view = view('admin.Fee.Studentfee.studentFeeTitleShow',$response)->render();
+        return response()->json(['view'=>$view,'data'=>$response]);
     }
 }

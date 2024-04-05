@@ -137,4 +137,7 @@ return [
     'student id' => 'Student Id',
     'add' => 'Add',
     'view' => 'View',
+    'male' => 'Male',
+    'female' => 'Female',
+    'others' => 'Others',
 ];

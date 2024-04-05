@@ -6,6 +6,7 @@ use App\Http\Controllers\ColumnWiseFeeSetupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MenuActionController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserMenuActionController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
@@ -342,11 +343,16 @@ Route::group(['middleware' => 'auth'], function () {
         'add_fee_title' => AddFeeTitleController::class,
         'cash_transaction_report' => CashTransactionController::class,
         'columnwisefee' => ColumnWiseFeeSetupController::class,
+
         'testimonial' => TestimonialController::class,
-    ]);
+
+        'addFeeInStudentAc' => StudentController::class,
+
 
     Route::post('/column-Fee-Title-Class-Wise',[ColumnWiseFeeSetupController::class,'columnFeeClassWise'])->name('columnFeeClassWise');
     Route::post('/columnwisefee-delete',[ColumnWiseFeeSetupController::class,'destroy'])->name('columnFeeClassWiseDelete');
+    Route::post('/studentWisefee-delete',[StudentController::class,'destroy'])->name('studentFeeWiseDelete');
+    Route::post('/show-Fee-Title-Student-Wise',[StudentController::class,'showStudentFeeTitle'])->name('showStudentFeeTitle');
     Route::get('/cash_satement',[CashTransactionController::class,'cash_statement']);
 
     Route::post('getExamType',[MarkDistributionController::class,'getExamType']);

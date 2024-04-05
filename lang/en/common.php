@@ -135,6 +135,7 @@ return [
     'fee column' => 'Fee Column',
     'column' => 'Column',
     'student id' => 'Student Id',
+    'student roll' => 'Student Roll',
     'add' => 'Add',
     'view' => 'View',
     'male' => 'Male',

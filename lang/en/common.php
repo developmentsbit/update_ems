@@ -138,4 +138,7 @@ return [
     'student roll' => 'Student Roll',
     'add' => 'Add',
     'view' => 'View',
+    'male' => 'Male',
+    'female' => 'Female',
+    'others' => 'Others',
 ];

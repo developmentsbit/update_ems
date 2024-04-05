@@ -88,6 +88,7 @@ use App\Http\Controllers\CashReceiverInfo;
 use App\Http\Controllers\CashDepositController;
 use App\Http\Controllers\CashWithdrawController;
 use App\Http\Controllers\CashTransactionController;
+use App\Http\Controllers\TestimonialController;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -342,8 +343,11 @@ Route::group(['middleware' => 'auth'], function () {
         'add_fee_title' => AddFeeTitleController::class,
         'cash_transaction_report' => CashTransactionController::class,
         'columnwisefee' => ColumnWiseFeeSetupController::class,
+
+        'testimonial' => TestimonialController::class,
+
         'addFeeInStudentAc' => StudentController::class,
-    ]);
+
 
     Route::post('/column-Fee-Title-Class-Wise',[ColumnWiseFeeSetupController::class,'columnFeeClassWise'])->name('columnFeeClassWise');
     Route::post('/columnwisefee-delete',[ColumnWiseFeeSetupController::class,'destroy'])->name('columnFeeClassWiseDelete');

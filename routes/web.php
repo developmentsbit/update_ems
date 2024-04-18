@@ -89,6 +89,8 @@ use App\Http\Controllers\CashDepositController;
 use App\Http\Controllers\CashWithdrawController;
 use App\Http\Controllers\CashTransactionController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\StudentCertificateController;
+use App\Http\Controllers\CharacterCertificate;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -347,8 +349,11 @@ Route::group(['middleware' => 'auth'], function () {
         'testimonial' => TestimonialController::class,
 
         'addFeeInStudentAc' => StudentController::class,
+        'student_certificate' => StudentCertificateController::class,
+        'character_certificate' => CharacterCertificate::class,
+    ]);
 
-
+    Route::get('show_character_certificate/{id}/{type}',[CharacterCertificate::class,'show_character_certificate']);
     Route::post('/column-Fee-Title-Class-Wise',[ColumnWiseFeeSetupController::class,'columnFeeClassWise'])->name('columnFeeClassWise');
     Route::post('/columnwisefee-delete',[ColumnWiseFeeSetupController::class,'destroy'])->name('columnFeeClassWiseDelete');
     Route::post('/studentWisefee-delete',[StudentController::class,'destroy'])->name('studentFeeWiseDelete');

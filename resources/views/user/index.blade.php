@@ -12,7 +12,7 @@
 @section('content')
     <div class="container">
 
-        @component('components.breadcrumb')
+        @component('components.breadcrumb')s
             @slot('title')
                 @lang('user.user')
             @endslot
